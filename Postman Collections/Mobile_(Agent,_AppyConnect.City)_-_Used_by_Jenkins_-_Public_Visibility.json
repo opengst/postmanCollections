@@ -2347,7 +2347,7 @@
                   " */ ",
                   "",
                   "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get CategorieOrganisations with code PARTICULIER\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
                 ]
               }
             }
