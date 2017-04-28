@@ -2856,8 +2856,24 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "postman.setEnvironmentVariable(\"latitude\", \"47.214067019162280\");",
-                  "postman.setEnvironmentVariable(\"longitude\", \"-1.554095624160767\");"
+                  "var requestName = \"\";",
+                  "var requestDescription = \"\";",
+                  "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+                  "",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    requestName += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    requestDescription += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "",
+                  "var requestLatitude = (Math.random() * (180 - -180) + -180).toFixed(15) * 1;",
+                  "var requestLongitude = (Math.random() * (180 - -180) + -180).toFixed(15) * 1;",
+                  "",
+                  "postman.setEnvironmentVariable(\"requestName\", requestName);",
+                  "postman.setEnvironmentVariable(\"requestDescription\", requestDescription);",
+                  "postman.setEnvironmentVariable(\"requestLatitude\", requestLatitude);",
+                  "postman.setEnvironmentVariable(\"requestLongitude\", requestLongitude);"
                 ]
               }
             }
@@ -2874,7 +2890,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"name\": \"Categorie- Debut description...\",\r\n      \"description\": \"description demande2\",\r\n      \"is_citizen\":false,\r\n      \"geo_point\":\"Point({{longitude}} {{latitude}})\",\r\n      \"type_id\":6,\r\n      \"partner_address\":{{addressId}},\r\n      \"partner_id\":{{partnerId}}\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
+              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"name\": \"requestName\",\r\n      \"description\": \"requestDescription\",\r\n      \"is_citizen\":false,\r\n      \"geo_point\":\"Point({{requestLongitude}} {{requestLatitude}})\",\r\n      \"type_id\":6,\r\n      \"partner_address\":{{addressId}},\r\n      \"partner_id\":{{partnerId}}\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
             },
             "description": ""
           },
