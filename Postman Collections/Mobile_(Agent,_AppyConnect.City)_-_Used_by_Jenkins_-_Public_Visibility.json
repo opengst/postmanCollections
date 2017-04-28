@@ -2000,7 +2000,7 @@
         },
         {
           "_postman_id": "fade5fc1-fbb1-51e6-ff11-f97c187f2402",
-          "name": "Create ir.model.access FOR openstc.ask.transfer.template copy",
+          "name": "Create ir.model.access FOR res.partner",
           "request": {
             "url": "{{server}}/web/dataset/create",
             "method": "POST",
