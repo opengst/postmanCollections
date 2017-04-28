@@ -2389,7 +2389,7 @@
         },
         {
           "_postman_id": "71d96e4a-a226-a2ba-0598-3d3b8e116fe0",
-          "name": "Authenticate",
+          "name": "Authenticate with userAccount",
           "event": [
             {
               "listen": "test",
