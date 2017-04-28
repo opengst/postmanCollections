@@ -832,47 +832,6 @@
       "response": []
     },
     {
-      "_postman_id": "5cc54ee1-8447-17c2-8461-12ee252430b1",
-      "name": "get Site \"openstc.site\"",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "tests[\"Site openSTC exist\"] = jsonData.result.length >0;",
-              "",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/get",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"openstc.site\",\r\n    \"ids\": [\r\n      1\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
       "_postman_id": "4d21dfcc-e763-ac97-ba38-ae052452fe89",
       "name": "Create Site",
       "event": [
@@ -996,6 +955,47 @@
         "body": {
           "mode": "raw",
           "raw": "{\n\t\"id\":\"r161\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"sort\":\"name ASC\",\n        \"limit\":20,\n        \"offset\":0,\n        \"model\":\"openstc.site\",\n        \"fields\":[\n            \"active\",\n            \"actions\",\n            \"attachment_count\",\n            \"block_booking\",\n            \"code\",\n            \"description_sale\",\n            \"external_booking\",\n            \"external_bookable_notice\",\n            \"internal_booking\",\n            \"internal_bookable_notice\",\n            \"lat\",\n            \"long\",\n            \"length\",\n            \"max_bookable_qty\",\n            \"name\",\n            \"openresa_property_manager_id\",\n            \"partner_type_bookable_ids\",\n            \"pricelist_id\",\n            \"product_id\",\n            \"service_ids\",\n            \"service_names\",\n            \"service_bookable_ids\",\n            \"site_parent_id\",\n            \"surface\",\n            \"type_id\",\n            \"width\",\n            \"color\",\n            \"resa_service_manager_ids\",\n            \"resa_user_manager_ids\",\n            \"optional_product_ids\",\n            \"option_of_product_ids\",\n            \"accomodation_capacity\",\n            \"phone\",\n            \"geometry\",\n            \"geo_point\",\n            \"osm_type\",\n            \"osm_id\",\n            \"osm_zoom\"\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "5cc54ee1-8447-17c2-8461-12ee252430b1",
+      "name": "get Site \"openstc.site\"",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "tests[\"Site openSTC exist\"] = jsonData.result.length >0;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/get",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"openstc.site\",\r\n    \"ids\": [\r\n      1\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
         },
         "description": ""
       },
