@@ -781,6 +781,55 @@
         "description": ""
       },
       "response": []
+    },
+    {
+      "_postman_id": "cc3b1e15-af3e-7458-1b7d-229067e6a77b",
+      "name": "create user : Particuliers Commune - Demandeur externe copy copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"User creation seems fine\"] = responseCode.code === 200;",
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"User created\"] = jsonData.result.result != 1;"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "postman.setEnvironmentVariable('userLogin','login'+postman.getEnvironmentVariable('userNumber'));",
+              "postman.setEnvironmentVariable('userName','name'+postman.getEnvironmentVariable('userNumber'));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": \"r7\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"context_tz\": \"Europe/Paris\",\r\n      \"hex_color\": \"#2B0652\",\r\n      \"service_id\": false,\r\n      \"service_ids\": [[6,  0,[]]],\r\n      \"is_assignable_to_task\": false,\r\n      \"is_bookable_manager\": false,\r\n      \"image\": false,\r\n      \"login\": \"{{userLogin}}\",\r\n      \"new_password\": \"user1Mdp\",\r\n      \"name\": \"{{userName}}\",\r\n      \"function\": \"userFonction\",\r\n      \"email\": \"user@domain.com\",\r\n      \"phone\": \"0240033021\",\r\n      \"mobile\": \"0660353212\",\r\n      \"street\": \"rue\",\r\n      \"zip\": \"44100\",\r\n      \"city\": \"nantes\",\r\n      \"partner_id\": {{resPartner.id}},\r\n      \"groups_id\": [[6,0,[{{resGroups.Demandeur.id}},  {{resGroups.DemandeurExterne.id}}]]]\r\n    },\r\n    \"model\": \"res.users\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\"bin_size\": true}\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+        },
+        "description": "resGroups.id = Demandeur externe\n28 : Demandeur\nresPartner.id = Particuliers Commune"
+      },
+      "response": []
     }
   ]
 }
