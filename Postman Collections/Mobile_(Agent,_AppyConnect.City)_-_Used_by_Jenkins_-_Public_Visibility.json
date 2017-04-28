@@ -2574,7 +2574,7 @@
                   "}",
                   "",
                   "//Check if really authenticate",
-                  "tests[\"Authenticate\"] = jsonData.result.uid != false;",
+                  "tests[\"Authenticate\"] = jsonData.result.uid !== false;",
                   "",
                   "",
                   "/*",
