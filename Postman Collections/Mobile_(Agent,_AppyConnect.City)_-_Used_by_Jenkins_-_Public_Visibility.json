@@ -2030,6 +2030,27 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "fade5fc1-fbb1-51e6-ff11-f97c187f2402",
+          "name": "Create ir.model.access FOR openstc.ask.transfer.template copy",
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n        \"model_id\":{{ir.model.id.openstc.ask.transfer.template}},\r\n        \"name\": \"generatedByScripting\",\r\n        \"perm_read\": true,\r\n        \"perm_write\": false,\r\n        \"perm_create\": false,\r\n        \"perm_unlink\": false,\r\n        \"group_id\":{{res.groups}}\r\n    },\r\n    \"model\":\"ir.model.access\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
