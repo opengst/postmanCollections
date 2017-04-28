@@ -1039,6 +1039,47 @@
         "description": ""
       },
       "response": []
+    },
+    {
+      "_postman_id": "f944bdf7-adc3-b15e-ae45-c01143313cce",
+      "name": "createTask",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "",
+              "tests[\"Task is not empty\"] = jsonData.result.result > 0",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"id\":\"r136\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"project_id\":1823,\n            \"name\":\"ffff\",\n            \"service_id\":2,\n            \"planned_hours\":2,\n            \"category_id\":33,\n            \"user_id\":57,\n            \"date_start\":\"2017-04-28 06:30:00\",\n            \"date_end\":\"2017-04-28 08:30:00\"\n        },\n        \"model\":\"project.task\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n}"
+        },
+        "description": ""
+      },
+      "response": []
     }
   ]
 }
