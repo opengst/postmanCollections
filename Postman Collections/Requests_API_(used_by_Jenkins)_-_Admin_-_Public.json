@@ -873,55 +873,6 @@
       "response": []
     },
     {
-      "_postman_id": "31717783-13d9-ac1d-81ef-ba8a237f4358",
-      "name": "Search Read Site",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "",
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "//Demandeur externe can only read the site",
-              "tests[\"Check site exist\"] = jsonData.result.records.length > 0;",
-              "",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/search_read",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Accept",
-            "value": "application/json, text/plain, */*",
-            "description": ""
-          },
-          {
-            "key": "//X-DevTools-Emulate-Network-Conditions-Client-Id",
-            "value": "f55002dd-9cf3-4ebf-ba56-72718a383a86",
-            "description": "",
-            "disabled": true
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n\t\"id\":\"r161\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"sort\":\"name ASC\",\n        \"limit\":20,\n        \"offset\":0,\n        \"model\":\"openstc.site\",\n        \"fields\":[\n            \"active\",\n            \"actions\",\n            \"attachment_count\",\n            \"block_booking\",\n            \"code\",\n            \"description_sale\",\n            \"external_booking\",\n            \"external_bookable_notice\",\n            \"internal_booking\",\n            \"internal_bookable_notice\",\n            \"lat\",\n            \"long\",\n            \"length\",\n            \"max_bookable_qty\",\n            \"name\",\n            \"openresa_property_manager_id\",\n            \"partner_type_bookable_ids\",\n            \"pricelist_id\",\n            \"product_id\",\n            \"service_ids\",\n            \"service_names\",\n            \"service_bookable_ids\",\n            \"site_parent_id\",\n            \"surface\",\n            \"type_id\",\n            \"width\",\n            \"color\",\n            \"resa_service_manager_ids\",\n            \"resa_user_manager_ids\",\n            \"optional_product_ids\",\n            \"option_of_product_ids\",\n            \"accomodation_capacity\",\n            \"phone\",\n            \"geometry\",\n            \"geo_point\",\n            \"osm_type\",\n            \"osm_id\",\n            \"osm_zoom\"\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
       "_postman_id": "4d21dfcc-e763-ac97-ba38-ae052452fe89",
       "name": "Create Site",
       "event": [
@@ -996,6 +947,55 @@
         "body": {
           "mode": "raw",
           "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"code\":false,\n            \"type_id\":68,\n            \"color\":\"#390A10\",\n            \"surface\":0,\n            \"active\":true,\n            \"block_booking\":false,\n            \"osm_id\":false,\n            \"resa_user_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"max_bookable_qty\":0,\n            \"site_parent_id\":313,\n            \"width\":0,\n            \"resa_service_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"length\":0,\n            \"long\":0,\n            \"internal_bookable_notice\":0,\n            \"geo_point\":false,\n            \"partner_type_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"service_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"description_sale\":false,\n            \"osm_zoom\":false,\n            \"openresa_property_manager_id\":1,\n            \"lat\":0,\n            \"name\":\"1er étage test\",\n            \"service_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"product_id\":648,\n            \"optional_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"geometry\":false,\n            \"osm_type\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"option_of_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"external_bookable_notice\":0,\n            \"accommodation_capacity\":0,\n            \"product_image\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1151,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r199\"\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "31717783-13d9-ac1d-81ef-ba8a237f4358",
+      "name": "Search Read Site",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//Demandeur externe can only read the site",
+              "tests[\"Check site exist\"] = jsonData.result.records.length > 0;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/search_read",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*",
+            "description": ""
+          },
+          {
+            "key": "//X-DevTools-Emulate-Network-Conditions-Client-Id",
+            "value": "f55002dd-9cf3-4ebf-ba56-72718a383a86",
+            "description": "",
+            "disabled": true
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"id\":\"r161\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"sort\":\"name ASC\",\n        \"limit\":20,\n        \"offset\":0,\n        \"model\":\"openstc.site\",\n        \"fields\":[\n            \"active\",\n            \"actions\",\n            \"attachment_count\",\n            \"block_booking\",\n            \"code\",\n            \"description_sale\",\n            \"external_booking\",\n            \"external_bookable_notice\",\n            \"internal_booking\",\n            \"internal_bookable_notice\",\n            \"lat\",\n            \"long\",\n            \"length\",\n            \"max_bookable_qty\",\n            \"name\",\n            \"openresa_property_manager_id\",\n            \"partner_type_bookable_ids\",\n            \"pricelist_id\",\n            \"product_id\",\n            \"service_ids\",\n            \"service_names\",\n            \"service_bookable_ids\",\n            \"site_parent_id\",\n            \"surface\",\n            \"type_id\",\n            \"width\",\n            \"color\",\n            \"resa_service_manager_ids\",\n            \"resa_user_manager_ids\",\n            \"optional_product_ids\",\n            \"option_of_product_ids\",\n            \"accomodation_capacity\",\n            \"phone\",\n            \"geometry\",\n            \"geo_point\",\n            \"osm_type\",\n            \"osm_id\",\n            \"osm_zoom\"\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n\n}"
         },
         "description": ""
       },
