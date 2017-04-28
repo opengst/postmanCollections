@@ -2940,7 +2940,7 @@
                   " */ ",
                   "",
                   "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Search_read All Category\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
             }
