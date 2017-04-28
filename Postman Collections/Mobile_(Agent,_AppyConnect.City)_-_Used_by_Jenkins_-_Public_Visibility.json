@@ -2231,10 +2231,6 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"categorieOrganisationId\", jsonData.result.records[0].id);",
-                  "",
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
                   " * TESTS ",
@@ -2247,14 +2243,14 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "",
+                  "postman.setEnvironmentVariable(\"categorieOrganisationId\", jsonData.result.records[0].id);",
                   "",
                   "",
                   "/*",
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get CategorieOrganisations with code PARTICULIER\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
@@ -2919,7 +2915,32 @@
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
                   "postman.setEnvironmentVariable(\"interventionRequest.id\", jsonData.result.records[0].id);",
-                  "postman.setEnvironmentVariable(\"attachment_count\", jsonData.result.records[0].attachment_count);"
+                  "postman.setEnvironmentVariable(\"attachment_count\", jsonData.result.records[0].attachment_count);",
+                  "",
+                  "",
+                  "",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
             }
@@ -2945,6 +2966,39 @@
         {
           "_postman_id": "2e9b8add-b549-1585-a7c9-ea457908335e",
           "name": "Search_read All Category",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
