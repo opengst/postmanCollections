@@ -721,6 +721,43 @@
       "response": []
     },
     {
+      "_postman_id": "21708680-667e-e117-0099-aa9f7a92f7d4",
+      "name": "get Consumptions",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//You have no right to create when you are not in the group Modify Sites (from actions)",
+              "tests[\"error code Check\"] = jsonData.error.code === 200;",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/search_read",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": \"r323\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"date_start DESC\",\r\n    \"limit\": 20,\r\n    \"offset\": 0,\r\n    \"model\": \"opengst.fluids.consumption\",\r\n    \"fields\": [\r\n      \"date_start\",\r\n      \"date_end\",\r\n      \"consumption\",\r\n      \"meter_id\",\r\n      \"category_id\",\r\n      \"site_id\"\r\n    ],\r\n    \"domain\": [],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
       "_postman_id": "52ef01b7-85a5-4375-1a1b-ec6c99b067b2",
       "name": "Search&Read Compteur DE",
       "event": [
@@ -1542,43 +1579,6 @@
         "body": {
           "mode": "raw",
           "raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"call\",\n\t\"params\": {\n\t\t\"model\": \"opengst.fluids.consumption\",\n\t\t\"method\": \"import_csv\",\n\t\t\"args\": [\n\t\t\t\"bWV0ZXIsZGF0ZV9zdGFydCxkYXRlX2VuZCxjb25zdW1wdGlvbixjb3N0CkEzLDIwMTctMDEtMTEsMjAxNy0wMS0xNCwzOSwxMApBMywyMDE3LTAxLTE1LDIwMTctMDEtMTksNTUsMjAKQTMsMjAxNy0wMS0yMCwyMDE3LTAxLTIxLDI3LDEwCkEzLDIwMTctMDItMTEsMjAxNy0wMi0xNCwxNSw1CkEzLDIwMTctMDItMTUsMjAxNy0wMi0xOSwzNiwyNgoxLDIwMTctMDEtMTEsMjAxNy0wMS0xNCwyOSwyOAoxLDIwMTctMDEtMTUsMjAxNy0wMS0xOSwzNSwzNQoxLDIwMTctMDEtMjAsMjAxNy0wMS0yMSwzNywzNgoxLDIwMTctMDItMTEsMjAxNy0wMi0xNCwzNSwzNQoxLDIwMTctMDItMTUsMjAxNy0wMi0xOSw1Niw1NQo=\"\n\t\t],\n\t\t\"kwargs\": {\n\t\t\t\"context\": {\n\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\"project_id\": false,\n\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\"section_id\": false,\n\t\t\t\t\"uid\": {{uid}}\n\t\t\t}\n\t\t},\n\t\t\"session_id\": \"{{sessionId}}\",\n\t\t\"context\": {\n\t\t\t\"__ref\": \"compound_context\",\n\t\t\t\"__contexts\": [\n\t\t\t\t{\n\t\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\t\"uid\": {{uid}}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"bin_size\": true\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"__eval_context\": null\n\t\t}\n\t},\n\t\"id\": \"r66\"\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "21708680-667e-e117-0099-aa9f7a92f7d4",
-      "name": "get Consumptions",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "//You have no right to create when you are not in the group Modify Sites (from actions)",
-              "tests[\"error code Check\"] = jsonData.error.code === 200;",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/search_read",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"id\": \"r323\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"date_start DESC\",\r\n    \"limit\": 20,\r\n    \"offset\": 0,\r\n    \"model\": \"opengst.fluids.consumption\",\r\n    \"fields\": [\r\n      \"date_start\",\r\n      \"date_end\",\r\n      \"consumption\",\r\n      \"meter_id\",\r\n      \"category_id\",\r\n      \"site_id\"\r\n    ],\r\n    \"domain\": [],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
         },
         "description": ""
       },
