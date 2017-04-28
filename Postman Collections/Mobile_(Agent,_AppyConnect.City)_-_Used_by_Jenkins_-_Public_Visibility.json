@@ -1253,9 +1253,7 @@
                   "/*",
                   " * SCENARIO",
                   " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                  ""
                 ]
               }
             },
@@ -1299,7 +1297,7 @@
         },
         {
           "_postman_id": "70fc7d95-a343-3ff9-abd8-7cf4d1475153",
-          "name": "Authenticate",
+          "name": "Authenticate with Admin",
           "event": [
             {
               "listen": "test",
@@ -1995,6 +1993,39 @@
             "body": {
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"login\":\"{{accountNotConnectedLogin}}\",\n         \"new_password\":\"{{accountNotConnectedPassword}}\",\n         \"name\":\"{{accountNotConnectedName}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{res.groups}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ca8999dd-bbb2-3325-a45d-c8cf00e8558c",
+          "name": "Get id ON ir.model FOR openstc.ask.category copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"ir.model.id.openstc.ask.category\", jsonData.result.records[0].id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t  \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"ir.model\",\n      \"domain\":[\n         [\n            \"model\",\n            \"=\",\n            \"openstc.ask.category\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"model\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
