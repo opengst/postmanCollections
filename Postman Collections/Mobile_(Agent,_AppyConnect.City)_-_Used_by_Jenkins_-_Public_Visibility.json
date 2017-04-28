@@ -2231,6 +2231,10 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"categorieOrganisationId\", jsonData.result.records[0].id);",
+                  "",
+                  "",
+                  "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
                   " * TESTS ",
@@ -2243,14 +2247,14 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "postman.setEnvironmentVariable(\"categorieOrganisationId\", jsonData.result.records[0].id);",
+                  "",
                   "",
                   "",
                   "/*",
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get CategorieOrganisations with code PARTICULIER\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
@@ -2284,6 +2288,10 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"organisationId\", jsonData.result.records[0].id);",
+                  "",
+                  "",
+                  "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
                   " * TESTS ",
@@ -2296,14 +2304,14 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "postman.setEnvironmentVariable(\"organisationId\", jsonData.result.records[0].id);",
+                  "",
                   "",
                   "",
                   "/*",
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get Organisation with last CategorieOrganisation\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
@@ -2329,13 +2337,17 @@
         },
         {
           "_postman_id": "b9f077a8-0eb6-7082-2db7-02ea57dbd483",
-          "name": "Get GroupId for Demandeur",
+          "name": "Get GroupId for \"Demandeur\"",
           "event": [
             {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
                 "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"groupIdDemandeur\", jsonData.result.records[0].id);",
+                  "",
+                  "",
                   "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
@@ -2349,14 +2361,14 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "postman.setEnvironmentVariable(\"groupIdDemandeur\", jsonData.result.records[0].id);",
+                  "",
                   "",
                   "",
                   "/*",
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
@@ -2382,13 +2394,17 @@
         },
         {
           "_postman_id": "39f15915-0d98-d5b3-5af8-404ae116d6eb",
-          "name": "Get GroupId for Demandeur externe",
+          "name": "Get GroupId for \"Demandeur externe\"",
           "event": [
             {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
                 "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"groupIdDemandeurExterne\", jsonData.result.records[0].id);",
+                  "",
+                  "",
                   "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
@@ -2402,14 +2418,14 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "postman.setEnvironmentVariable(\"groupIdDemandeurExterne\", jsonData.result.records[0].id);",
+                  "",
                   "",
                   "",
                   "/*",
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur externe\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
@@ -2435,7 +2451,7 @@
         },
         {
           "_postman_id": "13fd4a9f-5e58-1634-c6c9-5f30be27b61a",
-          "name": "Create User on Particuliers Commune",
+          "name": "Create User (external member)",
           "event": [
             {
               "listen": "test",
@@ -2772,39 +2788,6 @@
         {
           "_postman_id": "0a96471a-88e7-d461-3288-99269e74d06c",
           "name": "Get contact informations",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
-                ]
-              }
-            }
-          ],
           "request": {
             "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
@@ -2837,29 +2820,7 @@
                   "postman.setEnvironmentVariable(\"latitude\", parseFloat(postman.getEnvironmentVariable(\"latitude\"))+0.0010);",
                   "postman.setEnvironmentVariable(\"longitude\", parseFloat(postman.getEnvironmentVariable(\"longitude\"))+0.0010);",
                   "",
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
+                  ""
                 ]
               }
             },
@@ -2903,32 +2864,7 @@
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
                   "postman.setEnvironmentVariable(\"interventionRequest.id\", jsonData.result.records[0].id);",
-                  "postman.setEnvironmentVariable(\"attachment_count\", jsonData.result.records[0].attachment_count);",
-                  "",
-                  "",
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
+                  "postman.setEnvironmentVariable(\"attachment_count\", jsonData.result.records[0].attachment_count);"
                 ]
               }
             }
@@ -2954,39 +2890,6 @@
         {
           "_postman_id": "2e9b8add-b549-1585-a7c9-ea457908335e",
           "name": "Search_read All Category",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
-                ]
-              }
-            }
-          ],
           "request": {
             "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
