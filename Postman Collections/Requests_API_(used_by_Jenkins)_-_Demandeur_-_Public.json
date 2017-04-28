@@ -462,6 +462,64 @@
         "description": "resGroups.id = Demandeur externe\n28 : Demandeur\nresPartner.id = Particuliers Commune"
       },
       "response": []
+    },
+    {
+      "_postman_id": "b7bb5005-872b-421f-cce7-f1d7714465ce",
+      "name": "Create Compteur Demandeur externe",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//You have no right to create when you are not in the group Gestionnaire.",
+              "tests[\"error code Check\"] = jsonData.error.code === 200;",
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var text = \"\";",
+              "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+              "",
+              "for( var i=0; i < 15; i++ )",
+              "    text += possible.charAt(Math.floor(Math.random() * possible.length));",
+              "    ",
+              "postman.setEnvironmentVariable(\"ref\", text);",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"name\":\"Test Compteur1\",\n            \"categ_id\":22,\n            \"ref\":\"{{ref}}\",\n            \"category_id\":1\n        },\n        \"model\":\"opengst.fluids.meter\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r87\"\n}"
+        },
+        "description": ""
+      },
+      "response": []
     }
   ]
 }
