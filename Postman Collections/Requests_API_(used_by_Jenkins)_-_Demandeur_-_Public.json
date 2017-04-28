@@ -207,6 +207,12 @@
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "tests[\"Response time is less than 1000ms\"] = responseTime < 1000;",
               "var jsonData = JSON.parse(responseBody);",
+              "//Check if the content type is json",
+              "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
+              "if (contentTypeHeader) {",
+              "    tests[\"Content-Type is application/json\"] = ",
+              "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
+              "}",
               "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
               "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
               "tests[\"Authenticate Bdd\"] = jsonData.result.db === 'test_api';",
@@ -222,12 +228,7 @@
               "        tests[\"Authenticate as gestionnaire\"] = jsonData.result.uid === 104;",
               "}",
               "",
-              "//Check if the content type is json",
-              "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
-              "if (contentTypeHeader) {",
-              "    tests[\"Content-Type is application/json\"] = ",
-              "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
-              "}",
+              "",
               ""
             ]
           }
