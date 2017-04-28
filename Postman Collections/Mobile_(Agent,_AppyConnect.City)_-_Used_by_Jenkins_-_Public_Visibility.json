@@ -2014,7 +2014,6 @@
                   "switch(postman.getEnvironmentVariable(\"lastStepScenarioCitoyen\")) {",
                   "    ",
                   "    case undefined:",
-                  "        tests[\"BEGIN\"] = 1 === 1;",
                   "        tests[\"Utils - Clear Environnement Variables\"] = 1 === 1;",
                   "        postman.setNextRequest(\"Utils - Clear Environnement Variables\");",
                   "        break;",
