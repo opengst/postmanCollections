@@ -8,12 +8,6 @@
   },
   "item": [
     {
-      "_postman_id": "0724da8a-9520-6c10-8974-0cf43a4900ce",
-      "name": "Mobile Citoyen - 3 - Authenticate with new user",
-      "description": "",
-      "item": []
-    },
-    {
       "_postman_id": "20cb0336-b14f-3316-a4d1-40b6ed0b0d5f",
       "name": "Mobile Agent - 1 - Proto",
       "description": "",
@@ -1250,12 +1244,6 @@
           "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "c82b37e5-27b3-7a35-a3aa-be655b279299",
-      "name": "Mobile Citoyen - 4 - Get User Informations",
-      "description": "",
-      "item": []
     },
     {
       "_postman_id": "d62d8a50-e84a-3caf-e221-a04f99f523b4",
