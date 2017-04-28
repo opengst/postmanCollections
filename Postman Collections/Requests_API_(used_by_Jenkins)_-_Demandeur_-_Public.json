@@ -464,6 +464,86 @@
       "response": []
     },
     {
+      "_postman_id": "9e0705c0-aea5-2b66-2410-76f34f722647",
+      "name": "Delete Compteur DE",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "",
+              "//You have no right to create when you are not in the group Gestionnaire.",
+              "tests[\"error code Check\"] = jsonData.error.code === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/unlink",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"model\":\"opengst.fluids.meter\",\n        \"ids\":[\n            17\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r97\"\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "52ef01b7-85a5-4375-1a1b-ec6c99b067b2",
+      "name": "Search&Read Compteur DE",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "",
+              "//You have no right to create when you are not in the group Gestionnaire/Superviseur.",
+              "tests[\"error code Check\"] = jsonData.error.code === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://gst-dev.atreal-ouest.fr/web/dataset/search_read",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"limit\":20,\n        \"offset\":0,\n        \"model\":\"opengst.fluids.meter\",\n        \"fields\":[\n            \"id\",\n            \"actions\",\n            \"name\",\n            \"site_id\",\n            \"categ_id\",\n            \"category_id\",\n            \"ref\",\n            \"site_repartition_ids\"\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r96\"\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
       "_postman_id": "b7bb5005-872b-421f-cce7-f1d7714465ce",
       "name": "Create Compteur Demandeur externe",
       "event": [
@@ -572,86 +652,6 @@
         "body": {
           "mode": "raw",
           "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"categ_id\":22,\n            \"name\":\"Test Compteur\",\n            \"ref\":\"{{ref1}}\",\n            \"site_id\":false,\n            \"category_id\":3,\n            \"site_repartitions\":[\n\n            ]\n        },\n        \"model\":\"opengst.fluids.meter\",\n        \"id\":17,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r94\"\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "52ef01b7-85a5-4375-1a1b-ec6c99b067b2",
-      "name": "Search&Read Compteur DE",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "",
-              "//You have no right to create when you are not in the group Gestionnaire/Superviseur.",
-              "tests[\"error code Check\"] = jsonData.error.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://gst-dev.atreal-ouest.fr/web/dataset/search_read",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Accept",
-            "value": "application/json, text/plain, */*",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"limit\":20,\n        \"offset\":0,\n        \"model\":\"opengst.fluids.meter\",\n        \"fields\":[\n            \"id\",\n            \"actions\",\n            \"name\",\n            \"site_id\",\n            \"categ_id\",\n            \"category_id\",\n            \"ref\",\n            \"site_repartition_ids\"\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r96\"\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "9e0705c0-aea5-2b66-2410-76f34f722647",
-      "name": "Delete Compteur DE",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "",
-              "//You have no right to create when you are not in the group Gestionnaire.",
-              "tests[\"error code Check\"] = jsonData.error.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/unlink",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Accept",
-            "value": "application/json, text/plain, */*",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"model\":\"opengst.fluids.meter\",\n        \"ids\":[\n            17\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r97\"\n}"
         },
         "description": ""
       },
