@@ -1265,7 +1265,7 @@
                 "exec": [
                   "tests[\"Switch..\"] = 1 === 1;",
                   "",
-                  "switch(postman.getEnvironmentVariable(\"lastStepScenarioCitoyen\")) {",
+                  "switch(postman.getEnvironmentVariable(\"lastStepServerConfiguration\")) {",
                   "    ",
                   "    case undefined:",
                   "        tests[\"Utils - Clear Environnement Variables\"] = 1 === 1;",
@@ -1343,7 +1343,7 @@
                   "        break;     ",
                   "        ",
                   "    default:",
-                  "        tests[\"ERROR ON lastStepScenarioCitoyen\"] = 1 === 0;",
+                  "        tests[\"ERROR ON lastStepServerConfiguration\"] = 1 === 0;",
                   "        postman.setNextRequest(null);",
                   "}",
                   ""
