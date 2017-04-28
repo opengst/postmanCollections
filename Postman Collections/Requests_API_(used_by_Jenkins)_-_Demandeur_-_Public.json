@@ -383,7 +383,7 @@
             "type": "text/javascript",
             "exec": [
               "var jsonData = JSON.parse(responseBody);",
-              "postman.setEnvironmentVariable(\"user.number\", jsonData.result.length);",
+              "postman.setEnvironmentVariable(\"userNumber\", jsonData.result.length);",
               "tests[\"Find users\"] = jsonData.result.ids.length != 1;"
             ]
           }
