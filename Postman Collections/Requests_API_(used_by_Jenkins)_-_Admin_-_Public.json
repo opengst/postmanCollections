@@ -872,6 +872,47 @@
       "response": []
     },
     {
+      "_postman_id": "5cc54ee1-8447-17c2-8461-12ee252430b1",
+      "name": "get Site \"openstc.site\"",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "tests[\"Site openSTC exist\"] = jsonData.result.length >0;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/get",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"openstc.site\",\r\n    \"ids\": [\r\n      1\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
       "_postman_id": "31717783-13d9-ac1d-81ef-ba8a237f4358",
       "name": "Search Read Site",
       "event": [
@@ -955,47 +996,6 @@
         "body": {
           "mode": "raw",
           "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"osm_zoom\":false,\n            \"osm_type\":false,\n            \"osm_id\":false,\n            \"geometry\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"block_booking\":false,\n            \"product_image\":false,\n            \"name\":\"CreateTest\",\n            \"type_id\":80\n        },\n        \"model\":\"openstc.site\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r156\"\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "5cc54ee1-8447-17c2-8461-12ee252430b1",
-      "name": "get Site \"openstc.site\"",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "tests[\"Site openSTC exist\"] = jsonData.result.length >0;",
-              "",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/get",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"openstc.site\",\r\n    \"ids\": [\r\n      1\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
         },
         "description": ""
       },
