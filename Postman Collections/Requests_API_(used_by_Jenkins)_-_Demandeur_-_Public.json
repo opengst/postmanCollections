@@ -513,7 +513,7 @@
     },
     {
       "_postman_id": "bc2b25a6-96dc-682b-7a5d-e882bb863d1e",
-      "name": "create user : Particuliers Commune - Demandeur externe copy copy",
+      "name": "create user : Particuliers Commune - Demandeur externe",
       "event": [
         {
           "listen": "test",
