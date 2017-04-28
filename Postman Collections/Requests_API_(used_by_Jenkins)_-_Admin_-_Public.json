@@ -783,7 +783,7 @@
     },
     {
       "_postman_id": "68dca634-9039-a659-b253-b36ff1d68eee",
-      "name": "Update Compteur",
+      "name": "Update Meters",
       "event": [
         {
           "listen": "test",
