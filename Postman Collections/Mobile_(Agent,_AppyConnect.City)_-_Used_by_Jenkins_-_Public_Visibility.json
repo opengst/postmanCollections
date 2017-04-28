@@ -2570,7 +2570,7 @@
         },
         {
           "_postman_id": "7a994bb0-97f3-8780-cf09-e1f818464b69",
-          "name": "Authenticate with",
+          "name": "Authenticate with globalAccount",
           "event": [
             {
               "listen": "test",
@@ -2602,7 +2602,15 @@
                   " */",
                   "",
                   "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  " ",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Authenticate with accountNotConnected\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
                 ]
               }
             }
@@ -2619,7 +2627,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{login}}\",\r\n      \"password\": \"{{password}}\"\r\n   }\r\n}"
+              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{accountNotConnectedLogin}}\",\r\n      \"password\": \"{{accountNotConnectedLogin}}\"\r\n   }\r\n}"
             },
             "description": ""
           },
@@ -2639,7 +2647,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{login}}\",\r\n      \"password\": \"{{password}}\"\r\n   }\r\n}"
+                  "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{accountNotConnectedLogin}}\",\r\n      \"password\": \"{{accountNotConnectedLogin}}\"\r\n   }\r\n}"
                 },
                 "description": ""
               },
