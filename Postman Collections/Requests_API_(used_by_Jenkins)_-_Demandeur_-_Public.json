@@ -205,8 +205,15 @@
             "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "tests[\"Response time is less than 500ms\"] = responseTime < 500;",
+              "tests[\"Response time is less than 1000ms\"] = responseTime < 1000;",
               "var jsonData = JSON.parse(responseBody);",
+              "",
+              "//Check if the content type is json",
+              "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
+              "if (contentTypeHeader) {",
+              "    tests[\"Content-Type is application/json\"] = ",
+              "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
+              "}",
               "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
               "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
               "tests[\"Authenticate Bdd\"] = jsonData.result.db === 'test_api';",
@@ -222,12 +229,7 @@
               "        tests[\"Authenticate as gestionnaire\"] = jsonData.result.uid === 104;",
               "}",
               "",
-              "//Check if the content type is json",
-              "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
-              "if (contentTypeHeader) {",
-              "    tests[\"Content-Type is application/json\"] = ",
-              "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
-              "}",
+              "",
               ""
             ]
           }
@@ -1058,6 +1060,46 @@
       "response": []
     },
     {
+      "_postman_id": "3b186fa9-a456-7fe5-d3f7-947dcf4ecc8e",
+      "name": "search_read Site \"openstc.site\" copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "//For demandeur externe, who hasn't got right to read site \"Openstc.site\"",
+              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
+              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/search_read",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": \"r5\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.site\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
       "_postman_id": "0804a268-cf8b-7a63-a95c-6e1b98f87b9d",
       "name": "get res.company settings copy",
       "event": [
@@ -1218,6 +1260,129 @@
       "response": []
     },
     {
+      "_postman_id": "9f882302-5443-f8b0-2318-49b2e4e421a0",
+      "name": "create Marque de véhicule \"opengst.automobile.brand\" copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//For demandeur externe, who hasn't got right to create 'Marque de vehicule'",
+              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
+              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n      \"name\": \"Creation Marque\"\n    },\n  \"model\": \"opengst.automobile.brand\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "21b87183-2f99-8ac9-9c89-5d5486b6d3f5",
+      "name": "create Modele de véhicule \"opengst.automobile.model\" copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//For demandeur externe, who hasn't got right to create 'Modele de vehicule'",
+              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
+              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n      \"name\": \"Creation Modele\",\n      \"brand_id\": 229,\n      \"type_id\": false,\n      \"width\":1,\n            \"height\":2,\n            \"length\":3,\n            \"weight_ptv\":4,\n            \"weight_ptac\":5,\n            \"weight_ptr\":6\n    },\n  \"model\": \"opengst.automobile.brand.model\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "fb4f0694-c892-129c-bb6b-7305727e9566",
+      "name": "create Marque de véhicule \"opengst.automobile.brand\" copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//For demandeur externe, who hasn't got right to create 'Marque de vehicule'",
+              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
+              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n      \"name\": \"Creation Marque\"\n    },\n  \"model\": \"opengst.automobile.brand\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
       "_postman_id": "4c7f43f7-0260-a97a-6eeb-d4e12bba6c44",
       "name": "get Organisation \"openstc.site\" copy",
       "event": [
@@ -1260,8 +1425,8 @@
       "response": []
     },
     {
-      "_postman_id": "3b186fa9-a456-7fe5-d3f7-947dcf4ecc8e",
-      "name": "search_read Site \"openstc.site\" copy",
+      "_postman_id": "23d34960-05e9-0c28-a24f-4f2dc7de7116",
+      "name": "get Site \"openstc.site\" copy",
       "event": [
         {
           "listen": "test",
@@ -1269,7 +1434,8 @@
             "type": "text/javascript",
             "exec": [
               "var jsonData = JSON.parse(responseBody);",
-              "//For demandeur externe, who hasn't got right to read site \"Openstc.site\"",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//For demandeur externe, who hasn't got right to get 'Site'",
               "tests[\"Error Checked\"]=jsonData.error.code === 200;",
               "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
             ]
@@ -1277,7 +1443,7 @@
         }
       ],
       "request": {
-        "url": "{{server}}/web/dataset/search_read",
+        "url": "{{server}}/web/dataset/get",
         "method": "POST",
         "header": [
           {
@@ -1293,7 +1459,48 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"id\": \"r5\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.site\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+          "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"openstc.site\",\r\n    \"ids\": [\r\n      1\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "55b0626f-71de-f171-ff7c-6d125623af1f",
+      "name": "create Site \"openstc.site\" copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//For demandeur externe, who hasn't got right to create 'Site'",
+              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
+              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"city\":\"Ville\",\n        \"zip\":\"Code postal\",\n        \"product_image\":false,\n    \"osm_zoom\": false,\n    \"osm_type\": false,\n    \"osm_id\": false,\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"name\": \"Creation Site 2\",\n    \"type_id\": 76,\n    \"alarm\":true,\n    \"pmr\":true,\n        \"amiante\":true,\n        \"igh\":false,\n        \"cadastre_is_bati\":false,\n        \"cadastre_is_nonbati\":false,\n        \"pprn\":false,\n        \"pprm\":false,\n        \"pprt\":false,\n        \"ppri\":false,\n        \"product_image\":false,\n        \"street\":\"Rue\",\n        \"street2\":\"Rue (suite)\",\n        \"accommodation_capacity\":666,\n        \"width\":666,\n        \"length\":666,\n        \"surface\":443556,\n        \"is_copro\":false,\n        \"date_end\":\"2016-10-24\",\n        \"date_start\":\"2016-10-24\",\n        \"site_parent_id\":1151,\n        \"access_manager_ids\": [[6, 0, [73, 97]]]\n    },\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
         },
         "description": ""
       },
