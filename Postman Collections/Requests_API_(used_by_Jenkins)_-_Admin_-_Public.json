@@ -1513,7 +1513,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"res.company\",\r\n    \"ids\": [],\r\n    \"fields\": [\r\n      \"validate_request_window_advanced_mode\",\r\n      \"add_task_window_advanced_mode\",\r\n      \"add_intervention_window_create_task\",\r\n      \"intervention_window_synchronize_status\",\r\n      \"task_default_hours\",\r\n      \"task_default_minutes\"\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
+          "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"res.company\",\r\n    \"ids\": [{{companyId}}],\r\n    \"fields\": [\r\n      \"validate_request_window_advanced_mode\",\r\n      \"add_task_window_advanced_mode\",\r\n      \"add_intervention_window_create_task\",\r\n      \"intervention_window_synchronize_status\",\r\n      \"task_default_hours\",\r\n      \"task_default_minutes\"\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
         },
         "description": ""
       },
