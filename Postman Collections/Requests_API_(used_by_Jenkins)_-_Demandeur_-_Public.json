@@ -424,6 +424,7 @@
               "var jsonData = JSON.parse(responseBody);",
               "",
               "tests[\"Check error code\"] = jsonData.error.code ===200;",
+              "tests[\"Check error type\"] = jsonData.error.type ===\"server_exception\";",
               ""
             ]
           }
