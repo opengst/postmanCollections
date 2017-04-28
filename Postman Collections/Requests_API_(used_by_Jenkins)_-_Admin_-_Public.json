@@ -366,6 +366,7 @@
             "exec": [
               "var jsonData = JSON.parse(responseBody);",
               "postman.setEnvironmentVariable(\"resPartner.id\", jsonData.result.ids[0]);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "tests[\"Find one 'Particuliers Commune'\"] = jsonData.result.length === 1;"
             ]
           }
