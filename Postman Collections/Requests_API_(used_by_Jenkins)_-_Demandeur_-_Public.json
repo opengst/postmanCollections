@@ -1383,6 +1383,47 @@
       "response": []
     },
     {
+      "_postman_id": "55b0626f-71de-f171-ff7c-6d125623af1f",
+      "name": "create Site \"openstc.site\" copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//For demandeur externe, who hasn't got right to create 'Site'",
+              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
+              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"city\":\"Ville\",\n        \"zip\":\"Code postal\",\n        \"product_image\":false,\n    \"osm_zoom\": false,\n    \"osm_type\": false,\n    \"osm_id\": false,\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"name\": \"Creation Site 2\",\n    \"type_id\": 76,\n    \"alarm\":true,\n    \"pmr\":true,\n        \"amiante\":true,\n        \"igh\":false,\n        \"cadastre_is_bati\":false,\n        \"cadastre_is_nonbati\":false,\n        \"pprn\":false,\n        \"pprm\":false,\n        \"pprt\":false,\n        \"ppri\":false,\n        \"product_image\":false,\n        \"street\":\"Rue\",\n        \"street2\":\"Rue (suite)\",\n        \"accommodation_capacity\":666,\n        \"width\":666,\n        \"length\":666,\n        \"surface\":443556,\n        \"is_copro\":false,\n        \"date_end\":\"2016-10-24\",\n        \"date_start\":\"2016-10-24\",\n        \"site_parent_id\":1151,\n        \"access_manager_ids\": [[6, 0, [73, 97]]]\n    },\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
       "_postman_id": "4c7f43f7-0260-a97a-6eeb-d4e12bba6c44",
       "name": "get Organisation \"openstc.site\" copy",
       "event": [
@@ -1419,47 +1460,6 @@
         "body": {
           "mode": "raw",
           "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n     \"fields\":[\n        \"active\",\n        \"actions\",\n        \"attachment_count\",\n        \"block_booking\",\n        \"code\",\n        \"description_sale\",\n        \"external_booking\",\n        \"external_bookable_notice\",\n        \"internal_booking\",\n        \"internal_bookable_notice\",\n        \"lat\",\n        \"long\",\n        \"length\",\n        \"max_bookable_qty\",\n        \"name\",\n        \"openresa_property_manager_id\",\n        \"partner_type_bookable_ids\",\n        \"pricelist_id\",\n        \"product_id\",\n        \"service_ids\",\n        \"service_names\",\n        \"service_bookable_ids\",\n        \"site_parent_id\",\n        \"surface\",\n        \"type_id\",\n        \"width\",\n        \"color\",\n        \"resa_service_manager_ids\",\n        \"resa_user_manager_ids\",\n        \"optional_product_ids\",\n        \"option_of_product_ids\",\n        \"accomodation_capacity\",\n        \"phone\",\n        \"geometry\",\n        \"geo_point\",\n        \"osm_type\",\n        \"osm_id\",\n        \"osm_zoom\"\n     ],\n    \"ids\": [12],\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "55b0626f-71de-f171-ff7c-6d125623af1f",
-      "name": "create Site \"openstc.site\" copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "//For demandeur externe, who hasn't got right to create 'Site'",
-              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
-              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"city\":\"Ville\",\n        \"zip\":\"Code postal\",\n        \"product_image\":false,\n    \"osm_zoom\": false,\n    \"osm_type\": false,\n    \"osm_id\": false,\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"name\": \"Creation Site 2\",\n    \"type_id\": 76,\n    \"alarm\":true,\n    \"pmr\":true,\n        \"amiante\":true,\n        \"igh\":false,\n        \"cadastre_is_bati\":false,\n        \"cadastre_is_nonbati\":false,\n        \"pprn\":false,\n        \"pprm\":false,\n        \"pprt\":false,\n        \"ppri\":false,\n        \"product_image\":false,\n        \"street\":\"Rue\",\n        \"street2\":\"Rue (suite)\",\n        \"accommodation_capacity\":666,\n        \"width\":666,\n        \"length\":666,\n        \"surface\":443556,\n        \"is_copro\":false,\n        \"date_end\":\"2016-10-24\",\n        \"date_start\":\"2016-10-24\",\n        \"site_parent_id\":1151,\n        \"access_manager_ids\": [[6, 0, [73, 97]]]\n    },\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
         },
         "description": ""
       },
