@@ -1227,34 +1227,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "905b4dbb-b9a6-e0a7-d20c-b88bfd42ada7",
-          "name": "BEGIN RUN HERE copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"BEGIN\"] = 1 === 1;",
-                  "postman.clearEnvironmentVariable(\"lastStepScenarioCitoyen\")",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "http://www.google.com",
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "70fc7d95-a343-3ff9-abd8-7cf4d1475153",
           "name": "Authenticate",
           "event": [
