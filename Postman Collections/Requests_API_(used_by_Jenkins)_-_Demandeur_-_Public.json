@@ -1055,6 +1055,47 @@
         "description": ""
       },
       "response": []
+    },
+    {
+      "_postman_id": "e701f597-6251-8cca-9d2d-3ab189271617",
+      "name": "Create equipement openstc.equipement copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//For demandeur externe, who hasn't got right to create 'equipement'",
+              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
+              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept-Language",
+            "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"qty_available\":1,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"block_booking\":false,\n            \"internal_use\":false,\n            \"product_image\":false,\n            \"categ_id\":14,\n            \"name\":\"Clio\",\n            \"new_qty\":1\n        },\n        \"model\":\"openstc.equipment\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r51\"\n}"
+        },
+        "description": ""
+      },
+      "response": []
     }
   ]
 }
