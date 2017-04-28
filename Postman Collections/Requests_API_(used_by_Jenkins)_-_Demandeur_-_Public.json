@@ -1095,8 +1095,8 @@
       "response": []
     },
     {
-      "_postman_id": "82f6e09f-adec-9a26-6f87-d90af7e8f295",
-      "name": "create Carburant \"opengst.automobile.fuel\" copy",
+      "_postman_id": "3b186fa9-a456-7fe5-d3f7-947dcf4ecc8e",
+      "name": "search_read Site \"openstc.site\" copy",
       "event": [
         {
           "listen": "test",
@@ -1104,8 +1104,7 @@
             "type": "text/javascript",
             "exec": [
               "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "//For demandeur externe, who hasn't got right to create 'Carburant'",
+              "//For demandeur externe, who hasn't got right to read site \"Openstc.site\"",
               "tests[\"Error Checked\"]=jsonData.error.code === 200;",
               "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
             ]
@@ -1113,7 +1112,7 @@
         }
       ],
       "request": {
-        "url": "{{server}}/web/dataset/create",
+        "url": "{{server}}/web/dataset/search_read",
         "method": "POST",
         "header": [
           {
@@ -1129,7 +1128,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"name\": \"Creation Carburant\"\n  },\n  \"model\": \"opengst.automobile.fuel\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
+          "raw": "{\r\n  \"id\": \"r5\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.site\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
         },
         "description": ""
       },
@@ -1171,129 +1170,6 @@
         "body": {
           "mode": "raw",
           "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n  \"data\": {\n      \"is_vehicle\": false,\n      \"is_equipment\": true,\n      \"is_key\": false,\n      \"name\": \"Creation Categorie Equipement\",\n      \"parent_id\": 14\n  },\n  \"model\": \"product.category\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "4c7f43f7-0260-a97a-6eeb-d4e12bba6c44",
-      "name": "get Organisation \"openstc.site\" copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "",
-              "tests[\"Return a result when get Organization\"] = jsonData.result.length > 0;",
-              "",
-              "// Demandeur externe has no action exist",
-              "tests[\"Check action doesn't exist\"]=jsonData.result[0].actions.length === 0;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/get",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n     \"fields\":[\n        \"active\",\n        \"actions\",\n        \"attachment_count\",\n        \"block_booking\",\n        \"code\",\n        \"description_sale\",\n        \"external_booking\",\n        \"external_bookable_notice\",\n        \"internal_booking\",\n        \"internal_bookable_notice\",\n        \"lat\",\n        \"long\",\n        \"length\",\n        \"max_bookable_qty\",\n        \"name\",\n        \"openresa_property_manager_id\",\n        \"partner_type_bookable_ids\",\n        \"pricelist_id\",\n        \"product_id\",\n        \"service_ids\",\n        \"service_names\",\n        \"service_bookable_ids\",\n        \"site_parent_id\",\n        \"surface\",\n        \"type_id\",\n        \"width\",\n        \"color\",\n        \"resa_service_manager_ids\",\n        \"resa_user_manager_ids\",\n        \"optional_product_ids\",\n        \"option_of_product_ids\",\n        \"accomodation_capacity\",\n        \"phone\",\n        \"geometry\",\n        \"geo_point\",\n        \"osm_type\",\n        \"osm_id\",\n        \"osm_zoom\"\n     ],\n    \"ids\": [12],\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "3b186fa9-a456-7fe5-d3f7-947dcf4ecc8e",
-      "name": "search_read Site \"openstc.site\" copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "//For demandeur externe, who hasn't got right to read site \"Openstc.site\"",
-              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
-              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/search_read",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"id\": \"r5\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.site\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "a4fcddbb-e558-db5d-2f12-644ad3bcd7c7",
-      "name": "save Organisation avec nouveau sites \"openstc.site\" copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "//For demandeur externe, who hasn't got right to save 'Organisation'",
-              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
-              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/save",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n     \"data\": {\n    \"technical_service_id\": 2,\n    \"name\": \"ACCUEIL\",\n    \"type_id\": 7,\n    \"technical_site_ids\": [[6, 0, [1151, 1058]]],\n    \"technical_service_ids\": [[6, 0, []]],\n    \"technical_site_id\": false\n  },\n    \"model\": \"res.partner\",\n    \"id\": 12,\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
         },
         "description": ""
       },
