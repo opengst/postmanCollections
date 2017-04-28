@@ -1253,7 +1253,9 @@
                   "/*",
                   " * SCENARIO",
                   " */ ",
-                  ""
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
                 ]
               }
             },
@@ -1297,7 +1299,7 @@
         },
         {
           "_postman_id": "70fc7d95-a343-3ff9-abd8-7cf4d1475153",
-          "name": "Authenticate with Admin",
+          "name": "Authenticate",
           "event": [
             {
               "listen": "test",
