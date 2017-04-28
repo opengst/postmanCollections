@@ -1,7 +1,7 @@
 {
   "variables": [],
   "info": {
-    "name": "Mobile (Agent, AppyConnect.City) - Used by Jenkins - Public Visibility",
+    "name": "Mobile (Agent, AppyConnect.City) - Public Visibility",
     "_postman_id": "123a21ca-6faf-0a36-dbb3-0eee708619fd",
     "description": "",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
