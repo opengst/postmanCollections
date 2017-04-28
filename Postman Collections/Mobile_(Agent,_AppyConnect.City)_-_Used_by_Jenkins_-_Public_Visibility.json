@@ -2679,7 +2679,7 @@
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get session info\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
