@@ -1227,79 +1227,8 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "5e8fc552-2d11-2756-d172-a7b3504b7e3a",
-          "name": "Utils - Clear Environnement Variables copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var server = postman.getEnvironmentVariable(\"server\");",
-                  "var db = postman.getEnvironmentVariable(\"db\");",
-                  "var login = postman.getEnvironmentVariable(\"login\");",
-                  "var password = postman.getEnvironmentVariable(\"password\");",
-                  "var accountNotConnectedLogin = postman.getEnvironmentVariable(\"accountNotConnectedLogin\");",
-                  "var accountNotConnectedPassword = postman.getEnvironmentVariable(\"accountNotConnectedPassword\");",
-                  "var accountNotConnectedName = postman.getEnvironmentVariable(\"accountNotConnectedName\");",
-                  "",
-                  "postman.clearEnvironmentVariables();",
-                  "",
-                  "postman.setEnvironmentVariable(\"server\", server);",
-                  "postman.setEnvironmentVariable(\"db\", db);",
-                  "postman.setEnvironmentVariable(\"login\", login);",
-                  "postman.setEnvironmentVariable(\"password\", password);",
-                  "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", accountNotConnectedLogin);",
-                  "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", accountNotConnectedPassword);",
-                  "postman.setEnvironmentVariable(\"accountNotConnectedName\", accountNotConnectedName);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "http://www.google.com",
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "70fc7d95-a343-3ff9-abd8-7cf4d1475153",
-          "name": "Authenticate with Admin",
+          "name": "Authenticate",
           "event": [
             {
               "listen": "test",
@@ -3132,6 +3061,77 @@
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"name\": \"requestName\",\r\n      \"description\": \"requestDescription\",\r\n      \"is_citizen\":false,\r\n      \"geo_point\":\"Point({{requestLongitude}} {{requestLatitude}})\",\r\n      \"type_id\":6,\r\n      \"partner_address\":{{addressId}},\r\n      \"partner_id\":{{partnerId}}\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5e8fc552-2d11-2756-d172-a7b3504b7e3a",
+          "name": "Utils - Clear Environnement Variables copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var server = postman.getEnvironmentVariable(\"server\");",
+                  "var db = postman.getEnvironmentVariable(\"db\");",
+                  "var login = postman.getEnvironmentVariable(\"login\");",
+                  "var password = postman.getEnvironmentVariable(\"password\");",
+                  "var accountNotConnectedLogin = postman.getEnvironmentVariable(\"accountNotConnectedLogin\");",
+                  "var accountNotConnectedPassword = postman.getEnvironmentVariable(\"accountNotConnectedPassword\");",
+                  "var accountNotConnectedName = postman.getEnvironmentVariable(\"accountNotConnectedName\");",
+                  "",
+                  "postman.clearEnvironmentVariables();",
+                  "",
+                  "postman.setEnvironmentVariable(\"server\", server);",
+                  "postman.setEnvironmentVariable(\"db\", db);",
+                  "postman.setEnvironmentVariable(\"login\", login);",
+                  "postman.setEnvironmentVariable(\"password\", password);",
+                  "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", accountNotConnectedLogin);",
+                  "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", accountNotConnectedPassword);",
+                  "postman.setEnvironmentVariable(\"accountNotConnectedName\", accountNotConnectedName);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "http://www.google.com",
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
             },
             "description": ""
           },
