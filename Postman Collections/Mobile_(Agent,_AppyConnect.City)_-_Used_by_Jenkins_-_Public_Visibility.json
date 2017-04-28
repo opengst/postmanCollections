@@ -2767,7 +2767,6 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "",
                   "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
@@ -2788,7 +2787,7 @@
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get contact informations\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
