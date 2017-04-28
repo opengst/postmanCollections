@@ -837,7 +837,7 @@
     },
     {
       "_postman_id": "42abed87-2065-17c6-dc36-08aa2a3280e8",
-      "name": "Search&Read Compteur",
+      "name": "Search&Read Meters",
       "event": [
         {
           "listen": "test",
