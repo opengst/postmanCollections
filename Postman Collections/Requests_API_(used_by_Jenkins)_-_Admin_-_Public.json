@@ -1399,6 +1399,46 @@
         "description": ""
       },
       "response": []
+    },
+    {
+      "_postman_id": "72a35f33-de7d-ce66-77f7-d64fd0dd185c",
+      "name": "create Marque de véhicule \"opengst.automobile.brand\" copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "",
+              "tests[\"Check vehicle brand id exist\"] = jsonData.result.result > 0;",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n      \"name\": \"Creation Marque\"\n    },\n  \"model\": \"opengst.automobile.brand\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
+        },
+        "description": ""
+      },
+      "response": []
     }
   ]
 }
