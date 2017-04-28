@@ -885,7 +885,7 @@
               "var jsonData = JSON.parse(responseBody);",
               "",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "tests[\"Check site exist\"] = jsonData.result.result >0;"
+              "tests[\"Return site id\"] = jsonData.result.result >0;"
             ]
           }
         }
