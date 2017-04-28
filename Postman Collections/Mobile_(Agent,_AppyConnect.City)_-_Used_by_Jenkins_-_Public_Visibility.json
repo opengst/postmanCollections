@@ -2559,7 +2559,7 @@
                   " */ ",
                   "",
                   "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Create User on Particuliers Commune\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
                 ]
               }
             },
