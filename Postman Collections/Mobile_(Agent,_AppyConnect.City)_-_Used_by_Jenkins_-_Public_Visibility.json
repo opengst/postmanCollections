@@ -2713,12 +2713,7 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"addressId\", jsonData.result.records[0].address_id[0]);",
-                  "postman.setEnvironmentVariable(\"partnerId\", jsonData.result.records[0].partner_id[0]);",
                   "",
-                  "",
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
                   " * TESTS ",
@@ -2731,14 +2726,15 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "",
+                  "postman.setEnvironmentVariable(\"addressId\", jsonData.result.records[0].address_id[0]);",
+                  "postman.setEnvironmentVariable(\"partnerId\", jsonData.result.records[0].partner_id[0]);",
                   "",
                   "",
                   "/*",
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get user informations\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
