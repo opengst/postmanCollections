@@ -727,7 +727,7 @@
     },
     {
       "_postman_id": "a02cfc6c-c4eb-a5d8-475a-9b6acb952edb",
-      "name": "Create Compteur",
+      "name": "Create Meter",
       "event": [
         {
           "listen": "test",
