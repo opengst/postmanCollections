@@ -2650,7 +2650,7 @@
                 "exec": [
                   "var lastStepScenarioCitoyen = postman.getEnvironmentVariable(\"lastStepScenarioCitoyen\");",
                   "if (lastStepScenarioCitoyen === null){",
-                  "    lastStepScenarioCitoyen = \"begin\";",
+                  "    postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"begin\");",
                   "}",
                   "",
                   "switch(lastStepScenarioCitoyen) {",
