@@ -1546,6 +1546,43 @@
         "description": ""
       },
       "response": []
+    },
+    {
+      "_postman_id": "21708680-667e-e117-0099-aa9f7a92f7d4",
+      "name": "get Consumptions",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//You have no right to create when you are not in the group Modify Sites (from actions)",
+              "tests[\"error code Check\"] = jsonData.error.code === 200;",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/search_read",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": \"r323\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"date_start DESC\",\r\n    \"limit\": 20,\r\n    \"offset\": 0,\r\n    \"model\": \"opengst.fluids.consumption\",\r\n    \"fields\": [\r\n      \"date_start\",\r\n      \"date_end\",\r\n      \"consumption\",\r\n      \"meter_id\",\r\n      \"category_id\",\r\n      \"site_id\"\r\n    ],\r\n    \"domain\": [],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+        },
+        "description": ""
+      },
+      "response": []
     }
   ]
 }
