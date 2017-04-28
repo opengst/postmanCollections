@@ -2834,7 +2834,7 @@
                   " */ ",
                   "",
                   "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get user informations\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
                 ]
               }
             }
@@ -2887,7 +2887,7 @@
                   " */ ",
                   "",
                   "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get contact informations\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
                 ]
               }
             }
@@ -2940,7 +2940,7 @@
                   " */ ",
                   "",
                   "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Search_read All Category\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
                 ]
               }
             }
