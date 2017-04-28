@@ -1095,6 +1095,47 @@
       "response": []
     },
     {
+      "_postman_id": "82f6e09f-adec-9a26-6f87-d90af7e8f295",
+      "name": "create Carburant \"opengst.automobile.fuel\" copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//For demandeur externe, who hasn't got right to create 'Carburant'",
+              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
+              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"name\": \"Creation Carburant\"\n  },\n  \"model\": \"opengst.automobile.fuel\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
       "_postman_id": "f9d19cd7-7e28-a81e-5acd-67e16423e4cb",
       "name": "create Categorie d'equipement \"product.category\" copy",
       "event": [
@@ -1170,47 +1211,6 @@
         "body": {
           "mode": "raw",
           "raw": "{\r\n  \"id\": \"r5\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.site\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "82f6e09f-adec-9a26-6f87-d90af7e8f295",
-      "name": "create Carburant \"opengst.automobile.fuel\" copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "//For demandeur externe, who hasn't got right to create 'Carburant'",
-              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
-              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"name\": \"Creation Carburant\"\n  },\n  \"model\": \"opengst.automobile.fuel\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
         },
         "description": ""
       },
