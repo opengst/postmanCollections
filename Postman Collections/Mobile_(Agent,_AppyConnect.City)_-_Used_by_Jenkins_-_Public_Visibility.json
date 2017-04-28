@@ -2284,10 +2284,6 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"organisationId\", jsonData.result.records[0].id);",
-                  "",
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
                   " * TESTS ",
@@ -2300,14 +2296,14 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "",
+                  "postman.setEnvironmentVariable(\"organisationId\", jsonData.result.records[0].id);",
                   "",
                   "",
                   "/*",
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get Organisation with last CategorieOrganisation\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
@@ -2341,10 +2337,6 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"groupIdDemandeur\", jsonData.result.records[0].id);",
-                  "",
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
                   " * TESTS ",
@@ -2357,14 +2349,14 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "",
+                  "postman.setEnvironmentVariable(\"groupIdDemandeur\", jsonData.result.records[0].id);",
                   "",
                   "",
                   "/*",
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for \"Demandeur\"\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
