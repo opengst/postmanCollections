@@ -1494,7 +1494,7 @@
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "",
               "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Your test name\"] = jsonData.result[0].id === 1;"
+              "tests[\"Your test name\"] = jsonData.result[0].task_default_hours === 1;"
             ]
           }
         }
