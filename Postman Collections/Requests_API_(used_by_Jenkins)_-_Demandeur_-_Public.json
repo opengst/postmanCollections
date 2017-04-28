@@ -1058,125 +1058,6 @@
       "response": []
     },
     {
-      "_postman_id": "0804a268-cf8b-7a63-a95c-6e1b98f87b9d",
-      "name": "get res.company settings copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/get",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"res.company\",\r\n    \"ids\": [],\r\n    \"fields\": [\r\n      \"validate_request_window_advanced_mode\",\r\n      \"add_task_window_advanced_mode\",\r\n      \"add_intervention_window_create_task\",\r\n      \"intervention_window_synchronize_status\",\r\n      \"task_default_hours\",\r\n      \"task_default_minutes\"\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "82f6e09f-adec-9a26-6f87-d90af7e8f295",
-      "name": "create Carburant \"opengst.automobile.fuel\" copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "//For demandeur externe, who hasn't got right to create 'Carburant'",
-              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
-              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"name\": \"Creation Carburant\"\n  },\n  \"model\": \"opengst.automobile.fuel\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "f9d19cd7-7e28-a81e-5acd-67e16423e4cb",
-      "name": "create Categorie d'equipement \"product.category\" copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "//For demandeur externe, who hasn't got right to create 'Categorie'",
-              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
-              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n  \"data\": {\n      \"is_vehicle\": false,\n      \"is_equipment\": true,\n      \"is_key\": false,\n      \"name\": \"Creation Categorie Equipement\",\n      \"parent_id\": 14\n  },\n  \"model\": \"product.category\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
       "_postman_id": "3b186fa9-a456-7fe5-d3f7-947dcf4ecc8e",
       "name": "search_read Site \"openstc.site\" copy",
       "event": [
@@ -1217,20 +1098,15 @@
       "response": []
     },
     {
-      "_postman_id": "4c7f43f7-0260-a97a-6eeb-d4e12bba6c44",
-      "name": "get Organisation \"openstc.site\" copy",
+      "_postman_id": "0804a268-cf8b-7a63-a95c-6e1b98f87b9d",
+      "name": "get res.company settings copy",
       "event": [
         {
           "listen": "test",
           "script": {
             "type": "text/javascript",
             "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "",
-              "tests[\"Return a result when get Organization\"] = jsonData.result.length > 0;",
-              "",
-              "// Demandeur externe has no action exist",
-              "tests[\"Check action doesn't exist\"]=jsonData.result[0].actions.length === 0;"
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
             ]
           }
         }
@@ -1252,7 +1128,7 @@
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n     \"fields\":[\n        \"active\",\n        \"actions\",\n        \"attachment_count\",\n        \"block_booking\",\n        \"code\",\n        \"description_sale\",\n        \"external_booking\",\n        \"external_bookable_notice\",\n        \"internal_booking\",\n        \"internal_bookable_notice\",\n        \"lat\",\n        \"long\",\n        \"length\",\n        \"max_bookable_qty\",\n        \"name\",\n        \"openresa_property_manager_id\",\n        \"partner_type_bookable_ids\",\n        \"pricelist_id\",\n        \"product_id\",\n        \"service_ids\",\n        \"service_names\",\n        \"service_bookable_ids\",\n        \"site_parent_id\",\n        \"surface\",\n        \"type_id\",\n        \"width\",\n        \"color\",\n        \"resa_service_manager_ids\",\n        \"resa_user_manager_ids\",\n        \"optional_product_ids\",\n        \"option_of_product_ids\",\n        \"accomodation_capacity\",\n        \"phone\",\n        \"geometry\",\n        \"geo_point\",\n        \"osm_type\",\n        \"osm_id\",\n        \"osm_zoom\"\n     ],\n    \"ids\": [12],\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
+          "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"res.company\",\r\n    \"ids\": [],\r\n    \"fields\": [\r\n      \"validate_request_window_advanced_mode\",\r\n      \"add_task_window_advanced_mode\",\r\n      \"add_intervention_window_create_task\",\r\n      \"intervention_window_synchronize_status\",\r\n      \"task_default_hours\",\r\n      \"task_default_minutes\"\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
         },
         "description": ""
       },
