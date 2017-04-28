@@ -1164,87 +1164,6 @@
       "response": []
     },
     {
-      "_postman_id": "46354225-f646-5781-d5a4-1a607443b109",
-      "name": "create Carburant \"opengst.automobile.fuel\" copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "",
-              "tests[\"Return a fuel id\"] = jsonData.result.result > 0;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"name\": \"Creation Carburant\"\n  },\n  \"model\": \"opengst.automobile.fuel\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "ad4cb528-8600-b023-4e06-148ba4a547e4",
-      "name": "get Organisation \"openstc.site\" copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "",
-              "tests[\"Return a result when get Organization\"] = jsonData.result.length > 0;",
-              "",
-              "// Demandeur externe has no action exist",
-              "tests[\"Check actions exist\"]=jsonData.result[0].actions.length > 0;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/get",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n     \"fields\":[\n        \"active\",\n        \"actions\",\n        \"attachment_count\",\n        \"block_booking\",\n        \"code\",\n        \"description_sale\",\n        \"external_booking\",\n        \"external_bookable_notice\",\n        \"internal_booking\",\n        \"internal_bookable_notice\",\n        \"lat\",\n        \"long\",\n        \"length\",\n        \"max_bookable_qty\",\n        \"name\",\n        \"openresa_property_manager_id\",\n        \"partner_type_bookable_ids\",\n        \"pricelist_id\",\n        \"product_id\",\n        \"service_ids\",\n        \"service_names\",\n        \"service_bookable_ids\",\n        \"site_parent_id\",\n        \"surface\",\n        \"type_id\",\n        \"width\",\n        \"color\",\n        \"resa_service_manager_ids\",\n        \"resa_user_manager_ids\",\n        \"optional_product_ids\",\n        \"option_of_product_ids\",\n        \"accomodation_capacity\",\n        \"phone\",\n        \"geometry\",\n        \"geo_point\",\n        \"osm_type\",\n        \"osm_id\",\n        \"osm_zoom\"\n     ],\n    \"ids\": [12],\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
       "_postman_id": "5fe21592-7553-f608-a9af-ca2266228be6",
       "name": "create Categorie d'equipement \"product.category\" copy",
       "event": [
@@ -1317,45 +1236,6 @@
         "body": {
           "mode": "raw",
           "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"res.company\",\r\n    \"ids\": [],\r\n    \"fields\": [\r\n      \"validate_request_window_advanced_mode\",\r\n      \"add_task_window_advanced_mode\",\r\n      \"add_intervention_window_create_task\",\r\n      \"intervention_window_synchronize_status\",\r\n      \"task_default_hours\",\r\n      \"task_default_minutes\"\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "3bd179c3-ba19-86de-e2a4-e1240f62b089",
-      "name": "save Organisation avec nouveau sites \"openstc.site\" copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "",
-              "tests[\"Can update an organization with new sites\"] = jsonData.result.result = true;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/save",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n     \"data\": {\n    \"technical_service_id\": 2,\n    \"name\": \"ACCUEIL\",\n    \"type_id\": 7,\n    \"technical_site_ids\": [[6, 0, [1151, 1058]]],\n    \"technical_service_ids\": [[6, 0, []]],\n    \"technical_site_id\": false\n  },\n    \"model\": \"res.partner\",\n    \"id\": 12,\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
         },
         "description": ""
       },
