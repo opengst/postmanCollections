@@ -1974,7 +1974,7 @@
       "item": [
         {
           "_postman_id": "24407c89-9e4e-847a-4353-7ea0b1fae2b3",
-          "name": "000 - BEGIN Global Scenario",
+          "name": "BEGIN RUN HERE",
           "event": [
             {
               "listen": "test",
