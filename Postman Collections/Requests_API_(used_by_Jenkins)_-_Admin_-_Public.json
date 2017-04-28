@@ -1093,7 +1093,7 @@
             "exec": [
               "var jsonData = JSON.parse(responseBody);",
               "tests[\"Site openSTC exist\"] = jsonData.result.length >0;",
-              "tests[\"Check id \"] = jsonData.id ===\"r5\";",
+              "tests[\"Check id =\"+\"jsonData.id\"] = jsonData.id ===\"r5\";",
               ""
             ]
           }
