@@ -205,10 +205,11 @@
             "type": "text/javascript",
             "exec": [
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "tests[\"Response time is less than 1000ms\"] = responseTime < 1500;",
+              "tests[\"Response time is less than 1500ms\"] = responseTime < 1500;",
               "var jsonData = JSON.parse(responseBody);",
               "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
               "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
+              "//In our example, database is \"test_api\"",
               "tests[\"Authenticate Bdd\"] = jsonData.result.db === 'test_api';",
               "",
               "if (jsonData.result.db === 'test_api'){",
