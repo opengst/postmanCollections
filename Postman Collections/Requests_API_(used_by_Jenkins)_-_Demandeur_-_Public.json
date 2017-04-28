@@ -563,6 +563,48 @@
       "response": []
     },
     {
+      "_postman_id": "87697b50-c4d8-ec3d-73ed-29e93451579d",
+      "name": "createTask Demandeur",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "",
+              "//You have no right to create when you are not in one of these groups: Create, User (from actions)",
+              "tests[\"error code Check\"] = jsonData.error.code === 200;",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"id\":\"r136\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"project_id\":1823,\n            \"name\":\"ffff\",\n            \"service_id\":2,\n            \"planned_hours\":2,\n            \"category_id\":33,\n            \"user_id\":57,\n            \"date_start\":\"2017-04-28 06:30:00\",\n            \"date_end\":\"2017-04-28 08:30:00\"\n        },\n        \"model\":\"project.task\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
       "_postman_id": "b7bb5005-872b-421f-cce7-f1d7714465ce",
       "name": "Create Compteur Demandeur externe",
       "event": [
@@ -969,48 +1011,6 @@
         "body": {
           "mode": "raw",
           "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"active\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1158,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r238\"\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "87697b50-c4d8-ec3d-73ed-29e93451579d",
-      "name": "createTask Demandeur",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "",
-              "//You have no right to create when you are not in one of these groups: Create, User (from actions)",
-              "tests[\"error code Check\"] = jsonData.error.code === 200;",
-              "",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Accept",
-            "value": "application/json, text/plain, */*",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n\t\"id\":\"r136\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"project_id\":1823,\n            \"name\":\"ffff\",\n            \"service_id\":2,\n            \"planned_hours\":2,\n            \"category_id\":33,\n            \"user_id\":57,\n            \"date_start\":\"2017-04-28 06:30:00\",\n            \"date_end\":\"2017-04-28 08:30:00\"\n        },\n        \"model\":\"project.task\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n}"
         },
         "description": ""
       },
