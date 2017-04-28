@@ -2329,13 +2329,17 @@
         },
         {
           "_postman_id": "b9f077a8-0eb6-7082-2db7-02ea57dbd483",
-          "name": "Get GroupId for Demandeur",
+          "name": "Get GroupId for \"Demandeur\"",
           "event": [
             {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
                 "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"groupIdDemandeur\", jsonData.result.records[0].id);",
+                  "",
+                  "",
                   "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
@@ -2349,14 +2353,14 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "postman.setEnvironmentVariable(\"groupIdDemandeur\", jsonData.result.records[0].id);",
+                  "",
                   "",
                   "",
                   "/*",
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
