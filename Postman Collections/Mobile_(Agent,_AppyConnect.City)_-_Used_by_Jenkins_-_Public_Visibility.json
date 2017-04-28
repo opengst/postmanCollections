@@ -2648,13 +2648,10 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "var lastStepScenarioCitoyen = postman.getEnvironmentVariable(\"lastStepScenarioCitoyen\");",
-                  "if (lastStepScenarioCitoyen === null){",
-                  "    postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"begin\");",
-                  "}",
+                  "tests[\"Switch..\"] = 1 === 1;",
                   "",
-                  "switch(lastStepScenarioCitoyen) {",
-                  "    case null:",
+                  "switch(postman.getEnvironmentVariable(\"lastStepScenarioCitoyen\")) {",
+                  "    case undefined:",
                   "        tests[\"Clear Environnement Variables\"] = 1 === 1;",
                   "        postman.setNextRequest(\"Clear Environnement Variables\");",
                   "        break;",
@@ -2672,7 +2669,7 @@
           ],
           "request": {
             "url": "http://www.google.com",
-            "method": "POST",
+            "method": "GET",
             "header": [],
             "body": {
               "mode": "raw",
