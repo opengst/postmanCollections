@@ -1466,47 +1466,6 @@
       "response": []
     },
     {
-      "_postman_id": "3be65319-5af0-4dcb-d825-598a48b601fa",
-      "name": "Import CSV FIle DE",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "//For demandeur externe, who hasn't got right to im[ort file ",
-              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
-              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/call_kw",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept-Encoding",
-            "value": "gzip, deflate, br",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"call\",\n\t\"params\": {\n\t\t\"model\": \"opengst.fluids.consumption\",\n\t\t\"method\": \"import_csv\",\n\t\t\"args\": [\n\t\t\t\"bWV0ZXIsZGF0ZV9zdGFydCxkYXRlX2VuZCxjb25zdW1wdGlvbixjb3N0CkEzLDIwMTctMDEtMTEsMjAxNy0wMS0xNCwzOSwxMApBMywyMDE3LTAxLTE1LDIwMTctMDEtMTksNTUsMjAKQTMsMjAxNy0wMS0yMCwyMDE3LTAxLTIxLDI3LDEwCkEzLDIwMTctMDItMTEsMjAxNy0wMi0xNCwxNSw1CkEzLDIwMTctMDItMTUsMjAxNy0wMi0xOSwzNiwyNgoxLDIwMTctMDEtMTEsMjAxNy0wMS0xNCwyOSwyOAoxLDIwMTctMDEtMTUsMjAxNy0wMS0xOSwzNSwzNQoxLDIwMTctMDEtMjAsMjAxNy0wMS0yMSwzNywzNgoxLDIwMTctMDItMTEsMjAxNy0wMi0xNCwzNSwzNQoxLDIwMTctMDItMTUsMjAxNy0wMi0xOSw1Niw1NQo=\"\n\t\t],\n\t\t\"kwargs\": {\n\t\t\t\"context\": {\n\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\"project_id\": false,\n\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\"section_id\": false,\n\t\t\t\t\"uid\": {{uid}}\n\t\t\t}\n\t\t},\n\t\t\"session_id\": \"{{sessionId}}\",\n\t\t\"context\": {\n\t\t\t\"__ref\": \"compound_context\",\n\t\t\t\"__contexts\": [\n\t\t\t\t{\n\t\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\t\"uid\": {{uid}}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"bin_size\": true\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"__eval_context\": null\n\t\t}\n\t},\n\t\"id\": \"r66\"\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
       "_postman_id": "55b0626f-71de-f171-ff7c-6d125623af1f",
       "name": "create Site \"openstc.site\" copy",
       "event": [
@@ -1542,6 +1501,47 @@
         "body": {
           "mode": "raw",
           "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"city\":\"Ville\",\n        \"zip\":\"Code postal\",\n        \"product_image\":false,\n    \"osm_zoom\": false,\n    \"osm_type\": false,\n    \"osm_id\": false,\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"name\": \"Creation Site 2\",\n    \"type_id\": 76,\n    \"alarm\":true,\n    \"pmr\":true,\n        \"amiante\":true,\n        \"igh\":false,\n        \"cadastre_is_bati\":false,\n        \"cadastre_is_nonbati\":false,\n        \"pprn\":false,\n        \"pprm\":false,\n        \"pprt\":false,\n        \"ppri\":false,\n        \"product_image\":false,\n        \"street\":\"Rue\",\n        \"street2\":\"Rue (suite)\",\n        \"accommodation_capacity\":666,\n        \"width\":666,\n        \"length\":666,\n        \"surface\":443556,\n        \"is_copro\":false,\n        \"date_end\":\"2016-10-24\",\n        \"date_start\":\"2016-10-24\",\n        \"site_parent_id\":1151,\n        \"access_manager_ids\": [[6, 0, [73, 97]]]\n    },\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "3be65319-5af0-4dcb-d825-598a48b601fa",
+      "name": "Import CSV FIle DE",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//For demandeur externe, who hasn't got right to im[ort file ",
+              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
+              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/call_kw",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept-Encoding",
+            "value": "gzip, deflate, br",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"call\",\n\t\"params\": {\n\t\t\"model\": \"opengst.fluids.consumption\",\n\t\t\"method\": \"import_csv\",\n\t\t\"args\": [\n\t\t\t\"bWV0ZXIsZGF0ZV9zdGFydCxkYXRlX2VuZCxjb25zdW1wdGlvbixjb3N0CkEzLDIwMTctMDEtMTEsMjAxNy0wMS0xNCwzOSwxMApBMywyMDE3LTAxLTE1LDIwMTctMDEtMTksNTUsMjAKQTMsMjAxNy0wMS0yMCwyMDE3LTAxLTIxLDI3LDEwCkEzLDIwMTctMDItMTEsMjAxNy0wMi0xNCwxNSw1CkEzLDIwMTctMDItMTUsMjAxNy0wMi0xOSwzNiwyNgoxLDIwMTctMDEtMTEsMjAxNy0wMS0xNCwyOSwyOAoxLDIwMTctMDEtMTUsMjAxNy0wMS0xOSwzNSwzNQoxLDIwMTctMDEtMjAsMjAxNy0wMS0yMSwzNywzNgoxLDIwMTctMDItMTEsMjAxNy0wMi0xNCwzNSwzNQoxLDIwMTctMDItMTUsMjAxNy0wMi0xOSw1Niw1NQo=\"\n\t\t],\n\t\t\"kwargs\": {\n\t\t\t\"context\": {\n\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\"project_id\": false,\n\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\"section_id\": false,\n\t\t\t\t\"uid\": {{uid}}\n\t\t\t}\n\t\t},\n\t\t\"session_id\": \"{{sessionId}}\",\n\t\t\"context\": {\n\t\t\t\"__ref\": \"compound_context\",\n\t\t\t\"__contexts\": [\n\t\t\t\t{\n\t\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\t\"uid\": {{uid}}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"bin_size\": true\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"__eval_context\": null\n\t\t}\n\t},\n\t\"id\": \"r66\"\n}"
         },
         "description": ""
       },
