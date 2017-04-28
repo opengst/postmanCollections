@@ -2138,7 +2138,7 @@
                   " */ ",
                   "",
                   "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
                 ]
               }
             },
