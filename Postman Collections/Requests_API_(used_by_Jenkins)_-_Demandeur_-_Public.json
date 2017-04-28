@@ -799,6 +799,48 @@
       "response": []
     },
     {
+      "_postman_id": "754eb9ab-7865-eeb8-2f76-beee0f381159",
+      "name": "Update Site DE",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "//You have no right to create when you are not in the group Modify Sites (from actions)",
+              "tests[\"error code Check\"] = jsonData.error.code === 200;",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/save",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"code\":false,\n            \"type_id\":68,\n            \"color\":\"#390A10\",\n            \"surface\":0,\n            \"active\":true,\n            \"block_booking\":false,\n            \"osm_id\":false,\n            \"resa_user_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"max_bookable_qty\":0,\n            \"site_parent_id\":313,\n            \"width\":0,\n            \"resa_service_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"length\":0,\n            \"long\":0,\n            \"internal_bookable_notice\":0,\n            \"geo_point\":false,\n            \"partner_type_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"service_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"description_sale\":false,\n            \"osm_zoom\":false,\n            \"openresa_property_manager_id\":1,\n            \"lat\":0,\n            \"name\":\"1er étage test\",\n            \"service_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"product_id\":648,\n            \"optional_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"geometry\":false,\n            \"osm_type\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"option_of_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"external_bookable_notice\":0,\n            \"accommodation_capacity\":0,\n            \"product_image\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1151,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r199\"\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
       "_postman_id": "60705099-2530-d828-c1fb-d0a24f1dfdb0",
       "name": "Search Read Site DE",
       "event": [
