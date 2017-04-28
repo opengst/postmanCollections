@@ -2356,7 +2356,7 @@
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for \"Demandeur\"\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
@@ -2382,17 +2382,13 @@
         },
         {
           "_postman_id": "39f15915-0d98-d5b3-5af8-404ae116d6eb",
-          "name": "Get GroupId for \"Demandeur externe\"",
+          "name": "Get GroupId for Demandeur externe",
           "event": [
             {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"groupIdDemandeurExterne\", jsonData.result.records[0].id);",
-                  "",
-                  "",
                   "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
@@ -2406,14 +2402,14 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "",
+                  "postman.setEnvironmentVariable(\"groupIdDemandeurExterne\", jsonData.result.records[0].id);",
                   "",
                   "",
                   "/*",
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur externe\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
@@ -2439,14 +2435,13 @@
         },
         {
           "_postman_id": "13fd4a9f-5e58-1634-c6c9-5f30be27b61a",
-          "name": "Create User (external member)",
+          "name": "Create User on Particuliers Commune",
           "event": [
             {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "",
                   "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
@@ -2467,7 +2462,7 @@
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Create User on Particuliers Commune\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
