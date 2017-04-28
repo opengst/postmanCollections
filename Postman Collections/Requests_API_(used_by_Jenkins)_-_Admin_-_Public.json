@@ -1135,7 +1135,7 @@
               "var jsonData = JSON.parse(responseBody);",
               "",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "tests[\"equipement is not empty\"] = jsonData.result.result >0;",
+              "tests[\"Return an equipment\"] = jsonData.result.result >0;",
               ""
             ]
           }
