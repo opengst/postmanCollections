@@ -2904,12 +2904,7 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"interventionRequest.id\", jsonData.result.records[0].id);",
-                  "postman.setEnvironmentVariable(\"attachment_count\", jsonData.result.records[0].attachment_count);",
                   "",
-                  "",
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
                   " * TESTS ",
@@ -2929,7 +2924,7 @@
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Search_read All Demandes d'intervention\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
