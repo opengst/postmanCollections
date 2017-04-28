@@ -2013,7 +2013,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n        \"model_id\":{{ir.model.id.openstc.ask.transfer.template}},\r\n        \"name\": \"generatedByScripting\",\r\n        \"perm_read\": true,\r\n        \"perm_write\": false,\r\n        \"perm_create\": false,\r\n        \"perm_unlink\": false,\r\n        \"group_id\":{{res.groups}}\r\n    },\r\n    \"model\":\"ir.model.access\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
+              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n        \"model_id\":{{ir.model.id.res.partner}},\r\n        \"name\": \"generatedByScripting\",\r\n        \"perm_read\": true,\r\n        \"perm_write\": false,\r\n        \"perm_create\": false,\r\n        \"perm_unlink\": false,\r\n        \"group_id\":{{res.groups}}\r\n    },\r\n    \"model\":\"ir.model.access\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
             },
             "description": ""
           },
