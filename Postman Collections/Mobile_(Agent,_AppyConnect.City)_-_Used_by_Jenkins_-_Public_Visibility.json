@@ -2602,7 +2602,7 @@
                   " */",
                   "",
                   "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
+                  "postman.setEnvironmentVariable(\"uidAccountNotConnected\", jsonData.result.uid);",
                   "",
                   "",
                   "/*",
