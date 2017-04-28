@@ -561,60 +561,6 @@
       "response": []
     },
     {
-      "_postman_id": "68dca634-9039-a659-b253-b36ff1d68eee",
-      "name": "Update Compteur",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;"
-            ]
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var text = \"\";",
-              "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
-              "",
-              "for( var i=0; i < 15; i++ )",
-              "    text += possible.charAt(Math.floor(Math.random() * possible.length));",
-              "    ",
-              "postman.setEnvironmentVariable(\"ref1\", text);",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "https://gst-dev.atreal-ouest.fr/web/dataset/save",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Accept",
-            "value": "application/json, text/plain, */*",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"categ_id\":22,\n            \"name\":\"Test Compteur221\",\n            \"ref\":\"{{ref1}}\",\n            \"site_id\":false,\n            \"category_id\":3,\n            \"site_repartitions\":[\n\n            ]\n        },\n        \"model\":\"opengst.fluids.meter\",\n        \"id\":17,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r94\"\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
       "_postman_id": "a02cfc6c-c4eb-a5d8-475a-9b6acb952edb",
       "name": "Create Compteur",
       "event": [
@@ -665,6 +611,60 @@
         "body": {
           "mode": "raw",
           "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"name\":\"Test Compteur1\",\n            \"categ_id\":22,\n            \"ref\":\"{{ref}}\",\n            \"category_id\":1\n        },\n        \"model\":\"opengst.fluids.meter\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r87\"\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "68dca634-9039-a659-b253-b36ff1d68eee",
+      "name": "Update Compteur",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var text = \"\";",
+              "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+              "",
+              "for( var i=0; i < 15; i++ )",
+              "    text += possible.charAt(Math.floor(Math.random() * possible.length));",
+              "    ",
+              "postman.setEnvironmentVariable(\"ref1\", text);",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "https://gst-dev.atreal-ouest.fr/web/dataset/save",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json, text/plain, */*",
+            "description": ""
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"categ_id\":22,\n            \"name\":\"Test Compteur221\",\n            \"ref\":\"{{ref1}}\",\n            \"site_id\":false,\n            \"category_id\":3,\n            \"site_repartitions\":[\n\n            ]\n        },\n        \"model\":\"opengst.fluids.meter\",\n        \"id\":17,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r94\"\n}"
         },
         "description": ""
       },
