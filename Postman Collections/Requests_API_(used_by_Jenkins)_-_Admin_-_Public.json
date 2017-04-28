@@ -564,8 +564,8 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "postman.setEnvironmentVariable('userLogin','login'+postman.getEnvironmentVariable('user.number'));",
-              "postman.setEnvironmentVariable('userName','name'+postman.getEnvironmentVariable('user.number'));"
+              "postman.setEnvironmentVariable('userLogin','login'+postman.getEnvironmentVariable('userNumber'));",
+              "postman.setEnvironmentVariable('userName','name'+postman.getEnvironmentVariable('userNumber'));"
             ]
           }
         }
