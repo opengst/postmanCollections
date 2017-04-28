@@ -157,26 +157,8 @@
       ]
     },
     {
-      "_postman_id": "447a2ee4-a526-c35c-9647-5e6b8c08cc18",
-      "name": "Mobile Citoyen - 5 - Create Request",
-      "description": "",
-      "item": []
-    },
-    {
-      "_postman_id": "5e6c89a8-0c46-0fc9-0eeb-2fa604e1f490",
-      "name": "Mobile Citoyen - 6 - Get Requests",
-      "description": "",
-      "item": []
-    },
-    {
       "_postman_id": "5f2d2e90-14b8-fd6b-bbc9-f1ca95de0b7f",
       "name": "Postman - Utilities",
-      "description": "",
-      "item": []
-    },
-    {
-      "_postman_id": "6e866cc6-3dfe-d5fb-70b1-b556e1a77d24",
-      "name": "Mobile Citoyen - 7 - Get Category",
       "description": "",
       "item": []
     },
@@ -1244,12 +1226,6 @@
           "response": []
         }
       ]
-    },
-    {
-      "_postman_id": "c82b37e5-27b3-7a35-a3aa-be655b279299",
-      "name": "Mobile Citoyen - 4 - Get User Informations",
-      "description": "",
-      "item": []
     },
     {
       "_postman_id": "d62d8a50-e84a-3caf-e221-a04f99f523b4",
