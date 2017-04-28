@@ -635,7 +635,7 @@
     },
     {
       "_postman_id": "9ea358ea-73c2-7bec-fb7c-25411ca51636",
-      "name": "create user : Particuliers Commune - Demandeur externe copy",
+      "name": "create user : Particuliers Commune",
       "event": [
         {
           "listen": "test",
