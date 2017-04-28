@@ -2462,7 +2462,7 @@
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Create User on Particuliers Commune\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
@@ -2472,9 +2472,22 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "postman.setEnvironmentVariable(\"user_login\", \"fredericletellier@atreal.fr\");",
-                  "postman.setEnvironmentVariable(\"user_password\", \"123456789\");",
-                  "postman.setEnvironmentVariable(\"name\", \"frederic letellier\");"
+                  "var text = \"\";",
+                  "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+                  "",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userLogin += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userPassword += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userName += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "",
+                  "postman.setEnvironmentVariable(\"userLogin\", userLogin);",
+                  "postman.setEnvironmentVariable(\"userPassword\", userPassword);",
+                  "postman.setEnvironmentVariable(\"userName\", userName);"
                 ]
               }
             }
@@ -2508,9 +2521,11 @@
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
                   "",
+                  "",
                   "/*",
                   " * TESTS ",
                   " */",
+                  "",
                   "",
                   "//Check status code",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
@@ -2534,32 +2549,11 @@
                   "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
                   "",
                   "",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
                   "/*",
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Authenticate with userAccount\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
@@ -2577,7 +2571,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{user_login}}\",\r\n      \"password\": \"{{user_password}}\"\r\n   }\r\n}"
+              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{userLogin}}\",\r\n      \"password\": \"{{userPassword}}\"\r\n   }\r\n}"
             },
             "description": ""
           },
@@ -2597,7 +2591,7 @@
                 ],
                 "body": {
                   "mode": "raw",
-                  "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{user_login}}\",\r\n      \"password\": \"{{user_password}}\"\r\n   }\r\n}"
+                  "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{userLogin}}\",\r\n      \"password\": \"{{userPassword}}\"\r\n   }\r\n}"
                 },
                 "description": ""
               },
