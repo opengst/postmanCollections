@@ -1899,6 +1899,18 @@
         {
           "_postman_id": "13096a4e-e51b-a29a-efa1-57f5c797bc9c",
           "name": "Create User : MainAccessForMobiles",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setNextRequest(null);",
+                  ""
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{server}}/web/dataset/create",
             "method": "POST",
