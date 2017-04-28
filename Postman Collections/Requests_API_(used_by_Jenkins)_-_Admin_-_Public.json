@@ -1443,45 +1443,6 @@
       "response": []
     },
     {
-      "_postman_id": "e1133f4a-5145-cd7c-55b4-d21d214ab549",
-      "name": "create Site \"openstc.site\" copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "",
-              "tests[\"Return a site id\"] = jsonData.result.result > 0;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"city\":\"Ville\",\n        \"zip\":\"Code postal\",\n        \"product_image\":false,\n    \"osm_zoom\": false,\n    \"osm_type\": false,\n    \"osm_id\": false,\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"name\": \"Creation Site 2\",\n    \"type_id\": 76,\n    \"alarm\":true,\n    \"pmr\":true,\n        \"amiante\":true,\n        \"igh\":false,\n        \"cadastre_is_bati\":false,\n        \"cadastre_is_nonbati\":false,\n        \"pprn\":false,\n        \"pprm\":false,\n        \"pprt\":false,\n        \"ppri\":false,\n        \"product_image\":false,\n        \"street\":\"Rue\",\n        \"street2\":\"Rue (suite)\",\n        \"accommodation_capacity\":666,\n        \"width\":666,\n        \"length\":666,\n        \"surface\":443556,\n        \"is_copro\":false,\n        \"date_end\":\"2016-10-24\",\n        \"date_start\":\"2016-10-24\",\n        \"site_parent_id\":1151,\n        \"access_manager_ids\": [[6, 0, [73, 97]]]\n    },\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
       "_postman_id": "f451de93-0709-487e-ddee-9f69cea1d2fd",
       "name": "create Marque de véhicule \"opengst.automobile.brand\" copy",
       "event": [
