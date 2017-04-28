@@ -530,7 +530,7 @@
       "item": [
         {
           "_postman_id": "e52d52ed-1c27-30b4-22b7-99171bdcf8e7",
-          "name": "Clear Environnement Variables",
+          "name": "Utils - Clear Environnement Variables",
           "event": [
             {
               "listen": "test",
