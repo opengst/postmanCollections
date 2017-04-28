@@ -413,57 +413,6 @@
       "response": []
     },
     {
-      "_postman_id": "bc2b25a6-96dc-682b-7a5d-e882bb863d1e",
-      "name": "create user : Particuliers Commune - Demandeur externe copy copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "",
-              "tests[\"Check error code\"] = jsonData.error.code ===200;",
-              "tests[\"Check error type\"] = jsonData.error.data.type ===\"server_exception\";",
-              ""
-            ]
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "postman.setEnvironmentVariable('userLogin','login'+postman.getEnvironmentVariable('userNumber'));",
-              "postman.setEnvironmentVariable('userName','name'+postman.getEnvironmentVariable('userNumber'));"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"id\": \"r7\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"context_tz\": \"Europe/Paris\",\r\n      \"hex_color\": \"#2B0652\",\r\n      \"service_id\": false,\r\n      \"service_ids\": [[6,  0,[]]],\r\n      \"is_assignable_to_task\": false,\r\n      \"is_bookable_manager\": false,\r\n      \"image\": false,\r\n      \"login\": \"{{userLogin}}\",\r\n      \"new_password\": \"user1Mdp\",\r\n      \"name\": \"{{userName}}\",\r\n      \"function\": \"userFonction\",\r\n      \"email\": \"user@domain.com\",\r\n      \"phone\": \"0240033021\",\r\n      \"mobile\": \"0660353212\",\r\n      \"street\": \"rue\",\r\n      \"zip\": \"44100\",\r\n      \"city\": \"nantes\",\r\n      \"partner_id\": {{resPartner.id}},\r\n      \"groups_id\": [[6,0,[{{resGroups.Demandeur.id}},  {{resGroups.DemandeurExterne.id}}]]]\r\n    },\r\n    \"model\": \"res.users\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\"bin_size\": true}\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-        },
-        "description": "resGroups.id = Demandeur externe\n28 : Demandeur\nresPartner.id = Particuliers Commune"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "b7bb5005-872b-421f-cce7-f1d7714465ce",
       "name": "Create Compteur Demandeur externe",
       "event": [
@@ -522,8 +471,8 @@
       "response": []
     },
     {
-      "_postman_id": "f0a39479-94bb-2eec-4389-5027ffe29184",
-      "name": "Update Compteur DE",
+      "_postman_id": "bc2b25a6-96dc-682b-7a5d-e882bb863d1e",
+      "name": "create user : Particuliers Commune - Demandeur externe copy copy",
       "event": [
         {
           "listen": "test",
@@ -532,8 +481,9 @@
             "exec": [
               "var jsonData = JSON.parse(responseBody);",
               "",
-              "//You have no right to create when you are not in the group Gestionnaire.",
-              "tests[\"error code Check\"] = jsonData.error.code === 200;"
+              "tests[\"Check error code\"] = jsonData.error.code ===200;",
+              "tests[\"Check error type\"] = jsonData.error.data.type ===\"server_exception\";",
+              ""
             ]
           }
         },
@@ -542,38 +492,32 @@
           "script": {
             "type": "text/javascript",
             "exec": [
-              "var text = \"\";",
-              "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
-              "",
-              "for( var i=0; i < 15; i++ )",
-              "    text += possible.charAt(Math.floor(Math.random() * possible.length));",
-              "    ",
-              "postman.setEnvironmentVariable(\"ref1\", text);",
-              ""
+              "postman.setEnvironmentVariable('userLogin','login'+postman.getEnvironmentVariable('userNumber'));",
+              "postman.setEnvironmentVariable('userName','name'+postman.getEnvironmentVariable('userNumber'));"
             ]
           }
         }
       ],
       "request": {
-        "url": "https://gst-dev.atreal-ouest.fr/web/dataset/save",
+        "url": "{{server}}/web/dataset/create",
         "method": "POST",
         "header": [
           {
-            "key": "Accept",
-            "value": "application/json, text/plain, */*",
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
             "description": ""
           },
           {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
+            "key": "Accept",
+            "value": "application/json",
             "description": ""
           }
         ],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"categ_id\":22,\n            \"name\":\"Test Compteur\",\n            \"ref\":\"{{ref1}}\",\n            \"site_id\":false,\n            \"category_id\":3,\n            \"site_repartitions\":[\n\n            ]\n        },\n        \"model\":\"opengst.fluids.meter\",\n        \"id\":17,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r94\"\n}"
+          "raw": "{\r\n  \"id\": \"r7\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"context_tz\": \"Europe/Paris\",\r\n      \"hex_color\": \"#2B0652\",\r\n      \"service_id\": false,\r\n      \"service_ids\": [[6,  0,[]]],\r\n      \"is_assignable_to_task\": false,\r\n      \"is_bookable_manager\": false,\r\n      \"image\": false,\r\n      \"login\": \"{{userLogin}}\",\r\n      \"new_password\": \"user1Mdp\",\r\n      \"name\": \"{{userName}}\",\r\n      \"function\": \"userFonction\",\r\n      \"email\": \"user@domain.com\",\r\n      \"phone\": \"0240033021\",\r\n      \"mobile\": \"0660353212\",\r\n      \"street\": \"rue\",\r\n      \"zip\": \"44100\",\r\n      \"city\": \"nantes\",\r\n      \"partner_id\": {{resPartner.id}},\r\n      \"groups_id\": [[6,0,[{{resGroups.Demandeur.id}},  {{resGroups.DemandeurExterne.id}}]]]\r\n    },\r\n    \"model\": \"res.users\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\"bin_size\": true}\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
         },
-        "description": ""
+        "description": "resGroups.id = Demandeur externe\n28 : Demandeur\nresPartner.id = Particuliers Commune"
       },
       "response": []
     }
