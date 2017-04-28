@@ -2329,7 +2329,7 @@
         },
         {
           "_postman_id": "b9f077a8-0eb6-7082-2db7-02ea57dbd483",
-          "name": "Get GroupId for \"Demandeur\"",
+          "name": "Get GroupId for Demandeur",
           "event": [
             {
               "listen": "test",
@@ -2356,7 +2356,7 @@
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for \"Demandeur\"\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur\");",
                   "postman.setNextRequest(\"000 - Global Scenario\"\");"
                 ]
               }
