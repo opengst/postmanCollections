@@ -2506,7 +2506,7 @@
                   " */ ",
                   "",
                   "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur externe\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\"\");"
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
                 ]
               }
             }
