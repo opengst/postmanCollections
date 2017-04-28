@@ -353,7 +353,7 @@
       "item": [
         {
           "_postman_id": "7a994bb0-97f3-8780-cf09-e1f818464b69",
-          "name": "Authenticate",
+          "name": "Citoyen - Authenticate",
           "event": [
             {
               "listen": "test",
