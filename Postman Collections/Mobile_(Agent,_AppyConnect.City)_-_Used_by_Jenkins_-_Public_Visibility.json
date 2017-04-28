@@ -1791,39 +1791,6 @@
             "description": ""
           },
           "response": []
-        },
-        {
-          "_postman_id": "e52d52ed-1c27-30b4-22b7-99171bdcf8e7",
-          "name": "Get inGroupIds copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"organisationId\", jsonData.result.records[0].id);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/get",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\",\n      \"ids\":[113],\n      \"fields\":[\"in_group_120\",\"in_group_126\",\"sel_groups_181\",\"in_group_125\",\"sel_groups_3\",\"company_id\",\"company_ids\",\"in_group_69\",\"contact_id\",\"in_group_65\",\"in_group_64\",\"in_group_67\",\"in_group_66\",\"in_group_61\",\"in_group_60\",\"in_group_63\",\"in_group_62\",\"in_group_138\",\"in_group_139\",\"image_medium\",\"in_group_130\",\"in_group_131\",\"in_group_132\",\"in_group_133\",\"in_group_134\",\"in_group_135\",\"in_group_136\",\"in_group_137\",\"in_group_208\",\"in_group_209\",\"in_group_202\",\"in_group_203\",\"in_group_200\",\"in_group_201\",\"in_group_206\",\"in_group_207\",\"in_group_204\",\"in_group_177\",\"in_group_173\",\"in_group_94\",\"service_id\",\"active\",\"in_group_116\",\"in_group_117\",\"in_group_114\",\"in_group_115\",\"in_group_112\",\"in_group_113\",\"in_group_110\",\"in_group_111\",\"in_group_205\",\"in_group_118\",\"in_group_119\",\"login\",\"sel_groups_18_19\",\"in_group_189\",\"in_group_188\",\"in_group_180\",\"in_group_183\",\"in_group_182\",\"in_group_184\",\"in_group_187\",\"in_group_186\",\"in_group_28\",\"in_group_23\",\"in_group_24\",\"in_group_27\",\"menu_tips\",\"sel_groups_25\",\"sel_groups_29\",\"sel_groups_13_14\",\"in_group_240\",\"in_group_241\",\"in_group_98\",\"in_group_99\",\"in_group_95\",\"in_group_96\",\"in_group_97\",\"in_group_90\",\"in_group_91\",\"in_group_92\",\"in_group_93\",\"id\",\"new_password\",\"in_group_167\",\"openstc_accreditation_ids\",\"in_group_165\",\"in_group_164\",\"in_group_163\",\"in_group_162\",\"in_group_161\",\"context_project_id\",\"in_group_169\",\"in_group_168\",\"in_group_199\",\"in_group_194\",\"in_group_192\",\"user_email\",\"in_group_68\",\"in_group_58\",\"in_group_59\",\"in_group_50\",\"in_group_51\",\"in_group_52\",\"in_group_53\",\"in_group_54\",\"in_group_55\",\"in_group_56\",\"in_group_57\",\"in_group_219\",\"in_group_149\",\"in_group_148\",\"in_group_166\",\"in_group_145\",\"in_group_144\",\"in_group_147\",\"in_group_146\",\"in_group_141\",\"in_group_140\",\"in_group_143\",\"in_group_142\",\"sel_groups_242\",\"in_group_239\",\"in_group_238\",\"in_group_237\",\"in_group_236\",\"in_group_235\",\"in_group_234\",\"in_group_233\",\"in_group_232\",\"in_group_231\",\"in_group_230\",\"menu_id\",\"in_group_160\",\"sel_groups_20_21\",\"context_lang\",\"name\",\"openstc_license_ids\",\"in_group_72\",\"context_section_id\",\"in_group_70\",\"in_group_71\",\"sel_groups_7_22_8\",\"in_group_77\",\"in_group_74\",\"in_group_75\",\"in_group_78\",\"in_group_79\",\"in_group_128\",\"in_group_9\",\"in_group_6\",\"in_group_122\",\"in_group_4\",\"in_group_5\",\"in_group_127\",\"in_group_124\",\"in_group_215\",\"in_group_214\",\"in_group_217\",\"in_group_216\",\"in_group_211\",\"in_group_210\",\"in_group_213\",\"in_group_212\",\"in_group_218\",\"action_id\",\"in_group_100\",\"in_group_76\",\"in_group_198\",\"in_group_108\",\"in_group_196\",\"in_group_197\",\"in_group_195\",\"in_group_193\",\"in_group_190\",\"in_group_191\",\"image\",\"in_group_26\",\"in_group_10\",\"in_group_11\",\"in_group_12\",\"in_group_101\",\"in_group_103\",\"in_group_102\",\"in_group_105\",\"in_group_104\",\"in_group_107\",\"in_group_106\",\"in_group_109\",\"in_group_89\",\"in_group_88\",\"in_group_87\",\"in_group_86\",\"in_group_85\",\"in_group_84\",\"signature\",\"in_group_82\",\"in_group_81\",\"in_group_80\",\"service_ids\",\"in_group_73\",\"in_group_83\",\"image_small\",\"in_group_174\",\"in_group_175\",\"in_group_176\",\"in_group_170\",\"in_group_171\",\"in_group_172\",\"in_group_178\",\"in_group_179\",\"sel_groups_1_2\",\"in_group_38\",\"in_group_39\",\"in_group_36\",\"in_group_37\",\"in_group_34\",\"in_group_35\",\"in_group_32\",\"in_group_33\",\"in_group_30\",\"in_group_31\",\"sel_groups_15_16_17\",\"sel_groups_226\",\"in_group_153\",\"in_group_228\",\"in_group_229\",\"context_tz\",\"in_group_155\",\"in_group_129\",\"in_group_224\",\"in_group_49\",\"in_group_48\",\"in_group_185\",\"in_group_43\",\"in_group_42\",\"in_group_41\",\"in_group_40\",\"in_group_47\",\"in_group_46\",\"in_group_45\",\"in_group_44\",\"in_group_227\",\"in_group_221\",\"in_group_152\",\"in_group_123\",\"in_group_150\",\"in_group_151\",\"in_group_156\",\"in_group_157\",\"in_group_154\",\"in_group_225\",\"in_group_158\",\"in_group_159\",\"in_group_220\",\"in_group_121\",\"in_group_222\",\"in_group_223\"]\n   }\n}"
-            },
-            "description": ""
-          },
-          "response": []
         }
       ]
     },
@@ -2612,7 +2579,41 @@
       "_postman_id": "f8db7da9-73d6-3069-d962-067fd132fce2",
       "name": "0 - Test scenario",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "e52d52ed-1c27-30b4-22b7-99171bdcf8e7",
+          "name": "Get inGroupIds copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"organisationId\", jsonData.result.records[0].id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/get",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\",\n      \"ids\":[113],\n      \"fields\":[\"in_group_120\",\"in_group_126\",\"sel_groups_181\",\"in_group_125\",\"sel_groups_3\",\"company_id\",\"company_ids\",\"in_group_69\",\"contact_id\",\"in_group_65\",\"in_group_64\",\"in_group_67\",\"in_group_66\",\"in_group_61\",\"in_group_60\",\"in_group_63\",\"in_group_62\",\"in_group_138\",\"in_group_139\",\"image_medium\",\"in_group_130\",\"in_group_131\",\"in_group_132\",\"in_group_133\",\"in_group_134\",\"in_group_135\",\"in_group_136\",\"in_group_137\",\"in_group_208\",\"in_group_209\",\"in_group_202\",\"in_group_203\",\"in_group_200\",\"in_group_201\",\"in_group_206\",\"in_group_207\",\"in_group_204\",\"in_group_177\",\"in_group_173\",\"in_group_94\",\"service_id\",\"active\",\"in_group_116\",\"in_group_117\",\"in_group_114\",\"in_group_115\",\"in_group_112\",\"in_group_113\",\"in_group_110\",\"in_group_111\",\"in_group_205\",\"in_group_118\",\"in_group_119\",\"login\",\"sel_groups_18_19\",\"in_group_189\",\"in_group_188\",\"in_group_180\",\"in_group_183\",\"in_group_182\",\"in_group_184\",\"in_group_187\",\"in_group_186\",\"in_group_28\",\"in_group_23\",\"in_group_24\",\"in_group_27\",\"menu_tips\",\"sel_groups_25\",\"sel_groups_29\",\"sel_groups_13_14\",\"in_group_240\",\"in_group_241\",\"in_group_98\",\"in_group_99\",\"in_group_95\",\"in_group_96\",\"in_group_97\",\"in_group_90\",\"in_group_91\",\"in_group_92\",\"in_group_93\",\"id\",\"new_password\",\"in_group_167\",\"openstc_accreditation_ids\",\"in_group_165\",\"in_group_164\",\"in_group_163\",\"in_group_162\",\"in_group_161\",\"context_project_id\",\"in_group_169\",\"in_group_168\",\"in_group_199\",\"in_group_194\",\"in_group_192\",\"user_email\",\"in_group_68\",\"in_group_58\",\"in_group_59\",\"in_group_50\",\"in_group_51\",\"in_group_52\",\"in_group_53\",\"in_group_54\",\"in_group_55\",\"in_group_56\",\"in_group_57\",\"in_group_219\",\"in_group_149\",\"in_group_148\",\"in_group_166\",\"in_group_145\",\"in_group_144\",\"in_group_147\",\"in_group_146\",\"in_group_141\",\"in_group_140\",\"in_group_143\",\"in_group_142\",\"sel_groups_242\",\"in_group_239\",\"in_group_238\",\"in_group_237\",\"in_group_236\",\"in_group_235\",\"in_group_234\",\"in_group_233\",\"in_group_232\",\"in_group_231\",\"in_group_230\",\"menu_id\",\"in_group_160\",\"sel_groups_20_21\",\"context_lang\",\"name\",\"openstc_license_ids\",\"in_group_72\",\"context_section_id\",\"in_group_70\",\"in_group_71\",\"sel_groups_7_22_8\",\"in_group_77\",\"in_group_74\",\"in_group_75\",\"in_group_78\",\"in_group_79\",\"in_group_128\",\"in_group_9\",\"in_group_6\",\"in_group_122\",\"in_group_4\",\"in_group_5\",\"in_group_127\",\"in_group_124\",\"in_group_215\",\"in_group_214\",\"in_group_217\",\"in_group_216\",\"in_group_211\",\"in_group_210\",\"in_group_213\",\"in_group_212\",\"in_group_218\",\"action_id\",\"in_group_100\",\"in_group_76\",\"in_group_198\",\"in_group_108\",\"in_group_196\",\"in_group_197\",\"in_group_195\",\"in_group_193\",\"in_group_190\",\"in_group_191\",\"image\",\"in_group_26\",\"in_group_10\",\"in_group_11\",\"in_group_12\",\"in_group_101\",\"in_group_103\",\"in_group_102\",\"in_group_105\",\"in_group_104\",\"in_group_107\",\"in_group_106\",\"in_group_109\",\"in_group_89\",\"in_group_88\",\"in_group_87\",\"in_group_86\",\"in_group_85\",\"in_group_84\",\"signature\",\"in_group_82\",\"in_group_81\",\"in_group_80\",\"service_ids\",\"in_group_73\",\"in_group_83\",\"image_small\",\"in_group_174\",\"in_group_175\",\"in_group_176\",\"in_group_170\",\"in_group_171\",\"in_group_172\",\"in_group_178\",\"in_group_179\",\"sel_groups_1_2\",\"in_group_38\",\"in_group_39\",\"in_group_36\",\"in_group_37\",\"in_group_34\",\"in_group_35\",\"in_group_32\",\"in_group_33\",\"in_group_30\",\"in_group_31\",\"sel_groups_15_16_17\",\"sel_groups_226\",\"in_group_153\",\"in_group_228\",\"in_group_229\",\"context_tz\",\"in_group_155\",\"in_group_129\",\"in_group_224\",\"in_group_49\",\"in_group_48\",\"in_group_185\",\"in_group_43\",\"in_group_42\",\"in_group_41\",\"in_group_40\",\"in_group_47\",\"in_group_46\",\"in_group_45\",\"in_group_44\",\"in_group_227\",\"in_group_221\",\"in_group_152\",\"in_group_123\",\"in_group_150\",\"in_group_151\",\"in_group_156\",\"in_group_157\",\"in_group_154\",\"in_group_225\",\"in_group_158\",\"in_group_159\",\"in_group_220\",\"in_group_121\",\"in_group_222\",\"in_group_223\"]\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
