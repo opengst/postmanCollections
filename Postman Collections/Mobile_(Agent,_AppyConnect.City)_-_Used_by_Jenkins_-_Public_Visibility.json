@@ -1967,7 +1967,7 @@
         },
         {
           "_postman_id": "ca8999dd-bbb2-3325-a45d-c8cf00e8558c",
-          "name": "Get id ON ir.model FOR openstc.ask.category copy",
+          "name": "Get id ON ir.model FOR res.partner",
           "event": [
             {
               "listen": "test",
