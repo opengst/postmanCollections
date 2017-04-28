@@ -423,7 +423,7 @@
             "exec": [
               "var jsonData = JSON.parse(responseBody);",
               "",
-              "tests[\"Check error code\"] = jsonData.error.code ===200",
+              "tests[\"Check error code\"] = jsonData.error.code ===200;",
               ""
             ]
           }
