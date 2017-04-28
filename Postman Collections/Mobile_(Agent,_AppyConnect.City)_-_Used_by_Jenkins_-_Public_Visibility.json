@@ -1391,8 +1391,8 @@
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                  "postman.setEnvironmentVariable(\"lastStepServerConfiguration\", \"Clear Environnement Variables\");",
+                  "postman.setNextRequest(\"000 - Global Configuration\");"
                 ]
               }
             },
