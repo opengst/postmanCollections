@@ -406,6 +406,7 @@
             "exec": [
               "var jsonData = JSON.parse(responseBody);",
               "postman.setEnvironmentVariable(\"resGroups.DemandeurExterne.id\", jsonData.result.ids[0]);",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
               "tests[\"Find one 'Demandeur externe'\"] = jsonData.result.length === 1;"
             ]
           }
