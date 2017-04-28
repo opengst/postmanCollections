@@ -204,11 +204,31 @@
           "script": {
             "type": "text/javascript",
             "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "tests[\"Response time is less than 1000ms\"] = responseTime < 1000;",
               "var jsonData = JSON.parse(responseBody);",
               "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
               "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
               "tests[\"Authenticate Bdd\"] = jsonData.result.db === 'test_api';",
-              "tests[\"Authenticate as admin\"] = jsonData.result.uid === 1;"
+              "",
+              "if (jsonData.result.db === 'test_api'){",
+              "    if(jsonData.result.login === \"admin\")",
+              "        tests[\"Authenticate as admin\"] = jsonData.result.uid === 1;",
+              "    ",
+              "    if(jsonData.result.login === \"cdupont\")",
+              "        tests[\"Authenticate as demandeur externe\"] = jsonData.result.uid === 88;",
+              "    ",
+              "    if(jsonData.result.login === \"dst\")",
+              "        tests[\"Authenticate as gestionnaire\"] = jsonData.result.uid === 104;",
+              "}",
+              "",
+              "//Check if the content type is json",
+              "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
+              "if (contentTypeHeader) {",
+              "    tests[\"Content-Type is application/json\"] = ",
+              "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
+              "}",
+              ""
             ]
           }
         }
