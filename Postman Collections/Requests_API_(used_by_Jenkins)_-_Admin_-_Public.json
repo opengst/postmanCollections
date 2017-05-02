@@ -8,12 +8,6 @@
   },
   "item": [
     {
-      "_postman_id": "c8c8acc2-4c40-0775-90e3-34f82119c790",
-      "name": "CRUD Site",
-      "description": "",
-      "item": []
-    },
-    {
       "_postman_id": "8cebfdd8-f5f5-998c-680d-fc9f4eddbdfb",
       "name": "https://gst.atreal.fr/api/v1/ping",
       "event": [
