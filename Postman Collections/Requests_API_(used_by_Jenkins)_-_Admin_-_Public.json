@@ -1747,7 +1747,7 @@
     },
     {
       "_postman_id": "3bd179c3-ba19-86de-e2a4-e1240f62b089",
-      "name": "save Organisation avec nouveau sites \"openstc.site\" copy",
+      "name": "save Organisation avec nouveau sites \"openstc.site\"",
       "event": [
         {
           "listen": "test",
