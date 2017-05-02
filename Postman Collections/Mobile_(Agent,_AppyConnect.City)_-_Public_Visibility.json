@@ -1582,7 +1582,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"context_tz\":\"Europe/Paris\",\"hex_color\":\"#A05E5D\",\"service_id\":false,\"service_ids\":[[6,0,[]]],\"is_assignable_to_task\":false,\"is_bookable_manager\":false,\"image\":false,\"login\":\"fredsfde\",\"name\":\"efaezfaetf\",\"partner_id\":145,\"groups_id\":[[6,0,[28,89]]]},\"model\":\"res.users\",\"session_id\":\"{{sessionId}}\"}}"
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"city\":\"gjvdfcc\",\"context_tz\":\"Europe/Paris\",\"email\":\"fdggg@gdf.com\",\"groups_id\":[6,0,[28,89]],\"hex_color\":\"#A05E5D\",\"image\":false,\"is_assignable_to_task\":false,\"is_bookable_manager\":false,\"login\":\"fdggg@gdf.com\",\"name\":\"fedghgx\",\"new_password\":\"azertyuiop\",\"partner_id\":145,\"phone\":\"0000000000\",\"service_id\":false,\"service_ids\":[6,0,[]],\"street\":\"fhcfg\",\"zip\":\"44555\"},\"model\":\"res.users\",\"session_id\":\"ee6ec82785f14df39dd7d6ea651de70d\"}}"
             },
             "description": ""
           },
