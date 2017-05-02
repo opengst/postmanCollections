@@ -1669,7 +1669,7 @@
     },
     {
       "_postman_id": "0362f34f-b4ab-ffd7-b59b-81ce8532134d",
-      "name": "create Categorie de site \"openstc.site.type\" copy",
+      "name": "create Categorie de site \"openstc.site.type\"",
       "event": [
         {
           "listen": "test",
