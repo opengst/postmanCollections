@@ -1247,6 +1247,47 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "955465eb-7ad2-7c0d-3353-d30edbbc3010",
+          "name": "Create equipement openstc.equipement",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Return an equipment\"] = jsonData.result.result >0;",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept-Language",
+                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"qty_available\":1,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"block_booking\":false,\n            \"internal_use\":false,\n            \"product_image\":false,\n            \"categ_id\":14,\n            \"name\":\"Clio\",\n            \"new_qty\":1\n        },\n        \"model\":\"openstc.equipment\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r51\"\n}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
@@ -1496,47 +1537,6 @@
         "body": {
           "mode": "raw",
           "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "955465eb-7ad2-7c0d-3353-d30edbbc3010",
-      "name": "Create equipement openstc.equipement",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "tests[\"Return an equipment\"] = jsonData.result.result >0;",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept-Language",
-            "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"qty_available\":1,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"block_booking\":false,\n            \"internal_use\":false,\n            \"product_image\":false,\n            \"categ_id\":14,\n            \"name\":\"Clio\",\n            \"new_qty\":1\n        },\n        \"model\":\"openstc.equipment\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r51\"\n}"
         },
         "description": ""
       },
