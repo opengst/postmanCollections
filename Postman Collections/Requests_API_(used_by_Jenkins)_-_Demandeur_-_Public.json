@@ -8,6 +8,12 @@
   },
   "item": [
     {
+      "_postman_id": "ca0d1649-25ff-35b3-0ce2-fe5043c33f54",
+      "name": "Authenticate",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "d28880e2-8ca8-07b9-3de5-4ef69e6720fc",
       "name": "https://gst.atreal.fr/api/v1/ping",
       "event": [
