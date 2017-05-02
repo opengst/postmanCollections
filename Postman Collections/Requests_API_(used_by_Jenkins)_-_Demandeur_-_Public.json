@@ -1545,7 +1545,7 @@
     },
     {
       "_postman_id": "23d34960-05e9-0c28-a24f-4f2dc7de7116",
-      "name": "get Site \"openstc.site\" copy",
+      "name": "get Site \"openstc.site\" DE",
       "event": [
         {
           "listen": "test",
