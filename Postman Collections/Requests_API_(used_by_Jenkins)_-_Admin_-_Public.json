@@ -744,7 +744,7 @@
                 "exec": [
                   "",
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"Check 'by meters'\"] = jsonData.has(\"m³\");",
+                  "tests[\"Check 'by meters'\"] = jsonData.result[0].has(\"m³\");",
                   ""
                 ]
               }
