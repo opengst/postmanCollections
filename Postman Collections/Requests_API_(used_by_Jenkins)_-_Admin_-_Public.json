@@ -794,7 +794,7 @@
         },
         {
           "_postman_id": "6e3f4be6-dc60-9a44-46ad-696a60bddacf",
-          "name": "get Consumptions summary (by fluid category) copy",
+          "name": "get Consumptions summary (by fluid category)",
           "request": {
             "url": "{{server}}/web/dataset/call_kw",
             "method": "POST",
