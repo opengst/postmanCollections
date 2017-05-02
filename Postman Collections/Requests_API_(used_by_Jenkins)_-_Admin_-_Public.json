@@ -773,7 +773,7 @@
         },
         {
           "_postman_id": "c15f2146-655e-4088-920b-6741e4d0f7ec",
-          "name": "get Consumptions summary (by meters) copy",
+          "name": "get Consumptions summary (by meters)",
           "request": {
             "url": "{{server}}/web/dataset/call_kw",
             "method": "POST",
