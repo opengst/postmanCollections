@@ -1467,7 +1467,7 @@
     },
     {
       "_postman_id": "7b3ea926-e56f-b539-7d94-b333e99a6117",
-      "name": "get res.company settings copy",
+      "name": "get res.company settings",
       "event": [
         {
           "listen": "test",
