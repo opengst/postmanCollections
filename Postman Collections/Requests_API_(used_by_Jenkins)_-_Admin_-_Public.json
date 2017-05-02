@@ -812,6 +812,27 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "87b5216f-ba87-4f64-dd18-2a5af09acd03",
+          "name": "get Consumptions summary (by fluid category) with statistics copy",
+          "request": {
+            "url": "{{server}}/web/dataset/call_kw",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r61\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"opengst.fluids.consumption\",\r\n    \"method\": \"get_consumptions_summary\",\r\n    \"args\":[1, [], null, 1, \"2015-01-01\", \"2015-09-01\", \"year\"],\r\n    \"kwargs\": {\r\n      \"context\": {\r\n        \"lang\": \"fr_FR\",\r\n            \"tz\": \"Europe/Paris\",\r\n            \"uid\": {{uid}}\r\n      }\r\n    },\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
