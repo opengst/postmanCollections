@@ -1462,7 +1462,7 @@
     },
     {
       "_postman_id": "4c7f43f7-0260-a97a-6eeb-d4e12bba6c44",
-      "name": "get Organisation \"openstc.site\" copy",
+      "name": "get Organisation \"openstc.site\" DE",
       "event": [
         {
           "listen": "test",
