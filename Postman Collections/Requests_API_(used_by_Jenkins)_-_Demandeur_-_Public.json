@@ -312,6 +312,12 @@
       ]
     },
     {
+      "_postman_id": "b420dbae-5c4a-1778-8cae-e7a28d821579",
+      "name": "CRG User",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "ca0d1649-25ff-35b3-0ce2-fe5043c33f54",
       "name": "Authenticate",
       "description": "",
