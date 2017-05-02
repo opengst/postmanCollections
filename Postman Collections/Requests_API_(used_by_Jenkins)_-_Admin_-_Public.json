@@ -770,6 +770,27 @@
             "description": "get company currency defined in openerp\nConfiguration -> Company -> Devises"
           },
           "response": []
+        },
+        {
+          "_postman_id": "c15f2146-655e-4088-920b-6741e4d0f7ec",
+          "name": "get Consumptions summary (by meters) copy",
+          "request": {
+            "url": "{{server}}/web/dataset/call_kw",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r61\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"opengst.fluids.consumption\",\r\n    \"method\": \"get_consumptions_summary\",\r\n    \"args\":[1, [{{fluids_demo_meter_id}}, 2], null, null, \"2015-01-10\", \"2015-09-01\", \"month\"],\r\n    \"kwargs\": {\r\n      \"context\": {\r\n        \"lang\": \"fr_FR\",\r\n            \"tz\": \"Europe/Paris\",\r\n            \"uid\": {{uid}}\r\n      }\r\n    },\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
