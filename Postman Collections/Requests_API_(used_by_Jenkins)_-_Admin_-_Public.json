@@ -886,7 +886,7 @@
             "type": "text/javascript",
             "exec": [
               "var jsonData = JSON.parse(responseBody);",
-              "tests[\"water categories exists and unique\"] = jsonData.result.length>1;",
+              "tests[\"water categories exists and unique\"] = jsonData.result.length>0;",
               "postman.setEnvironmentVariable(\"fluids_demo_meter_id\", jsonData.result.ids[0]);"
             ]
           }
