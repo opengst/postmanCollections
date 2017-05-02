@@ -1566,6 +1566,27 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "ef61b1c7-8090-9b71-c257-0a016374b187",
+          "name": "CREATE SUR MOBILE",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"context_tz\":\"Europe/Paris\",\"hex_color\":\"#A05E5D\",\"service_id\":false,\"service_ids\":[[6,0,[]]],\"is_assignable_to_task\":false,\"is_bookable_manager\":false,\"image\":false,\"login\":\"fredsfde\",\"name\":\"efaezfaetf\",\"partner_id\":145,\"groups_id\":[[6,0,[28,89]]]},\"model\":\"res.users\",\"session_id\":\"{{sessionId}}\"}}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
