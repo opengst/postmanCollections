@@ -8,6 +8,12 @@
   },
   "item": [
     {
+      "_postman_id": "044ceaf1-a4bb-6774-cce2-acf60a061787",
+      "name": "Fluid",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "8cebfdd8-f5f5-998c-680d-fc9f4eddbdfb",
       "name": "https://gst.atreal.fr/api/v1/ping",
       "event": [
