@@ -1378,6 +1378,62 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "3dce0a48-b943-a1d2-0e8d-2a03aab8af30",
+          "name": "https://localhost:9443/web/dataset/save",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/save",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Origin",
+                "value": "https://localhost:9443",
+                "description": ""
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Referer",
+                "value": "https://localhost:9443/demo/",
+                "description": ""
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "description": ""
+              },
+              {
+                "key": "Accept-Language",
+                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
+                "description": ""
+              },
+              {
+                "key": "Cookie",
+                "value": "session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=4799fbb42e52eefb80ac758c9ae3a0caebcc40f3; session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=d8fbb06dc9de92f33fd4facdc03727471f961dad",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"groups_id\":[[6,0,[28]]],\"hex_color\":false,\"is_bookable_manager\":false,\"city\":false,\"zip\":false,\"managed_bookable_service_ids\":[[6,0,[]]],\"function\":false,\"phone\":false,\"service_ids\":[[6,0,[]]],\"name\":\"fredt\",\"street\":false,\"service_id\":false,\"cost\":0,\"partner_id\":145,\"openstc_employee_ref\":false,\"is_assignable_to_task\":false,\"email\":false,\"context_tz\":\"Europe/Paris\",\"warehouse_ids\":[[6,0,[]]],\"login\":\"fdggg@gmail.com\",\"mobile\":false,\"signature\":false,\"image\":false},\"model\":\"res.users\",\"id\":100,\"session_id\":\"006899280e8246b6920ce9e5716039d9\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":1},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r354\"}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
