@@ -1586,7 +1586,7 @@
     },
     {
       "_postman_id": "e2894e61-0823-5223-9162-d8ba95fe323f",
-      "name": "get Company currency copy",
+      "name": "get Company currency DE",
       "event": [
         {
           "listen": "test",
