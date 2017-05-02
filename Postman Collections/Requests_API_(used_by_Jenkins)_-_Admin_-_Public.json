@@ -1306,7 +1306,7 @@
     },
     {
       "_postman_id": "c0d518f2-d3c3-6e04-af77-83fa4e54e1ce",
-      "name": "search_read Task \"project.task\" copy",
+      "name": "search_read Task \"project.task\"",
       "event": [
         {
           "listen": "test",
