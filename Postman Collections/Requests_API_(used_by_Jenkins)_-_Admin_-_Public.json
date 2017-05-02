@@ -777,7 +777,7 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"Check 'by meters'\"] = jsonData.result[0].unit === \"¬\"",
+                  "tests[\"Check 'by meters'\"] = jsonData.result[1].unit === \"¬\"",
                   ""
                 ]
               }
