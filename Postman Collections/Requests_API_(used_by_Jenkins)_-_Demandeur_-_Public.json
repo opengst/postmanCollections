@@ -1098,7 +1098,7 @@
     },
     {
       "_postman_id": "3b186fa9-a456-7fe5-d3f7-947dcf4ecc8e",
-      "name": "search_read Site \"openstc.site\" copy",
+      "name": "search_read Site \"openstc.site\" DE",
       "event": [
         {
           "listen": "test",
