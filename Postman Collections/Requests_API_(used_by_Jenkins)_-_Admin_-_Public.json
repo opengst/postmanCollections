@@ -77,12 +77,6 @@
       ]
     },
     {
-      "_postman_id": "ecfd92b2-ffa7-329c-f35c-9e03c82f5b56",
-      "name": "121",
-      "description": "",
-      "item": []
-    },
-    {
       "_postman_id": "8cebfdd8-f5f5-998c-680d-fc9f4eddbdfb",
       "name": "https://gst.atreal.fr/api/v1/ping",
       "event": [
