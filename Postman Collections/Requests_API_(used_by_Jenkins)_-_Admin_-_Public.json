@@ -1192,7 +1192,7 @@
     },
     {
       "_postman_id": "3d9c9d5e-c0b8-8453-6295-c2f1260b31af",
-      "name": "search_read Demande d'intervention \"openstc.ask\" copy",
+      "name": "search_read Demande d'intervention \"openstc.ask\"",
       "event": [
         {
           "listen": "test",
