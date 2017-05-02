@@ -743,7 +743,9 @@
                 "type": "text/javascript",
                 "exec": [
                   "",
-                  "tests[\"Check 'by meters'\"] = responseBody.has(\"m³\");"
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Check 'by meters'\"] = jsonData.has(\"m³\");",
+                  ""
                 ]
               }
             }
