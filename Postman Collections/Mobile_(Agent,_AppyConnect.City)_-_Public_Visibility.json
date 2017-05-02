@@ -1485,7 +1485,63 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"groups_id\":[[6,0,[]]],\"hex_color\":false,\"is_bookable_manager\":false,\"city\":false,\"zip\":false,\"managed_bookable_service_ids\":[[6,0,[]]],\"function\":false,\"phone\":false,\"service_ids\":[[6,0,[]]],\"name\":\"frsedtrr\",\"street\":false,\"service_id\":false,\"cost\":0,\"partner_id\":145,\"openstc_employee_ref\":false,\"is_assignable_to_task\":false,\"email\":false,\"context_tz\":\"Europe/Paris\",\"warehouse_ids\":[[6,0,[]]],\"login\":\"fdgsgg@gmail.com\",\"mobile\":false,\"signature\":false,\"image\":false},\"model\":\"res.users\",\"id\":104,\"session_id\":\"006899280e8246b6920ce9e5716039d9\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":1},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r364\"}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"hex_color\":false,\n         \"is_bookable_manager\":false,\n         \"city\":false,\n         \"zip\":false,\n         \"managed_bookable_service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"function\":false,\n         \"phone\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"name\":\"frsedtrr\",\n         \"street\":false,\n         \"service_id\":false,\n         \"cost\":0,\n         \"partner_id\":145,\n         \"openstc_employee_ref\":false,\n         \"is_assignable_to_task\":false,\n         \"email\":false,\n         \"context_tz\":\"Europe/Paris\",\n         \"warehouse_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"login\":\"fdgsgg@gmail.com\",\n         \"mobile\":false,\n         \"signature\":false,\n         \"image\":false\n      },\n      \"model\":\"res.users\",\n      \"id\":104,\n      \"session_id\":\"006899280e8246b6920ce9e5716039d9\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":1\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r364\"\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8146825f-3b67-9930-2b7b-dab280f425f6",
+          "name": "https://localhost:9443/web/dataset/create",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Origin",
+                "value": "https://localhost:9443",
+                "description": ""
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Referer",
+                "value": "https://localhost:9443/demo/",
+                "description": ""
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "description": ""
+              },
+              {
+                "key": "Accept-Language",
+                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
+                "description": ""
+              },
+              {
+                "key": "Cookie",
+                "value": "session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=4799fbb42e52eefb80ac758c9ae3a0caebcc40f3; session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=d8fbb06dc9de92f33fd4facdc03727471f961dad",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"context_tz\":\"Europe/Paris\",\"hex_color\":\"#A05E5D\",\"service_id\":false,\"service_ids\":[[6,0,[]]],\"is_assignable_to_task\":false,\"is_bookable_manager\":false,\"image\":false,\"login\":\"frede\",\"name\":\"efaezfaetf\",\"partner_id\":145,\"groups_id\":[[6,0,[28,89]]]},\"model\":\"res.users\",\"session_id\":\"006899280e8246b6920ce9e5716039d9\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":1},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r57\"}"
             },
             "description": ""
           },
