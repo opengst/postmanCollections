@@ -813,7 +813,7 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"Check 'by fluid category'\"] = jsonData.result[1].unit === \"¬\"",
+                  "tests[\"Check 'by fluid category' with statistics\"] = jsonData.result[1].unit === \"¬\"",
                   ""
                 ]
               }
