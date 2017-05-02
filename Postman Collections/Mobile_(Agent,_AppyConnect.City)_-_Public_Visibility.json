@@ -1373,7 +1373,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"groups_id\":[6,0,[28,89]],\"image\":false,\"is_assignable_to_task\":false,\"is_bookable_manager\":false,\"login\":\"fdggg@gmail.com\",\"name\":\"fredt\",\"new_password\":\"12345678\",\"partner_id\":145,\"service_id\":false,\"service_ids\":[6,0,[]]},\"model\":\"res.users\",\"session_id\":\"73a386784c254ec0aa5c95eb4258c1b7\"}}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"groups_id\":[\n            6,\n            0,\n            [\n               28,\n               89\n            ]\n         ],\n         \"image\":false,\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"login\":\"fdggg@gmail.com\",\n         \"name\":\"fredt\",\n         \"new_password\":\"12345678\",\n         \"partner_id\":145,\n         \"service_id\":false,\n         \"service_ids\":[\n            6,\n            0,\n            [\n\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"73a386784c254ec0aa5c95eb4258c1b7\"\n   }\n}"
             },
             "description": ""
           },
