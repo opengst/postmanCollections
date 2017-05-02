@@ -1878,6 +1878,40 @@
         "description": "get company currency defined in openerp\nConfiguration -> Company -> Devises"
       },
       "response": []
+    },
+    {
+      "_postman_id": "9dd31e5c-5cd0-0a7e-4b86-af50979c3dc7",
+      "name": "get Meters by sites id and categorie",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "",
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"Check Meters exist\"] = jsonData.result.length >0;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/search_read",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": \"r323\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"limit\": 20,\r\n    \"offset\": 0,\r\n    \"model\": \"opengst.fluids.meter\",\r\n    \"fields\": [\r\n      \"ref\",\r\n      \"type\",\r\n      \"site_id\",\r\n      \"category_id\"\r\n    ],\r\n    \"domain\": [],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+        },
+        "description": ""
+      },
+      "response": []
     }
   ]
 }
