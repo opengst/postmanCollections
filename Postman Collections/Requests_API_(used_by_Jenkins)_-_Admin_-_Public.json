@@ -8,12 +8,6 @@
   },
   "item": [
     {
-      "_postman_id": "26ccab7a-22b5-b394-4f63-ecaf8deeddce",
-      "name": "CRUD Site",
-      "description": "",
-      "item": []
-    },
-    {
       "_postman_id": "8da08717-4a7d-bb65-3918-6e1cfd6db7bb",
       "name": "authenticate",
       "description": "",
