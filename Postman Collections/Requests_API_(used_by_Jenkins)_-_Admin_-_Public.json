@@ -806,6 +806,19 @@
         {
           "_postman_id": "87b5216f-ba87-4f64-dd18-2a5af09acd03",
           "name": "get Consumptions summary (by fluid category) with statistics",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Check 'by fluid category'\"] = jsonData.result[1].unit === \"¬\"",
+                  ""
+                ]
+              }
+            }
+          ],
           "request": {
             "url": "{{server}}/web/dataset/call_kw",
             "method": "POST",
