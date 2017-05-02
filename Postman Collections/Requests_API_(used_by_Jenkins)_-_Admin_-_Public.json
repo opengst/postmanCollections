@@ -1201,7 +1201,7 @@
             "exec": [
               "tests[\"User creation seems fine\"] = responseCode.code === 200;",
               "var jsonData = JSON.parse(responseBody);",
-              "tests[\"User created\"] = jsonData.result.result != 1;"
+              "tests[\"User created\"] = jsonData.result.result >1;"
             ]
           }
         },
