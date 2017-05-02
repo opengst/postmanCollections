@@ -1373,7 +1373,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{ \n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"groups_id\":[\n            6,\n            0,\n            [\n               28,\n               89\n            ]\n         ],\n         \"image\":false,\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"login\":\"fdgsgg@gmail.com\",\n         \"name\":\"frsedt\",\n         \"new_password\":\"12345678\",\n         \"partner_id\":145,\n         \"service_id\":false,\n         \"service_ids\":[\n            6,\n            0,\n            [\n\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"groups_id\":[\n            6,\n            0,\n            [\n               28,\n               89\n            ]\n         ],\n         \"image\":false,\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"login\":\"fdggg@gmail.com\",\n         \"name\":\"fredt\",\n         \"new_password\":\"12345678\",\n         \"partner_id\":145,\n         \"service_id\":false,\n         \"service_ids\":[\n            6,\n            0,\n            [\n\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"73a386784c254ec0aa5c95eb4258c1b7\"\n   }\n}"
             },
             "description": ""
           },
