@@ -22,7 +22,7 @@
                 "type": "text/javascript",
                 "exec": [
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response time is less than 1000ms\"] = responseTime < 1000;",
+                  "tests[\"Response time is less than 1500ms\"] = responseTime < 1500;",
                   "var jsonData = JSON.parse(responseBody);",
                   "",
                   "//Check if the content type is json",
