@@ -1387,7 +1387,7 @@
     },
     {
       "_postman_id": "46354225-f646-5781-d5a4-1a607443b109",
-      "name": "create Carburant \"opengst.automobile.fuel\" copy",
+      "name": "create Carburant \"opengst.automobile.fuel\"",
       "event": [
         {
           "listen": "test",
