@@ -359,7 +359,7 @@
     },
     {
       "_postman_id": "79e00113-bf28-5a12-a08b-cb8f969ded5e",
-      "name": "get Organisations 'Particuliers Commune' id copy",
+      "name": "get Organisations 'Particuliers Commune' id",
       "event": [
         {
           "listen": "test",
