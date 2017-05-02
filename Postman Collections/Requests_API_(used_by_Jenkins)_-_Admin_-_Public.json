@@ -1549,7 +1549,7 @@
     },
     {
       "_postman_id": "5fe21592-7553-f608-a9af-ca2266228be6",
-      "name": "create Categorie d'equipement \"product.category\" copy",
+      "name": "create Categorie d'equipement \"product.category\"",
       "event": [
         {
           "listen": "test",
