@@ -1786,7 +1786,7 @@
     },
     {
       "_postman_id": "a2ebe9d8-9d95-3a95-ff69-f4cf8a521c80",
-      "name": "Import CSV FIle DE copy",
+      "name": "Import CSV FIle",
       "event": [
         {
           "listen": "test",
