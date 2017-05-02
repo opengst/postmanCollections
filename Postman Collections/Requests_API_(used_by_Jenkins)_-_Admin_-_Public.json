@@ -1795,7 +1795,7 @@
             "exec": [
               "var jsonData = JSON.parse(responseBody);",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              ""
+              "tests[\"import Success\"] = jsonData.id ===\"r66\";"
             ]
           }
         }
