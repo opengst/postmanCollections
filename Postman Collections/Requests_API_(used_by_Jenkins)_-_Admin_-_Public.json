@@ -246,7 +246,47 @@
       "_postman_id": "a75fc622-3060-8b74-ba6d-60b1f58aff8a",
       "name": "CRUD ask",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "4aa72d52-be7c-0d33-68c8-ac9c28cda649",
+          "name": "create Demande intervention",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests ['Check jsonrpc'] = jsonData.jsonrpc ===\"2.0\";",
+                  "tests['Demande intervention exist'] = jsonData.result.result > 0;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"is_citizen\": false,\r\n      \"partner_id\": {{resPartner.id}},\r\n      \"name\": \"Libellé Demande2\",\r\n      \"site1\": 1051,\r\n      \"site_details\": \"Détails de l'emplacement2\",\r\n      \"service_id\": 2,\r\n      \"description\": \"description demande2\"\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     },
     {
       "_postman_id": "acb7b3b7-f733-762c-a63f-a28c613e63b4",
@@ -1263,45 +1303,6 @@
         "body": {
           "mode": "raw",
           "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
-        },
-        "description": ""
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "4aa72d52-be7c-0d33-68c8-ac9c28cda649",
-      "name": "create Demande intervention",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests ['Check jsonrpc'] = jsonData.jsonrpc ===\"2.0\";",
-              "tests['Demande intervention exist'] = jsonData.result.result > 0;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"is_citizen\": false,\r\n      \"partner_id\": {{resPartner.id}},\r\n      \"name\": \"Libellé Demande2\",\r\n      \"site1\": 1051,\r\n      \"site_details\": \"Détails de l'emplacement2\",\r\n      \"service_id\": 2,\r\n      \"description\": \"description demande2\"\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
         },
         "description": ""
       },
