@@ -1111,55 +1111,6 @@
       "response": []
     },
     {
-      "_postman_id": "9ea358ea-73c2-7bec-fb7c-25411ca51636",
-      "name": "create user : Particuliers Commune",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"User creation seems fine\"] = responseCode.code === 200;",
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"User created\"] = jsonData.result.result != 1;"
-            ]
-          }
-        },
-        {
-          "listen": "prerequest",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "postman.setEnvironmentVariable('userLogin','login'+postman.getEnvironmentVariable('userNumber'));",
-              "postman.setEnvironmentVariable('userName','name'+postman.getEnvironmentVariable('userNumber'));"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"id\": \"r7\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"context_tz\": \"Europe/Paris\",\r\n      \"hex_color\": \"#2B0652\",\r\n      \"service_id\": false,\r\n      \"service_ids\": [[6,  0,[]]],\r\n      \"is_assignable_to_task\": false,\r\n      \"is_bookable_manager\": false,\r\n      \"image\": false,\r\n      \"login\": \"{{userLogin}}\",\r\n      \"new_password\": \"user1Mdp\",\r\n      \"name\": \"{{userName}}\",\r\n      \"function\": \"userFonction\",\r\n      \"email\": \"user@domain.com\",\r\n      \"phone\": \"0240033021\",\r\n      \"mobile\": \"0660353212\",\r\n      \"street\": \"rue\",\r\n      \"zip\": \"44100\",\r\n      \"city\": \"nantes\",\r\n      \"partner_id\": {{resPartner.id}},\r\n      \"groups_id\": [[6,0,[{{resGroups.Demandeur.id}},  {{resGroups.DemandeurExterne.id}}]]]\r\n    },\r\n    \"model\": \"res.users\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\"bin_size\": true}\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-        },
-        "description": "resGroups.id = Demandeur externe\n28 : Demandeur\nresPartner.id = Particuliers Commune"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "d7b73116-3247-1fa5-e584-10b50bc02f2f",
       "name": "search_read users",
       "event": [
@@ -1236,6 +1187,55 @@
           "raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"call\",\n\t\"params\": {\n\t\t\"sort\": \"name ASC\",\n\t\t\"limit\": 20,\n\t\t\"offset\": 0,\n\t\t\"model\": \"res.users\",\n\t\t\"fields\": [\n\t\t\t\"achat_group\",\n\t\t\t\"actions\",\n\t\t\t\"active\",\n\t\t\t\"access_rights\",\n\t\t\t\"address_id\",\n\t\t\t\"city\",\n\t\t\t\"company_id\",\n\t\t\t\"complete_name\",\n\t\t\t\"contact_id\",\n\t\t\t\"context_lang\",\n\t\t\t\"context_tz\",\n\t\t\t\"cost\",\n\t\t\t\"current_group\",\n\t\t\t\"date\",\n\t\t\t\"email\",\n\t\t\t\"fluid_group\",\n\t\t\t\"function\",\n\t\t\t\"groups_id\",\n\t\t\t\"hex_color\",\n\t\t\t\"id\",\n\t\t\t\"is_assignable_to_task\",\n\t\t\t\"is_bookable_manager\",\n\t\t\t\"isDST\",\n\t\t\t\"isManager\",\n\t\t\t\"isResaManager\",\n\t\t\t\"lastname\",\n\t\t\t\"login\",\n\t\t\t\"managed_bookable_site_ids\",\n\t\t\t\"managed_bookable_equipment_ids\",\n\t\t\t\"managed_bookable_service_ids\",\n\t\t\t\"managed_bookables\",\n\t\t\t\"mobile\",\n\t\t\t\"name\",\n\t\t\t\"oauth_uid\",\n\t\t\t\"openresa_group\",\n\t\t\t\"patrimoine_group\",\n\t\t\t\"parcauto_group\",\n\t\t\t\"partner_id\",\n\t\t\t\"phone\",\n\t\t\t\"service_id\",\n\t\t\t\"service_ids\",\n\t\t\t\"service_names\",\n\t\t\t\"signature\",\n\t\t\t\"street\",\n\t\t\t\"tasks\",\n\t\t\t\"team_ids\",\n\t\t\t\"zip\",\n\t\t\t\"warehouse_ids\",\n\t\t\t\"openstc_employee_ref\"\n\t\t],\n\t\t\"session_id\": \"{{sessionId}}\",\n\t\t\"context\": {\n\t\t\t\"__ref\": \"compound_context\",\n\t\t\t\"__contexts\": [\n\t\t\t\t{\n\t\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\t\"uid\": {{uid}}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"bin_size\": true\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"__eval_context\": null\n\t\t}\n\t}\n}"
         },
         "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "9ea358ea-73c2-7bec-fb7c-25411ca51636",
+      "name": "create user : Particuliers Commune",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"User creation seems fine\"] = responseCode.code === 200;",
+              "var jsonData = JSON.parse(responseBody);",
+              "tests[\"User created\"] = jsonData.result.result != 1;"
+            ]
+          }
+        },
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "postman.setEnvironmentVariable('userLogin','login'+postman.getEnvironmentVariable('userNumber'));",
+              "postman.setEnvironmentVariable('userName','name'+postman.getEnvironmentVariable('userNumber'));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          },
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"id\": \"r7\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"context_tz\": \"Europe/Paris\",\r\n      \"hex_color\": \"#2B0652\",\r\n      \"service_id\": false,\r\n      \"service_ids\": [[6,  0,[]]],\r\n      \"is_assignable_to_task\": false,\r\n      \"is_bookable_manager\": false,\r\n      \"image\": false,\r\n      \"login\": \"{{userLogin}}\",\r\n      \"new_password\": \"user1Mdp\",\r\n      \"name\": \"{{userName}}\",\r\n      \"function\": \"userFonction\",\r\n      \"email\": \"user@domain.com\",\r\n      \"phone\": \"0240033021\",\r\n      \"mobile\": \"0660353212\",\r\n      \"street\": \"rue\",\r\n      \"zip\": \"44100\",\r\n      \"city\": \"nantes\",\r\n      \"partner_id\": {{resPartner.id}},\r\n      \"groups_id\": [[6,0,[{{resGroups.Demandeur.id}},  {{resGroups.DemandeurExterne.id}}]]]\r\n    },\r\n    \"model\": \"res.users\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\"bin_size\": true}\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+        },
+        "description": "resGroups.id = Demandeur externe\n28 : Demandeur\nresPartner.id = Particuliers Commune"
       },
       "response": []
     },
