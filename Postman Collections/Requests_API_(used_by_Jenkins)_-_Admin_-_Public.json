@@ -1230,7 +1230,7 @@
     },
     {
       "_postman_id": "145532be-90e6-d210-6d7a-9bdbf96677d5",
-      "name": "search_read Organisations \"res.partner\" =particuliers copy",
+      "name": "search_read Organisations \"res.partner\" =particuliers",
       "event": [
         {
           "listen": "test",
