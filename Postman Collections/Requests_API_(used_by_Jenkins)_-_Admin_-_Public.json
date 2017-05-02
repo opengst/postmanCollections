@@ -877,6 +877,12 @@
       ]
     },
     {
+      "_postman_id": "cbf25456-cda8-e5aa-77ee-cf8a8a24e2c1",
+      "name": "CRUD Task",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "dafbaa3c-37ee-64e2-a5f9-bb71000da313",
       "name": "OpenGST test request",
       "description": "",
