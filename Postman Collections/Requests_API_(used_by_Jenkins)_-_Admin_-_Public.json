@@ -454,7 +454,7 @@
     },
     {
       "_postman_id": "874376a2-aef0-8d4e-d451-7fa2fa8d9453",
-      "name": "authenticate copy",
+      "name": "authenticate",
       "event": [
         {
           "listen": "test",
