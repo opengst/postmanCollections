@@ -1380,7 +1380,7 @@
     },
     {
       "_postman_id": "fb4f0694-c892-129c-bb6b-7305727e9566",
-      "name": "create Marque de véhicule \"opengst.automobile.brand\" copy",
+      "name": "create Marque de véhicule \"opengst.automobile.brand\" DE",
       "event": [
         {
           "listen": "test",
