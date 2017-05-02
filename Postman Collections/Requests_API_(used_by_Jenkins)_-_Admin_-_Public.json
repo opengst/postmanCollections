@@ -1590,7 +1590,7 @@
     },
     {
       "_postman_id": "59742f4a-b98a-2506-944a-4183a57cb212",
-      "name": "create Modele de véhicule \"opengst.automobile.model\" copy",
+      "name": "create Modele de véhicule \"opengst.automobile.model\"",
       "event": [
         {
           "listen": "test",
