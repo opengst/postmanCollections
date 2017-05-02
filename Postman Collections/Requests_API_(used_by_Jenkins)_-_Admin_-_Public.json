@@ -110,6 +110,86 @@
             "description": "pour connaitre des infos à renseigner dans la demande"
           },
           "response": []
+        },
+        {
+          "_postman_id": "d7b73116-3247-1fa5-e584-10b50bc02f2f",
+          "name": "search_read users",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Response time is less than 2000ms\"] = responseTime < 2000;",
+                  "postman.setEnvironmentVariable(\"userNumber\", jsonData.result.length);",
+                  "//var increment = postman.setEnvironmentVariable(\"userNumber\", jsonData.result.length++);",
+                  "tests[\"Find users\"] = jsonData.result.ids.length != 1;",
+                  "",
+                  "if(jsonData.result.records[1].name === \"Administrator\"){",
+                  "     ",
+                  "        tests[\"Check admin isResaManager\"] = jsonData.result.records[1].isResaManager===true;",
+                  "        tests[\"Check admin isDST\"]= jsonData.result.records[1].isDST === true;",
+                  "        tests[\"Check admin is_bookable_manager\"] =jsonData.result.records[1].is_bookable_manager=== true;",
+                  "        tests[\"Admin's Role in openresa_group\"] = jsonData.result.records[1].openresa_group[1] ===\"Demandeur interne\";",
+                  "        tests[\"Check admin isManager\"] = jsonData.result.records[1].isManager === true;",
+                  "    }",
+                  "    ",
+                  "if(jsonData.result.records[13].name === \"dst\"){",
+                  "        tests[\"Check gestionnaire is_bookable_manager\"] =jsonData.result.records[13].is_bookable_manager=== true;",
+                  "        tests[\"Check gestionnaire isResaManager\"] = jsonData.result.records[13].isResaManager===true;",
+                  "        tests[\"Check gestionnaire isDST\"]= jsonData.result.records[13].isDST === true;",
+                  "        tests[\"gestionnaire's role in openresa_group\"] = jsonData.result.records[13].openresa_group[1] ===\"Gestionnaire\";",
+                  "        tests[\"Check gestionnaire isManager\"] = jsonData.result.records[13].isManager===true;",
+                  "    }",
+                  "    ",
+                  "if(jsonData.result.records[15].name === \"DUPONT Chantal\"){",
+                  "        tests[\"Check Demandeur is_bookable_manager\"] =jsonData.result.records[15].is_bookable_manager=== false;",
+                  "        tests[\"Check Demandeur isResaManager\"] = jsonData.result.records[15].isResaManager===false;",
+                  "",
+                  "        tests[\"Check Demandeur isManager\"] = jsonData.result.records[15].isManager===false;",
+                  "    }",
+                  "",
+                  "",
+                  "//Check if the content type is json",
+                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
+                  "if (contentTypeHeader) {",
+                  "    tests[\"Content-Type is application/json\"] = ",
+                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
+                  "}",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"call\",\n\t\"params\": {\n\t\t\"sort\": \"name ASC\",\n\t\t\"limit\": 20,\n\t\t\"offset\": 0,\n\t\t\"model\": \"res.users\",\n\t\t\"fields\": [\n\t\t\t\"achat_group\",\n\t\t\t\"actions\",\n\t\t\t\"active\",\n\t\t\t\"access_rights\",\n\t\t\t\"address_id\",\n\t\t\t\"city\",\n\t\t\t\"company_id\",\n\t\t\t\"complete_name\",\n\t\t\t\"contact_id\",\n\t\t\t\"context_lang\",\n\t\t\t\"context_tz\",\n\t\t\t\"cost\",\n\t\t\t\"current_group\",\n\t\t\t\"date\",\n\t\t\t\"email\",\n\t\t\t\"fluid_group\",\n\t\t\t\"function\",\n\t\t\t\"groups_id\",\n\t\t\t\"hex_color\",\n\t\t\t\"id\",\n\t\t\t\"is_assignable_to_task\",\n\t\t\t\"is_bookable_manager\",\n\t\t\t\"isDST\",\n\t\t\t\"isManager\",\n\t\t\t\"isResaManager\",\n\t\t\t\"lastname\",\n\t\t\t\"login\",\n\t\t\t\"managed_bookable_site_ids\",\n\t\t\t\"managed_bookable_equipment_ids\",\n\t\t\t\"managed_bookable_service_ids\",\n\t\t\t\"managed_bookables\",\n\t\t\t\"mobile\",\n\t\t\t\"name\",\n\t\t\t\"oauth_uid\",\n\t\t\t\"openresa_group\",\n\t\t\t\"patrimoine_group\",\n\t\t\t\"parcauto_group\",\n\t\t\t\"partner_id\",\n\t\t\t\"phone\",\n\t\t\t\"service_id\",\n\t\t\t\"service_ids\",\n\t\t\t\"service_names\",\n\t\t\t\"signature\",\n\t\t\t\"street\",\n\t\t\t\"tasks\",\n\t\t\t\"team_ids\",\n\t\t\t\"zip\",\n\t\t\t\"warehouse_ids\",\n\t\t\t\"openstc_employee_ref\"\n\t\t],\n\t\t\"session_id\": \"{{sessionId}}\",\n\t\t\"context\": {\n\t\t\t\"__ref\": \"compound_context\",\n\t\t\t\"__contexts\": [\n\t\t\t\t{\n\t\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\t\"uid\": {{uid}}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"bin_size\": true\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"__eval_context\": null\n\t\t}\n\t}\n}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
@@ -1114,86 +1194,6 @@
           "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"res.company\",\r\n    \"ids\": [1],\r\n    \"fields\":[\"currency_id\"],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
         },
         "description": "get company currency defined in openerp\nConfiguration -> Company -> Devises"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "d7b73116-3247-1fa5-e584-10b50bc02f2f",
-      "name": "search_read users",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "tests[\"Response time is less than 2000ms\"] = responseTime < 2000;",
-              "postman.setEnvironmentVariable(\"userNumber\", jsonData.result.length);",
-              "//var increment = postman.setEnvironmentVariable(\"userNumber\", jsonData.result.length++);",
-              "tests[\"Find users\"] = jsonData.result.ids.length != 1;",
-              "",
-              "if(jsonData.result.records[1].name === \"Administrator\"){",
-              "     ",
-              "        tests[\"Check admin isResaManager\"] = jsonData.result.records[1].isResaManager===true;",
-              "        tests[\"Check admin isDST\"]= jsonData.result.records[1].isDST === true;",
-              "        tests[\"Check admin is_bookable_manager\"] =jsonData.result.records[1].is_bookable_manager=== true;",
-              "        tests[\"Admin's Role in openresa_group\"] = jsonData.result.records[1].openresa_group[1] ===\"Demandeur interne\";",
-              "        tests[\"Check admin isManager\"] = jsonData.result.records[1].isManager === true;",
-              "    }",
-              "    ",
-              "if(jsonData.result.records[13].name === \"dst\"){",
-              "        tests[\"Check gestionnaire is_bookable_manager\"] =jsonData.result.records[13].is_bookable_manager=== true;",
-              "        tests[\"Check gestionnaire isResaManager\"] = jsonData.result.records[13].isResaManager===true;",
-              "        tests[\"Check gestionnaire isDST\"]= jsonData.result.records[13].isDST === true;",
-              "        tests[\"gestionnaire's role in openresa_group\"] = jsonData.result.records[13].openresa_group[1] ===\"Gestionnaire\";",
-              "        tests[\"Check gestionnaire isManager\"] = jsonData.result.records[13].isManager===true;",
-              "    }",
-              "    ",
-              "if(jsonData.result.records[15].name === \"DUPONT Chantal\"){",
-              "        tests[\"Check Demandeur is_bookable_manager\"] =jsonData.result.records[15].is_bookable_manager=== false;",
-              "        tests[\"Check Demandeur isResaManager\"] = jsonData.result.records[15].isResaManager===false;",
-              "",
-              "        tests[\"Check Demandeur isManager\"] = jsonData.result.records[15].isManager===false;",
-              "    }",
-              "",
-              "",
-              "//Check if the content type is json",
-              "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
-              "if (contentTypeHeader) {",
-              "    tests[\"Content-Type is application/json\"] = ",
-              "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
-              "}",
-              "",
-              "",
-              "",
-              "",
-              "",
-              ""
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/search_read",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Accept",
-            "value": "application/json, text/plain, */*",
-            "description": ""
-          },
-          {
-            "key": "Content-Type",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"call\",\n\t\"params\": {\n\t\t\"sort\": \"name ASC\",\n\t\t\"limit\": 20,\n\t\t\"offset\": 0,\n\t\t\"model\": \"res.users\",\n\t\t\"fields\": [\n\t\t\t\"achat_group\",\n\t\t\t\"actions\",\n\t\t\t\"active\",\n\t\t\t\"access_rights\",\n\t\t\t\"address_id\",\n\t\t\t\"city\",\n\t\t\t\"company_id\",\n\t\t\t\"complete_name\",\n\t\t\t\"contact_id\",\n\t\t\t\"context_lang\",\n\t\t\t\"context_tz\",\n\t\t\t\"cost\",\n\t\t\t\"current_group\",\n\t\t\t\"date\",\n\t\t\t\"email\",\n\t\t\t\"fluid_group\",\n\t\t\t\"function\",\n\t\t\t\"groups_id\",\n\t\t\t\"hex_color\",\n\t\t\t\"id\",\n\t\t\t\"is_assignable_to_task\",\n\t\t\t\"is_bookable_manager\",\n\t\t\t\"isDST\",\n\t\t\t\"isManager\",\n\t\t\t\"isResaManager\",\n\t\t\t\"lastname\",\n\t\t\t\"login\",\n\t\t\t\"managed_bookable_site_ids\",\n\t\t\t\"managed_bookable_equipment_ids\",\n\t\t\t\"managed_bookable_service_ids\",\n\t\t\t\"managed_bookables\",\n\t\t\t\"mobile\",\n\t\t\t\"name\",\n\t\t\t\"oauth_uid\",\n\t\t\t\"openresa_group\",\n\t\t\t\"patrimoine_group\",\n\t\t\t\"parcauto_group\",\n\t\t\t\"partner_id\",\n\t\t\t\"phone\",\n\t\t\t\"service_id\",\n\t\t\t\"service_ids\",\n\t\t\t\"service_names\",\n\t\t\t\"signature\",\n\t\t\t\"street\",\n\t\t\t\"tasks\",\n\t\t\t\"team_ids\",\n\t\t\t\"zip\",\n\t\t\t\"warehouse_ids\",\n\t\t\t\"openstc_employee_ref\"\n\t\t],\n\t\t\"session_id\": \"{{sessionId}}\",\n\t\t\"context\": {\n\t\t\t\"__ref\": \"compound_context\",\n\t\t\t\"__contexts\": [\n\t\t\t\t{\n\t\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\t\"uid\": {{uid}}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"bin_size\": true\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"__eval_context\": null\n\t\t}\n\t}\n}"
-        },
-        "description": ""
       },
       "response": []
     },
