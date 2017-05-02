@@ -268,49 +268,6 @@
           "response": []
         },
         {
-          "_postman_id": "3ef97e70-c011-b46e-35df-ce0b6f9ca664",
-          "name": "get Site \"openstc.site\" DE",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "//tests[\"Site openSTC exist\"] = jsonData.result.length >0;",
-                  "",
-                  "//You have no right to create when you are not in one of these groups: User, Manager (from actions)",
-                  "tests[\"error code Check\"] = jsonData.error.code === 200;",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/get",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"openstc.site\",\r\n    \"ids\": [\r\n      1\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "5a867067-2c8f-43e1-40d7-6158a6aca728",
           "name": "Deactivate Site DE",
           "event": [
