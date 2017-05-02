@@ -1561,7 +1561,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"context_tz\":\"Europe/Paris\",\"hex_color\":\"#A05E5D\",\"service_id\":false,\"service_ids\":[[6,0,[]]],\"is_assignable_to_task\":false,\"is_bookable_manager\":false,\"image\":false,\"login\":\"fredsfde\",\"name\":\"efaezfaetf\",\"partner_id\":145,\"groups_id\":[[6,0,[28,89]]]},\"model\":\"res.users\",\"session_id\":\"{{sessionId}}\"}}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"context_tz\":\"Europe/Paris\",\n         \"hex_color\":\"#A05E5D\",\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"fredsfde\",\n         \"name\":\"efaezfaetf\",\n         \"partner_id\":145,\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  28,\n                  89\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
