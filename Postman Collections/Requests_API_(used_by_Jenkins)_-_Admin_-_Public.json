@@ -1346,7 +1346,7 @@
     },
     {
       "_postman_id": "955465eb-7ad2-7c0d-3353-d30edbbc3010",
-      "name": "Create equipement openstc.equipement copy",
+      "name": "Create equipement openstc.equipement",
       "event": [
         {
           "listen": "test",
