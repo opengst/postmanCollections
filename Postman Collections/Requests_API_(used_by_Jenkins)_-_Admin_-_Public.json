@@ -1795,9 +1795,7 @@
             "exec": [
               "var jsonData = JSON.parse(responseBody);",
               "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "//For demandeur externe, who hasn't got right to im[ort file ",
-              "tests[\"Error Checked\"]=jsonData.error.code === 200;",
-              "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+              ""
             ]
           }
         }
