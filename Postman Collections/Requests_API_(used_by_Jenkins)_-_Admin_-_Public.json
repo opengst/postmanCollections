@@ -1268,7 +1268,7 @@
     },
     {
       "_postman_id": "e9d1790a-cf4e-4b45-6760-b55e934b812a",
-      "name": "search_read Roles \"res.groups\" =Demandeur externe copy",
+      "name": "search_read Roles \"res.groups\" =Demandeur externe",
       "event": [
         {
           "listen": "test",
