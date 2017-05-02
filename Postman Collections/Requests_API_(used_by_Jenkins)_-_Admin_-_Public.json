@@ -8,6 +8,12 @@
   },
   "item": [
     {
+      "_postman_id": "619fbd1c-867f-b07b-0af3-55596d253bb2",
+      "name": "Authenticate",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "6f6687de-6fea-5a6f-e684-52855f86b4e3",
       "name": "CRG Users",
       "description": "",
