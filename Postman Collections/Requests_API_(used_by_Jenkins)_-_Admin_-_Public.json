@@ -1213,47 +1213,6 @@
       "response": []
     },
     {
-      "_postman_id": "eb24e5c1-0816-063a-6378-5b7b5ff17bce",
-      "name": "get Company currency copy",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "var jsonData = JSON.parse(responseBody);",
-              "//postman.setEnvironmentVariable(\"companyId\", jsonData.result[0].company_id[0]);",
-              "",
-              "var jsonData = JSON.parse(responseBody);",
-              "tests[\"Check Currency id\"] = jsonData.result[0].id === 1;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "{{server}}/web/dataset/get",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          },
-          {
-            "key": "Accept",
-            "value": "application/json",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"res.company\",\r\n    \"ids\": [1],\r\n    \"fields\":[\"currency_id\"],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
-        },
-        "description": "get company currency defined in openerp\nConfiguration -> Company -> Devises"
-      },
-      "response": []
-    },
-    {
       "_postman_id": "4aa72d52-be7c-0d33-68c8-ac9c28cda649",
       "name": "create Demande intervention",
       "event": [
