@@ -8,6 +8,12 @@
   },
   "item": [
     {
+      "_postman_id": "acb7b3b7-f733-762c-a63f-a28c613e63b4",
+      "name": "CRUD Meter",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "c8c8acc2-4c40-0775-90e3-34f82119c790",
       "name": "CRUD Site",
       "description": "",
