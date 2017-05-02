@@ -836,6 +836,12 @@
       ]
     },
     {
+      "_postman_id": "dafbaa3c-37ee-64e2-a5f9-bb71000da313",
+      "name": "OpenGST ",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "8cebfdd8-f5f5-998c-680d-fc9f4eddbdfb",
       "name": "https://gst.atreal.fr/api/v1/ping",
       "event": [
