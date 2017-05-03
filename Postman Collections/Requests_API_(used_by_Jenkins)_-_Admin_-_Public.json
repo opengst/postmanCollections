@@ -1760,6 +1760,12 @@
       "item": []
     },
     {
+      "_postman_id": "22e18b3c-e075-b56f-3a9f-e133de335cf8",
+      "name": "Authentification",
+      "description": "",
+      "item": []
+    },
+    {
       "_postman_id": "f861fe9a-32f9-0ba7-727b-f2d4f794effd",
       "name": "authenticate",
       "event": [
