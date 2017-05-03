@@ -1588,7 +1588,7 @@
       "item": [
         {
           "_postman_id": "98f2904e-65a6-e1b7-8e76-74607d9c27d9",
-          "name": "authenticate copy",
+          "name": "authenticate",
           "event": [
             {
               "listen": "test",
