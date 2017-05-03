@@ -8,155 +8,6 @@
   },
   "item": [
     {
-      "_postman_id": "20cb0336-b14f-3316-a4d1-40b6ed0b0d5f",
-      "name": "Mobile Agent",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "344740b3-3a62-1a2c-7e38-2f22e8c02ccb",
-          "name": "Authenticate",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "/*postman.setEnvironmentVariable(\"server\", \"https://gst-staging.atreal-ouest.fr\");",
-                  "postman.setEnvironmentVariable(\"db\", \"demo\");",
-                  "postman.setEnvironmentVariable(\"login\", \"dstdst\");",
-                  "postman.setEnvironmentVariable(\"password\", \"dstdst\");",
-                  "postman.setEnvironmentVariable(\"sessionId\", \"\");",
-                  "postman.setEnvironmentVariable(\"uid\", \"\");",
-                  "postman.setEnvironmentVariable(\"interventionRequest.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"attachment_count\", \"\");",
-                  "postman.setEnvironmentVariable(\"attachment.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"demandeInter.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"resPartner.id\", \"\");*/"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/session/authenticate",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "bb2ba57b-0e29-a639-7203-e73cb6dc9f55",
-          "name": "Get My Tasks",
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"domain\":[\n         [\n            \"user_id\",\n            \"in\",\n            [\n               63\n            ]\n         ]\n      ],\n      \"sort\":\"id DESC\",\n      \"limit\":20,\n      \"offset\":0,\n      \"fields\":[\n         \"actions\",\n         \"agent_or_team_name\",\n         \"category_id\",\n         \"consumable_ask_ids\",\n         \"consumable_asks\",\n         \"consumable_request_id\",\n         \"date_start\",\n         \"equipment_id\",\n         \"effective_hours\",\n         \"id\",\n         \"swif_id\",\n         \"ask_id\",\n         \"name\",\n         \"partner_id\",\n         \"planned_hours\",\n         \"project_id\",\n         \"can_read_project\",\n         \"service_id\",\n         \"site1\",\n         \"state\",\n         \"team_id\",\n         \"user_id\",\n         \"cost\",\n         \"hr_cost\",\n         \"equipment_cost\",\n         \"consumable_cost\",\n         \"equipment_ids\",\n         \"attachment_count\",\n         \"mail_message_count\",\n         \"external\"\n      ],\n      \"model\":\"project.task\",\n      \"session_id\":\"{{sessionId}}\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":63\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r4\"\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "10391312-6bff-71d2-4338-b7d1d7dff49a",
-          "name": "Get Site",
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n\n\"fields\":[\"actions\",\"active\",\"access_manager_ids\",\"accommodation_capacity\",\"actions\",\"alarm\",\"amiante\",\"block_booking\",\"breadcrumb_names\",\"buyer_contact\",\"cadastre_commune\",\"cadastre_feuille\",\"cadastre_is_bati\",\"cadastre_is_nonbati\",\"cadastre_section\",\"cadastre_id\",\"code\",\"complete_name\",\"copro_id\",\"date_start\",\"date_end\",\"erp\",\"erp_category\",\"external_booking\",\"external_bookable_notice\",\"height\",\"igh\",\"internal_booking\",\"internal_bookable_notice\",\"is_copro\",\"length\",\"length_amort\",\"max_bookable_qty\",\"name\",\"notary_fees\",\"openresa_property_manager_id\",\"osm_relation_id\",\"partner_type_bookable_ids\",\"pmr\",\"postal_address\",\"pprn\",\"pprm\",\"pprt\",\"ppri\",\"pricelist_id\",\"product_id\",\"property_ids\",\"purchase_buyer_id\",\"purchase_record_name\",\"purchase_date\",\"purchase_date_avis_des_domaines\",\"purchase_date_deliberation\",\"purchase_description\",\"purchase_mode\",\"purchase_notary_fees\",\"purchase_notary_id\",\"purchase_price\",\"purchase_price_from_domaines\",\"purchase_seller_id\",\"record_name\",\"sale_record_name\",\"sale_mode\",\"sale_description\",\"sale_price\",\"sale_notary_fees\",\"sale_price_from_domaines\",\"sale_date\",\"sale_date_avis_des_domaines\",\"sale_date_deliberation\",\"sale_buyer_id\",\"sale_seller_id\",\"sale_notary_id\",\"service_ids\",\"service_names\",\"service_bookable_ids\",\"site_parent_id\",\"surface\",\"surface_plancher\",\"syndic_id\",\"type_id\",\"type_ids\",\"width\",\"color\",\"street\",\"street2\",\"city\",\"zip\",\"phone\"],\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.site\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "96901b87-012c-4e7e-f361-7f9580f69ecd",
-          "name": "Get Equipement",
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t\n      \"fields\":[\"active\",\"actions\",\"attachment_count\",\"block_booking\",\"built_date\",\"categ_id\",\"code\",\"color\",\"commercial_vehicle\",\"default_code\",\"energy_type\",\"external_bookable_notice\",\"external_booking\",\"fat_material\",\"hour_price\",\"immat\",\"internal_bookable_notice\",\"internal_booking\",\"internal_use\",\"km\",\"length_amort\",\"list_price\",\"marque\",\"maintenance_service_ids\",\"name\",\"openresa_property_manager_id\",\"openstc_reservable\",\"parent_id\",\"partner_type_bookable_ids\",\"product_product_id\",\"purchase_date\",\"purchase_price\",\"qty_available\",\"service_ids\",\"service_bookable_ids\",\"small_material\",\"supplier_id\",\"technical_vehicle\",\"time\",\"warranty_date\",\"new_qty\",\"site_id\",\"state\",\"life_duration\",\"date_start\",\"date_end\",\"resa_service_manager_ids\",\"resa_user_manager_ids\",\"serial_number\",\"optional_product_ids\",\"option_of_product_ids\"],\n      \"sort\":\"name ASC\",\n      \"limit\":100,\n      \"offset\":0,\n      \"model\":\"openstc.equipment\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "eb6cf567-25a2-f442-a82b-0853eed4f4f3",
-          "name": "Get Image of Site",
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"fields\":[\"actions\",\"id\",\"datas_fname\",\"create_uid\",\"create_date\",\"name\"],\"domain\":[[\"res_model\",\"=\",\"openstc.site\"],[\"res_id\",\"=\",49]],\"model\":\"ir.attachment\",\"session_id\":\"89414787d73a49efa2b0626135dc8d54\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":63},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r31\"}"
-            },
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "a1a75afa-4ce0-102d-6e2a-997fa1e9e18a",
       "name": "Toolbox",
       "description": "",
@@ -1121,413 +972,71 @@
       ]
     },
     {
-      "_postman_id": "adc9b71f-9b9d-4195-3dfc-458a04ef5e57",
-      "name": "Sandbox",
+      "_postman_id": "20cb0336-b14f-3316-a4d1-40b6ed0b0d5f",
+      "name": "Mobile Agent",
       "description": "",
       "item": [
         {
-          "_postman_id": "ea4182b8-904b-e058-c560-92e6e060716c",
-          "name": "Sandbox",
+          "_postman_id": "344740b3-3a62-1a2c-7e38-2f22e8c02ccb",
+          "name": "Authenticate",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "/*postman.setEnvironmentVariable(\"server\", \"https://gst-staging.atreal-ouest.fr\");",
+                  "postman.setEnvironmentVariable(\"db\", \"demo\");",
+                  "postman.setEnvironmentVariable(\"login\", \"dstdst\");",
+                  "postman.setEnvironmentVariable(\"password\", \"dstdst\");",
+                  "postman.setEnvironmentVariable(\"sessionId\", \"\");",
+                  "postman.setEnvironmentVariable(\"uid\", \"\");",
+                  "postman.setEnvironmentVariable(\"interventionRequest.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"attachment_count\", \"\");",
+                  "postman.setEnvironmentVariable(\"attachment.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"demandeInter.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"resPartner.id\", \"\");*/"
+                ]
+              }
+            }
+          ],
           "request": {
-            "url": "{{server}}/web/dataset/save",
+            "url": "{{server}}/web/session/authenticate",
             "method": "POST",
             "header": [
               {
-                "key": "Accept",
-                "value": "application/json, text/javascript, */*; q=0.01",
-                "description": ""
-              },
-              {
-                "key": "Origin",
-                "value": "http://localhost:8069",
-                "description": ""
-              },
-              {
-                "key": "X-Requested-With",
-                "value": "XMLHttpRequest",
-                "description": ""
-              },
-              {
-                "key": "User-Agent",
-                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
-                "description": ""
-              },
-              {
                 "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
                 "value": "application/json",
                 "description": ""
-              },
-              {
-                "key": "Referer",
-                "value": "http://localhost:8069/web/webclient/home",
-                "description": ""
-              },
-              {
-                "key": "Accept-Encoding",
-                "value": "gzip, deflate, br",
-                "description": ""
-              },
-              {
-                "key": "Accept-Language",
-                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
-                "description": ""
-              },
-              {
-                "key": "Cookie",
-                "value": "session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=33b9b2e10a3926821b7289fcd3a096b7575ebe73; session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=4799fbb42e52eefb80ac758c9ae3a0caebcc40f3",
-                "description": ""
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "\nRESSOURCES HUMAINES EMPLOYE\n\n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"sel_groups_3\":3,\"sel_groups_25\":false},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r3289\"}\n\n\nOPENBASE EMPLOYEE\n\n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"sel_groups_25\":25},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r1330\"}\n\n\nADMINISTRATION DROITS D ACCES\n\n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"sel_groups_1_2\":1},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r2586\"}\n\nOPENSTC - REQUESTS - CRUD - READ\n\n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"in_group_61\":true},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r2605\"}\n\nOPENSTC - CONFIGURATION - MENU DEMANDE INTERVENTION CATEGORIES\n \n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"in_group_177\":true},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r2624\"}\n\nOPENSTC - CONFIGURATION - CREATE DEMANDE INTERVENTION CATEGORIES\n\n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"in_group_178\":true},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r2643\"}\n\nAUTRE - GESTIONNAIRE DES PARTENAIRES\n\n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"in_group_9\":true},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r2681\"}"
+              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
             },
             "description": ""
           },
           "response": []
         },
         {
-          "_postman_id": "a2139002-970b-64a4-03e9-1d5b7d3c5eda",
-          "name": "Get inGroupIds",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"organisationId\", jsonData.result.records[0].id);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/get",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\",\n      \"ids\":[113],\n      \"fields\":[\"in_group_120\",\"in_group_126\",\"sel_groups_181\",\"in_group_125\",\"sel_groups_3\",\"company_id\",\"company_ids\",\"in_group_69\",\"contact_id\",\"in_group_65\",\"in_group_64\",\"in_group_67\",\"in_group_66\",\"in_group_61\",\"in_group_60\",\"in_group_63\",\"in_group_62\",\"in_group_138\",\"in_group_139\",\"image_medium\",\"in_group_130\",\"in_group_131\",\"in_group_132\",\"in_group_133\",\"in_group_134\",\"in_group_135\",\"in_group_136\",\"in_group_137\",\"in_group_208\",\"in_group_209\",\"in_group_202\",\"in_group_203\",\"in_group_200\",\"in_group_201\",\"in_group_206\",\"in_group_207\",\"in_group_204\",\"in_group_177\",\"in_group_173\",\"in_group_94\",\"service_id\",\"active\",\"in_group_116\",\"in_group_117\",\"in_group_114\",\"in_group_115\",\"in_group_112\",\"in_group_113\",\"in_group_110\",\"in_group_111\",\"in_group_205\",\"in_group_118\",\"in_group_119\",\"login\",\"sel_groups_18_19\",\"in_group_189\",\"in_group_188\",\"in_group_180\",\"in_group_183\",\"in_group_182\",\"in_group_184\",\"in_group_187\",\"in_group_186\",\"in_group_28\",\"in_group_23\",\"in_group_24\",\"in_group_27\",\"menu_tips\",\"sel_groups_25\",\"sel_groups_29\",\"sel_groups_13_14\",\"in_group_240\",\"in_group_241\",\"in_group_98\",\"in_group_99\",\"in_group_95\",\"in_group_96\",\"in_group_97\",\"in_group_90\",\"in_group_91\",\"in_group_92\",\"in_group_93\",\"id\",\"new_password\",\"in_group_167\",\"openstc_accreditation_ids\",\"in_group_165\",\"in_group_164\",\"in_group_163\",\"in_group_162\",\"in_group_161\",\"context_project_id\",\"in_group_169\",\"in_group_168\",\"in_group_199\",\"in_group_194\",\"in_group_192\",\"user_email\",\"in_group_68\",\"in_group_58\",\"in_group_59\",\"in_group_50\",\"in_group_51\",\"in_group_52\",\"in_group_53\",\"in_group_54\",\"in_group_55\",\"in_group_56\",\"in_group_57\",\"in_group_219\",\"in_group_149\",\"in_group_148\",\"in_group_166\",\"in_group_145\",\"in_group_144\",\"in_group_147\",\"in_group_146\",\"in_group_141\",\"in_group_140\",\"in_group_143\",\"in_group_142\",\"sel_groups_242\",\"in_group_239\",\"in_group_238\",\"in_group_237\",\"in_group_236\",\"in_group_235\",\"in_group_234\",\"in_group_233\",\"in_group_232\",\"in_group_231\",\"in_group_230\",\"menu_id\",\"in_group_160\",\"sel_groups_20_21\",\"context_lang\",\"name\",\"openstc_license_ids\",\"in_group_72\",\"context_section_id\",\"in_group_70\",\"in_group_71\",\"sel_groups_7_22_8\",\"in_group_77\",\"in_group_74\",\"in_group_75\",\"in_group_78\",\"in_group_79\",\"in_group_128\",\"in_group_9\",\"in_group_6\",\"in_group_122\",\"in_group_4\",\"in_group_5\",\"in_group_127\",\"in_group_124\",\"in_group_215\",\"in_group_214\",\"in_group_217\",\"in_group_216\",\"in_group_211\",\"in_group_210\",\"in_group_213\",\"in_group_212\",\"in_group_218\",\"action_id\",\"in_group_100\",\"in_group_76\",\"in_group_198\",\"in_group_108\",\"in_group_196\",\"in_group_197\",\"in_group_195\",\"in_group_193\",\"in_group_190\",\"in_group_191\",\"image\",\"in_group_26\",\"in_group_10\",\"in_group_11\",\"in_group_12\",\"in_group_101\",\"in_group_103\",\"in_group_102\",\"in_group_105\",\"in_group_104\",\"in_group_107\",\"in_group_106\",\"in_group_109\",\"in_group_89\",\"in_group_88\",\"in_group_87\",\"in_group_86\",\"in_group_85\",\"in_group_84\",\"signature\",\"in_group_82\",\"in_group_81\",\"in_group_80\",\"service_ids\",\"in_group_73\",\"in_group_83\",\"image_small\",\"in_group_174\",\"in_group_175\",\"in_group_176\",\"in_group_170\",\"in_group_171\",\"in_group_172\",\"in_group_178\",\"in_group_179\",\"sel_groups_1_2\",\"in_group_38\",\"in_group_39\",\"in_group_36\",\"in_group_37\",\"in_group_34\",\"in_group_35\",\"in_group_32\",\"in_group_33\",\"in_group_30\",\"in_group_31\",\"sel_groups_15_16_17\",\"sel_groups_226\",\"in_group_153\",\"in_group_228\",\"in_group_229\",\"context_tz\",\"in_group_155\",\"in_group_129\",\"in_group_224\",\"in_group_49\",\"in_group_48\",\"in_group_185\",\"in_group_43\",\"in_group_42\",\"in_group_41\",\"in_group_40\",\"in_group_47\",\"in_group_46\",\"in_group_45\",\"in_group_44\",\"in_group_227\",\"in_group_221\",\"in_group_152\",\"in_group_123\",\"in_group_150\",\"in_group_151\",\"in_group_156\",\"in_group_157\",\"in_group_154\",\"in_group_225\",\"in_group_158\",\"in_group_159\",\"in_group_220\",\"in_group_121\",\"in_group_222\",\"in_group_223\"]\n   }\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "79b50152-92c8-fd02-ac50-f708d0f67a98",
-          "name": "Create User on Particuliers Commune copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Create User on Particuliers Commune\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var userLogin = \"\";",
-                  "var userPassword = \"\";",
-                  "var userName = \"\";",
-                  "",
-                  "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
-                  "",
-                  "for( var i=0; i < 15; i++ ){",
-                  "    userLogin += possible.charAt(Math.floor(Math.random() * possible.length));",
-                  "}",
-                  "for( var i=0; i < 15; i++ ){",
-                  "    userPassword += possible.charAt(Math.floor(Math.random() * possible.length));",
-                  "}",
-                  "for( var i=0; i < 15; i++ ){",
-                  "    userName += possible.charAt(Math.floor(Math.random() * possible.length));",
-                  "}",
-                  "",
-                  "postman.setEnvironmentVariable(\"userLogin\", userLogin);",
-                  "postman.setEnvironmentVariable(\"userPassword\", userPassword);",
-                  "postman.setEnvironmentVariable(\"userName\", userName);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/create",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{ \n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n             ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"{{userLogin}}\",\n         \"new_password\":\"{{userPassword}}\",\n         \"name\":\"{{userName}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{groupIdDemandeur}},\n                  {{groupIdDemandeurExterne}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "cbfa916c-ff0c-36e1-b727-5b4888144c38",
-          "name": "Create User on Particuliers Commune REAL",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Create User on Particuliers Commune\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var userLogin = \"\";",
-                  "var userPassword = \"\";",
-                  "var userName = \"\";",
-                  "",
-                  "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
-                  "",
-                  "for( var i=0; i < 15; i++ ){",
-                  "    userLogin += possible.charAt(Math.floor(Math.random() * possible.length));",
-                  "}",
-                  "for( var i=0; i < 15; i++ ){",
-                  "    userPassword += possible.charAt(Math.floor(Math.random() * possible.length));",
-                  "}",
-                  "for( var i=0; i < 15; i++ ){",
-                  "    userName += possible.charAt(Math.floor(Math.random() * possible.length));",
-                  "}",
-                  "",
-                  "postman.setEnvironmentVariable(\"userLogin\", userLogin);",
-                  "postman.setEnvironmentVariable(\"userPassword\", userPassword);",
-                  "postman.setEnvironmentVariable(\"userName\", userName);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/create",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{ \n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"groups_id\":[\n            6,\n            0,\n            [\n               28,\n               89\n            ]\n         ],\n         \"image\":false,\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"login\":\"fdgsgg@gmail.com\",\n         \"name\":\"frsedt\",\n         \"new_password\":\"12345678\",\n         \"partner_id\":145,\n         \"service_id\":false,\n         \"service_ids\":[\n            6,\n            0,\n            [\n\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "3dce0a48-b943-a1d2-0e8d-2a03aab8af30",
-          "name": "https://localhost:9443/web/dataset/save",
-          "request": {
-            "url": "https://localhost:9443/web/dataset/save",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "Origin",
-                "value": "https://localhost:9443",
-                "description": ""
-              },
-              {
-                "key": "User-Agent",
-                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Referer",
-                "value": "https://localhost:9443/demo/",
-                "description": ""
-              },
-              {
-                "key": "Accept-Encoding",
-                "value": "gzip, deflate, br",
-                "description": ""
-              },
-              {
-                "key": "Accept-Language",
-                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
-                "description": ""
-              },
-              {
-                "key": "Cookie",
-                "value": "session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=4799fbb42e52eefb80ac758c9ae3a0caebcc40f3; session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=d8fbb06dc9de92f33fd4facdc03727471f961dad",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  28\n               ]\n            ]\n         ],\n         \"hex_color\":false,\n         \"is_bookable_manager\":false,\n         \"city\":false,\n         \"zip\":false,\n         \"managed_bookable_service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"function\":false,\n         \"phone\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"name\":\"fredt\",\n         \"street\":false,\n         \"service_id\":false,\n         \"cost\":0,\n         \"partner_id\":145,\n         \"openstc_employee_ref\":false,\n         \"is_assignable_to_task\":false,\n         \"email\":false,\n         \"context_tz\":\"Europe/Paris\",\n         \"warehouse_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"login\":\"fdggg@gmail.com\",\n         \"mobile\":false,\n         \"signature\":false,\n         \"image\":false\n      },\n      \"model\":\"res.users\",\n      \"id\":100,\n      \"session_id\":\"006899280e8246b6920ce9e5716039d9\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":1\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r354\"\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "169cb6fe-7085-ff4c-883c-1628b1da6803",
-          "name": "https://localhost:9443/web/dataset/save",
-          "request": {
-            "url": "https://localhost:9443/web/dataset/save",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "Origin",
-                "value": "https://localhost:9443",
-                "description": ""
-              },
-              {
-                "key": "User-Agent",
-                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Referer",
-                "value": "https://localhost:9443/demo/",
-                "description": ""
-              },
-              {
-                "key": "Accept-Encoding",
-                "value": "gzip, deflate, br",
-                "description": ""
-              },
-              {
-                "key": "Accept-Language",
-                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
-                "description": ""
-              },
-              {
-                "key": "Cookie",
-                "value": "session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=4799fbb42e52eefb80ac758c9ae3a0caebcc40f3; session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=d8fbb06dc9de92f33fd4facdc03727471f961dad",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"hex_color\":false,\n         \"is_bookable_manager\":false,\n         \"city\":false,\n         \"zip\":false,\n         \"managed_bookable_service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"function\":false,\n         \"phone\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"name\":\"frsedtrr\",\n         \"street\":false,\n         \"service_id\":false,\n         \"cost\":0,\n         \"partner_id\":145,\n         \"openstc_employee_ref\":false,\n         \"is_assignable_to_task\":false,\n         \"email\":false,\n         \"context_tz\":\"Europe/Paris\",\n         \"warehouse_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"login\":\"fdgsgg@gmail.com\",\n         \"mobile\":false,\n         \"signature\":false,\n         \"image\":false\n      },\n      \"model\":\"res.users\",\n      \"id\":104,\n      \"session_id\":\"006899280e8246b6920ce9e5716039d9\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":1\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r364\"\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "017f47bd-85a0-ac50-9113-e9cdb713dde6",
-          "name": "Get user informations copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "postman.setEnvironmentVariable(\"addressId\", jsonData.result.records[0].address_id[0]);",
-                  "postman.setEnvironmentVariable(\"partnerId\", jsonData.result.records[0].partner_id[0]);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get user informations\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
+          "_postman_id": "bb2ba57b-0e29-a639-7203-e73cb6dc9f55",
+          "name": "Get My Tasks",
           "request": {
             "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
@@ -1540,17 +1049,17 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t  \"model\":\"res.users\",\n   \t  \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n      \t [\"id\", \"!=\", false],\n      \t [\"name\", \"!=\", false],\n      \t [\"address_id\", \"!=\", false],\n      \t [\"partner_id\", \"!=\", false],\n         [\"id\", \"=\", {{uid}}]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"email\",\n         \"city\",\n         \"zip\",\n         \"street\",\n         \"phone\",\n         \"mobile\",\n         \"address_id\",\n         \"partner_id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"domain\":[\n         [\n            \"user_id\",\n            \"in\",\n            [\n               63\n            ]\n         ]\n      ],\n      \"sort\":\"id DESC\",\n      \"limit\":20,\n      \"offset\":0,\n      \"fields\":[\n         \"actions\",\n         \"agent_or_team_name\",\n         \"category_id\",\n         \"consumable_ask_ids\",\n         \"consumable_asks\",\n         \"consumable_request_id\",\n         \"date_start\",\n         \"equipment_id\",\n         \"effective_hours\",\n         \"id\",\n         \"swif_id\",\n         \"ask_id\",\n         \"name\",\n         \"partner_id\",\n         \"planned_hours\",\n         \"project_id\",\n         \"can_read_project\",\n         \"service_id\",\n         \"site1\",\n         \"state\",\n         \"team_id\",\n         \"user_id\",\n         \"cost\",\n         \"hr_cost\",\n         \"equipment_cost\",\n         \"consumable_cost\",\n         \"equipment_ids\",\n         \"attachment_count\",\n         \"mail_message_count\",\n         \"external\"\n      ],\n      \"model\":\"project.task\",\n      \"session_id\":\"{{sessionId}}\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":63\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r4\"\n}"
             },
             "description": ""
           },
           "response": []
         },
         {
-          "_postman_id": "8146825f-3b67-9930-2b7b-dab280f425f6",
-          "name": "CREATE QUI MARCHE",
+          "_postman_id": "10391312-6bff-71d2-4338-b7d1d7dff49a",
+          "name": "Get Site",
           "request": {
-            "url": "https://localhost:9443/web/dataset/create",
+            "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
             "header": [
               {
@@ -1561,17 +1070,17 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"context_tz\":\"Europe/Paris\",\n         \"hex_color\":\"#A05E5D\",\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"fredsfde\",\n         \"name\":\"efaezfaetf\",\n         \"partner_id\":145,\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  28,\n                  89\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n\n\"fields\":[\"actions\",\"active\",\"access_manager_ids\",\"accommodation_capacity\",\"actions\",\"alarm\",\"amiante\",\"block_booking\",\"breadcrumb_names\",\"buyer_contact\",\"cadastre_commune\",\"cadastre_feuille\",\"cadastre_is_bati\",\"cadastre_is_nonbati\",\"cadastre_section\",\"cadastre_id\",\"code\",\"complete_name\",\"copro_id\",\"date_start\",\"date_end\",\"erp\",\"erp_category\",\"external_booking\",\"external_bookable_notice\",\"height\",\"igh\",\"internal_booking\",\"internal_bookable_notice\",\"is_copro\",\"length\",\"length_amort\",\"max_bookable_qty\",\"name\",\"notary_fees\",\"openresa_property_manager_id\",\"osm_relation_id\",\"partner_type_bookable_ids\",\"pmr\",\"postal_address\",\"pprn\",\"pprm\",\"pprt\",\"ppri\",\"pricelist_id\",\"product_id\",\"property_ids\",\"purchase_buyer_id\",\"purchase_record_name\",\"purchase_date\",\"purchase_date_avis_des_domaines\",\"purchase_date_deliberation\",\"purchase_description\",\"purchase_mode\",\"purchase_notary_fees\",\"purchase_notary_id\",\"purchase_price\",\"purchase_price_from_domaines\",\"purchase_seller_id\",\"record_name\",\"sale_record_name\",\"sale_mode\",\"sale_description\",\"sale_price\",\"sale_notary_fees\",\"sale_price_from_domaines\",\"sale_date\",\"sale_date_avis_des_domaines\",\"sale_date_deliberation\",\"sale_buyer_id\",\"sale_seller_id\",\"sale_notary_id\",\"service_ids\",\"service_names\",\"service_bookable_ids\",\"site_parent_id\",\"surface\",\"surface_plancher\",\"syndic_id\",\"type_id\",\"type_ids\",\"width\",\"color\",\"street\",\"street2\",\"city\",\"zip\",\"phone\"],\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.site\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
           "response": []
         },
         {
-          "_postman_id": "ef61b1c7-8090-9b71-c257-0a016374b187",
-          "name": "CREATE SUR MOBILE",
+          "_postman_id": "96901b87-012c-4e7e-f361-7f9580f69ecd",
+          "name": "Get Equipement",
           "request": {
-            "url": "https://localhost:9443/web/dataset/create",
+            "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
             "header": [
               {
@@ -1582,7 +1091,28 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"city\":\"gjvdfcc\",\n         \"context_tz\":\"Europe/Paris\",\n         \"email\":\"fdggg@gdf.com\",\n         \"groups_id\":[\n            6,\n            0,\n            [\n               28,\n               89\n            ]\n         ],\n         \"hex_color\":\"#A05E5D\",\n         \"image\":false,\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"login\":\"fdggg@gdf.com\",\n         \"name\":\"fedghgx\",\n         \"new_password\":\"azertyuiop\",\n         \"partner_id\":145,\n         \"phone\":\"0000000000\",\n         \"service_id\":false,\n         \"service_ids\":[\n            6,\n            0,\n            [\n\n            ]\n         ],\n         \"street\":\"fhcfg\",\n         \"zip\":\"44555\"\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t\n      \"fields\":[\"active\",\"actions\",\"attachment_count\",\"block_booking\",\"built_date\",\"categ_id\",\"code\",\"color\",\"commercial_vehicle\",\"default_code\",\"energy_type\",\"external_bookable_notice\",\"external_booking\",\"fat_material\",\"hour_price\",\"immat\",\"internal_bookable_notice\",\"internal_booking\",\"internal_use\",\"km\",\"length_amort\",\"list_price\",\"marque\",\"maintenance_service_ids\",\"name\",\"openresa_property_manager_id\",\"openstc_reservable\",\"parent_id\",\"partner_type_bookable_ids\",\"product_product_id\",\"purchase_date\",\"purchase_price\",\"qty_available\",\"service_ids\",\"service_bookable_ids\",\"small_material\",\"supplier_id\",\"technical_vehicle\",\"time\",\"warranty_date\",\"new_qty\",\"site_id\",\"state\",\"life_duration\",\"date_start\",\"date_end\",\"resa_service_manager_ids\",\"resa_user_manager_ids\",\"serial_number\",\"optional_product_ids\",\"option_of_product_ids\"],\n      \"sort\":\"name ASC\",\n      \"limit\":100,\n      \"offset\":0,\n      \"model\":\"openstc.equipment\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "eb6cf567-25a2-f442-a82b-0853eed4f4f3",
+          "name": "Get Image of Site",
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"fields\":[\"actions\",\"id\",\"datas_fname\",\"create_uid\",\"create_date\",\"name\"],\"domain\":[[\"res_model\",\"=\",\"openstc.site\"],[\"res_id\",\"=\",49]],\"model\":\"ir.attachment\",\"session_id\":\"89414787d73a49efa2b0626135dc8d54\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":63},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r31\"}"
             },
             "description": ""
           },
@@ -1707,14 +1237,21 @@
                   {
                     "key": "Content-Type",
                     "value": "application/json;charset=UTF-8",
-                    "description": ""
+                    "enabled": true,
+                    "description": "The mime type of this content",
+                    "warning": ""
+                  },
+                  {
+                    "key": "Content-Length",
+                    "value": "",
+                    "enabled": false,
+                    "warning": "Restricted Header (use Postman Interceptor)"
                   }
                 ],
                 "body": {
                   "mode": "raw",
                   "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{login}}\",\r\n      \"password\": \"{{password}}\"\r\n   }\r\n}"
-                },
-                "description": ""
+                }
               },
               "status": "OK",
               "code": 200,
@@ -2416,6 +1953,530 @@
             "body": {
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"login\":\"{{accountNotConnectedLogin}}\",\n         \"new_password\":\"{{accountNotConnectedPassword}}\",\n         \"name\":\"{{accountNotConnectedName}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{res.groups}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "adc9b71f-9b9d-4195-3dfc-458a04ef5e57",
+      "name": "Sandbox",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "ea4182b8-904b-e058-c560-92e6e060716c",
+          "name": "Sandbox",
+          "request": {
+            "url": "{{server}}/web/dataset/save",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/javascript, */*; q=0.01",
+                "description": ""
+              },
+              {
+                "key": "Origin",
+                "value": "http://localhost:8069",
+                "description": ""
+              },
+              {
+                "key": "X-Requested-With",
+                "value": "XMLHttpRequest",
+                "description": ""
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              },
+              {
+                "key": "Referer",
+                "value": "http://localhost:8069/web/webclient/home",
+                "description": ""
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "description": ""
+              },
+              {
+                "key": "Accept-Language",
+                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
+                "description": ""
+              },
+              {
+                "key": "Cookie",
+                "value": "session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=33b9b2e10a3926821b7289fcd3a096b7575ebe73; session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=4799fbb42e52eefb80ac758c9ae3a0caebcc40f3",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "\nRESSOURCES HUMAINES EMPLOYE\n\n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"sel_groups_3\":3,\"sel_groups_25\":false},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r3289\"}\n\n\nOPENBASE EMPLOYEE\n\n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"sel_groups_25\":25},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r1330\"}\n\n\nADMINISTRATION DROITS D ACCES\n\n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"sel_groups_1_2\":1},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r2586\"}\n\nOPENSTC - REQUESTS - CRUD - READ\n\n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"in_group_61\":true},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r2605\"}\n\nOPENSTC - CONFIGURATION - MENU DEMANDE INTERVENTION CATEGORIES\n \n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"in_group_177\":true},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r2624\"}\n\nOPENSTC - CONFIGURATION - CREATE DEMANDE INTERVENTION CATEGORIES\n\n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"in_group_178\":true},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r2643\"}\n\nAUTRE - GESTIONNAIRE DES PARTENAIRES\n\n{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"model\":\"res.users\",\"id\":113,\"data\":{\"in_group_9\":true},\"context\":{\"lang\":\"fr_FR\",\"project_id\":false,\"tz\":\"Europe/Paris\",\"section_id\":false,\"uid\":1},\"session_id\":\"d5b809773557405f99a4bbb33eae307a\"},\"id\":\"r2681\"}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "a2139002-970b-64a4-03e9-1d5b7d3c5eda",
+          "name": "Get inGroupIds",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"organisationId\", jsonData.result.records[0].id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/get",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\",\n      \"ids\":[113],\n      \"fields\":[\"in_group_120\",\"in_group_126\",\"sel_groups_181\",\"in_group_125\",\"sel_groups_3\",\"company_id\",\"company_ids\",\"in_group_69\",\"contact_id\",\"in_group_65\",\"in_group_64\",\"in_group_67\",\"in_group_66\",\"in_group_61\",\"in_group_60\",\"in_group_63\",\"in_group_62\",\"in_group_138\",\"in_group_139\",\"image_medium\",\"in_group_130\",\"in_group_131\",\"in_group_132\",\"in_group_133\",\"in_group_134\",\"in_group_135\",\"in_group_136\",\"in_group_137\",\"in_group_208\",\"in_group_209\",\"in_group_202\",\"in_group_203\",\"in_group_200\",\"in_group_201\",\"in_group_206\",\"in_group_207\",\"in_group_204\",\"in_group_177\",\"in_group_173\",\"in_group_94\",\"service_id\",\"active\",\"in_group_116\",\"in_group_117\",\"in_group_114\",\"in_group_115\",\"in_group_112\",\"in_group_113\",\"in_group_110\",\"in_group_111\",\"in_group_205\",\"in_group_118\",\"in_group_119\",\"login\",\"sel_groups_18_19\",\"in_group_189\",\"in_group_188\",\"in_group_180\",\"in_group_183\",\"in_group_182\",\"in_group_184\",\"in_group_187\",\"in_group_186\",\"in_group_28\",\"in_group_23\",\"in_group_24\",\"in_group_27\",\"menu_tips\",\"sel_groups_25\",\"sel_groups_29\",\"sel_groups_13_14\",\"in_group_240\",\"in_group_241\",\"in_group_98\",\"in_group_99\",\"in_group_95\",\"in_group_96\",\"in_group_97\",\"in_group_90\",\"in_group_91\",\"in_group_92\",\"in_group_93\",\"id\",\"new_password\",\"in_group_167\",\"openstc_accreditation_ids\",\"in_group_165\",\"in_group_164\",\"in_group_163\",\"in_group_162\",\"in_group_161\",\"context_project_id\",\"in_group_169\",\"in_group_168\",\"in_group_199\",\"in_group_194\",\"in_group_192\",\"user_email\",\"in_group_68\",\"in_group_58\",\"in_group_59\",\"in_group_50\",\"in_group_51\",\"in_group_52\",\"in_group_53\",\"in_group_54\",\"in_group_55\",\"in_group_56\",\"in_group_57\",\"in_group_219\",\"in_group_149\",\"in_group_148\",\"in_group_166\",\"in_group_145\",\"in_group_144\",\"in_group_147\",\"in_group_146\",\"in_group_141\",\"in_group_140\",\"in_group_143\",\"in_group_142\",\"sel_groups_242\",\"in_group_239\",\"in_group_238\",\"in_group_237\",\"in_group_236\",\"in_group_235\",\"in_group_234\",\"in_group_233\",\"in_group_232\",\"in_group_231\",\"in_group_230\",\"menu_id\",\"in_group_160\",\"sel_groups_20_21\",\"context_lang\",\"name\",\"openstc_license_ids\",\"in_group_72\",\"context_section_id\",\"in_group_70\",\"in_group_71\",\"sel_groups_7_22_8\",\"in_group_77\",\"in_group_74\",\"in_group_75\",\"in_group_78\",\"in_group_79\",\"in_group_128\",\"in_group_9\",\"in_group_6\",\"in_group_122\",\"in_group_4\",\"in_group_5\",\"in_group_127\",\"in_group_124\",\"in_group_215\",\"in_group_214\",\"in_group_217\",\"in_group_216\",\"in_group_211\",\"in_group_210\",\"in_group_213\",\"in_group_212\",\"in_group_218\",\"action_id\",\"in_group_100\",\"in_group_76\",\"in_group_198\",\"in_group_108\",\"in_group_196\",\"in_group_197\",\"in_group_195\",\"in_group_193\",\"in_group_190\",\"in_group_191\",\"image\",\"in_group_26\",\"in_group_10\",\"in_group_11\",\"in_group_12\",\"in_group_101\",\"in_group_103\",\"in_group_102\",\"in_group_105\",\"in_group_104\",\"in_group_107\",\"in_group_106\",\"in_group_109\",\"in_group_89\",\"in_group_88\",\"in_group_87\",\"in_group_86\",\"in_group_85\",\"in_group_84\",\"signature\",\"in_group_82\",\"in_group_81\",\"in_group_80\",\"service_ids\",\"in_group_73\",\"in_group_83\",\"image_small\",\"in_group_174\",\"in_group_175\",\"in_group_176\",\"in_group_170\",\"in_group_171\",\"in_group_172\",\"in_group_178\",\"in_group_179\",\"sel_groups_1_2\",\"in_group_38\",\"in_group_39\",\"in_group_36\",\"in_group_37\",\"in_group_34\",\"in_group_35\",\"in_group_32\",\"in_group_33\",\"in_group_30\",\"in_group_31\",\"sel_groups_15_16_17\",\"sel_groups_226\",\"in_group_153\",\"in_group_228\",\"in_group_229\",\"context_tz\",\"in_group_155\",\"in_group_129\",\"in_group_224\",\"in_group_49\",\"in_group_48\",\"in_group_185\",\"in_group_43\",\"in_group_42\",\"in_group_41\",\"in_group_40\",\"in_group_47\",\"in_group_46\",\"in_group_45\",\"in_group_44\",\"in_group_227\",\"in_group_221\",\"in_group_152\",\"in_group_123\",\"in_group_150\",\"in_group_151\",\"in_group_156\",\"in_group_157\",\"in_group_154\",\"in_group_225\",\"in_group_158\",\"in_group_159\",\"in_group_220\",\"in_group_121\",\"in_group_222\",\"in_group_223\"]\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "79b50152-92c8-fd02-ac50-f708d0f67a98",
+          "name": "Create User on Particuliers Commune copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Create User on Particuliers Commune\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var userLogin = \"\";",
+                  "var userPassword = \"\";",
+                  "var userName = \"\";",
+                  "",
+                  "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+                  "",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userLogin += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userPassword += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userName += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "",
+                  "postman.setEnvironmentVariable(\"userLogin\", userLogin);",
+                  "postman.setEnvironmentVariable(\"userPassword\", userPassword);",
+                  "postman.setEnvironmentVariable(\"userName\", userName);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{ \n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n             ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"{{userLogin}}\",\n         \"new_password\":\"{{userPassword}}\",\n         \"name\":\"{{userName}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{groupIdDemandeur}},\n                  {{groupIdDemandeurExterne}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "cbfa916c-ff0c-36e1-b727-5b4888144c38",
+          "name": "Create User on Particuliers Commune REAL",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Create User on Particuliers Commune\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var userLogin = \"\";",
+                  "var userPassword = \"\";",
+                  "var userName = \"\";",
+                  "",
+                  "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+                  "",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userLogin += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userPassword += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userName += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "",
+                  "postman.setEnvironmentVariable(\"userLogin\", userLogin);",
+                  "postman.setEnvironmentVariable(\"userPassword\", userPassword);",
+                  "postman.setEnvironmentVariable(\"userName\", userName);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"groups_id\":[\n            6,\n            0,\n            [\n               28,\n               89\n            ]\n         ],\n         \"image\":false,\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"login\":\"fdgsgg@gmail.com\",\n         \"name\":\"frsedt\",\n         \"new_password\":\"12345678\",\n         \"partner_id\":145,\n         \"service_id\":false,\n         \"service_ids\":[\n            6,\n            0,\n            [\n\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3dce0a48-b943-a1d2-0e8d-2a03aab8af30",
+          "name": "https://localhost:9443/web/dataset/save",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/save",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Origin",
+                "value": "https://localhost:9443",
+                "description": ""
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Referer",
+                "value": "https://localhost:9443/demo/",
+                "description": ""
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "description": ""
+              },
+              {
+                "key": "Accept-Language",
+                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
+                "description": ""
+              },
+              {
+                "key": "Cookie",
+                "value": "session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=4799fbb42e52eefb80ac758c9ae3a0caebcc40f3; session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=d8fbb06dc9de92f33fd4facdc03727471f961dad",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  28\n               ]\n            ]\n         ],\n         \"hex_color\":false,\n         \"is_bookable_manager\":false,\n         \"city\":false,\n         \"zip\":false,\n         \"managed_bookable_service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"function\":false,\n         \"phone\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"name\":\"fredt\",\n         \"street\":false,\n         \"service_id\":false,\n         \"cost\":0,\n         \"partner_id\":145,\n         \"openstc_employee_ref\":false,\n         \"is_assignable_to_task\":false,\n         \"email\":false,\n         \"context_tz\":\"Europe/Paris\",\n         \"warehouse_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"login\":\"fdggg@gmail.com\",\n         \"mobile\":false,\n         \"signature\":false,\n         \"image\":false\n      },\n      \"model\":\"res.users\",\n      \"id\":100,\n      \"session_id\":\"006899280e8246b6920ce9e5716039d9\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":1\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r354\"\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "169cb6fe-7085-ff4c-883c-1628b1da6803",
+          "name": "https://localhost:9443/web/dataset/save",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/save",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Origin",
+                "value": "https://localhost:9443",
+                "description": ""
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Referer",
+                "value": "https://localhost:9443/demo/",
+                "description": ""
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "description": ""
+              },
+              {
+                "key": "Accept-Language",
+                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
+                "description": ""
+              },
+              {
+                "key": "Cookie",
+                "value": "session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=4799fbb42e52eefb80ac758c9ae3a0caebcc40f3; session0|session_id=%22d5b809773557405f99a4bbb33eae307a%22; sessionid=d8fbb06dc9de92f33fd4facdc03727471f961dad",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"hex_color\":false,\n         \"is_bookable_manager\":false,\n         \"city\":false,\n         \"zip\":false,\n         \"managed_bookable_service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"function\":false,\n         \"phone\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"name\":\"frsedtrr\",\n         \"street\":false,\n         \"service_id\":false,\n         \"cost\":0,\n         \"partner_id\":145,\n         \"openstc_employee_ref\":false,\n         \"is_assignable_to_task\":false,\n         \"email\":false,\n         \"context_tz\":\"Europe/Paris\",\n         \"warehouse_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"login\":\"fdgsgg@gmail.com\",\n         \"mobile\":false,\n         \"signature\":false,\n         \"image\":false\n      },\n      \"model\":\"res.users\",\n      \"id\":104,\n      \"session_id\":\"006899280e8246b6920ce9e5716039d9\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":1\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r364\"\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "017f47bd-85a0-ac50-9113-e9cdb713dde6",
+          "name": "Get user informations copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "postman.setEnvironmentVariable(\"addressId\", jsonData.result.records[0].address_id[0]);",
+                  "postman.setEnvironmentVariable(\"partnerId\", jsonData.result.records[0].partner_id[0]);",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get user informations\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t  \"model\":\"res.users\",\n   \t  \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n      \t [\"id\", \"!=\", false],\n      \t [\"name\", \"!=\", false],\n      \t [\"address_id\", \"!=\", false],\n      \t [\"partner_id\", \"!=\", false],\n         [\"id\", \"=\", {{uid}}]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"email\",\n         \"city\",\n         \"zip\",\n         \"street\",\n         \"phone\",\n         \"mobile\",\n         \"address_id\",\n         \"partner_id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8146825f-3b67-9930-2b7b-dab280f425f6",
+          "name": "CREATE QUI MARCHE",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"context_tz\":\"Europe/Paris\",\n         \"hex_color\":\"#A05E5D\",\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"fredsfde\",\n         \"name\":\"efaezfaetf\",\n         \"partner_id\":145,\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  28,\n                  89\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ef61b1c7-8090-9b71-c257-0a016374b187",
+          "name": "CREATE SUR MOBILE",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"city\":\"gjvdfcc\",\n         \"context_tz\":\"Europe/Paris\",\n         \"email\":\"fdggg@gdf.com\",\n         \"groups_id\":[\n            6,\n            0,\n            [\n               28,\n               89\n            ]\n         ],\n         \"hex_color\":\"#A05E5D\",\n         \"image\":false,\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"login\":\"fdggg@gdf.com\",\n         \"name\":\"fedghgx\",\n         \"new_password\":\"azertyuiop\",\n         \"partner_id\":145,\n         \"phone\":\"0000000000\",\n         \"service_id\":false,\n         \"service_ids\":[\n            6,\n            0,\n            [\n\n            ]\n         ],\n         \"street\":\"fhcfg\",\n         \"zip\":\"44555\"\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "2192ba9e-e6d7-ff02-97be-e72323a27666",
+          "name": "Search_read All Demandes d'intervention copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Search_read All Demandes d'intervention\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n  \t  \"model\": \"openstc.ask\",\r\n  \t  \"sort\": \"id DESC\",\r\n      \"limit\": false,\r\n      \"offset\": false,\r\n      \"domain\":[\r\n      \t [\"id\", \"!=\", false],\r\n         [\"name\", \"!=\", false],\r\n         [\"geo_point\", \"!=\", false],\r\n         [\"description\", \"!=\", false],\r\n         [\"type_id\", \"!=\", false],\r\n         [\"create_uid\", \"!=\", false],\r\n         [\"create_date\", \"!=\", false],\r\n         [\"partner_address\", \"!=\", false],\r\n         [\"partner_id\", \"!=\", false],\r\n         [\"state\", \"!=\", false]\r\n      ],\r\n      \"fields\":[\r\n         \"id\",\r\n         \"name\",\r\n         \"geo_point\",\r\n         \"description\",\r\n         \"type_id\",\r\n         \"create_uid\",\r\n         \"create_date\",\r\n         \"partner_address\",\r\n         \"partner_id\",\r\n         \"state\"\r\n      ],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
             },
             "description": ""
           },
