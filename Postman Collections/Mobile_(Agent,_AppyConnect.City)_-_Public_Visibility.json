@@ -2411,6 +2411,27 @@
               "body": "{\"jsonrpc\": \"2.0\", \"id\": null, \"result\": {\"uid\": 82, \"db\": \"demo\", \"session_id\": \"a71fcc8234a34bfb9571f8c39ff7ba00\", \"openerp_entreprise\": false, \"context\": {\"lang\": \"fr_FR\", \"project_id\": false, \"tz\": \"Europe/Paris\", \"section_id\": false, \"uid\": 82}, \"login\": \"dstdst\"}}"
             }
           ]
+        },
+        {
+          "_postman_id": "836eff1e-d8fb-6998-2039-4ba8a6d0afa9",
+          "name": "Create category",
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"openstc.ask.category\",\n      \"data\":{\n         \"name\":\"{{categoryName}}\"\n      },\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
@@ -3676,27 +3697,6 @@
           "body": "{\"jsonrpc\": \"2.0\", \"id\": null, \"result\": {\"uid\": 82, \"db\": \"demo\", \"session_id\": \"a71fcc8234a34bfb9571f8c39ff7ba00\", \"openerp_entreprise\": false, \"context\": {\"lang\": \"fr_FR\", \"project_id\": false, \"tz\": \"Europe/Paris\", \"section_id\": false, \"uid\": 82}, \"login\": \"dstdst\"}}"
         }
       ]
-    },
-    {
-      "_postman_id": "836eff1e-d8fb-6998-2039-4ba8a6d0afa9",
-      "name": "Create category",
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"openstc.ask.category\",\n      \"data\":{\n         \"name\":\"{{categoryName}}\"\n      },\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
-        },
-        "description": ""
-      },
-      "response": []
     }
   ]
 }
