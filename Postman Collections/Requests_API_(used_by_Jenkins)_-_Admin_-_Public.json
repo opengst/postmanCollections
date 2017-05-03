@@ -8,44 +8,104 @@
   },
   "item": [
     {
-      "_postman_id": "619fbd1c-867f-b07b-0af3-55596d253bb2",
-      "name": "Authenticate",
+      "_postman_id": "c8c8acc2-4c40-0775-90e3-34f82119c790",
+      "name": "CRUD Site",
       "description": "",
       "item": [
         {
-          "_postman_id": "874376a2-aef0-8d4e-d451-7fa2fa8d9453",
-          "name": "authenticate",
+          "_postman_id": "4d21dfcc-e763-ac97-ba38-ae052452fe89",
+          "name": "Create Site",
           "event": [
             {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response time is less than 1500ms\"] = responseTime < 1500;",
                   "var jsonData = JSON.parse(responseBody);",
                   "",
-                  "//Check if the content type is json",
-                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
-                  "if (contentTypeHeader) {",
-                  "    tests[\"Content-Type is application/json\"] = ",
-                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
-                  "}",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
-                  "tests[\"Authenticate Bdd\"] = jsonData.result.db === 'test_api';",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Return site id\"] = jsonData.result.result >0;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"osm_zoom\":false,\n            \"osm_type\":false,\n            \"osm_id\":false,\n            \"geometry\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"block_booking\":false,\n            \"product_image\":false,\n            \"name\":\"CreateTest\",\n            \"type_id\":80\n        },\n        \"model\":\"openstc.site\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r156\"\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b827ad8f-5a33-e5b1-62a7-a14b5528d4c0",
+          "name": "Update Site",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
                   "",
-                  "if (jsonData.result.db === 'test_api'){",
-                  "    if(jsonData.result.login === \"admin\")",
-                  "        tests[\"Authenticate as admin\"] = jsonData.result.uid === 1;",
-                  "    ",
-                  "    if(jsonData.result.login === \"cdupont\")",
-                  "        tests[\"Authenticate as demandeur externe\"] = jsonData.result.uid === 88;",
-                  "    ",
-                  "    if(jsonData.result.login === \"dst\")",
-                  "        tests[\"Authenticate as gestionnaire\"] = jsonData.result.uid === 104;",
-                  "}",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Update success\"]= jsonData.result.result ===true;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/save",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"code\":false,\n            \"type_id\":68,\n            \"color\":\"#390A10\",\n            \"surface\":0,\n            \"active\":true,\n            \"block_booking\":false,\n            \"osm_id\":false,\n            \"resa_user_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"max_bookable_qty\":0,\n            \"site_parent_id\":313,\n            \"width\":0,\n            \"resa_service_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"length\":0,\n            \"long\":0,\n            \"internal_bookable_notice\":0,\n            \"geo_point\":false,\n            \"partner_type_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"service_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"description_sale\":false,\n            \"osm_zoom\":false,\n            \"openresa_property_manager_id\":1,\n            \"lat\":0,\n            \"name\":\"1er Ã©tage test\",\n            \"service_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"product_id\":648,\n            \"optional_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"geometry\":false,\n            \"osm_type\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"option_of_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"external_bookable_notice\":0,\n            \"accommodation_capacity\":0,\n            \"product_image\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1151,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r199\"\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "31717783-13d9-ac1d-81ef-ba8a237f4358",
+          "name": "Search Read Site",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
                   "",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "//Demandeur externe can only read the site",
+                  "tests[\"Check site exist\"] = jsonData.result.records.length > 0;",
                   "",
                   ""
                 ]
@@ -53,7 +113,53 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/session/authenticate",
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "//X-DevTools-Emulate-Network-Conditions-Client-Id",
+                "value": "f55002dd-9cf3-4ebf-ba56-72718a383a86",
+                "description": "",
+                "disabled": true
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"id\":\"r161\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"sort\":\"name ASC\",\n        \"limit\":20,\n        \"offset\":0,\n        \"model\":\"openstc.site\",\n        \"fields\":[\n            \"active\",\n            \"actions\",\n            \"attachment_count\",\n            \"block_booking\",\n            \"code\",\n            \"description_sale\",\n            \"external_booking\",\n            \"external_bookable_notice\",\n            \"internal_booking\",\n            \"internal_bookable_notice\",\n            \"lat\",\n            \"long\",\n            \"length\",\n            \"max_bookable_qty\",\n            \"name\",\n            \"openresa_property_manager_id\",\n            \"partner_type_bookable_ids\",\n            \"pricelist_id\",\n            \"product_id\",\n            \"service_ids\",\n            \"service_names\",\n            \"service_bookable_ids\",\n            \"site_parent_id\",\n            \"surface\",\n            \"type_id\",\n            \"width\",\n            \"color\",\n            \"resa_service_manager_ids\",\n            \"resa_user_manager_ids\",\n            \"optional_product_ids\",\n            \"option_of_product_ids\",\n            \"accomodation_capacity\",\n            \"phone\",\n            \"geometry\",\n            \"geo_point\",\n            \"osm_type\",\n            \"osm_id\",\n            \"osm_zoom\"\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "e6318c29-408b-3887-4dcd-b596535f988b",
+          "name": "search_read Site \"openstc.site\"",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Site openSTC exist\"] = jsonData.result.length >0;",
+                  "tests[\"Check id =\"+jsonData.id] = jsonData.id ===\"r5\";",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
             "header": [
               {
@@ -69,22 +175,15 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
+              "raw": "{\r\n  \"id\": \"r5\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.site\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
             },
             "description": ""
           },
           "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "6f6687de-6fea-5a6f-e684-52855f86b4e3",
-      "name": "CRG Users",
-      "description": "",
-      "item": [
+        },
         {
-          "_postman_id": "e24b0325-ec42-c177-cb40-315af5b3bbd1",
-          "name": "get 'res.users'",
+          "_postman_id": "5cc54ee1-8447-17c2-8461-12ee252430b1",
+          "name": "get Site \"openstc.site\"",
           "event": [
             {
               "listen": "test",
@@ -93,67 +192,9 @@
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"get id\"] = jsonData.id === 'r2';",
-                  "tests[\"get action id\"] = jsonData.result[0].action_id[0] ===106;",
+                  "tests[\"Site openSTC exist\"] = jsonData.result.length >0;",
                   "",
-                  "//Tests below allow you to test user's bdd ",
-                  "if(jsonData.result[0].isManager ===true)",
-                  "    tests[\"get Users Bdd as Admin\"] = jsonData.result[0].user_id[1]==='Administrator';",
-                  "else if(jsonData.result[0].is_bookable_manager ===true)",
-                  "    tests[\"get Users Bdd as Gestionnaire\"] = jsonData.result[0].user_id[1]==='dst 02'; //Gestionnaire",
-                  "else",
-                  "    tests[\"get Users Bdd as Demandeur externe\"] = jsonData.result[0].user_id[1]==='DUPONT Chantal';//Demandeur externe",
-                  "",
-                  "",
-                  "",
-                  "//Get current Group for user",
-                  "if(jsonData.result[0].is_bookable_manager ===true){",
-                  "    tests[\"get current Group\"] = jsonData.result[0].current_group[1] ==='Gestionnaire des demandes';",
-                  "}",
-                  "else{",
-                  "    tests[\"get current Group\"] = jsonData.result[0].current_group[1] ==='Demandeur';",
-                  "}",
-                  "",
-                  "if(jsonData.result[0].user_id[1]==='Administrator'){",
-                  "    tests[\"get achat Group\"] = jsonData.result[0].achat_group[1] ==='Demandeur';",
-                  "}else{",
-                  "    tests[\"get achat Group\"] = jsonData.result[0].achat_group === false;",
-                  "}",
-                  "",
-                  "if((jsonData.result[0].isManager === false)&& (jsonData.result[0].is_bookable_manager ===true))",
-                  "{",
-                  "    tests[\"get openresa Group\"] = jsonData.result[0].openresa_group[1] === 'Gestionnaire';",
-                  "}",
-                  "",
-                  "if(jsonData.result[0].isManager === true){",
-                  "tests[\"get patrimoine Group\"] = jsonData.result[0].patrimoine_group[1] === 'Superviseur';",
-                  "tests[\"get user_id\"] = jsonData.result[0].user_id[1] === 'Administrator';",
-                  "    ",
-                  "}",
-                  "",
-                  "// When the person's right is Adminitrator return true, otherwise it will return false",
-                  "if(jsonData.result[0].user_id[1]==='Administrator'){",
-                  "    tests[\"Check Manager right\"] = jsonData.result[0].isManager ===true;    ",
-                  "}else{",
-                  "    tests[\"Check Manager right\"] = jsonData.result[0].isManager ===false;",
-                  "}",
-                  "",
-                  "// When the person's right is Adminitrator or  Gestionnaire return true, otherwise it will return false",
-                  "if(jsonData.result[0].user_id[1]==='Administrator'||jsonData.result[0].user_id[1]==='dst 02'){",
-                  "    tests[\"Check Bookable_Manager\"]= jsonData.result[0].is_bookable_manager ===true;",
-                  "    ",
-                  "}",
-                  "else{",
-                  "    tests[\"Check Bookable_Manager\"]= jsonData.result[0].is_bookable_manager ===false;",
-                  "}",
-                  "",
-                  "// When the person's right is Adminitrator or  Gestionnaire return true, otherwise it will return false",
-                  "if(jsonData.result[0].user_id[1]==='Administrator'||jsonData.result[0].user_id[1]==='dst 02'){",
-                  "    tests[\"Check ResaManager\"] = jsonData.result[0].isResaManager=== true;",
-                  "}",
-                  "else{",
-                  "    tests[\"Check ResaManager\"] = jsonData.result[0].isResaManager=== false;",
-                  "}"
+                  ""
                 ]
               }
             }
@@ -175,15 +216,15 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"res.users\",\r\n    \"ids\": [{{uid}}],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
+              "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"openstc.site\",\r\n    \"ids\": [\r\n      1\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
             },
-            "description": "pour connaitre des infos à renseigner dans la demande"
+            "description": ""
           },
           "response": []
         },
         {
-          "_postman_id": "d7b73116-3247-1fa5-e584-10b50bc02f2f",
-          "name": "search_read users",
+          "_postman_id": "496cbe72-c8fb-c7aa-af14-7b349f84372d",
+          "name": "Deactivate Site",
           "event": [
             {
               "listen": "test",
@@ -191,55 +232,15 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
+                  "",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response time is less than 2000ms\"] = responseTime < 2000;",
-                  "postman.setEnvironmentVariable(\"userNumber\", jsonData.result.length);",
-                  "//var increment = postman.setEnvironmentVariable(\"userNumber\", jsonData.result.length++);",
-                  "tests[\"Find users\"] = jsonData.result.ids.length != 1;",
-                  "",
-                  "if(jsonData.result.records[1].name === \"Administrator\"){",
-                  "     ",
-                  "        tests[\"Check admin isResaManager\"] = jsonData.result.records[1].isResaManager===true;",
-                  "        tests[\"Check admin isDST\"]= jsonData.result.records[1].isDST === true;",
-                  "        tests[\"Check admin is_bookable_manager\"] =jsonData.result.records[1].is_bookable_manager=== true;",
-                  "        tests[\"Admin's Role in openresa_group\"] = jsonData.result.records[1].openresa_group[1] ===\"Demandeur interne\";",
-                  "        tests[\"Check admin isManager\"] = jsonData.result.records[1].isManager === true;",
-                  "    }",
-                  "    ",
-                  "if(jsonData.result.records[13].name === \"dst\"){",
-                  "        tests[\"Check gestionnaire is_bookable_manager\"] =jsonData.result.records[13].is_bookable_manager=== true;",
-                  "        tests[\"Check gestionnaire isResaManager\"] = jsonData.result.records[13].isResaManager===true;",
-                  "        tests[\"Check gestionnaire isDST\"]= jsonData.result.records[13].isDST === true;",
-                  "        tests[\"gestionnaire's role in openresa_group\"] = jsonData.result.records[13].openresa_group[1] ===\"Gestionnaire\";",
-                  "        tests[\"Check gestionnaire isManager\"] = jsonData.result.records[13].isManager===true;",
-                  "    }",
-                  "    ",
-                  "if(jsonData.result.records[15].name === \"DUPONT Chantal\"){",
-                  "        tests[\"Check Demandeur is_bookable_manager\"] =jsonData.result.records[15].is_bookable_manager=== false;",
-                  "        tests[\"Check Demandeur isResaManager\"] = jsonData.result.records[15].isResaManager===false;",
-                  "",
-                  "        tests[\"Check Demandeur isManager\"] = jsonData.result.records[15].isManager===false;",
-                  "    }",
-                  "",
-                  "",
-                  "//Check if the content type is json",
-                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
-                  "if (contentTypeHeader) {",
-                  "    tests[\"Content-Type is application/json\"] = ",
-                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
-                  "}",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "",
-                  ""
+                  "tests[\"Deactivate success\"] = jsonData.result.result ===true;"
                 ]
               }
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/search_read",
+            "url": "{{server}}/web/dataset/save",
             "method": "POST",
             "header": [
               {
@@ -249,146 +250,13 @@
               },
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"call\",\n\t\"params\": {\n\t\t\"sort\": \"name ASC\",\n\t\t\"limit\": 20,\n\t\t\"offset\": 0,\n\t\t\"model\": \"res.users\",\n\t\t\"fields\": [\n\t\t\t\"achat_group\",\n\t\t\t\"actions\",\n\t\t\t\"active\",\n\t\t\t\"access_rights\",\n\t\t\t\"address_id\",\n\t\t\t\"city\",\n\t\t\t\"company_id\",\n\t\t\t\"complete_name\",\n\t\t\t\"contact_id\",\n\t\t\t\"context_lang\",\n\t\t\t\"context_tz\",\n\t\t\t\"cost\",\n\t\t\t\"current_group\",\n\t\t\t\"date\",\n\t\t\t\"email\",\n\t\t\t\"fluid_group\",\n\t\t\t\"function\",\n\t\t\t\"groups_id\",\n\t\t\t\"hex_color\",\n\t\t\t\"id\",\n\t\t\t\"is_assignable_to_task\",\n\t\t\t\"is_bookable_manager\",\n\t\t\t\"isDST\",\n\t\t\t\"isManager\",\n\t\t\t\"isResaManager\",\n\t\t\t\"lastname\",\n\t\t\t\"login\",\n\t\t\t\"managed_bookable_site_ids\",\n\t\t\t\"managed_bookable_equipment_ids\",\n\t\t\t\"managed_bookable_service_ids\",\n\t\t\t\"managed_bookables\",\n\t\t\t\"mobile\",\n\t\t\t\"name\",\n\t\t\t\"oauth_uid\",\n\t\t\t\"openresa_group\",\n\t\t\t\"patrimoine_group\",\n\t\t\t\"parcauto_group\",\n\t\t\t\"partner_id\",\n\t\t\t\"phone\",\n\t\t\t\"service_id\",\n\t\t\t\"service_ids\",\n\t\t\t\"service_names\",\n\t\t\t\"signature\",\n\t\t\t\"street\",\n\t\t\t\"tasks\",\n\t\t\t\"team_ids\",\n\t\t\t\"zip\",\n\t\t\t\"warehouse_ids\",\n\t\t\t\"openstc_employee_ref\"\n\t\t],\n\t\t\"session_id\": \"{{sessionId}}\",\n\t\t\"context\": {\n\t\t\t\"__ref\": \"compound_context\",\n\t\t\t\"__contexts\": [\n\t\t\t\t{\n\t\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\t\"uid\": {{uid}}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"bin_size\": true\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"__eval_context\": null\n\t\t}\n\t}\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "9ea358ea-73c2-7bec-fb7c-25411ca51636",
-          "name": "create user : Particuliers Commune",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"User creation seems fine\"] = responseCode.code === 200;",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"User created\"] = jsonData.result.result >1;"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "postman.setEnvironmentVariable('userLogin','login'+postman.getEnvironmentVariable('userNumber'));",
-                  "postman.setEnvironmentVariable('userName','name'+postman.getEnvironmentVariable('userNumber'));"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/create",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
                 "value": "application/json;charset=UTF-8",
                 "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r7\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"context_tz\": \"Europe/Paris\",\r\n      \"hex_color\": \"#2B0652\",\r\n      \"service_id\": false,\r\n      \"service_ids\": [[6,  0,[]]],\r\n      \"is_assignable_to_task\": false,\r\n      \"is_bookable_manager\": false,\r\n      \"image\": false,\r\n      \"login\": \"{{userLogin}}\",\r\n      \"new_password\": \"user1Mdp\",\r\n      \"name\": \"{{userName}}\",\r\n      \"function\": \"userFonction\",\r\n      \"email\": \"user@domain.com\",\r\n      \"phone\": \"0240033021\",\r\n      \"mobile\": \"0660353212\",\r\n      \"street\": \"rue\",\r\n      \"zip\": \"44100\",\r\n      \"city\": \"nantes\",\r\n      \"partner_id\": {{resPartner.id}},\r\n      \"groups_id\": [[6,0,[{{resGroups.Demandeur.id}},  {{resGroups.DemandeurExterne.id}}]]]\r\n    },\r\n    \"model\": \"res.users\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\"bin_size\": true}\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-            },
-            "description": "resGroups.id = Demandeur externe\n28 : Demandeur\nresPartner.id = Particuliers Commune"
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "a75fc622-3060-8b74-ba6d-60b1f58aff8a",
-      "name": "SomeAsk Request",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "4aa72d52-be7c-0d33-68c8-ac9c28cda649",
-          "name": "create Demande intervention",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests ['Check jsonrpc'] = jsonData.jsonrpc ===\"2.0\";",
-                  "tests['Demande intervention exist'] = jsonData.result.result > 0;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/create",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"is_citizen\": false,\r\n      \"partner_id\": {{resPartner.id}},\r\n      \"name\": \"Libellé Demande2\",\r\n      \"site1\": 1051,\r\n      \"site_details\": \"Détails de l'emplacement2\",\r\n      \"service_id\": 2,\r\n      \"description\": \"description demande2\"\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "3d9c9d5e-c0b8-8453-6295-c2f1260b31af",
-          "name": "search_read Demande d'intervention \"openstc.ask\"",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"Demande d'intervention exist\"] = jsonData.result.length >0;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r4\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"active\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1158,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r238\"\n}"
             },
             "description": ""
           },
@@ -878,182 +746,13 @@
       ]
     },
     {
-      "_postman_id": "c8c8acc2-4c40-0775-90e3-34f82119c790",
-      "name": "CRUD Site",
+      "_postman_id": "6f6687de-6fea-5a6f-e684-52855f86b4e3",
+      "name": "CRG Users",
       "description": "",
       "item": [
         {
-          "_postman_id": "4d21dfcc-e763-ac97-ba38-ae052452fe89",
-          "name": "Create Site",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Return site id\"] = jsonData.result.result >0;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/create",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"osm_zoom\":false,\n            \"osm_type\":false,\n            \"osm_id\":false,\n            \"geometry\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"block_booking\":false,\n            \"product_image\":false,\n            \"name\":\"CreateTest\",\n            \"type_id\":80\n        },\n        \"model\":\"openstc.site\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r156\"\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "b827ad8f-5a33-e5b1-62a7-a14b5528d4c0",
-          "name": "Update Site",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Update success\"]= jsonData.result.result ===true;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/save",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"code\":false,\n            \"type_id\":68,\n            \"color\":\"#390A10\",\n            \"surface\":0,\n            \"active\":true,\n            \"block_booking\":false,\n            \"osm_id\":false,\n            \"resa_user_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"max_bookable_qty\":0,\n            \"site_parent_id\":313,\n            \"width\":0,\n            \"resa_service_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"length\":0,\n            \"long\":0,\n            \"internal_bookable_notice\":0,\n            \"geo_point\":false,\n            \"partner_type_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"service_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"description_sale\":false,\n            \"osm_zoom\":false,\n            \"openresa_property_manager_id\":1,\n            \"lat\":0,\n            \"name\":\"1er Ã©tage test\",\n            \"service_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"product_id\":648,\n            \"optional_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"geometry\":false,\n            \"osm_type\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"option_of_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"external_bookable_notice\":0,\n            \"accommodation_capacity\":0,\n            \"product_image\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1151,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r199\"\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "31717783-13d9-ac1d-81ef-ba8a237f4358",
-          "name": "Search Read Site",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "//Demandeur externe can only read the site",
-                  "tests[\"Check site exist\"] = jsonData.result.records.length > 0;",
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "//X-DevTools-Emulate-Network-Conditions-Client-Id",
-                "value": "f55002dd-9cf3-4ebf-ba56-72718a383a86",
-                "description": "",
-                "disabled": true
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"id\":\"r161\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"sort\":\"name ASC\",\n        \"limit\":20,\n        \"offset\":0,\n        \"model\":\"openstc.site\",\n        \"fields\":[\n            \"active\",\n            \"actions\",\n            \"attachment_count\",\n            \"block_booking\",\n            \"code\",\n            \"description_sale\",\n            \"external_booking\",\n            \"external_bookable_notice\",\n            \"internal_booking\",\n            \"internal_bookable_notice\",\n            \"lat\",\n            \"long\",\n            \"length\",\n            \"max_bookable_qty\",\n            \"name\",\n            \"openresa_property_manager_id\",\n            \"partner_type_bookable_ids\",\n            \"pricelist_id\",\n            \"product_id\",\n            \"service_ids\",\n            \"service_names\",\n            \"service_bookable_ids\",\n            \"site_parent_id\",\n            \"surface\",\n            \"type_id\",\n            \"width\",\n            \"color\",\n            \"resa_service_manager_ids\",\n            \"resa_user_manager_ids\",\n            \"optional_product_ids\",\n            \"option_of_product_ids\",\n            \"accomodation_capacity\",\n            \"phone\",\n            \"geometry\",\n            \"geo_point\",\n            \"osm_type\",\n            \"osm_id\",\n            \"osm_zoom\"\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "e6318c29-408b-3887-4dcd-b596535f988b",
-          "name": "search_read Site \"openstc.site\"",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"Site openSTC exist\"] = jsonData.result.length >0;",
-                  "tests[\"Check id =\"+jsonData.id] = jsonData.id ===\"r5\";",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r5\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.site\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "5cc54ee1-8447-17c2-8461-12ee252430b1",
-          "name": "get Site \"openstc.site\"",
+          "_postman_id": "e24b0325-ec42-c177-cb40-315af5b3bbd1",
+          "name": "get 'res.users'",
           "event": [
             {
               "listen": "test",
@@ -1062,9 +761,67 @@
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Site openSTC exist\"] = jsonData.result.length >0;",
+                  "tests[\"get id\"] = jsonData.id === 'r2';",
+                  "tests[\"get action id\"] = jsonData.result[0].action_id[0] ===106;",
                   "",
-                  ""
+                  "//Tests below allow you to test user's bdd ",
+                  "if(jsonData.result[0].isManager ===true)",
+                  "    tests[\"get Users Bdd as Admin\"] = jsonData.result[0].user_id[1]==='Administrator';",
+                  "else if(jsonData.result[0].is_bookable_manager ===true)",
+                  "    tests[\"get Users Bdd as Gestionnaire\"] = jsonData.result[0].user_id[1]==='dst 02'; //Gestionnaire",
+                  "else",
+                  "    tests[\"get Users Bdd as Demandeur externe\"] = jsonData.result[0].user_id[1]==='DUPONT Chantal';//Demandeur externe",
+                  "",
+                  "",
+                  "",
+                  "//Get current Group for user",
+                  "if(jsonData.result[0].is_bookable_manager ===true){",
+                  "    tests[\"get current Group\"] = jsonData.result[0].current_group[1] ==='Gestionnaire des demandes';",
+                  "}",
+                  "else{",
+                  "    tests[\"get current Group\"] = jsonData.result[0].current_group[1] ==='Demandeur';",
+                  "}",
+                  "",
+                  "if(jsonData.result[0].user_id[1]==='Administrator'){",
+                  "    tests[\"get achat Group\"] = jsonData.result[0].achat_group[1] ==='Demandeur';",
+                  "}else{",
+                  "    tests[\"get achat Group\"] = jsonData.result[0].achat_group === false;",
+                  "}",
+                  "",
+                  "if((jsonData.result[0].isManager === false)&& (jsonData.result[0].is_bookable_manager ===true))",
+                  "{",
+                  "    tests[\"get openresa Group\"] = jsonData.result[0].openresa_group[1] === 'Gestionnaire';",
+                  "}",
+                  "",
+                  "if(jsonData.result[0].isManager === true){",
+                  "tests[\"get patrimoine Group\"] = jsonData.result[0].patrimoine_group[1] === 'Superviseur';",
+                  "tests[\"get user_id\"] = jsonData.result[0].user_id[1] === 'Administrator';",
+                  "    ",
+                  "}",
+                  "",
+                  "// When the person's right is Adminitrator return true, otherwise it will return false",
+                  "if(jsonData.result[0].user_id[1]==='Administrator'){",
+                  "    tests[\"Check Manager right\"] = jsonData.result[0].isManager ===true;    ",
+                  "}else{",
+                  "    tests[\"Check Manager right\"] = jsonData.result[0].isManager ===false;",
+                  "}",
+                  "",
+                  "// When the person's right is Adminitrator or  Gestionnaire return true, otherwise it will return false",
+                  "if(jsonData.result[0].user_id[1]==='Administrator'||jsonData.result[0].user_id[1]==='dst 02'){",
+                  "    tests[\"Check Bookable_Manager\"]= jsonData.result[0].is_bookable_manager ===true;",
+                  "    ",
+                  "}",
+                  "else{",
+                  "    tests[\"Check Bookable_Manager\"]= jsonData.result[0].is_bookable_manager ===false;",
+                  "}",
+                  "",
+                  "// When the person's right is Adminitrator or  Gestionnaire return true, otherwise it will return false",
+                  "if(jsonData.result[0].user_id[1]==='Administrator'||jsonData.result[0].user_id[1]==='dst 02'){",
+                  "    tests[\"Check ResaManager\"] = jsonData.result[0].isResaManager=== true;",
+                  "}",
+                  "else{",
+                  "    tests[\"Check ResaManager\"] = jsonData.result[0].isResaManager=== false;",
+                  "}"
                 ]
               }
             }
@@ -1086,15 +843,15 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"openstc.site\",\r\n    \"ids\": [\r\n      1\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+              "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"res.users\",\r\n    \"ids\": [{{uid}}],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
             },
-            "description": ""
+            "description": "pour connaitre des infos à renseigner dans la demande"
           },
           "response": []
         },
         {
-          "_postman_id": "496cbe72-c8fb-c7aa-af14-7b349f84372d",
-          "name": "Deactivate Site",
+          "_postman_id": "d7b73116-3247-1fa5-e584-10b50bc02f2f",
+          "name": "search_read users",
           "event": [
             {
               "listen": "test",
@@ -1102,55 +859,47 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "",
                   "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Deactivate success\"] = jsonData.result.result ===true;"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/save",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"active\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1158,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r238\"\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
-      "_postman_id": "cbf25456-cda8-e5aa-77ee-cf8a8a24e2c1",
-      "name": "Task Request",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "f944bdf7-adc3-b15e-ae45-c01143313cce",
-          "name": "createTask",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Response time is less than 2000ms\"] = responseTime < 2000;",
+                  "postman.setEnvironmentVariable(\"userNumber\", jsonData.result.length);",
+                  "//var increment = postman.setEnvironmentVariable(\"userNumber\", jsonData.result.length++);",
+                  "tests[\"Find users\"] = jsonData.result.ids.length != 1;",
                   "",
-                  "tests[\"Task is not empty\"] = jsonData.result.result > 0",
+                  "if(jsonData.result.records[1].name === \"Administrator\"){",
+                  "     ",
+                  "        tests[\"Check admin isResaManager\"] = jsonData.result.records[1].isResaManager===true;",
+                  "        tests[\"Check admin isDST\"]= jsonData.result.records[1].isDST === true;",
+                  "        tests[\"Check admin is_bookable_manager\"] =jsonData.result.records[1].is_bookable_manager=== true;",
+                  "        tests[\"Admin's Role in openresa_group\"] = jsonData.result.records[1].openresa_group[1] ===\"Demandeur interne\";",
+                  "        tests[\"Check admin isManager\"] = jsonData.result.records[1].isManager === true;",
+                  "    }",
+                  "    ",
+                  "if(jsonData.result.records[13].name === \"dst\"){",
+                  "        tests[\"Check gestionnaire is_bookable_manager\"] =jsonData.result.records[13].is_bookable_manager=== true;",
+                  "        tests[\"Check gestionnaire isResaManager\"] = jsonData.result.records[13].isResaManager===true;",
+                  "        tests[\"Check gestionnaire isDST\"]= jsonData.result.records[13].isDST === true;",
+                  "        tests[\"gestionnaire's role in openresa_group\"] = jsonData.result.records[13].openresa_group[1] ===\"Gestionnaire\";",
+                  "        tests[\"Check gestionnaire isManager\"] = jsonData.result.records[13].isManager===true;",
+                  "    }",
+                  "    ",
+                  "if(jsonData.result.records[15].name === \"DUPONT Chantal\"){",
+                  "        tests[\"Check Demandeur is_bookable_manager\"] =jsonData.result.records[15].is_bookable_manager=== false;",
+                  "        tests[\"Check Demandeur isResaManager\"] = jsonData.result.records[15].isResaManager===false;",
+                  "",
+                  "        tests[\"Check Demandeur isManager\"] = jsonData.result.records[15].isManager===false;",
+                  "    }",
+                  "",
+                  "",
+                  "//Check if the content type is json",
+                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
+                  "if (contentTypeHeader) {",
+                  "    tests[\"Content-Type is application/json\"] = ",
+                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
+                  "}",
+                  "",
+                  "",
+                  "",
+                  "",
                   "",
                   ""
                 ]
@@ -1158,7 +907,7 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/create",
+            "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
             "header": [
               {
@@ -1168,37 +917,46 @@
               },
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
+                "value": "application/json",
                 "description": ""
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"id\":\"r136\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"project_id\":1823,\n            \"name\":\"ffff\",\n            \"service_id\":2,\n            \"planned_hours\":2,\n            \"category_id\":33,\n            \"user_id\":57,\n            \"date_start\":\"2017-04-28 06:30:00\",\n            \"date_end\":\"2017-04-28 08:30:00\"\n        },\n        \"model\":\"project.task\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n}"
+              "raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"call\",\n\t\"params\": {\n\t\t\"sort\": \"name ASC\",\n\t\t\"limit\": 20,\n\t\t\"offset\": 0,\n\t\t\"model\": \"res.users\",\n\t\t\"fields\": [\n\t\t\t\"achat_group\",\n\t\t\t\"actions\",\n\t\t\t\"active\",\n\t\t\t\"access_rights\",\n\t\t\t\"address_id\",\n\t\t\t\"city\",\n\t\t\t\"company_id\",\n\t\t\t\"complete_name\",\n\t\t\t\"contact_id\",\n\t\t\t\"context_lang\",\n\t\t\t\"context_tz\",\n\t\t\t\"cost\",\n\t\t\t\"current_group\",\n\t\t\t\"date\",\n\t\t\t\"email\",\n\t\t\t\"fluid_group\",\n\t\t\t\"function\",\n\t\t\t\"groups_id\",\n\t\t\t\"hex_color\",\n\t\t\t\"id\",\n\t\t\t\"is_assignable_to_task\",\n\t\t\t\"is_bookable_manager\",\n\t\t\t\"isDST\",\n\t\t\t\"isManager\",\n\t\t\t\"isResaManager\",\n\t\t\t\"lastname\",\n\t\t\t\"login\",\n\t\t\t\"managed_bookable_site_ids\",\n\t\t\t\"managed_bookable_equipment_ids\",\n\t\t\t\"managed_bookable_service_ids\",\n\t\t\t\"managed_bookables\",\n\t\t\t\"mobile\",\n\t\t\t\"name\",\n\t\t\t\"oauth_uid\",\n\t\t\t\"openresa_group\",\n\t\t\t\"patrimoine_group\",\n\t\t\t\"parcauto_group\",\n\t\t\t\"partner_id\",\n\t\t\t\"phone\",\n\t\t\t\"service_id\",\n\t\t\t\"service_ids\",\n\t\t\t\"service_names\",\n\t\t\t\"signature\",\n\t\t\t\"street\",\n\t\t\t\"tasks\",\n\t\t\t\"team_ids\",\n\t\t\t\"zip\",\n\t\t\t\"warehouse_ids\",\n\t\t\t\"openstc_employee_ref\"\n\t\t],\n\t\t\"session_id\": \"{{sessionId}}\",\n\t\t\"context\": {\n\t\t\t\"__ref\": \"compound_context\",\n\t\t\t\"__contexts\": [\n\t\t\t\t{\n\t\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\t\"uid\": {{uid}}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"bin_size\": true\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"__eval_context\": null\n\t\t}\n\t}\n}"
             },
             "description": ""
           },
           "response": []
         },
         {
-          "_postman_id": "c0d518f2-d3c3-6e04-af77-83fa4e54e1ce",
-          "name": "search_read Task \"project.task\"",
+          "_postman_id": "9ea358ea-73c2-7bec-fb7c-25411ca51636",
+          "name": "create user : Particuliers Commune",
           "event": [
             {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
+                  "tests[\"User creation seems fine\"] = responseCode.code === 200;",
                   "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"Return a task id\"] = jsonData.result.length > 0;"
+                  "tests[\"User created\"] = jsonData.result.result >1;"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable('userLogin','login'+postman.getEnvironmentVariable('userNumber'));",
+                  "postman.setEnvironmentVariable('userName','name'+postman.getEnvironmentVariable('userNumber'));"
                 ]
               }
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/search_read",
+            "url": "{{server}}/web/dataset/create",
             "method": "POST",
             "header": [
               {
@@ -1214,9 +972,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r6\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"project.task\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+              "raw": "{\r\n  \"id\": \"r7\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"context_tz\": \"Europe/Paris\",\r\n      \"hex_color\": \"#2B0652\",\r\n      \"service_id\": false,\r\n      \"service_ids\": [[6,  0,[]]],\r\n      \"is_assignable_to_task\": false,\r\n      \"is_bookable_manager\": false,\r\n      \"image\": false,\r\n      \"login\": \"{{userLogin}}\",\r\n      \"new_password\": \"user1Mdp\",\r\n      \"name\": \"{{userName}}\",\r\n      \"function\": \"userFonction\",\r\n      \"email\": \"user@domain.com\",\r\n      \"phone\": \"0240033021\",\r\n      \"mobile\": \"0660353212\",\r\n      \"street\": \"rue\",\r\n      \"zip\": \"44100\",\r\n      \"city\": \"nantes\",\r\n      \"partner_id\": {{resPartner.id}},\r\n      \"groups_id\": [[6,0,[{{resGroups.Demandeur.id}},  {{resGroups.DemandeurExterne.id}}]]]\r\n    },\r\n    \"model\": \"res.users\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\"bin_size\": true}\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
             },
-            "description": ""
+            "description": "resGroups.id = Demandeur externe\n28 : Demandeur\nresPartner.id = Particuliers Commune"
           },
           "response": []
         }
@@ -1816,6 +1574,248 @@
             "body": {
               "mode": "raw",
               "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n     \"data\": {\n    \"technical_service_id\": 2,\n    \"name\": \"ACCUEIL\",\n    \"type_id\": 7,\n    \"technical_site_ids\": [[6, 0, [1151, 1058]]],\n    \"technical_service_ids\": [[6, 0, []]],\n    \"technical_site_id\": false\n  },\n    \"model\": \"res.partner\",\n    \"id\": 12,\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "cbf25456-cda8-e5aa-77ee-cf8a8a24e2c1",
+      "name": "Task Request",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "f944bdf7-adc3-b15e-ae45-c01143313cce",
+          "name": "createTask",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Task is not empty\"] = jsonData.result.result > 0",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"id\":\"r136\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"project_id\":1823,\n            \"name\":\"ffff\",\n            \"service_id\":2,\n            \"planned_hours\":2,\n            \"category_id\":33,\n            \"user_id\":57,\n            \"date_start\":\"2017-04-28 06:30:00\",\n            \"date_end\":\"2017-04-28 08:30:00\"\n        },\n        \"model\":\"project.task\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c0d518f2-d3c3-6e04-af77-83fa4e54e1ce",
+          "name": "search_read Task \"project.task\"",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Return a task id\"] = jsonData.result.length > 0;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r6\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"project.task\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "a75fc622-3060-8b74-ba6d-60b1f58aff8a",
+      "name": "SomeAsk Request",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "4aa72d52-be7c-0d33-68c8-ac9c28cda649",
+          "name": "create Demande intervention",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests ['Check jsonrpc'] = jsonData.jsonrpc ===\"2.0\";",
+                  "tests['Demande intervention exist'] = jsonData.result.result > 0;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"is_citizen\": false,\r\n      \"partner_id\": {{resPartner.id}},\r\n      \"name\": \"Libellé Demande2\",\r\n      \"site1\": 1051,\r\n      \"site_details\": \"Détails de l'emplacement2\",\r\n      \"service_id\": 2,\r\n      \"description\": \"description demande2\"\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3d9c9d5e-c0b8-8453-6295-c2f1260b31af",
+          "name": "search_read Demande d'intervention \"openstc.ask\"",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Demande d'intervention exist\"] = jsonData.result.length >0;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r4\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "619fbd1c-867f-b07b-0af3-55596d253bb2",
+      "name": "1.Authenticate",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "874376a2-aef0-8d4e-d451-7fa2fa8d9453",
+          "name": "authenticate",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Response time is less than 1500ms\"] = responseTime < 1500;",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "//Check if the content type is json",
+                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
+                  "if (contentTypeHeader) {",
+                  "    tests[\"Content-Type is application/json\"] = ",
+                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
+                  "}",
+                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
+                  "tests[\"Authenticate Bdd\"] = jsonData.result.db === 'test_api';",
+                  "",
+                  "if (jsonData.result.db === 'test_api'){",
+                  "    if(jsonData.result.login === \"admin\")",
+                  "        tests[\"Authenticate as admin\"] = jsonData.result.uid === 1;",
+                  "    ",
+                  "    if(jsonData.result.login === \"cdupont\")",
+                  "        tests[\"Authenticate as demandeur externe\"] = jsonData.result.uid === 88;",
+                  "    ",
+                  "    if(jsonData.result.login === \"dst\")",
+                  "        tests[\"Authenticate as gestionnaire\"] = jsonData.result.uid === 104;",
+                  "}",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/session/authenticate",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
             },
             "description": ""
           },
