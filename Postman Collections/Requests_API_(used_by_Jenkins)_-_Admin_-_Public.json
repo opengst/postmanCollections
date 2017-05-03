@@ -9,7 +9,7 @@
   "item": [
     {
       "_postman_id": "c8c8acc2-4c40-0775-90e3-34f82119c790",
-      "name": "CRUD Site",
+      "name": "04-CRUD Site",
       "description": "",
       "item": [
         {
@@ -982,7 +982,7 @@
     },
     {
       "_postman_id": "dafbaa3c-37ee-64e2-a5f9-bb71000da313",
-      "name": "OpenGST test request",
+      "name": "05-OpenGST test request",
       "description": "",
       "item": [
         {
@@ -1671,7 +1671,7 @@
     },
     {
       "_postman_id": "a75fc622-3060-8b74-ba6d-60b1f58aff8a",
-      "name": "SomeAsk Request",
+      "name": "04-ASK",
       "description": "",
       "item": [
         {
