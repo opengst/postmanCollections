@@ -1587,6 +1587,69 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "98f2904e-65a6-e1b7-8e76-74607d9c27d9",
+          "name": "authenticate copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "tests[\"Response time is less than 1500ms\"] = responseTime < 1500;",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "//Check if the content type is json",
+                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
+                  "if (contentTypeHeader) {",
+                  "    tests[\"Content-Type is application/json\"] = ",
+                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
+                  "}",
+                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
+                  "tests[\"Authenticate Bdd\"] = jsonData.result.db === 'test_api';",
+                  "",
+                  "if (jsonData.result.db === 'test_api'){",
+                  "    if(jsonData.result.login === \"admin\")",
+                  "        tests[\"Authenticate as admin\"] = jsonData.result.uid === 1;",
+                  "    ",
+                  "    if(jsonData.result.login === \"cdupont\")",
+                  "        tests[\"Authenticate as demandeur externe\"] = jsonData.result.uid === 88;",
+                  "    ",
+                  "    if(jsonData.result.login === \"dst\")",
+                  "        tests[\"Authenticate as gestionnaire\"] = jsonData.result.uid === 104;",
+                  "}",
+                  "",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/session/authenticate",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
           "_postman_id": "f944bdf7-adc3-b15e-ae45-c01143313cce",
           "name": "createTask",
           "event": [
@@ -1662,69 +1725,6 @@
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"id\": \"r6\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"project.task\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "98f2904e-65a6-e1b7-8e76-74607d9c27d9",
-          "name": "authenticate copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response time is less than 1500ms\"] = responseTime < 1500;",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "//Check if the content type is json",
-                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
-                  "if (contentTypeHeader) {",
-                  "    tests[\"Content-Type is application/json\"] = ",
-                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
-                  "}",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
-                  "tests[\"Authenticate Bdd\"] = jsonData.result.db === 'test_api';",
-                  "",
-                  "if (jsonData.result.db === 'test_api'){",
-                  "    if(jsonData.result.login === \"admin\")",
-                  "        tests[\"Authenticate as admin\"] = jsonData.result.uid === 1;",
-                  "    ",
-                  "    if(jsonData.result.login === \"cdupont\")",
-                  "        tests[\"Authenticate as demandeur externe\"] = jsonData.result.uid === 88;",
-                  "    ",
-                  "    if(jsonData.result.login === \"dst\")",
-                  "        tests[\"Authenticate as gestionnaire\"] = jsonData.result.uid === 104;",
-                  "}",
-                  "",
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/session/authenticate",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
             },
             "description": ""
           },
