@@ -982,7 +982,7 @@
     },
     {
       "_postman_id": "dafbaa3c-37ee-64e2-a5f9-bb71000da313",
-      "name": "05-OpenGST test request",
+      "name": "OpenGST test request",
       "description": "",
       "item": [
         {
@@ -1583,7 +1583,7 @@
     },
     {
       "_postman_id": "cbf25456-cda8-e5aa-77ee-cf8a8a24e2c1",
-      "name": "07-Task Request",
+      "name": "Task Request",
       "description": "",
       "item": [
         {
@@ -1671,7 +1671,7 @@
     },
     {
       "_postman_id": "a75fc622-3060-8b74-ba6d-60b1f58aff8a",
-      "name": "06-ASK",
+      "name": "SomeAsk Request",
       "description": "",
       "item": [
         {
