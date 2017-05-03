@@ -2858,60 +2858,6 @@
             "description": ""
           },
           "response": []
-        },
-        {
-          "_postman_id": "f4baface-f79a-07a3-51a5-45dd4dff698f",
-          "name": "Get session info",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get session info\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/session/get_session_info",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "description": ""
-          },
-          "response": []
         }
       ]
     },
