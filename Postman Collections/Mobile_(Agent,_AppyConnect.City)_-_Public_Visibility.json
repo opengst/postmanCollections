@@ -2071,42 +2071,7 @@
       "_postman_id": "8c99bf23-f287-a2b8-8da9-174ca2ec0dfa",
       "name": "2 - Jeu de données - Modele Demande Intervention - AppyConnect.City copy",
       "description": "",
-      "item": [
-        {
-          "_postman_id": "bb2b2764-ce29-9884-6ab3-31938c0f2859",
-          "name": "Authenticate with Admin",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/session/authenticate",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{login}}\",\r\n      \"password\": \"{{password}}\"\r\n   }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        }
-      ]
+      "item": []
     },
     {
       "_postman_id": "88f972b1-197c-9091-b972-7ec74509b5db",
@@ -2418,27 +2383,6 @@
           "body": "{\"jsonrpc\": \"2.0\", \"id\": null, \"result\": {\"uid\": 82, \"db\": \"demo\", \"session_id\": \"a71fcc8234a34bfb9571f8c39ff7ba00\", \"openerp_entreprise\": false, \"context\": {\"lang\": \"fr_FR\", \"project_id\": false, \"tz\": \"Europe/Paris\", \"section_id\": false, \"uid\": 82}, \"login\": \"dstdst\"}}"
         }
       ]
-    },
-    {
-      "_postman_id": "836eff1e-d8fb-6998-2039-4ba8a6d0afa9",
-      "name": "Create category",
-      "request": {
-        "url": "{{server}}/web/dataset/create",
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json;charset=UTF-8",
-            "description": ""
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"openstc.ask.category\",\n      \"data\":{\n         \"name\":\"{{categoryName}}\"\n      },\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
-        },
-        "description": ""
-      },
-      "response": []
     }
   ]
 }
