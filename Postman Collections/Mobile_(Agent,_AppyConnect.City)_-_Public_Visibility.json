@@ -2068,6 +2068,110 @@
       "item": []
     },
     {
+      "_postman_id": "8c99bf23-f287-a2b8-8da9-174ca2ec0dfa",
+      "name": "2 - Jeu de données - Modele Demande Intervention - AppyConnect.City copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "bb2b2764-ce29-9884-6ab3-31938c0f2859",
+          "name": "Authenticate with Admin",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/session/authenticate",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{login}}\",\r\n      \"password\": \"{{password}}\"\r\n   }\r\n}"
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "8259cf34-239b-d375-1349-5b7eb33c8744",
+              "name": "stag demo - dstdst",
+              "originalRequest": {
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "name": "Connection",
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Encoding",
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "description": ""
+                },
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": ""
+                },
+                {
+                  "name": "Date",
+                  "key": "Date",
+                  "value": "Wed, 12 Apr 2017 14:17:34 GMT",
+                  "description": ""
+                },
+                {
+                  "name": "Server",
+                  "key": "Server",
+                  "value": "nginx/1.4.6 (Ubuntu)",
+                  "description": ""
+                },
+                {
+                  "name": "Transfer-Encoding",
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "description": ""
+                },
+                {
+                  "name": "Vary",
+                  "key": "Vary",
+                  "value": "Accept-Encoding",
+                  "description": ""
+                }
+              ],
+              "cookie": [],
+              "responseTime": "1054",
+              "body": "{\"jsonrpc\": \"2.0\", \"id\": null, \"result\": {\"uid\": 82, \"db\": \"demo\", \"session_id\": \"a71fcc8234a34bfb9571f8c39ff7ba00\", \"openerp_entreprise\": false, \"context\": {\"lang\": \"fr_FR\", \"project_id\": false, \"tz\": \"Europe/Paris\", \"section_id\": false, \"uid\": 82}, \"login\": \"dstdst\"}}"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "_postman_id": "88f972b1-197c-9091-b972-7ec74509b5db",
       "name": "Create Demande intervention",
       "event": [
@@ -2244,6 +2348,156 @@
         "body": {
           "mode": "raw",
           "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.ask.category\",\n      \"domain\":[[\n        \"name\",\n        \"=\",\n        \"{{categoryName}}\"\n      ]],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
+        },
+        "description": ""
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "bef75cf1-214c-a599-9786-32697cb906d4",
+      "name": "Authenticate with userAccount copy",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "var jsonData = JSON.parse(responseBody);",
+              "",
+              "",
+              "/*",
+              " * TESTS ",
+              " */",
+              "",
+              "",
+              "//Check status code",
+              "tests[\"Status code is 200\"] = responseCode.code === 200;",
+              "",
+              "//Check if the content type is json",
+              "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
+              "if (contentTypeHeader) {",
+              "    tests[\"Content-Type is application/json\"] = ",
+              "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
+              "}",
+              "",
+              "//Check if really authenticate",
+              "tests[\"Authenticate\"] = jsonData.result.uid !== false;",
+              "",
+              "",
+              "/*",
+              " * LOGIC",
+              " */",
+              "",
+              "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+              "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
+              "",
+              "",
+              "/*",
+              " * SCENARIO",
+              " */ ",
+              "",
+              ""
+            ]
+          }
+        }
+      ],
+      "request": {
+        "url": "{{server}}/web/session/authenticate",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{userLogin}}\",\r\n      \"password\": \"{{userPassword}}\"\r\n   }\r\n}"
+        },
+        "description": ""
+      },
+      "response": [
+        {
+          "id": "40c3f50d-dbe0-ff70-5be3-23854d3154cf",
+          "name": "stag demo - dstdst",
+          "originalRequest": {
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "_postman_previewtype": "text",
+          "header": [
+            {
+              "name": "Connection",
+              "key": "Connection",
+              "value": "keep-alive",
+              "description": ""
+            },
+            {
+              "name": "Content-Encoding",
+              "key": "Content-Encoding",
+              "value": "gzip",
+              "description": ""
+            },
+            {
+              "name": "Content-Type",
+              "key": "Content-Type",
+              "value": "application/json",
+              "description": ""
+            },
+            {
+              "name": "Date",
+              "key": "Date",
+              "value": "Wed, 12 Apr 2017 14:17:34 GMT",
+              "description": ""
+            },
+            {
+              "name": "Server",
+              "key": "Server",
+              "value": "nginx/1.4.6 (Ubuntu)",
+              "description": ""
+            },
+            {
+              "name": "Transfer-Encoding",
+              "key": "Transfer-Encoding",
+              "value": "chunked",
+              "description": ""
+            },
+            {
+              "name": "Vary",
+              "key": "Vary",
+              "value": "Accept-Encoding",
+              "description": ""
+            }
+          ],
+          "cookie": [],
+          "responseTime": "1054",
+          "body": "{\"jsonrpc\": \"2.0\", \"id\": null, \"result\": {\"uid\": 82, \"db\": \"demo\", \"session_id\": \"a71fcc8234a34bfb9571f8c39ff7ba00\", \"openerp_entreprise\": false, \"context\": {\"lang\": \"fr_FR\", \"project_id\": false, \"tz\": \"Europe/Paris\", \"section_id\": false, \"uid\": 82}, \"login\": \"dstdst\"}}"
+        }
+      ]
+    },
+    {
+      "_postman_id": "836eff1e-d8fb-6998-2039-4ba8a6d0afa9",
+      "name": "Create category",
+      "request": {
+        "url": "{{server}}/web/dataset/create",
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json;charset=UTF-8",
+            "description": ""
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"openstc.ask.category\",\n      \"data\":{\n         \"name\":\"{{categoryName}}\"\n      },\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
         },
         "description": ""
       },
