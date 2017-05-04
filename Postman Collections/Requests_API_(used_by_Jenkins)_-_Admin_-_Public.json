@@ -13,69 +13,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "a9e0dd82-d208-9d06-5d4b-855bb372cb7f",
-          "name": "authenticate",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response time is less than 1500ms\"] = responseTime < 1500;",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "//Check if the content type is json",
-                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
-                  "if (contentTypeHeader) {",
-                  "    tests[\"Content-Type is application/json\"] = ",
-                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
-                  "}",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
-                  "tests[\"Authenticate Bdd\"] = jsonData.result.db === 'test_api';",
-                  "",
-                  "if (jsonData.result.db === 'test_api'){",
-                  "    if(jsonData.result.login === \"admin\")",
-                  "        tests[\"Authenticate as admin\"] = jsonData.result.uid === 1;",
-                  "    ",
-                  "    if(jsonData.result.login === \"cdupont\")",
-                  "        tests[\"Authenticate as demandeur externe\"] = jsonData.result.uid === 88;",
-                  "    ",
-                  "    if(jsonData.result.login === \"dst\")",
-                  "        tests[\"Authenticate as gestionnaire\"] = jsonData.result.uid === 104;",
-                  "}",
-                  "",
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/session/authenticate",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "4d21dfcc-e763-ac97-ba38-ae052452fe89",
           "name": "Create Site",
           "event": [
@@ -1049,69 +986,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "97bc4132-8f7d-60fc-bbbc-35efc7e3e7e9",
-          "name": "authenticate",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response time is less than 1500ms\"] = responseTime < 1500;",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "//Check if the content type is json",
-                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
-                  "if (contentTypeHeader) {",
-                  "    tests[\"Content-Type is application/json\"] = ",
-                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
-                  "}",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
-                  "tests[\"Authenticate Bdd\"] = jsonData.result.db === 'test_api';",
-                  "",
-                  "if (jsonData.result.db === 'test_api'){",
-                  "    if(jsonData.result.login === \"admin\")",
-                  "        tests[\"Authenticate as admin\"] = jsonData.result.uid === 1;",
-                  "    ",
-                  "    if(jsonData.result.login === \"cdupont\")",
-                  "        tests[\"Authenticate as demandeur externe\"] = jsonData.result.uid === 88;",
-                  "    ",
-                  "    if(jsonData.result.login === \"dst\")",
-                  "        tests[\"Authenticate as gestionnaire\"] = jsonData.result.uid === 104;",
-                  "}",
-                  "",
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/session/authenticate",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "e188fe84-cbd5-7c23-b759-5db635b84bab",
           "name": "get Organisations 'Particuliers Commune' id",
           "event": [
@@ -1713,69 +1587,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "98f2904e-65a6-e1b7-8e76-74607d9c27d9",
-          "name": "authenticate",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response time is less than 1500ms\"] = responseTime < 1500;",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "//Check if the content type is json",
-                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
-                  "if (contentTypeHeader) {",
-                  "    tests[\"Content-Type is application/json\"] = ",
-                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
-                  "}",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
-                  "tests[\"Authenticate Bdd\"] = jsonData.result.db === 'test_api';",
-                  "",
-                  "if (jsonData.result.db === 'test_api'){",
-                  "    if(jsonData.result.login === \"admin\")",
-                  "        tests[\"Authenticate as admin\"] = jsonData.result.uid === 1;",
-                  "    ",
-                  "    if(jsonData.result.login === \"cdupont\")",
-                  "        tests[\"Authenticate as demandeur externe\"] = jsonData.result.uid === 88;",
-                  "    ",
-                  "    if(jsonData.result.login === \"dst\")",
-                  "        tests[\"Authenticate as gestionnaire\"] = jsonData.result.uid === 104;",
-                  "}",
-                  "",
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/session/authenticate",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "f944bdf7-adc3-b15e-ae45-c01143313cce",
           "name": "createTask",
           "event": [
@@ -1863,69 +1674,6 @@
       "name": "ask Request",
       "description": "",
       "item": [
-        {
-          "_postman_id": "6de8efb0-3307-dc4e-22dc-1a1747692b02",
-          "name": "authenticate",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "tests[\"Response time is less than 1500ms\"] = responseTime < 1500;",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "//Check if the content type is json",
-                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
-                  "if (contentTypeHeader) {",
-                  "    tests[\"Content-Type is application/json\"] = ",
-                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
-                  "}",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
-                  "tests[\"Authenticate Bdd\"] = jsonData.result.db === 'test_api';",
-                  "",
-                  "if (jsonData.result.db === 'test_api'){",
-                  "    if(jsonData.result.login === \"admin\")",
-                  "        tests[\"Authenticate as admin\"] = jsonData.result.uid === 1;",
-                  "    ",
-                  "    if(jsonData.result.login === \"cdupont\")",
-                  "        tests[\"Authenticate as demandeur externe\"] = jsonData.result.uid === 88;",
-                  "    ",
-                  "    if(jsonData.result.login === \"dst\")",
-                  "        tests[\"Authenticate as gestionnaire\"] = jsonData.result.uid === 104;",
-                  "}",
-                  "",
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/session/authenticate",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
         {
           "_postman_id": "4aa72d52-be7c-0d33-68c8-ac9c28cda649",
           "name": "create Demande intervention",
