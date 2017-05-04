@@ -2346,8 +2346,13 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "var requestLongitude = (Math.random() * (-0.5146 - -0.4781) + -0.4781).toFixed(15) * 1;",
-                  "var requestLatitude = (Math.random() * (47.4781 - 47.4591) + 47.4591).toFixed(15) * 1;",
+                  "var minLongitude = -0.509226;",
+                  "var maxLongitude = -0.476632;",
+                  "var minLatitude = 47.488250;",
+                  "var maxLatitude = 47.460194;",
+                  "",
+                  "var requestLongitude = (Math.random() * (maxLongitude - minLongitude) + minLongitude).toFixed(fixed) * 1;",
+                  "var requestLatitude = (Math.random() * (maxLatitude - minLatitude) + minLatitude).toFixed(fixed) * 1;",
                   "",
                   "postman.setEnvironmentVariable(\"requestLatitude\", requestLatitude);",
                   "postman.setEnvironmentVariable(\"requestLongitude\", requestLongitude);",
