@@ -329,7 +329,7 @@
     },
     {
       "_postman_id": "acb7b3b7-f733-762c-a63f-a28c613e63b4",
-      "name": "CRUD Fluids",
+      "name": "03-CRUD Fluids",
       "description": "",
       "item": [
         {
@@ -873,7 +873,7 @@
     },
     {
       "_postman_id": "6f6687de-6fea-5a6f-e684-52855f86b4e3",
-      "name": "CRG Users",
+      "name": "02-CRG Users",
       "description": "",
       "item": [
         {
@@ -1986,7 +1986,7 @@
     },
     {
       "_postman_id": "a75fc622-3060-8b74-ba6d-60b1f58aff8a",
-      "name": "ask Request",
+      "name": "Ask Request",
       "description": "",
       "item": [
         {
