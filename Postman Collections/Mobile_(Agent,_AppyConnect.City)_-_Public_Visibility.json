@@ -2084,6 +2084,39 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "28926e0f-75bc-4d9b-c3f0-655f7b5393ed",
+          "name": "Create ir.module.category copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"ir.module.category\", jsonData.result.result);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"name\":\"Mobile\"\n      },\n      \"model\":\"ir.module.category\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
