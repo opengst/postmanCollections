@@ -1469,7 +1469,7 @@
         },
         {
           "_postman_id": "28926e0f-75bc-4d9b-c3f0-655f7b5393ed",
-          "name": "Create ir.module.category copy",
+          "name": "Create openstc.partner.type",
           "event": [
             {
               "listen": "test",
