@@ -1435,39 +1435,6 @@
           ]
         },
         {
-          "_postman_id": "28926e0f-75bc-4d9b-c3f0-655f7b5393ed",
-          "name": "Create ir.module.category copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"ir.module.category\", jsonData.result.result);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/create",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"name\":\"Mobile\"\n      },\n      \"model\":\"ir.module.category\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "a0183e57-31c1-0416-32f7-c553d89fb752",
           "name": "Get CategorieOrganisations with code PARTICULIER (reference unique et non modifiable)",
           "event": [
@@ -1494,7 +1461,40 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"openstc.partner.type\",\n      \"domain\":[\n         [\n            \"code\",\n            \"=\",\n            \"PARTICULIER\"\n         ]\n      ],\n      \"fields\":[\n         \"id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":100,\n      \"offset\":0,\n      \"model\":\"openstc.partner.type\",\n      \"domain\":[\n      \t \"|\",\n      \t \"|\",\n         [\n            \"code\",\n            \"=\",\n            \"PARTICULIER\"\n         ],\n         [\n            \"code\",\n            \"=\",\n            \"3\"\n         ],\n\t\t [\n            \"name\",\n            \"=\",\n            \"Particulier\"\n         ]\n      ],\n      \"fields\":[\n         \"id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "28926e0f-75bc-4d9b-c3f0-655f7b5393ed",
+          "name": "Create openstc.partner.type",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"categorieOrganisationId\", jsonData.result.records[0].id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n        \"customer\": true,\n        \"code\": \"PARTICULIER\",\n        \"service_supplier\": false,\n        \"name\": \"Particulier\",\n        \"product_supplier\": false,\n        \"parent_id\": false,\n        \"supplier\": false,\n        \"sending_mail\": true\n      },\n      \"model\":\"openstc.partner.type\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
