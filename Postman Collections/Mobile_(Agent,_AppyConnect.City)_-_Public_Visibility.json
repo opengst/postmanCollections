@@ -1436,7 +1436,7 @@
         },
         {
           "_postman_id": "4660df87-4d53-84dd-f723-b4696a80bbe1",
-          "name": "Create ir.module.category copy",
+          "name": "Create openstc.partner.type",
           "event": [
             {
               "listen": "test",
