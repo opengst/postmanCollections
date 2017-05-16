@@ -1477,7 +1477,7 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"ir.module.category\", jsonData.result.result);"
+                  "postman.setEnvironmentVariable(\"categorieOrganisationId\", jsonData.result.records[0].id);"
                 ]
               }
             }
@@ -1494,7 +1494,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n        \"customer\": true,\n        \"code\": \"PARTICULIER\",\n        \"service_supplier\": false,\n        \"name\": \"Particulier\",\n        \"product_supplier\": false,\n        \"parent_id\": false,\n        \"supplier\": false,\n        \"sending_mail\": true,\n      },\n      \"model\":\"openstc.partner.type\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n        \"customer\": true,\n        \"code\": \"PARTICULIER\",\n        \"service_supplier\": false,\n        \"name\": \"Particulier\",\n        \"product_supplier\": false,\n        \"parent_id\": false,\n        \"supplier\": false,\n        \"sending_mail\": true\n      },\n      \"model\":\"openstc.partner.type\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
