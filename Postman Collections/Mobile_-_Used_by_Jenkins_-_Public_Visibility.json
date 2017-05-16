@@ -524,59 +524,6 @@
           "response": []
         },
         {
-          "_postman_id": "88027756-4013-bcd2-1126-151bf187faa6",
-          "name": "Get GroupId for Demandeur externe",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "postman.setEnvironmentVariable(\"groupIdDemandeurExterne\", jsonData.result.records[0].id);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur externe\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t  \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n         [\n            \"code\",\n            \"=\",\n            \"HOTEL_USER_EXT\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"code\"\n      ],\n      \"model\":\"res.groups\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "b418593f-c2fb-45d4-f436-08f541f2c4b6",
           "name": "Create User on Particuliers Commune",
           "event": [
@@ -650,7 +597,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n             ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"{{userLogin}}\",\n         \"new_password\":\"{{userPassword}}\",\n         \"name\":\"{{userName}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{groupIdDemandeur}},\n                  {{groupIdDemandeurExterne}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n             ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"{{userLogin}}\",\n         \"new_password\":\"{{userPassword}}\",\n         \"name\":\"{{userName}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{groupIdDemandeur}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
