@@ -1954,7 +1954,10 @@
                 "type": "text/javascript",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"ir.model.id.openstc.ask.prod\", jsonData.result.records[0].id);"
+                  "if (jsonData.result.length !== 0) {",
+                  "    postman.setEnvironmentVariable(\"ir.model.id.openstc.ask.prod\", jsonData.result.records[0].id);",
+                  "}",
+                  ""
                 ]
               }
             }
