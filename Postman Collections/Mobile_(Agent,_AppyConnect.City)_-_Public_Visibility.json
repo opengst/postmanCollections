@@ -2269,7 +2269,7 @@
               },
               {
                 "key": "Origin",
-                "value": "{{server}}",
+                "value": "https://gst-staging.atreal-ouest.fr",
                 "description": ""
               },
               {
@@ -2284,7 +2284,7 @@
               },
               {
                 "key": "Referer",
-                "value": "{{server}}{{db}}/",
+                "value": "https://gst-staging.atreal-ouest.fr/mobile/",
                 "description": ""
               },
               {
@@ -2521,8 +2521,8 @@
           ]
         },
         {
-          "_postman_id": "705cb28e-36f3-ba07-0ed1-d41c40f9fe50",
-          "name": "Create attachment 2",
+          "_postman_id": "1f3c77b8-260f-2a45-66d3-c7d97f2745f0",
+          "name": "Create attachment copy",
           "request": {
             "url": "{{server}}/web/dataset/create",
             "method": "POST",
@@ -2534,7 +2534,7 @@
               },
               {
                 "key": "Origin",
-                "value": "{{server}}",
+                "value": "https://gst-staging.atreal-ouest.fr",
                 "description": ""
               },
               {
@@ -2549,7 +2549,7 @@
               },
               {
                 "key": "Referer",
-                "value": "{{server}}{{db}}/",
+                "value": "https://gst-staging.atreal-ouest.fr/mobile/",
                 "description": ""
               },
               {
