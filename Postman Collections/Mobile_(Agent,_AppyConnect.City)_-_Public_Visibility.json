@@ -2521,62 +2521,6 @@
           ]
         },
         {
-          "_postman_id": "1f3c77b8-260f-2a45-66d3-c7d97f2745f0",
-          "name": "Create attachment copy",
-          "request": {
-            "url": "{{server}}/web/dataset/create",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "Origin",
-                "value": "https://gst-staging.atreal-ouest.fr",
-                "description": ""
-              },
-              {
-                "key": "User-Agent",
-                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Referer",
-                "value": "https://gst-staging.atreal-ouest.fr/mobile/",
-                "description": ""
-              },
-              {
-                "key": "Accept-Encoding",
-                "value": "gzip, deflate, br",
-                "description": ""
-              },
-              {
-                "key": "Accept-Language",
-                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
-                "description": ""
-              },
-              {
-                "key": "Cookie",
-                "value": "session0|session_id=%22c0ac689db8d74e1a946e9dd5c9569d42%22; sessionid=253fa12d2d4e9edb9a4002ef510a07b3f6be3c56; session0|session_id=%222f4106031643451db39462431e416790%22; sessionid=3c28849347f4c3472d0accb6726467e674eb25eb",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"ir.attachment\",\n      \"data\":{\n        \"datas\":\"{{attachment_1_data}}\",\n         \"datas_fname\":\"{{attachment_1_name}}\",\n         \"name\":\"{{attachment_1_name}}\",\n         \"res_model\":\"openstc.ask\",\n         \"res_id\":{{requestId}}\n      },\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "705cb28e-36f3-ba07-0ed1-d41c40f9fe50",
           "name": "Create attachment copy",
           "request": {
