@@ -2269,7 +2269,7 @@
               },
               {
                 "key": "Origin",
-                "value": "https://gst-staging.atreal-ouest.fr",
+                "value": "{{server}}",
                 "description": ""
               },
               {
@@ -2284,7 +2284,7 @@
               },
               {
                 "key": "Referer",
-                "value": "https://gst-staging.atreal-ouest.fr/mobile/",
+                "value": "{{server}}{{db}}/",
                 "description": ""
               },
               {
@@ -2521,8 +2521,8 @@
           ]
         },
         {
-          "_postman_id": "1f3c77b8-260f-2a45-66d3-c7d97f2745f0",
-          "name": "Create attachment copy",
+          "_postman_id": "705cb28e-36f3-ba07-0ed1-d41c40f9fe50",
+          "name": "Create attachment 2",
           "request": {
             "url": "{{server}}/web/dataset/create",
             "method": "POST",
@@ -2534,7 +2534,7 @@
               },
               {
                 "key": "Origin",
-                "value": "https://gst-staging.atreal-ouest.fr",
+                "value": "{{server}}",
                 "description": ""
               },
               {
@@ -2549,7 +2549,7 @@
               },
               {
                 "key": "Referer",
-                "value": "https://gst-staging.atreal-ouest.fr/mobile/",
+                "value": "{{server}}{{db}}/",
                 "description": ""
               },
               {
@@ -2570,7 +2570,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"ir.attachment\",\n      \"data\":{\n        \"datas\":\"{{attachment_1_data}}\",\n         \"datas_fname\":\"{{attachment_1_name}}\",\n         \"name\":\"{{attachment_1_name}}\",\n         \"res_model\":\"openstc.ask\",\n         \"res_id\":{{requestId}}\n      },\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"ir.attachment\",\n      \"data\":{\n        \"datas\":\"{{attachment_2_data}}\",\n         \"datas_fname\":\"{{attachment_2_name}}\",\n         \"name\":\"{{attachment_2_name}}\",\n         \"res_model\":\"openstc.ask\",\n         \"res_id\":{{requestId}}\n      },\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
