@@ -2349,10 +2349,18 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
+                  "/* NANTES ",
                   "var minLongitude = -1.574551;",
                   "var maxLongitude = -1.540381;",
                   "var minLatitude = 47.211716;",
                   "var maxLatitude = 47.220401;",
+                  "*/",
+                  "",
+                  "/* SAINT BARTHELEMY D ANJOU */",
+                  "var minLongitude = -0.50731;",
+                  "var maxLongitude = -0.48774;",
+                  "var minLatitude = 47.46045;",
+                  "var maxLatitude = 47.47258;",
                   "",
                   "var requestLongitude = (Math.random() * (maxLongitude - minLongitude) + minLongitude).toFixed(15) * 1;",
                   "var requestLatitude = (Math.random() * (maxLatitude - minLatitude) + minLatitude).toFixed(15) * 1;",
