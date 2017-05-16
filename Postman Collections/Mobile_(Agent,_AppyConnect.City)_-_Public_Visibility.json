@@ -1461,7 +1461,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":100,\n      \"offset\":0,\n      \"model\":\"openstc.partner.type\",\n      \"domain\":[\n      \t \"|\",\n      \t \"|\",\n         [\n            \"code\",\n            \"=\",\n            \"PARTICULIER\"\n         ],\n         [\n            \"code\",\n            \"=\",\n            \"3\"\n         ],\n\t\t [\n            \"name\",\n            \"=\",\n            \"Particulier\"\n         ]\n      ],\n      \"fields\":[\n         \"id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"openstc.partner.type\",\n      \"domain\":[\n      \t \"|\",\n      \t \"|\",\n         [\n            \"code\",\n            \"=\",\n            \"PARTICULIER\"\n         ],\n         [\n            \"code\",\n            \"=\",\n            \"3\"\n         ],\n\t\t [\n            \"name\",\n            \"=\",\n            \"Particulier\"\n         ]\n      ],\n      \"fields\":[\n         \"id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
@@ -3035,7 +3035,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"openstc.partner.type\",\n      \"domain\":[\n         [\n            \"code\",\n            \"=\",\n            \"PARTICULIER\"\n         ]\n      ],\n      \"fields\":[\n         \"id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"openstc.partner.type\",\n      \"domain\":[\n      \t \"|\",\n      \t \"|\",\n         [\n            \"code\",\n            \"=\",\n            \"PARTICULIER\"\n         ],\n         [\n            \"code\",\n            \"=\",\n            \"3\"\n         ],\n\t\t [\n            \"name\",\n            \"=\",\n            \"Particulier\"\n         ]\n      ],\n      \"fields\":[\n         \"id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
@@ -3142,59 +3142,6 @@
             "body": {
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t  \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n         [\n            \"code\",\n            \"=\",\n            \"PART\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\"\n      ],\n      \"model\":\"res.groups\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "de6c67bf-915d-91b5-2f4b-fdb52c614f1d",
-          "name": "Get GroupId for Demandeur externe",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "postman.setEnvironmentVariable(\"groupIdDemandeurExterne\", jsonData.result.records[0].id);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur externe\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t  \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n         [\n            \"code\",\n            \"=\",\n            \"HOTEL_USER_EXT\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"code\"\n      ],\n      \"model\":\"res.groups\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
