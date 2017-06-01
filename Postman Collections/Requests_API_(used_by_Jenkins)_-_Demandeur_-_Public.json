@@ -446,8 +446,10 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "vvar jsonData = JSON.parse(responseBody);",
-                  "tests[\"get id\"] = jsonData.id === 'r2';",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Check error code\"] = jsonData.error.code ===200;",
+                  "tests[\"Check error type\"] = jsonData.error.data.type ===\"server_exception\";",
                   ""
                 ]
               }
