@@ -456,7 +456,6 @@
                   "postman.setEnvironmentVariable(\"userNumber\", jsonData.result.length);",
                   "//var increment = postman.setEnvironmentVariable(\"userNumber\", jsonData.result.length++);",
                   "tests[\"Find users\"] = jsonData.result.ids.length != 1;",
-                  "",
                   "if(jsonData.result.records[1].name === \"Administrator\"){",
                   "     ",
                   "        tests[\"Check admin isResaManager\"] = jsonData.result.records[1].isResaManager===true;",
