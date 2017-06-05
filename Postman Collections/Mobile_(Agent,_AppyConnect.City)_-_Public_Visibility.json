@@ -9,7 +9,7 @@
   "item": [
     {
       "_postman_id": "a1a75afa-4ce0-102d-6e2a-997fa1e9e18a",
-      "name": "Toolbox",
+      "name": "Mobile - Scénario Action basiques",
       "description": "",
       "item": [
         {
@@ -46,6 +46,45 @@
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "107ec851-e507-fc3b-c4eb-07d6cb6d72ab",
+          "name": "Search_read All Demandes d'intervention",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"interventionRequest.id\", jsonData.result.records[0].id);",
+                  "postman.setEnvironmentVariable(\"attachment_count\", jsonData.result.records[0].attachment_count);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
             },
             "description": ""
           },
@@ -279,6 +318,48 @@
               }
             ],
             "body": {},
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0e105830-569f-6789-3b9d-07ec71bf416c",
+          "name": "Create Demande intervention",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"demandeInter.id\", jsonData.result.result);",
+                  "postman.setEnvironmentVariable(\"latitude\", parseFloat(postman.getEnvironmentVariable(\"latitude\"))+0.0010);",
+                  "postman.setEnvironmentVariable(\"longitude\", parseFloat(postman.getEnvironmentVariable(\"longitude\"))+0.0010);",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"name\": \"Categorie- Debut description...\",\r\n      \"description\": \"description demande2\",\r\n      \"is_citizen\":false,\r\n      \"geo_point\":\"Point({{longitude}} {{latitude}})\",\r\n      \"type_id\":6,\r\n       \"partner_address\":5,\r\n       \"partner_id\":3,\r\n       \"service_id\":1,\r\n       \"site1\":1\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
+            },
             "description": ""
           },
           "response": []
@@ -1024,87 +1105,6 @@
             "description": ""
           },
           "response": []
-        },
-        {
-          "_postman_id": "0e105830-569f-6789-3b9d-07ec71bf416c",
-          "name": "Create Demande intervention",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"demandeInter.id\", jsonData.result.result);",
-                  "postman.setEnvironmentVariable(\"latitude\", parseFloat(postman.getEnvironmentVariable(\"latitude\"))+0.0010);",
-                  "postman.setEnvironmentVariable(\"longitude\", parseFloat(postman.getEnvironmentVariable(\"longitude\"))+0.0010);",
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/create",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"name\": \"Categorie- Debut description...\",\r\n      \"description\": \"description demande2\",\r\n      \"is_citizen\":false,\r\n      \"geo_point\":\"Point({{longitude}} {{latitude}})\",\r\n      \"type_id\":6,\r\n       \"partner_address\":5,\r\n       \"partner_id\":3,\r\n       \"service_id\":1,\r\n       \"site1\":1\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "107ec851-e507-fc3b-c4eb-07d6cb6d72ab",
-          "name": "Search_read All Demandes d'intervention",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"interventionRequest.id\", jsonData.result.records[0].id);",
-                  "postman.setEnvironmentVariable(\"attachment_count\", jsonData.result.records[0].attachment_count);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
         }
       ]
     },
@@ -1259,78 +1259,9 @@
     },
     {
       "_postman_id": "d62d8a50-e84a-3caf-e221-a04f99f523b4",
-      "name": "1 - Server AppyConnect.City",
+      "name": "Create conf server",
       "description": "",
       "item": [
-        {
-          "_postman_id": "5e8fc552-2d11-2756-d172-a7b3504b7e3a",
-          "name": "Utils - Clear Environnement Variables copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  ""
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var server = postman.getEnvironmentVariable(\"server\");",
-                  "var db = postman.getEnvironmentVariable(\"db\");",
-                  "var login = postman.getEnvironmentVariable(\"login\");",
-                  "var password = postman.getEnvironmentVariable(\"password\");",
-                  "var accountNotConnectedLogin = postman.getEnvironmentVariable(\"accountNotConnectedLogin\");",
-                  "var accountNotConnectedPassword = postman.getEnvironmentVariable(\"accountNotConnectedPassword\");",
-                  "var accountNotConnectedName = postman.getEnvironmentVariable(\"accountNotConnectedName\");",
-                  "",
-                  "postman.clearEnvironmentVariables();",
-                  "",
-                  "postman.setEnvironmentVariable(\"server\", server);",
-                  "postman.setEnvironmentVariable(\"db\", db);",
-                  "postman.setEnvironmentVariable(\"login\", login);",
-                  "postman.setEnvironmentVariable(\"password\", password);",
-                  "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", accountNotConnectedLogin);",
-                  "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", accountNotConnectedPassword);",
-                  "postman.setEnvironmentVariable(\"accountNotConnectedName\", accountNotConnectedName);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "http://www.google.com",
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "description": ""
-          },
-          "response": []
-        },
         {
           "_postman_id": "70fc7d95-a343-3ff9-abd8-7cf4d1475153",
           "name": "Authenticate with Admin",
@@ -1582,6 +1513,27 @@
           "response": []
         },
         {
+          "_postman_id": "13fd4a9f-5e58-1634-c6c9-5f30be27b61a",
+          "name": "Create User (external member)",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"identifiadntfred\",\n         \"new_password\":\"12345678\",\n         \"name\":\"NomPrÃ©nomFred\",\n         \"partner_id\":145,\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  28,\n                  89\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
           "_postman_id": "f4f6fc93-5df9-5044-fd0b-a7d1b52ca0e1",
           "name": "Create ir.module.category",
           "event": [
@@ -1696,60 +1648,6 @@
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n        \"model_id\":{{ir.model.id.openstc.ask.category}},\r\n        \"name\": \"generatedByScripting\",\r\n        \"perm_read\": true,\r\n        \"perm_write\": false,\r\n        \"perm_create\": false,\r\n        \"perm_unlink\": false,\r\n        \"group_id\":{{res.groups}}\r\n    },\r\n    \"model\":\"ir.model.access\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ca8999dd-bbb2-3325-a45d-c8cf00e8558c",
-          "name": "Get id ON ir.model FOR res.partner",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"ir.model.id.res.partner\", jsonData.result.records[0].id);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t  \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"ir.model\",\n      \"domain\":[\n         [\n            \"model\",\n            \"=\",\n            \"res.partner\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"model\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "fade5fc1-fbb1-51e6-ff11-f97c187f2402",
-          "name": "Create ir.model.access FOR res.partner",
-          "request": {
-            "url": "{{server}}/web/dataset/create",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n        \"model_id\":{{ir.model.id.res.partner}},\r\n        \"name\": \"generatedByScripting\",\r\n        \"perm_read\": true,\r\n        \"perm_write\": false,\r\n        \"perm_create\": false,\r\n        \"perm_unlink\": false,\r\n        \"group_id\":{{res.groups}}\r\n    },\r\n    \"model\":\"ir.model.access\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
             },
             "description": ""
           },
@@ -2164,6 +2062,129 @@
             "body": {
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"login\":\"{{accountNotConnectedLogin}}\",\n         \"new_password\":\"{{accountNotConnectedPassword}}\",\n         \"name\":\"{{accountNotConnectedName}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{res.groups}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5e8fc552-2d11-2756-d172-a7b3504b7e3a",
+          "name": "Utils - Clear Environnement Variables copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var server = postman.getEnvironmentVariable(\"server\");",
+                  "var db = postman.getEnvironmentVariable(\"db\");",
+                  "var login = postman.getEnvironmentVariable(\"login\");",
+                  "var password = postman.getEnvironmentVariable(\"password\");",
+                  "var accountNotConnectedLogin = postman.getEnvironmentVariable(\"accountNotConnectedLogin\");",
+                  "var accountNotConnectedPassword = postman.getEnvironmentVariable(\"accountNotConnectedPassword\");",
+                  "var accountNotConnectedName = postman.getEnvironmentVariable(\"accountNotConnectedName\");",
+                  "",
+                  "postman.clearEnvironmentVariables();",
+                  "",
+                  "postman.setEnvironmentVariable(\"server\", server);",
+                  "postman.setEnvironmentVariable(\"db\", db);",
+                  "postman.setEnvironmentVariable(\"login\", login);",
+                  "postman.setEnvironmentVariable(\"password\", password);",
+                  "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", accountNotConnectedLogin);",
+                  "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", accountNotConnectedPassword);",
+                  "postman.setEnvironmentVariable(\"accountNotConnectedName\", accountNotConnectedName);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "http://www.google.com",
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ca8999dd-bbb2-3325-a45d-c8cf00e8558c",
+          "name": "Get id ON ir.model FOR res.partner",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"ir.model.id.res.partner\", jsonData.result.records[0].id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t  \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"ir.model\",\n      \"domain\":[\n         [\n            \"model\",\n            \"=\",\n            \"res.partner\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"model\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "fade5fc1-fbb1-51e6-ff11-f97c187f2402",
+          "name": "Create ir.model.access FOR res.partner",
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n        \"model_id\":{{ir.model.id.res.partner}},\r\n        \"name\": \"generatedByScripting\",\r\n        \"perm_read\": true,\r\n        \"perm_write\": false,\r\n        \"perm_create\": false,\r\n        \"perm_unlink\": false,\r\n        \"group_id\":{{res.groups}}\r\n    },\r\n    \"model\":\"ir.model.access\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
             },
             "description": ""
           },
