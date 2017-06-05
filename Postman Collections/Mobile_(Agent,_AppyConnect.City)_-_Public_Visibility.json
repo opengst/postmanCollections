@@ -483,7 +483,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"jsonrpc\":\"2.0\",\n\t\"method\":\"call\",\n\t\"params\":{\n\t\t\"fields\":[\n\t\t\t\"id\",\n\t\t\t\"res_id\"\n\t\t\t],\n\t\t\"domain\":[\n\t\t\t[\n\t\t\t\t\"res_id\",\n\t\t\t\t\"=\",\n\t\t\t\t{{interventionRequest.id}}\n\t\t\t]\n\t\t],\n\t\t\"model\":\"ir.attachment\",\n\t\t\"session_id\": \"{{sessionId}}\"\n\t}\n}"
+              "raw": "{\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\":{\n    \"fields\":[\n      \"id\",\n      \"res_id\"\n      ],\n    \"domain\":[\n      [\n        \"res_id\",\n        \"=\",\n        {{interventionRequest.id}}\n      ]\n    ],\n    \"model\":\"ir.attachment\",\n    \"session_id\": \"{{sessionId}}\"\n  }\n}"
             },
             "description": ""
           },
