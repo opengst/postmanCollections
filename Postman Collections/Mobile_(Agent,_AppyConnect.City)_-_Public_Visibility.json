@@ -579,7 +579,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\":\"r5\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"model\":\"openstc.ask\",\n    \"ids\":[{{demandeInter.id}}],\n      \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\":\"compound_context\",\n      \"__contexts\": [\n        { \n          \"lang\":\"fr_FR\",\n          \"tz\":\"Europe/Paris\",\n            \"uid\": {{uid}}\n        },\n        {\n          \"bin_size\":true\n            \n        }\n      ],\n      \"__eval_context\":null\n    }\n  }\n} "
+              "raw": "{\n\t\"id\":\"r5\",\n\t\"jsonrpc\":\"2.0\",\n\t\"method\":\"call\",\n\t\"params\": {\n\t\t\"model\":\"openstc.ask\",\n\t\t\"ids\":[{{demandeInter.id}}],\n    \t\"session_id\": \"{{sessionId}}\",\n\t\t\"context\": {\n\t\t\t\"__ref\":\"compound_context\",\n\t\t\t\"__contexts\": [\n\t\t\t\t{ \n\t\t\t\t\t\"lang\":\"fr_FR\",\n\t\t\t\t\t\"tz\":\"Europe/Paris\",\n\t\t\t\t\t\t\"uid\": {{uid}}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"bin_size\":true\n\t\t\t\t\t\t\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"__eval_context\":null\n\t\t}\n\t}\n} "
             },
             "description": ""
           },
