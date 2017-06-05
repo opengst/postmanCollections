@@ -308,7 +308,51 @@
           "_postman_id": "bf1d84cb-5f69-cafa-5e91-e23a6dbe01bf",
           "name": "Get Piece Jointe",
           "request": {
-            "url": "{{server}}/web/binary/saveas?session_id={{sessionId}}&model=ir.attachment&id={{attachment.id}}&field=datas&filename_field=datas_fname",
+            "url": {
+              "raw": "{{server}}/web/binary/saveas?session_id={{sessionId}}&model=ir.attachment&id={{attachment.id}}&field=datas&filename_field=datas_fname",
+              "auth": {},
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "web",
+                "binary",
+                "saveas"
+              ],
+              "query": [
+                {
+                  "key": "session_id",
+                  "value": "{{sessionId}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "model",
+                  "value": "ir.attachment",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "id",
+                  "value": "{{attachment.id}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "field",
+                  "value": "datas",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "filename_field",
+                  "value": "datas_fname",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
@@ -652,7 +696,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.ask.category\",\n      \"domain\":[[\n      \t\"id\",\n      \t\"=\",\n      \t4\n      ]],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.ask.category\",\n      \"domain\":[[\n        \"id\",\n        \"=\",\n        4\n      ]],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
