@@ -308,7 +308,51 @@
           "_postman_id": "bf1d84cb-5f69-cafa-5e91-e23a6dbe01bf",
           "name": "Get Piece Jointe",
           "request": {
-            "url": "{{server}}/web/binary/saveas?session_id={{sessionId}}&model=ir.attachment&id={{attachment.id}}&field=datas&filename_field=datas_fname",
+            "url": {
+              "raw": "{{server}}/web/binary/saveas?session_id={{sessionId}}&model=ir.attachment&id={{attachment.id}}&field=datas&filename_field=datas_fname",
+              "auth": {},
+              "host": [
+                "{{server}}"
+              ],
+              "path": [
+                "web",
+                "binary",
+                "saveas"
+              ],
+              "query": [
+                {
+                  "key": "session_id",
+                  "value": "{{sessionId}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "model",
+                  "value": "ir.attachment",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "id",
+                  "value": "{{attachment.id}}",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "field",
+                  "value": "datas",
+                  "equals": true,
+                  "description": ""
+                },
+                {
+                  "key": "filename_field",
+                  "value": "datas_fname",
+                  "equals": true,
+                  "description": ""
+                }
+              ],
+              "variable": []
+            },
             "method": "GET",
             "header": [
               {
@@ -535,7 +579,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"id\":\"r5\",\n\t\"jsonrpc\":\"2.0\",\n\t\"method\":\"call\",\n\t\"params\": {\n\t\t\"model\":\"openstc.ask\",\n\t\t\"ids\":[{{demandeInter.id}}],\n    \t\"session_id\": \"{{sessionId}}\",\n\t\t\"context\": {\n\t\t\t\"__ref\":\"compound_context\",\n\t\t\t\"__contexts\": [\n\t\t\t\t{ \n\t\t\t\t\t\"lang\":\"fr_FR\",\n\t\t\t\t\t\"tz\":\"Europe/Paris\",\n\t\t\t\t\t\t\"uid\": {{uid}}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"bin_size\":true\n\t\t\t\t\t\t\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"__eval_context\":null\n\t\t}\n\t}\n} "
+              "raw": "{\n  \"id\":\"r5\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"model\":\"openstc.ask\",\n    \"ids\":[{{demandeInter.id}}],\n      \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\":\"compound_context\",\n      \"__contexts\": [\n        { \n          \"lang\":\"fr_FR\",\n          \"tz\":\"Europe/Paris\",\n            \"uid\": {{uid}}\n        },\n        {\n          \"bin_size\":true\n            \n        }\n      ],\n      \"__eval_context\":null\n    }\n  }\n} "
             },
             "description": ""
           },
@@ -652,7 +696,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.ask.category\",\n      \"domain\":[[\n      \t\"id\",\n      \t\"=\",\n      \t4\n      ]],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.ask.category\",\n      \"domain\":[[\n        \"id\",\n        \"=\",\n        4\n      ]],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
