@@ -2626,7 +2626,7 @@
         },
         {
           "_postman_id": "d1f1b593-a221-a6a6-4e27-c3c660d667bb",
-          "name": "https://localhost:9443/web/dataset/save",
+          "name": "Cancel task",
           "request": {
             "url": "https://localhost:9443/web/dataset/save",
             "method": "POST",
