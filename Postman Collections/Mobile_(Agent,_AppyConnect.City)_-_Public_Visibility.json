@@ -2730,7 +2730,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"state\":\"pending\",\"name\":\"GR15456789\",\"category_id\":140,\"site1\":1058,\"date_start\":\"2017-07-10 16:04:00\",\"service_id\":14,\"user_id\":false,\"planned_hours\":2,\"date_end\":\"2017-07-10 18:04:00\"},\"model\":\"project.task\",\"session_id\":\"b17e5ab8ec0a43d591c7e17397ffc60d\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":82},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r197\"}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"state\":\"pending\",\n         \"name\":\"GR15456789\",\n         \"category_id\":140,\n         \"site1\":1058,\n         \"date_start\":\"2017-07-10 16:04:00\",\n         \"service_id\":14,\n         \"user_id\":false,\n         \"planned_hours\":2,\n         \"date_end\":\"2017-07-10 18:04:00\"\n      },\n      \"model\":\"project.task\",\n      \"session_id\":\"b17e5ab8ec0a43d591c7e17397ffc60d\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":82\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r197\"\n}"
             },
             "description": ""
           },
