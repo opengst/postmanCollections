@@ -2455,6 +2455,174 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "94587036-baba-983a-889d-b9b746bf95c9",
+          "name": "https://localhost:9443/web/dataset/search_read",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Origin",
+                "value": "https://localhost:9443",
+                "description": ""
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Referer",
+                "value": "https://localhost:9443/demo/",
+                "description": ""
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "description": ""
+              },
+              {
+                "key": "Accept-Language",
+                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
+                "description": ""
+              },
+              {
+                "key": "Cookie",
+                "value": "session0|session_id=%22854b9e66b1dc42b1a3d119bf5644b91b%22; sessionid=7c59350489a19a65a90f772441d9f80553e15229",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"domain\":[[\"state\",\"in\",[\"draft\",\"open\"]],\"|\",\"|\",[\"user_id\",\"in\",[82]],[\"team_id.user_ids.id\",\"in\",[82]],[\"team_id.manager_id\",\"=\",82]],\"sort\":\"id DESC\",\"limit\":20,\"offset\":0,\"fields\":[\"actions\",\"agent_or_team_name\",\"category_id\",\"consumable_ask_ids\",\"consumable_asks\",\"consumable_request_id\",\"date_start\",\"equipment_id\",\"effective_hours\",\"id\",\"swif_id\",\"ask_id\",\"name\",\"partner_id\",\"planned_hours\",\"project_id\",\"can_read_project\",\"service_id\",\"site1\",\"state\",\"team_id\",\"user_id\",\"cost\",\"hr_cost\",\"equipment_cost\",\"consumable_cost\",\"equipment_ids\",\"attachment_count\",\"mail_message_count\",\"external\"],\"model\":\"project.task\",\"session_id\":\"dad0367489a04c9f8c4979fb23f908f5\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":82},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r4\"}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5a4f7a77-cd7f-bade-d378-b362bd157d8b",
+          "name": "https://localhost:9443/web/dataset/search_read",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Origin",
+                "value": "https://localhost:9443",
+                "description": ""
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Referer",
+                "value": "https://localhost:9443/demo/",
+                "description": ""
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "description": ""
+              },
+              {
+                "key": "Accept-Language",
+                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
+                "description": ""
+              },
+              {
+                "key": "Cookie",
+                "value": "session0|session_id=%22854b9e66b1dc42b1a3d119bf5644b91b%22; sessionid=7c59350489a19a65a90f772441d9f80553e15229",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"fields\":[\"id\",\"name\"],\"domain\":[[\"state\",\"not in\",[\"finished\"]]],\"model\":\"openstc.ask\",\"session_id\":\"dad0367489a04c9f8c4979fb23f908f5\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":82},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r5\"}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "883f0a34-56d2-95ff-fd65-c3cecaa2f1d0",
+          "name": "https://localhost:9443/web/dataset/search_read",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Origin",
+                "value": "https://localhost:9443",
+                "description": ""
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Referer",
+                "value": "https://localhost:9443/demo/",
+                "description": ""
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "description": ""
+              },
+              {
+                "key": "Accept-Language",
+                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
+                "description": ""
+              },
+              {
+                "key": "Cookie",
+                "value": "session0|session_id=%22854b9e66b1dc42b1a3d119bf5644b91b%22; sessionid=7c59350489a19a65a90f772441d9f80553e15229",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"fields\":[\"id\",\"name\"],\"domain\":[[\"state\",\"in\",[\"open\",\"scheduled\",\"pending\"]],[\"date_deadline\",\"<\",\"OUTDATED\"],\"|\",[\"project_type\",\"=\",\"intervention\"],[\"project_type\",\"=\",false]],\"model\":\"project.project\",\"session_id\":\"dad0367489a04c9f8c4979fb23f908f5\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":82},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r6\"}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
