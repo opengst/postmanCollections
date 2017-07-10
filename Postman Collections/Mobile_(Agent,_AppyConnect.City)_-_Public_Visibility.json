@@ -2458,7 +2458,7 @@
         },
         {
           "_postman_id": "94587036-baba-983a-889d-b9b746bf95c9",
-          "name": "https://localhost:9443/web/dataset/search_read",
+          "name": "Read basic agent",
           "request": {
             "url": "https://localhost:9443/web/dataset/search_read",
             "method": "POST",
