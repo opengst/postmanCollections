@@ -2674,7 +2674,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"team_id\":false,\"partner_id\":false,\"user_id\":false,\"date_start\":false,\"state\":\"draft\",\"date_end\":false},\"model\":\"project.task\",\"id\":3421,\"session_id\":\"b17e5ab8ec0a43d591c7e17397ffc60d\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":82},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r132\"}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"team_id\":false,\n         \"partner_id\":false,\n         \"user_id\":false,\n         \"date_start\":false,\n         \"state\":\"draft\",\n         \"date_end\":false\n      },\n      \"model\":\"project.task\",\n      \"id\":3421,\n      \"session_id\":\"b17e5ab8ec0a43d591c7e17397ffc60d\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":82\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r132\"\n}"
             },
             "description": ""
           },
