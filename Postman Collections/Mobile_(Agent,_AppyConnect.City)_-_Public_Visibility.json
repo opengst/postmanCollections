@@ -2434,6 +2434,27 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "31935d71-72ce-ef98-adec-6a55836de8b1",
+          "name": "https://support.opengst.fr/web/dataset/save copy",
+          "request": {
+            "url": "{{server}}/web/dataset/save",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"cost\":0,\n         \"planned_hours\":3,\n         \"user_id\":82,\n         \"date_start\":\"2017-07-06 14:00:00\",\n         \"report_hours\":0,\n         \"date_end\":\"2017-07-06 16:00:00\",\n         \"state\": \"open\"\n      },\n      \"model\":\"project.task\",\n      \"id\":3169,\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
