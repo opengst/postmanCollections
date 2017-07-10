@@ -2511,6 +2511,62 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "d2170570-6484-fa00-7f91-a9f1aabc6a69",
+          "name": "https://localhost:9443/web/dataset/save",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/save",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Origin",
+                "value": "https://localhost:9443",
+                "description": ""
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Referer",
+                "value": "https://localhost:9443/demo/",
+                "description": ""
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "description": ""
+              },
+              {
+                "key": "Accept-Language",
+                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
+                "description": ""
+              },
+              {
+                "key": "Cookie",
+                "value": "session0|session_id=%22854b9e66b1dc42b1a3d119bf5644b91b%22; sessionid=7c59350489a19a65a90f772441d9f80553e15229",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"team_id\":false,\"cost\":0,\"planned_hours\":2,\"partner_id\":false,\"user_id\":82,\"date_start\":\"2016-09-23 09:30:00\",\"equipment_ids\":[[6,0,[]]],\"report_hours\":2,\"date_end\":\"2016-09-23 11:30:00\"},\"model\":\"project.task\",\"id\":3385,\"session_id\":\"b17e5ab8ec0a43d591c7e17397ffc60d\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":82},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r121\"}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
