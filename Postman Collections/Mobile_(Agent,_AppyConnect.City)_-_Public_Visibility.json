@@ -2437,7 +2437,7 @@
         },
         {
           "_postman_id": "31935d71-72ce-ef98-adec-6a55836de8b1",
-          "name": "https://support.opengst.fr/web/dataset/save copy",
+          "name": "Update Task (full)",
           "request": {
             "url": "{{server}}/web/dataset/save",
             "method": "POST",
