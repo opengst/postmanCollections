@@ -2418,53 +2418,18 @@
           "_postman_id": "aaf1a2be-eb39-84d1-2e75-cd730f0c100a",
           "name": "https://support.opengst.fr/web/dataset/save",
           "request": {
-            "url": "https://support.opengst.fr/web/dataset/save",
+            "url": "{{server}}/web/dataset/save",
             "method": "POST",
             "header": [
               {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "Origin",
-                "value": "https://support.opengst.fr",
-                "description": ""
-              },
-              {
-                "key": "User-Agent",
-                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
-                "description": ""
-              },
-              {
                 "key": "Content-Type",
                 "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Referer",
-                "value": "https://support.opengst.fr/",
-                "description": ""
-              },
-              {
-                "key": "Accept-Encoding",
-                "value": "gzip, deflate, br",
-                "description": ""
-              },
-              {
-                "key": "Accept-Language",
-                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
-                "description": ""
-              },
-              {
-                "key": "Cookie",
-                "value": "session0|session_id=%224fc99700eeec4a74a992ba0a22385b4b%22; _ga=GA1.2.79149421.1496758409; _gid=GA1.2.158225111.1499691027; sessionid=83b721db754b63b06bd04e366e1fa10a8f80c57f",
                 "description": ""
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"team_id\":false,\n         \"cost\":0,\n         \"planned_hours\":2,\n         \"partner_id\":false,\n         \"user_id\":63,\n         \"date_start\":\"2017-07-06 14:00:00\",\n         \"description\":false,\n         \"equipment_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"report_hours\":2,\n         \"date_end\":\"2017-07-06 16:00:00\"\n      },\n      \"model\":\"project.task\",\n      \"id\":7928,\n      \"session_id\":\"{{sessionId}}\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":63\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r124\"\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"cost\":0,\n         \"planned_hours\":3,\n         \"user_id\":82,\n         \"date_start\":\"2017-07-06 14:00:00\",\n         \"report_hours\":0,\n         \"date_end\":\"2017-07-06 16:00:00\",\n         \"state\": \"open\"\n      },\n      \"model\":\"project.task\",\n      \"id\":3169,\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
