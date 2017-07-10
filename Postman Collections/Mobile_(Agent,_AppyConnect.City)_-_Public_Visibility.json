@@ -2278,62 +2278,6 @@
           "response": []
         },
         {
-          "_postman_id": "aaf1a2be-eb39-84d1-2e75-cd730f0c100a",
-          "name": "https://support.opengst.fr/web/dataset/save",
-          "request": {
-            "url": "https://support.opengst.fr/web/dataset/save",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "Origin",
-                "value": "https://support.opengst.fr",
-                "description": ""
-              },
-              {
-                "key": "User-Agent",
-                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Referer",
-                "value": "https://support.opengst.fr/",
-                "description": ""
-              },
-              {
-                "key": "Accept-Encoding",
-                "value": "gzip, deflate, br",
-                "description": ""
-              },
-              {
-                "key": "Accept-Language",
-                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
-                "description": ""
-              },
-              {
-                "key": "Cookie",
-                "value": "session0|session_id=%224fc99700eeec4a74a992ba0a22385b4b%22; _ga=GA1.2.79149421.1496758409; _gid=GA1.2.158225111.1499691027; sessionid=83b721db754b63b06bd04e366e1fa10a8f80c57f",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"team_id\":false,\"cost\":0,\"planned_hours\":2,\"partner_id\":false,\"user_id\":63,\"date_start\":\"2017-07-06 14:00:00\",\"description\":false,\"equipment_ids\":[[6,0,[]]],\"report_hours\":2,\"date_end\":\"2017-07-06 16:00:00\"},\"model\":\"project.task\",\"id\":7928,\"session_id\":\"df94141fea7041758f4e325b0b8d0f3c\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":63},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r124\"}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "344740b3-3a62-1a2c-7e38-2f22e8c02ccb",
           "name": "Authenticate",
           "event": [
@@ -2386,6 +2330,62 @@
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "aaf1a2be-eb39-84d1-2e75-cd730f0c100a",
+          "name": "https://support.opengst.fr/web/dataset/save",
+          "request": {
+            "url": "https://support.opengst.fr/web/dataset/save",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Origin",
+                "value": "https://support.opengst.fr",
+                "description": ""
+              },
+              {
+                "key": "User-Agent",
+                "value": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.110 Safari/537.36",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Referer",
+                "value": "https://support.opengst.fr/",
+                "description": ""
+              },
+              {
+                "key": "Accept-Encoding",
+                "value": "gzip, deflate, br",
+                "description": ""
+              },
+              {
+                "key": "Accept-Language",
+                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
+                "description": ""
+              },
+              {
+                "key": "Cookie",
+                "value": "session0|session_id=%224fc99700eeec4a74a992ba0a22385b4b%22; _ga=GA1.2.79149421.1496758409; _gid=GA1.2.158225111.1499691027; sessionid=83b721db754b63b06bd04e366e1fa10a8f80c57f",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"team_id\":false,\"cost\":0,\"planned_hours\":2,\"partner_id\":false,\"user_id\":63,\"date_start\":\"2017-07-06 14:00:00\",\"description\":false,\"equipment_ids\":[[6,0,[]]],\"report_hours\":2,\"date_end\":\"2017-07-06 16:00:00\"},\"model\":\"project.task\",\"id\":7928,\"session_id\":\"df94141fea7041758f4e325b0b8d0f3c\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":63},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r124\"}"
             },
             "description": ""
           },
