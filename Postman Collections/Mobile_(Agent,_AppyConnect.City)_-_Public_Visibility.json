@@ -2513,10 +2513,10 @@
           "response": []
         },
         {
-          "_postman_id": "d2170570-6484-fa00-7f91-a9f1aabc6a69",
-          "name": "https://localhost:9443/web/dataset/save",
+          "_postman_id": "883f0a34-56d2-95ff-fd65-c3cecaa2f1d0",
+          "name": "https://localhost:9443/web/dataset/search_read",
           "request": {
-            "url": "https://localhost:9443/web/dataset/save",
+            "url": "https://localhost:9443/web/dataset/search_read",
             "method": "POST",
             "header": [
               {
@@ -2562,7 +2562,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"team_id\":false,\"cost\":0,\"planned_hours\":2,\"partner_id\":false,\"user_id\":82,\"date_start\":\"2016-09-23 09:30:00\",\"equipment_ids\":[[6,0,[]]],\"report_hours\":2,\"date_end\":\"2016-09-23 11:30:00\"},\"model\":\"project.task\",\"id\":3385,\"session_id\":\"b17e5ab8ec0a43d591c7e17397ffc60d\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":82},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r121\"}"
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"fields\":[\"id\",\"name\"],\"domain\":[[\"state\",\"in\",[\"open\",\"scheduled\",\"pending\"]],[\"date_deadline\",\"<\",\"OUTDATED\"],\"|\",[\"project_type\",\"=\",\"intervention\"],[\"project_type\",\"=\",false]],\"model\":\"project.project\",\"session_id\":\"dad0367489a04c9f8c4979fb23f908f5\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":82},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r6\"}"
             },
             "description": ""
           },
