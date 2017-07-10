@@ -2394,27 +2394,6 @@
           "response": []
         },
         {
-          "_postman_id": "fe84666e-5df9-4670-276a-71c388830f0c",
-          "name": "Get My Tasks copy",
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"domain\":[\n         [\n            \"user_id\",\n            \"in\",\n            [\n               63\n            ]\n         ]\n      ],\n      \"sort\":\"id DESC\",\n      \"limit\":20,\n      \"offset\":0,\n      \"fields\":[\n         \"actions\",\n         \"agent_or_team_name\",\n         \"category_id\",\n         \"consumable_ask_ids\",\n         \"consumable_asks\",\n         \"consumable_request_id\",\n         \"date_start\",\n         \"equipment_id\",\n         \"effective_hours\",\n         \"id\",\n         \"swif_id\",\n         \"ask_id\",\n         \"name\",\n         \"partner_id\",\n         \"planned_hours\",\n         \"project_id\",\n         \"can_read_project\",\n         \"service_id\",\n         \"site1\",\n         \"state\",\n         \"team_id\",\n         \"user_id\",\n         \"cost\",\n         \"hr_cost\",\n         \"equipment_cost\",\n         \"consumable_cost\",\n         \"equipment_ids\",\n         \"attachment_count\",\n         \"mail_message_count\",\n         \"external\"\n      ],\n      \"model\":\"project.task\",\n      \"session_id\":\"{{sessionId}}\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":63\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r4\"\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "aaf1a2be-eb39-84d1-2e75-cd730f0c100a",
           "name": "https://support.opengst.fr/web/dataset/save",
           "request": {
