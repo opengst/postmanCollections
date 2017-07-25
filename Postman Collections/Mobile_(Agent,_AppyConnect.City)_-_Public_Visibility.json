@@ -3748,6 +3748,27 @@
       "description": "",
       "item": [
         {
+          "_postman_id": "13fd4a9f-5e58-1634-c6c9-5f30be27b61a",
+          "name": "Create User (external member)",
+          "request": {
+            "url": "https://localhost:9443/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"identifiadntfred\",\n         \"new_password\":\"12345678\",\n         \"name\":\"NomPrénomFred\",\n         \"partner_id\":145,\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  28,\n                  89\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
           "_postman_id": "ea4182b8-904b-e058-c560-92e6e060716c",
           "name": "Sandbox",
           "request": {
@@ -4293,27 +4314,6 @@
             "body": {
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"project.task\",\n      \"ids\":[\n         3421\n      ],\n      \"session_id\":\"b17e5ab8ec0a43d591c7e17397ffc60d\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":82\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r199\"\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "13fd4a9f-5e58-1634-c6c9-5f30be27b61a",
-          "name": "Create User (external member)",
-          "request": {
-            "url": "https://localhost:9443/web/dataset/create",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n\n               ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"identifiadntfred\",\n         \"new_password\":\"12345678\",\n         \"name\":\"NomPrénomFred\",\n         \"partner_id\":145,\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  28,\n                  89\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "description": ""
           },
