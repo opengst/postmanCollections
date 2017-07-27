@@ -3590,6 +3590,48 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "af422b40-a216-e724-76de-61326961bde0",
+          "name": "Create Demande intervention copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"demandeInter.id\", jsonData.result.result);",
+                  "postman.setEnvironmentVariable(\"latitude\", parseFloat(postman.getEnvironmentVariable(\"latitude\"))+0.0010);",
+                  "postman.setEnvironmentVariable(\"longitude\", parseFloat(postman.getEnvironmentVariable(\"longitude\"))+0.0010);",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"name\": \"Categorie- Debut description...\",\r\n      \"description\": \"description demande2\",\r\n      \"is_citizen\":false,\r\n      \"geo_point\":\"Point({{longitude}} {{latitude}})\",\r\n      \"type_id\":6,\r\n       \"partner_address\":5,\r\n       \"partner_id\":3,\r\n       \"service_id\":1,\r\n       \"site1\":1\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
