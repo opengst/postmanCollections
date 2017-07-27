@@ -3590,6 +3590,32 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "5dde47ea-515b-4460-024d-a93c5f227d69",
+          "name": "Get Category copy",
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.ask.category\",\n      \"domain\":[[\n        \"id\",\n        \"=\",\n        4\n      ]],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
+            },
+            "description": ""
+          },
+          "response": []
         }
       ]
     },
