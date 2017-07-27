@@ -3590,45 +3590,6 @@
             "description": ""
           },
           "response": []
-        },
-        {
-          "_postman_id": "c9f7e211-6619-af0c-e348-4724e2def995",
-          "name": "Search_read Pièces jointes Demande d'intervention copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"attachment.id\", jsonData.result.records[0].id);",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\":{\n    \"domain\":[\n      [\n        \"res_id\",\n        \"=\",\n        \"{{interventionRequest.id}}\"\n      ]\n    ],\n    \"model\":\"ir.attachment\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\":{\n      \"__ref\":\"compound_context\",\n      \"__contexts\":[\n        {\n          \"lang\":\"fr_FR\",\n          \"tz\":\"Europe/Paris\",\n          \"uid\":{{uid}}\n        },\n        {\n          \"bin_size\":true\n        }\n      ],\n      \"__eval_context\":null\n    }\n  },\n  \"id\":\"r78\"\n}"
-            },
-            "description": ""
-          },
-          "response": []
         }
       ]
     },
