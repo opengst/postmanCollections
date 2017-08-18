@@ -78,310 +78,6 @@
       ]
     },
     {
-      "_postman_id": "99a74e96-583e-ff82-4e09-7f23d580eec9",
-      "name": "CRUD SIte",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "d1042fff-9039-b0be-5e2a-1de91becb450",
-          "name": "Create Site DE",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "//You have no right to create when you are not in the group Create Sites.",
-                  "tests[\"error code Check\"] = jsonData.error.code === 200;",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/create",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"osm_zoom\":false,\n            \"osm_type\":false,\n            \"osm_id\":false,\n            \"geometry\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"block_booking\":false,\n            \"product_image\":false,\n            \"name\":\"CreateTest\",\n            \"type_id\":80\n        },\n        \"model\":\"openstc.site\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r156\"\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "754eb9ab-7865-eeb8-2f76-beee0f381159",
-          "name": "Update Site DE",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "//You have no right to create when you are not in the group Modify Sites (from actions)",
-                  "tests[\"error code Check\"] = jsonData.error.code === 200;",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/save",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"code\":false,\n            \"type_id\":68,\n            \"color\":\"#390A10\",\n            \"surface\":0,\n            \"active\":true,\n            \"block_booking\":false,\n            \"osm_id\":false,\n            \"resa_user_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"max_bookable_qty\":0,\n            \"site_parent_id\":313,\n            \"width\":0,\n            \"resa_service_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"length\":0,\n            \"long\":0,\n            \"internal_bookable_notice\":0,\n            \"geo_point\":false,\n            \"partner_type_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"service_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"description_sale\":false,\n            \"osm_zoom\":false,\n            \"openresa_property_manager_id\":1,\n            \"lat\":0,\n            \"name\":\"1er Ã©tage test\",\n            \"service_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"product_id\":648,\n            \"optional_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"geometry\":false,\n            \"osm_type\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"option_of_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"external_bookable_notice\":0,\n            \"accommodation_capacity\":0,\n            \"product_image\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1151,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r199\"\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "60705099-2530-d828-c1fb-d0a24f1dfdb0",
-          "name": "Search Read Site DE",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "//Demandeur externe can only read the site",
-                  "tests[\"Check site exist\"] = jsonData.result.records.length > 0;",
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "X-DevTools-Emulate-Network-Conditions-Client-Id",
-                "value": "f55002dd-9cf3-4ebf-ba56-72718a383a86",
-                "description": "",
-                "disabled": true
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"id\":\"r161\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"sort\":\"name ASC\",\n        \"limit\":20,\n        \"offset\":0,\n        \"model\":\"openstc.site\",\n        \"fields\":[\n            \"active\",\n            \"actions\",\n            \"attachment_count\",\n            \"block_booking\",\n            \"code\",\n            \"description_sale\",\n            \"external_booking\",\n            \"external_bookable_notice\",\n            \"internal_booking\",\n            \"internal_bookable_notice\",\n            \"lat\",\n            \"long\",\n            \"length\",\n            \"max_bookable_qty\",\n            \"name\",\n            \"openresa_property_manager_id\",\n            \"partner_type_bookable_ids\",\n            \"pricelist_id\",\n            \"product_id\",\n            \"service_ids\",\n            \"service_names\",\n            \"service_bookable_ids\",\n            \"site_parent_id\",\n            \"surface\",\n            \"type_id\",\n            \"width\",\n            \"color\",\n            \"resa_service_manager_ids\",\n            \"resa_user_manager_ids\",\n            \"optional_product_ids\",\n            \"option_of_product_ids\",\n            \"accomodation_capacity\",\n            \"phone\",\n            \"geometry\",\n            \"geo_point\",\n            \"osm_type\",\n            \"osm_id\",\n            \"osm_zoom\"\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "3b186fa9-a456-7fe5-d3f7-947dcf4ecc8e",
-          "name": "search_read Site \"openstc.site\" DE",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "//For demandeur externe, who hasn't got right to read site \"Openstc.site\"",
-                  "tests[\"Error Checked\"]=jsonData.error.code === 200;",
-                  "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/search_read",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r5\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.site\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "55b0626f-71de-f171-ff7c-6d125623af1f",
-          "name": "create Site \"openstc.site\" DE",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "//For demandeur externe, who hasn't got right to create 'Site'",
-                  "tests[\"Error Checked\"]=jsonData.error.code === 200;",
-                  "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/create",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"city\":\"Ville\",\n        \"zip\":\"Code postal\",\n        \"product_image\":false,\n    \"osm_zoom\": false,\n    \"osm_type\": false,\n    \"osm_id\": false,\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"name\": \"Creation Site 2\",\n    \"type_id\": 76,\n    \"alarm\":true,\n    \"pmr\":true,\n        \"amiante\":true,\n        \"igh\":false,\n        \"cadastre_is_bati\":false,\n        \"cadastre_is_nonbati\":false,\n        \"pprn\":false,\n        \"pprm\":false,\n        \"pprt\":false,\n        \"ppri\":false,\n        \"product_image\":false,\n        \"street\":\"Rue\",\n        \"street2\":\"Rue (suite)\",\n        \"accommodation_capacity\":666,\n        \"width\":666,\n        \"length\":666,\n        \"surface\":443556,\n        \"is_copro\":false,\n        \"date_end\":\"2016-10-24\",\n        \"date_start\":\"2016-10-24\",\n        \"site_parent_id\":1151,\n        \"access_manager_ids\": [[6, 0, [73, 97]]]\n    },\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "23d34960-05e9-0c28-a24f-4f2dc7de7116",
-          "name": "get Site \"openstc.site\" DE",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "//For demandeur externe, who hasn't got right to get 'Site'",
-                  "tests[\"Error Checked\"]=jsonData.error.code === 200;",
-                  "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/get",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"openstc.site\",\r\n    \"ids\": [\r\n      1\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "5a867067-2c8f-43e1-40d7-6158a6aca728",
-          "name": "Deactivate Site DE",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "//You have no right to create when you are not in the group Modify Sites (from actions)",
-                  "tests[\"error code Check\"] = jsonData.error.code === 200;",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/save",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"active\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1158,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r238\"\n}"
-            },
-            "description": ""
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "b420dbae-5c4a-1778-8cae-e7a28d821579",
       "name": "CRG User",
       "description": "",
@@ -841,13 +537,13 @@
       ]
     },
     {
-      "_postman_id": "4b99905d-f0b5-9a0a-fdcf-4d13a4260666",
-      "name": "Task Request",
+      "_postman_id": "99a74e96-583e-ff82-4e09-7f23d580eec9",
+      "name": "CRUD SIte",
       "description": "",
       "item": [
         {
-          "_postman_id": "87697b50-c4d8-ec3d-73ed-29e93451579d",
-          "name": "createTask Demandeur",
+          "_postman_id": "d1042fff-9039-b0be-5e2a-1de91becb450",
+          "name": "Create Site DE",
           "event": [
             {
               "listen": "test",
@@ -856,9 +552,9 @@
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
                   "",
-                  "//You have no right to create when you are not in one of these groups: Create, User (from actions)",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "//You have no right to create when you are not in the group Create Sites.",
                   "tests[\"error code Check\"] = jsonData.error.code === 200;",
-                  "",
                   ""
                 ]
               }
@@ -881,7 +577,262 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"id\":\"r136\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"project_id\":1823,\n            \"name\":\"ffff\",\n            \"service_id\":2,\n            \"planned_hours\":2,\n            \"category_id\":33,\n            \"user_id\":57,\n            \"date_start\":\"2017-04-28 06:30:00\",\n            \"date_end\":\"2017-04-28 08:30:00\"\n        },\n        \"model\":\"project.task\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n}"
+              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"osm_zoom\":false,\n            \"osm_type\":false,\n            \"osm_id\":false,\n            \"geometry\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"block_booking\":false,\n            \"product_image\":false,\n            \"name\":\"CreateTest\",\n            \"type_id\":80\n        },\n        \"model\":\"openstc.site\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r156\"\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "754eb9ab-7865-eeb8-2f76-beee0f381159",
+          "name": "Update Site DE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "//You have no right to create when you are not in the group Modify Sites (from actions)",
+                  "tests[\"error code Check\"] = jsonData.error.code === 200;",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/save",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"code\":false,\n            \"type_id\":68,\n            \"color\":\"#390A10\",\n            \"surface\":0,\n            \"active\":true,\n            \"block_booking\":false,\n            \"osm_id\":false,\n            \"resa_user_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"max_bookable_qty\":0,\n            \"site_parent_id\":313,\n            \"width\":0,\n            \"resa_service_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"length\":0,\n            \"long\":0,\n            \"internal_bookable_notice\":0,\n            \"geo_point\":false,\n            \"partner_type_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"service_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"description_sale\":false,\n            \"osm_zoom\":false,\n            \"openresa_property_manager_id\":1,\n            \"lat\":0,\n            \"name\":\"1er Ã©tage test\",\n            \"service_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"product_id\":648,\n            \"optional_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"geometry\":false,\n            \"osm_type\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"option_of_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"external_bookable_notice\":0,\n            \"accommodation_capacity\":0,\n            \"product_image\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1151,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r199\"\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "60705099-2530-d828-c1fb-d0a24f1dfdb0",
+          "name": "Search Read Site DE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "//Demandeur externe can only read the site",
+                  "tests[\"Check site exist\"] = jsonData.result.records.length > 0;",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "X-DevTools-Emulate-Network-Conditions-Client-Id",
+                "value": "f55002dd-9cf3-4ebf-ba56-72718a383a86",
+                "description": "",
+                "disabled": true
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"id\":\"r161\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"sort\":\"name ASC\",\n        \"limit\":20,\n        \"offset\":0,\n        \"model\":\"openstc.site\",\n        \"fields\":[\n            \"active\",\n            \"actions\",\n            \"attachment_count\",\n            \"block_booking\",\n            \"code\",\n            \"description_sale\",\n            \"external_booking\",\n            \"external_bookable_notice\",\n            \"internal_booking\",\n            \"internal_bookable_notice\",\n            \"lat\",\n            \"long\",\n            \"length\",\n            \"max_bookable_qty\",\n            \"name\",\n            \"openresa_property_manager_id\",\n            \"partner_type_bookable_ids\",\n            \"pricelist_id\",\n            \"product_id\",\n            \"service_ids\",\n            \"service_names\",\n            \"service_bookable_ids\",\n            \"site_parent_id\",\n            \"surface\",\n            \"type_id\",\n            \"width\",\n            \"color\",\n            \"resa_service_manager_ids\",\n            \"resa_user_manager_ids\",\n            \"optional_product_ids\",\n            \"option_of_product_ids\",\n            \"accomodation_capacity\",\n            \"phone\",\n            \"geometry\",\n            \"geo_point\",\n            \"osm_type\",\n            \"osm_id\",\n            \"osm_zoom\"\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "3b186fa9-a456-7fe5-d3f7-947dcf4ecc8e",
+          "name": "search_read Site \"openstc.site\" DE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "//For demandeur externe, who hasn't got right to read site \"Openstc.site\"",
+                  "tests[\"Error Checked\"]=jsonData.error.code === 200;",
+                  "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/search_read",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r5\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"id DESC\",\r\n    \"limit\": 10,\r\n    \"offset\": 0,\r\n    \"model\": \"openstc.site\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "55b0626f-71de-f171-ff7c-6d125623af1f",
+          "name": "create Site \"openstc.site\" DE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "//For demandeur externe, who hasn't got right to create 'Site'",
+                  "tests[\"Error Checked\"]=jsonData.error.code === 200;",
+                  "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"city\":\"Ville\",\n        \"zip\":\"Code postal\",\n        \"product_image\":false,\n    \"osm_zoom\": false,\n    \"osm_type\": false,\n    \"osm_id\": false,\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"name\": \"Creation Site 2\",\n    \"type_id\": 76,\n    \"alarm\":true,\n    \"pmr\":true,\n        \"amiante\":true,\n        \"igh\":false,\n        \"cadastre_is_bati\":false,\n        \"cadastre_is_nonbati\":false,\n        \"pprn\":false,\n        \"pprm\":false,\n        \"pprt\":false,\n        \"ppri\":false,\n        \"product_image\":false,\n        \"street\":\"Rue\",\n        \"street2\":\"Rue (suite)\",\n        \"accommodation_capacity\":666,\n        \"width\":666,\n        \"length\":666,\n        \"surface\":443556,\n        \"is_copro\":false,\n        \"date_end\":\"2016-10-24\",\n        \"date_start\":\"2016-10-24\",\n        \"site_parent_id\":1151,\n        \"access_manager_ids\": [[6, 0, [73, 97]]]\n    },\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "23d34960-05e9-0c28-a24f-4f2dc7de7116",
+          "name": "get Site \"openstc.site\" DE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "//For demandeur externe, who hasn't got right to get 'Site'",
+                  "tests[\"Error Checked\"]=jsonData.error.code === 200;",
+                  "tests[\"Body matches access right\"] = jsonData.error.data.fault_code.has(\"Erreur d'accès\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/get",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              },
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"openstc.site\",\r\n    \"ids\": [\r\n      1\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5a867067-2c8f-43e1-40d7-6158a6aca728",
+          "name": "Deactivate Site DE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "//You have no right to create when you are not in the group Modify Sites (from actions)",
+                  "tests[\"error code Check\"] = jsonData.error.code === 200;",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/save",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"active\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1158,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r238\"\n}"
             },
             "description": ""
           },
@@ -1421,6 +1372,55 @@
       ]
     },
     {
+      "_postman_id": "4b99905d-f0b5-9a0a-fdcf-4d13a4260666",
+      "name": "Task Request",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "87697b50-c4d8-ec3d-73ed-29e93451579d",
+          "name": "createTask Demandeur",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "//You have no right to create when you are not in one of these groups: Create, User (from actions)",
+                  "tests[\"error code Check\"] = jsonData.error.code === 200;",
+                  "",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "url": "{{server}}/web/dataset/create",
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8",
+                "description": ""
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"id\":\"r136\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"project_id\":1823,\n            \"name\":\"ffff\",\n            \"service_id\":2,\n            \"planned_hours\":2,\n            \"category_id\":33,\n            \"user_id\":57,\n            \"date_start\":\"2017-04-28 06:30:00\",\n            \"date_end\":\"2017-04-28 08:30:00\"\n        },\n        \"model\":\"project.task\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n}"
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "d28880e2-8ca8-07b9-3de5-4ef69e6720fc",
       "name": "https://gst.atreal.fr/api/v1/ping",
       "event": [
@@ -1477,70 +1477,6 @@
         ],
         "body": {},
         "description": "test if resaframe in prod is up"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "fda101d1-46be-c194-3e59-b470b5dc9fb0",
-      "name": "http://gmao.ville-lannion.fr/api/v1/lannion/open_object/partners?",
-      "event": [
-        {
-          "listen": "test",
-          "script": {
-            "type": "text/javascript",
-            "exec": [
-              "tests[\"Lannion resaframe ASSO select seems fine\"] = responseCode.code === 200;"
-            ]
-          }
-        }
-      ],
-      "request": {
-        "url": "http://gmao.ville-lannion.fr/api/v1/lannion/open_object/partners?fields%5B%5D=id&fields%5B%5D=name&filters%5B0%5D%5Bfield%5D=name&filters%5B0%5D%5Boperator%5D=ilike&filters%5B0%5D%5Bvalue%5D=&filters%5B1%5D%5Bfield%5D=type_id.code&filters%5B1%5D%5Boperator%5D=ilike&filters%5B1%5D%5Bvalue%5D=ASSO",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Accept",
-            "value": "*/*",
-            "description": ""
-          },
-          {
-            "key": "X-Requested-With",
-            "value": "XMLHttpRequest",
-            "description": ""
-          },
-          {
-            "key": "User-Agent",
-            "value": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36",
-            "description": ""
-          },
-          {
-            "key": "Authorization",
-            "value": "Token token=7695535153c9e8acb19c1830ce8736fa",
-            "description": ""
-          },
-          {
-            "key": "Referer",
-            "value": "https://gst.atreal.fr/saint-barthelemy-anjou/resaframe/index.html",
-            "description": ""
-          },
-          {
-            "key": "Accept-Encoding",
-            "value": "gzip, deflate, sdch, br",
-            "description": ""
-          },
-          {
-            "key": "Accept-Language",
-            "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
-            "description": ""
-          },
-          {
-            "key": "Cookie",
-            "value": "session0|session_id=%22%22; connect.sid=s%3A9e984315-4d55-496c-a7cf-06bfe711df3a.OD85HPOJ8clIOZxagfEX%2Fps7Pi%2BuSliu%2FU0SAFI1wmw; sessionid=52314e2d3754f719c3710fe8750a7c6d8b8acbd9",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": ""
       },
       "response": []
     },
