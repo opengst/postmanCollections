@@ -134,48 +134,6 @@
           "response": []
         },
         {
-          "_postman_id": "d04f2c0e-426b-0b3b-8d9a-ab588f9c5b07",
-          "name": "get 'res.users' Test",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Check error code\"] = jsonData.error.code ===200;",
-                  "tests[\"Check error type\"] = jsonData.error.data.type ===\"server_exception\";",
-                  "",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "url": "{{server}}/web/dataset/get",
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
-              },
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "description": ""
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"res.users\",\r\n    \"ids\": [{{uid}}],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
-            },
-            "description": "pour connaitre des infos à renseigner dans la demande"
-          },
-          "response": []
-        },
-        {
           "_postman_id": "b12233d5-09e8-502a-b51e-63d9735c678e",
           "name": "search_read users",
           "event": [
