@@ -587,7 +587,7 @@
         },
         {
           "_postman_id": "0dcd10f0-f918-371a-660c-ab2d39d528f5",
-          "name": "Get GroupId for Demandeur",
+          "name": "Get GroupId for CITIZEN",
           "event": [
             {
               "listen": "test",
