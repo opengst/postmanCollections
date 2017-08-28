@@ -614,7 +614,7 @@
                   " * SCENARIO",
                   " */ ",
                   "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur\");",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for CITIZEN\");",
                   "postman.setNextRequest(\"000 - Global Scenario\");"
                 ]
               }
