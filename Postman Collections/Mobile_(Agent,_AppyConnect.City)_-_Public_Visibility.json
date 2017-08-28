@@ -607,7 +607,7 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "postman.setEnvironmentVariable(\"groupIdDemandeur\", jsonData.result.records[0].id);",
+                  "postman.setEnvironmentVariable(\"groupIdCitoyen\", jsonData.result.records[0].id);",
                   "",
                   "",
                   "/*",
