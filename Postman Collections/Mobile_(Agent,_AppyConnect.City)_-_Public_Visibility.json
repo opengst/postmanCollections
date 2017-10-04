@@ -4446,7 +4446,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"domain\":[[\"id\",\"!=\",false],[\"name\",\"!=\",false],[\"address_id\",\"!=\",false],[\"partner_id\",\"!=\",false],[\"id\",\"=\",642]],\"fields\":[\"id\",\"name\",\"email\",\"city\",\"zip\",\"street\",\"phone\",\"mobile\",\"address_id\",\"partner_id\"],\"limit\":1,\"model\":\"res.users\",\"offset\":0,\"sort\":\"id DESC\",\"session_id\":\"{{sessionId}}\"}}\n"
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"domain\":[[\"id\",\"!=\",false],[\"name\",\"!=\",false],[\"id\",\"=\",642]],\"fields\":[\"id\",\"name\",\"email\",\"city\",\"zip\",\"street\",\"phone\",\"mobile\",\"address_id\",\"partner_id\"],\"limit\":1,\"model\":\"res.users\",\"offset\":0,\"sort\":\"id DESC\",\"session_id\":\"{{sessionId}}\"}}\n"
             },
             "description": ""
           },
