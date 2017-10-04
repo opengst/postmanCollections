@@ -4375,7 +4375,7 @@
         },
         {
           "_postman_id": "c7fe474d-52cf-b75a-8e46-cc6d4b1312cc",
-          "name": "Authenticate copy",
+          "name": "Authenticate With NotConnectedAccount",
           "event": [
             {
               "listen": "test",
