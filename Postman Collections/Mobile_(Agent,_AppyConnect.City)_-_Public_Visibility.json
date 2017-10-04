@@ -4425,7 +4425,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
+              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{accountNotConnectedLogin}}\",\r\n    \"password\": \"{{accountNotConnectedPassword}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
             },
             "description": ""
           },
