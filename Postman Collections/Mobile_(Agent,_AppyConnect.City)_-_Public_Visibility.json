@@ -2183,6 +2183,26 @@
           "response": []
         },
         {
+          "_postman_id": "fade5fc1-fbb1-51e6-ff11-f97c187f2402",
+          "name": "Create ir.model.access FOR res.partner",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n        \"model_id\":{{ir.model.id.res.partner}},\r\n        \"name\": \"generatedByScripting\",\r\n        \"perm_read\": true,\r\n        \"perm_write\": false,\r\n        \"perm_create\": false,\r\n        \"perm_unlink\": false,\r\n        \"group_id\":{{res.groups}}\r\n    },\r\n    \"model\":\"ir.model.access\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
+            },
+            "url": "{{server}}/web/dataset/create",
+            "description": ""
+          },
+          "response": []
+        },
+        {
           "_postman_id": "13096a4e-e51b-a29a-efa1-57f5c797bc9c",
           "name": "Create User : MainAccessForMobiles",
           "event": [
@@ -2279,26 +2299,6 @@
               "raw": ""
             },
             "url": "http://www.google.com",
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "fade5fc1-fbb1-51e6-ff11-f97c187f2402",
-          "name": "Create ir.model.access FOR res.partner",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n        \"model_id\":{{ir.model.id.res.partner}},\r\n        \"name\": \"generatedByScripting\",\r\n        \"perm_read\": true,\r\n        \"perm_write\": false,\r\n        \"perm_create\": false,\r\n        \"perm_unlink\": false,\r\n        \"group_id\":{{res.groups}}\r\n    },\r\n    \"model\":\"ir.model.access\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
-            },
-            "url": "{{server}}/web/dataset/create",
             "description": ""
           },
           "response": []
