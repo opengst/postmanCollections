@@ -53,24 +53,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/session/authenticate",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
             },
+            "url": "{{server}}/web/session/authenticate",
             "description": ""
           },
           "response": []
@@ -111,24 +109,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/create",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r7\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"context_tz\": \"Europe/Paris\",\r\n      \"hex_color\": \"#2B0652\",\r\n      \"service_id\": false,\r\n      \"service_ids\": [[6,  0,[]]],\r\n      \"is_assignable_to_task\": false,\r\n      \"is_bookable_manager\": false,\r\n      \"image\": false,\r\n      \"login\": \"{{userLogin}}\",\r\n      \"new_password\": \"user1Mdp\",\r\n      \"name\": \"{{userName}}\",\r\n      \"function\": \"userFonction\",\r\n      \"email\": \"user@domain.com\",\r\n      \"phone\": \"0240033021\",\r\n      \"mobile\": \"0660353212\",\r\n      \"street\": \"rue\",\r\n      \"zip\": \"44100\",\r\n      \"city\": \"nantes\",\r\n      \"partner_id\": {{resPartner.id}},\r\n      \"groups_id\": [[6,0,[{{resGroups.Demandeur.id}},  {{resGroups.DemandeurExterne.id}}]]]\r\n    },\r\n    \"model\": \"res.users\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\"bin_size\": true}\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
+              "raw": "{\r\n  \"id\": \"r7\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"context_tz\": \"Europe/Paris\",\r\n      \"hex_color\": \"#2B0652\",\r\n      \"service_id\": false,\r\n      \"service_ids\": [[6,  0,[]]],\r\n      \"is_assignable_to_task\": false,\r\n      \"is_bookable_manager\": false,\r\n      \"image\": false,\r\n      \"login\": \"{{userLogin}}\",\r\n      \"new_password\": \"user1Mdp\",\r\n      \"name\": \"{{userName}}\",\r\n      \"function\": \"userFonction\",\r\n      \"email\": \"user@domain.com\",\r\n      \"phone\": \"0240033021\",\r\n      \"mobile\": \"0660353212\",\r\n      \"street\": \"rue\",\r\n      \"zip\": \"44100\",\r\n      \"city\": \"nantes\",\r\n      \"partner_id\": \"{{resPartner.id}}\",\r\n      \"groups_id\": [[6,0,[\"{{resGroups.Demandeur.id}}\", \"{{resGroups.DemandeurExterne.id}}\"]]]\r\n    },\r\n    \"model\": \"res.users\",\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": \"{{uid}}\"\r\n        },\r\n        {\"bin_size\": true}\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
             },
+            "url": "{{server}}/web/dataset/create",
             "description": "resGroups.id = Demandeur externe\n28 : Demandeur\nresPartner.id = Particuliers Commune"
           },
           "response": []
@@ -150,24 +146,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
+                "value": "application/json, text/plain, */*"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"call\",\n\t\"params\": {\n\t\t\"sort\": \"name ASC\",\n\t\t\"limit\": 20,\n\t\t\"offset\": 0,\n\t\t\"model\": \"res.users\",\n\t\t\"fields\": [\n\t\t\t\"achat_group\",\n\t\t\t\"actions\",\n\t\t\t\"active\",\n\t\t\t\"access_rights\",\n\t\t\t\"address_id\",\n\t\t\t\"city\",\n\t\t\t\"company_id\",\n\t\t\t\"complete_name\",\n\t\t\t\"contact_id\",\n\t\t\t\"context_lang\",\n\t\t\t\"context_tz\",\n\t\t\t\"cost\",\n\t\t\t\"current_group\",\n\t\t\t\"date\",\n\t\t\t\"email\",\n\t\t\t\"fluid_group\",\n\t\t\t\"function\",\n\t\t\t\"groups_id\",\n\t\t\t\"hex_color\",\n\t\t\t\"id\",\n\t\t\t\"is_assignable_to_task\",\n\t\t\t\"is_bookable_manager\",\n\t\t\t\"isDST\",\n\t\t\t\"isManager\",\n\t\t\t\"isResaManager\",\n\t\t\t\"lastname\",\n\t\t\t\"login\",\n\t\t\t\"managed_bookable_site_ids\",\n\t\t\t\"managed_bookable_equipment_ids\",\n\t\t\t\"managed_bookable_service_ids\",\n\t\t\t\"managed_bookables\",\n\t\t\t\"mobile\",\n\t\t\t\"name\",\n\t\t\t\"oauth_uid\",\n\t\t\t\"openresa_group\",\n\t\t\t\"patrimoine_group\",\n\t\t\t\"parcauto_group\",\n\t\t\t\"partner_id\",\n\t\t\t\"phone\",\n\t\t\t\"service_id\",\n\t\t\t\"service_ids\",\n\t\t\t\"service_names\",\n\t\t\t\"signature\",\n\t\t\t\"street\",\n\t\t\t\"tasks\",\n\t\t\t\"team_ids\",\n\t\t\t\"zip\",\n\t\t\t\"warehouse_ids\",\n\t\t\t\"openstc_employee_ref\"\n\t\t],\n\t\t\"session_id\": \"{{sessionId}}\",\n\t\t\"context\": {\n\t\t\t\"__ref\": \"compound_context\",\n\t\t\t\"__contexts\": [\n\t\t\t\t{\n\t\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\t\"uid\": {{uid}}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"bin_size\": true\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"__eval_context\": null\n\t\t}\n\t}\n}"
             },
+            "url": "{{server}}/web/dataset/search_read",
             "description": ""
           },
           "response": []
@@ -215,24 +209,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/create",
             "method": "POST",
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
+                "value": "application/json, text/plain, */*"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"name\":\"Test Compteur1\",\n            \"categ_id\":22,\n            \"ref\":\"{{ref}}\",\n            \"category_id\":1\n        },\n        \"model\":\"opengst.fluids.meter\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r87\"\n}"
             },
+            "url": "{{server}}/web/dataset/create",
             "description": ""
           },
           "response": []
@@ -271,24 +263,22 @@
             }
           ],
           "request": {
-            "url": "https://gst-dev.atreal-ouest.fr/web/dataset/save",
             "method": "POST",
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
+                "value": "application/json, text/plain, */*"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"categ_id\":22,\n            \"name\":\"Test Compteur\",\n            \"ref\":\"{{ref1}}\",\n            \"site_id\":false,\n            \"category_id\":3,\n            \"site_repartitions\":[\n\n            ]\n        },\n        \"model\":\"opengst.fluids.meter\",\n        \"id\":17,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r94\"\n}"
             },
+            "url": "https://gst-dev.atreal-ouest.fr/web/dataset/save",
             "description": ""
           },
           "response": []
@@ -311,24 +301,22 @@
             }
           ],
           "request": {
-            "url": "https://gst-dev.atreal-ouest.fr/web/dataset/search_read",
             "method": "POST",
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
+                "value": "application/json, text/plain, */*"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"limit\":20,\n        \"offset\":0,\n        \"model\":\"opengst.fluids.meter\",\n        \"fields\":[\n            \"id\",\n            \"actions\",\n            \"name\",\n            \"site_id\",\n            \"categ_id\",\n            \"category_id\",\n            \"ref\",\n            \"site_repartition_ids\"\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r96\"\n}"
             },
+            "url": "https://gst-dev.atreal-ouest.fr/web/dataset/search_read",
             "description": ""
           },
           "response": []
@@ -352,24 +340,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/get",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"res.company\",\r\n    \"ids\": [1],\r\n    \"fields\":[\"currency_id\"],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
             },
+            "url": "{{server}}/web/dataset/get",
             "description": "get company currency defined in openerp\nConfiguration -> Company -> Devises"
           },
           "response": []
@@ -394,19 +380,18 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"id\": \"r323\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"date_start DESC\",\r\n    \"limit\": 20,\r\n    \"offset\": 0,\r\n    \"model\": \"opengst.fluids.consumption\",\r\n    \"fields\": [\r\n      \"date_start\",\r\n      \"date_end\",\r\n      \"consumption\",\r\n      \"meter_id\",\r\n      \"category_id\",\r\n      \"site_id\"\r\n    ],\r\n    \"domain\": [],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
             },
+            "url": "{{server}}/web/dataset/search_read",
             "description": ""
           },
           "response": []
@@ -430,24 +415,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/call_kw",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept-Encoding",
-                "value": "gzip, deflate, br",
-                "description": ""
+                "value": "gzip, deflate, br"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n\t\"jsonrpc\": \"2.0\",\n\t\"method\": \"call\",\n\t\"params\": {\n\t\t\"model\": \"opengst.fluids.consumption\",\n\t\t\"method\": \"import_csv\",\n\t\t\"args\": [\n\t\t\t\"bWV0ZXIsZGF0ZV9zdGFydCxkYXRlX2VuZCxjb25zdW1wdGlvbixjb3N0CkEzLDIwMTctMDEtMTEsMjAxNy0wMS0xNCwzOSwxMApBMywyMDE3LTAxLTE1LDIwMTctMDEtMTksNTUsMjAKQTMsMjAxNy0wMS0yMCwyMDE3LTAxLTIxLDI3LDEwCkEzLDIwMTctMDItMTEsMjAxNy0wMi0xNCwxNSw1CkEzLDIwMTctMDItMTUsMjAxNy0wMi0xOSwzNiwyNgoxLDIwMTctMDEtMTEsMjAxNy0wMS0xNCwyOSwyOAoxLDIwMTctMDEtMTUsMjAxNy0wMS0xOSwzNSwzNQoxLDIwMTctMDEtMjAsMjAxNy0wMS0yMSwzNywzNgoxLDIwMTctMDItMTEsMjAxNy0wMi0xNCwzNSwzNQoxLDIwMTctMDItMTUsMjAxNy0wMi0xOSw1Niw1NQo=\"\n\t\t],\n\t\t\"kwargs\": {\n\t\t\t\"context\": {\n\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\"project_id\": false,\n\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\"section_id\": false,\n\t\t\t\t\"uid\": {{uid}}\n\t\t\t}\n\t\t},\n\t\t\"session_id\": \"{{sessionId}}\",\n\t\t\"context\": {\n\t\t\t\"__ref\": \"compound_context\",\n\t\t\t\"__contexts\": [\n\t\t\t\t{\n\t\t\t\t\t\"lang\": \"fr_FR\",\n\t\t\t\t\t\"tz\": \"Europe/Paris\",\n\t\t\t\t\t\"uid\": {{uid}}\n\t\t\t\t},\n\t\t\t\t{\n\t\t\t\t\t\"bin_size\": true\n\t\t\t\t}\n\t\t\t],\n\t\t\t\"__eval_context\": null\n\t\t}\n\t},\n\t\"id\": \"r66\"\n}"
             },
+            "url": "{{server}}/web/dataset/call_kw",
             "description": ""
           },
           "response": []
@@ -470,24 +453,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/unlink",
             "method": "POST",
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
+                "value": "application/json, text/plain, */*"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"model\":\"opengst.fluids.meter\",\n        \"ids\":[\n            17\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r97\"\n}"
             },
+            "url": "{{server}}/web/dataset/unlink",
             "description": ""
           },
           "response": []
@@ -519,24 +500,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/create",
             "method": "POST",
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
+                "value": "application/json, text/plain, */*"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"osm_zoom\":false,\n            \"osm_type\":false,\n            \"osm_id\":false,\n            \"geometry\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"block_booking\":false,\n            \"product_image\":false,\n            \"name\":\"CreateTest\",\n            \"type_id\":80\n        },\n        \"model\":\"openstc.site\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r156\"\n}"
             },
+            "url": "{{server}}/web/dataset/create",
             "description": ""
           },
           "response": []
@@ -561,24 +540,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/save",
             "method": "POST",
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
+                "value": "application/json, text/plain, */*"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"code\":false,\n            \"type_id\":68,\n            \"color\":\"#390A10\",\n            \"surface\":0,\n            \"active\":true,\n            \"block_booking\":false,\n            \"osm_id\":false,\n            \"resa_user_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"max_bookable_qty\":0,\n            \"site_parent_id\":313,\n            \"width\":0,\n            \"resa_service_manager_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"length\":0,\n            \"long\":0,\n            \"internal_bookable_notice\":0,\n            \"geo_point\":false,\n            \"partner_type_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"service_bookable_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"description_sale\":false,\n            \"osm_zoom\":false,\n            \"openresa_property_manager_id\":1,\n            \"lat\":0,\n            \"name\":\"1er étage test\",\n            \"service_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"product_id\":648,\n            \"optional_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"geometry\":false,\n            \"osm_type\":false,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"option_of_product_ids\":[\n                [\n                    6,\n                    0,\n                    [\n\n                    ]\n                ]\n            ],\n            \"external_bookable_notice\":0,\n            \"accommodation_capacity\":0,\n            \"product_image\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1151,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r199\"\n}"
             },
+            "url": "{{server}}/web/dataset/save",
             "description": ""
           },
           "response": []
@@ -604,30 +581,27 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
+                "value": "application/json, text/plain, */*"
               },
               {
                 "key": "X-DevTools-Emulate-Network-Conditions-Client-Id",
                 "value": "f55002dd-9cf3-4ebf-ba56-72718a383a86",
-                "description": "",
                 "disabled": true
               },
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n\t\"id\":\"r161\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"sort\":\"name ASC\",\n        \"limit\":20,\n        \"offset\":0,\n        \"model\":\"openstc.site\",\n        \"fields\":[\n            \"active\",\n            \"actions\",\n            \"attachment_count\",\n            \"block_booking\",\n            \"code\",\n            \"description_sale\",\n            \"external_booking\",\n            \"external_bookable_notice\",\n            \"internal_booking\",\n            \"internal_bookable_notice\",\n            \"lat\",\n            \"long\",\n            \"length\",\n            \"max_bookable_qty\",\n            \"name\",\n            \"openresa_property_manager_id\",\n            \"partner_type_bookable_ids\",\n            \"pricelist_id\",\n            \"product_id\",\n            \"service_ids\",\n            \"service_names\",\n            \"service_bookable_ids\",\n            \"site_parent_id\",\n            \"surface\",\n            \"type_id\",\n            \"width\",\n            \"color\",\n            \"resa_service_manager_ids\",\n            \"resa_user_manager_ids\",\n            \"optional_product_ids\",\n            \"option_of_product_ids\",\n            \"accomodation_capacity\",\n            \"phone\",\n            \"geometry\",\n            \"geo_point\",\n            \"osm_type\",\n            \"osm_id\",\n            \"osm_zoom\"\n        ],\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n\n}"
             },
+            "url": "{{server}}/web/dataset/search_read",
             "description": ""
           },
           "response": []
@@ -651,24 +625,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/create",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"city\":\"Ville\",\n        \"zip\":\"Code postal\",\n        \"product_image\":false,\n    \"osm_zoom\": false,\n    \"osm_type\": false,\n    \"osm_id\": false,\n    \"geometry\": false,\n    \"internal_booking\": false,\n    \"external_booking\": false,\n    \"block_booking\": false,\n    \"product_image\": false,\n    \"name\": \"Creation Site 2\",\n    \"type_id\": 76,\n    \"alarm\":true,\n    \"pmr\":true,\n        \"amiante\":true,\n        \"igh\":false,\n        \"cadastre_is_bati\":false,\n        \"cadastre_is_nonbati\":false,\n        \"pprn\":false,\n        \"pprm\":false,\n        \"pprt\":false,\n        \"ppri\":false,\n        \"product_image\":false,\n        \"street\":\"Rue\",\n        \"street2\":\"Rue (suite)\",\n        \"accommodation_capacity\":666,\n        \"width\":666,\n        \"length\":666,\n        \"surface\":443556,\n        \"is_copro\":false,\n        \"date_end\":\"2016-10-24\",\n        \"date_start\":\"2016-10-24\",\n        \"site_parent_id\":1151,\n        \"access_manager_ids\": [[6, 0, [73, 97]]]\n    },\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
             },
+            "url": "{{server}}/web/dataset/create",
             "description": ""
           },
           "response": []
@@ -693,24 +665,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/save",
             "method": "POST",
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
+                "value": "application/json, text/plain, */*"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"active\":false\n        },\n        \"model\":\"openstc.site\",\n        \"id\":1158,\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r238\"\n}"
             },
+            "url": "{{server}}/web/dataset/save",
             "description": ""
           },
           "response": []
@@ -741,24 +711,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/create",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept-Language",
-                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
-                "description": ""
+                "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"qty_available\":1,\n            \"internal_booking\":false,\n            \"external_booking\":false,\n            \"block_booking\":false,\n            \"internal_use\":false,\n            \"product_image\":false,\n            \"categ_id\":14,\n            \"name\":\"Clio\",\n            \"new_qty\":1\n        },\n        \"model\":\"openstc.equipment\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    },\n    \"id\":\"r51\"\n}"
             },
+            "url": "{{server}}/web/dataset/create",
             "description": ""
           },
           "response": []
@@ -782,24 +750,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/save",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n     \"data\": {\n    \"technical_service_id\": 2,\n    \"name\": \"ACCUEIL\",\n    \"type_id\": 7,\n    \"technical_site_ids\": [[6, 0, [1151, 1058]]],\n    \"technical_service_ids\": [[6, 0, []]],\n    \"technical_site_id\": false\n  },\n    \"model\": \"res.partner\",\n    \"id\": 12,\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
             },
+            "url": "{{server}}/web/dataset/save",
             "description": ""
           },
           "response": []
@@ -823,24 +789,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/create",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n    \"name\": \"Creation Carburant\"\n  },\n  \"model\": \"opengst.automobile.fuel\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
             },
+            "url": "{{server}}/web/dataset/create",
             "description": ""
           },
           "response": []
@@ -864,24 +828,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/create",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n  \"data\": {\n      \"is_vehicle\": false,\n      \"is_equipment\": true,\n      \"is_key\": false,\n      \"name\": \"Creation Categorie Equipement\",\n      \"parent_id\": 14\n  },\n  \"model\": \"product.category\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
             },
+            "url": "{{server}}/web/dataset/create",
             "description": ""
           },
           "response": []
@@ -905,24 +867,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/create",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n      \"name\": \"Creation Modele\",\n      \"brand_id\": 229,\n      \"type_id\": false,\n      \"width\":1,\n            \"height\":2,\n            \"length\":3,\n            \"weight_ptv\":4,\n            \"weight_ptac\":5,\n            \"weight_ptr\":6\n    },\n  \"model\": \"opengst.automobile.brand.model\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
             },
+            "url": "{{server}}/web/dataset/create",
             "description": ""
           },
           "response": []
@@ -946,24 +906,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/create",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n      \"name\": \"Creation Marque\"\n    },\n  \"model\": \"opengst.automobile.brand\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
             },
+            "url": "{{server}}/web/dataset/create",
             "description": ""
           },
           "response": []
@@ -987,24 +945,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/create",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n    \"data\": {\n      \"name\": \"Creation Marque\"\n    },\n  \"model\": \"opengst.automobile.brand\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
             },
+            "url": "{{server}}/web/dataset/create",
             "description": ""
           },
           "response": []
@@ -1026,24 +982,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"name ASC\",\r\n    \"limit\": 20,\r\n    \"offset\": 0,\r\n    \"model\": \"res.partner\",\r\n    \"fields\": [\r\n      \"id\"\r\n    ],\r\n    \"domain\": [\r\n      [\r\n        \"name\",\r\n        \"ilike\",\r\n        \"Particuliers Commune\"\r\n      ],\r\n      [\r\n        \"subname\",\r\n        \"ilike\",\r\n        \"Particuliers Commune\"\r\n      ]\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
             },
+            "url": "{{server}}/web/dataset/search_read",
             "description": ""
           },
           "response": []
@@ -1065,24 +1019,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"name ASC\",\r\n    \"limit\": 0,\r\n    \"offset\": 0,\r\n    \"fields\": [\r\n      \"id\"\r\n    ],\r\n    \"model\": \"res.groups\",\r\n    \"domain\": [\r\n      [\r\n        \"name\",\r\n        \"ilike\",\r\n        \"Demandeur externe\"\r\n      ],\r\n      [\r\n        \"full_name\",\r\n        \"ilike\",\r\n        \"Demandeur externe\"\r\n      ]\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
             },
+            "url": "{{server}}/web/dataset/search_read",
             "description": ""
           },
           "response": []
@@ -1104,24 +1056,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/search_read",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"id\": \"r3\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"sort\": \"name ASC\",\r\n    \"limit\": 0,\r\n    \"offset\": 0,\r\n    \"fields\": [\r\n      \"id\",\r\n      \"name\",\r\n      \"implied_ids\",\r\n      \"trans_implied_ids\",\r\n      \"category_id\",\r\n      \"code\"\r\n    ],\r\n    \"model\": \"res.groups\",\r\n    \"domain\": [\r\n      [\r\n        \"name\",\r\n        \"ilike\",\r\n        \"Demandeur\"\r\n      ],\r\n      [\r\n        \"full_name\",\r\n        \"ilike\",\r\n        \"Demandeur\"\r\n      ],\r\n            [\r\n        \"code\",\r\n        \"ilike\",\r\n        \"PART\"\r\n      ]\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\",\r\n    \"context\": {\r\n      \"__ref\": \"compound_context\",\r\n      \"__contexts\": [\r\n        {\r\n          \"lang\": \"fr_FR\",\r\n          \"tz\": \"Europe/Paris\",\r\n          \"uid\": {{uid}}\r\n        },\r\n        {\r\n          \"bin_size\": true\r\n        }\r\n      ],\r\n      \"__eval_context\": null\r\n    }\r\n  }\r\n}"
             },
+            "url": "{{server}}/web/dataset/search_read",
             "description": ""
           },
           "response": []
@@ -1141,24 +1091,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/get",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\r\n  \"id\": \"r2\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"model\": \"res.company\",\r\n    \"ids\": [],\r\n    \"fields\": [\r\n      \"validate_request_window_advanced_mode\",\r\n      \"add_task_window_advanced_mode\",\r\n      \"add_intervention_window_create_task\",\r\n      \"intervention_window_synchronize_status\",\r\n      \"task_default_hours\",\r\n      \"task_default_minutes\"\r\n    ],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
             },
+            "url": "{{server}}/web/dataset/get",
             "description": ""
           },
           "response": []
@@ -1183,24 +1131,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/get",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n     \"fields\":[\n        \"active\",\n        \"actions\",\n        \"attachment_count\",\n        \"block_booking\",\n        \"code\",\n        \"description_sale\",\n        \"external_booking\",\n        \"external_bookable_notice\",\n        \"internal_booking\",\n        \"internal_bookable_notice\",\n        \"lat\",\n        \"long\",\n        \"length\",\n        \"max_bookable_qty\",\n        \"name\",\n        \"openresa_property_manager_id\",\n        \"partner_type_bookable_ids\",\n        \"pricelist_id\",\n        \"product_id\",\n        \"service_ids\",\n        \"service_names\",\n        \"service_bookable_ids\",\n        \"site_parent_id\",\n        \"surface\",\n        \"type_id\",\n        \"width\",\n        \"color\",\n        \"resa_service_manager_ids\",\n        \"resa_user_manager_ids\",\n        \"optional_product_ids\",\n        \"option_of_product_ids\",\n        \"accomodation_capacity\",\n        \"phone\",\n        \"geometry\",\n        \"geo_point\",\n        \"osm_type\",\n        \"osm_id\",\n        \"osm_zoom\"\n     ],\n    \"ids\": [12],\n    \"model\": \"openstc.site\",\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
             },
+            "url": "{{server}}/web/dataset/get",
             "description": ""
           },
           "response": []
@@ -1224,24 +1170,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/save",
             "method": "POST",
             "header": [
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               },
               {
                 "key": "Accept",
-                "value": "application/json",
-                "description": ""
+                "value": "application/json"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n  \"id\": \"r7\",\n  \"jsonrpc\": \"2.0\",\n  \"method\": \"call\",\n  \"params\": {\n     \"data\": {\n    \"technical_service_id\": 2,\n    \"name\": \"ACCUEIL\",\n    \"type_id\": 7,\n    \"technical_site_ids\": [[6, 0, [1151, 1058]]],\n    \"technical_service_ids\": [[6, 0, []]],\n    \"technical_site_id\": false\n  },\n    \"model\": \"res.partner\",\n    \"id\": 12,\n    \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\": \"compound_context\",\n      \"__contexts\": [\n        {\n          \"lang\": \"fr_FR\",\n          \"tz\": \"Europe/Paris\",\n          \"uid\": \"{{uid}}\"\n        },\n        {\"bin_size\": true}\n      ],\n      \"__eval_context\": null\n    }\n  }\n}"
             },
+            "url": "{{server}}/web/dataset/save",
             "description": ""
           },
           "response": []
@@ -1273,24 +1217,22 @@
             }
           ],
           "request": {
-            "url": "{{server}}/web/dataset/create",
             "method": "POST",
             "header": [
               {
                 "key": "Accept",
-                "value": "application/json, text/plain, */*",
-                "description": ""
+                "value": "application/json, text/plain, */*"
               },
               {
                 "key": "Content-Type",
-                "value": "application/json;charset=UTF-8",
-                "description": ""
+                "value": "application/json;charset=UTF-8"
               }
             ],
             "body": {
               "mode": "raw",
               "raw": "{\n\t\"id\":\"r136\",\n    \"jsonrpc\":\"2.0\",\n    \"method\":\"call\",\n    \"params\":{\n        \"data\":{\n            \"project_id\":1823,\n            \"name\":\"ffff\",\n            \"service_id\":2,\n            \"planned_hours\":2,\n            \"category_id\":33,\n            \"user_id\":57,\n            \"date_start\":\"2017-04-28 06:30:00\",\n            \"date_end\":\"2017-04-28 08:30:00\"\n        },\n        \"model\":\"project.task\",\n        \"session_id\":\"{{sessionId}}\",\n        \"context\":{\n            \"__ref\":\"compound_context\",\n            \"__contexts\":[\n                {\n                    \"lang\":\"fr_FR\",\n                    \"tz\":\"Europe/Paris\",\n                    \"uid\":{{uid}}\n                },\n                {\n                    \"bin_size\":true\n                }\n            ],\n            \"__eval_context\":null\n        }\n    }\n}"
             },
+            "url": "{{server}}/web/dataset/create",
             "description": ""
           },
           "response": []
@@ -1313,46 +1255,39 @@
         }
       ],
       "request": {
-        "url": "https://gst.atreal.fr/api/v1/ping",
         "method": "GET",
         "header": [
           {
             "key": "Accept",
-            "value": "*/*",
-            "description": ""
+            "value": "*/*"
           },
           {
             "key": "X-Requested-With",
-            "value": "XMLHttpRequest",
-            "description": ""
+            "value": "XMLHttpRequest"
           },
           {
             "key": "User-Agent",
-            "value": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36",
-            "description": ""
+            "value": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"
           },
           {
             "key": "Authorization",
-            "value": "Token token=7695535153c9e8acb19c1830ce8736fa",
-            "description": ""
+            "value": "Token token=7695535153c9e8acb19c1830ce8736fa"
           },
           {
             "key": "Accept-Encoding",
-            "value": "gzip, deflate, sdch, br",
-            "description": ""
+            "value": "gzip, deflate, sdch, br"
           },
           {
             "key": "Accept-Language",
-            "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
-            "description": ""
+            "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4"
           },
           {
             "key": "Cookie",
-            "value": "session0|session_id=%22%22; connect.sid=s%3A9e984315-4d55-496c-a7cf-06bfe711df3a.OD85HPOJ8clIOZxagfEX%2Fps7Pi%2BuSliu%2FU0SAFI1wmw; sessionid=52314e2d3754f719c3710fe8750a7c6d8b8acbd9",
-            "description": ""
+            "value": "session0|session_id=%22%22; connect.sid=s%3A9e984315-4d55-496c-a7cf-06bfe711df3a.OD85HPOJ8clIOZxagfEX%2Fps7Pi%2BuSliu%2FU0SAFI1wmw; sessionid=52314e2d3754f719c3710fe8750a7c6d8b8acbd9"
           }
         ],
         "body": {},
+        "url": "https://gst.atreal.fr/api/v1/ping",
         "description": "test if resaframe in prod is up"
       },
       "response": []
@@ -1372,51 +1307,92 @@
         }
       ],
       "request": {
-        "url": "https://gst.atreal.fr/api/v1/lamontagne/open_object/partners?fields%5B%5D=id&fields%5B%5D=name&filters%5B0%5D%5Bfield%5D=name&filters%5B0%5D%5Boperator%5D=ilike&filters%5B0%5D%5Bvalue%5D=&filters%5B1%5D%5Bfield%5D=type_id.name&filters%5B1%5D%5Boperator%5D=ilike&filters%5B1%5D%5Bvalue%5D=asso",
         "method": "GET",
         "header": [
           {
             "key": "Accept",
-            "value": "*/*",
-            "description": ""
+            "value": "*/*"
           },
           {
             "key": "X-Requested-With",
-            "value": "XMLHttpRequest",
-            "description": ""
+            "value": "XMLHttpRequest"
           },
           {
             "key": "User-Agent",
-            "value": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36",
-            "description": ""
+            "value": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36"
           },
           {
             "key": "Authorization",
-            "value": "Token token=7695535153c9e8acb19c1830ce8736fa",
-            "description": ""
+            "value": "Token token=7695535153c9e8acb19c1830ce8736fa"
           },
           {
             "key": "Referer",
-            "value": "https://gst.atreal.fr/saint-barthelemy-anjou/resaframe/index.html",
-            "description": ""
+            "value": "https://gst.atreal.fr/saint-barthelemy-anjou/resaframe/index.html"
           },
           {
             "key": "Accept-Encoding",
-            "value": "gzip, deflate, sdch, br",
-            "description": ""
+            "value": "gzip, deflate, sdch, br"
           },
           {
             "key": "Accept-Language",
-            "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4",
-            "description": ""
+            "value": "fr-FR,fr;q=0.8,en-US;q=0.6,en;q=0.4"
           },
           {
             "key": "Cookie",
-            "value": "session0|session_id=%22%22; connect.sid=s%3A9e984315-4d55-496c-a7cf-06bfe711df3a.OD85HPOJ8clIOZxagfEX%2Fps7Pi%2BuSliu%2FU0SAFI1wmw; sessionid=52314e2d3754f719c3710fe8750a7c6d8b8acbd9",
-            "description": ""
+            "value": "session0|session_id=%22%22; connect.sid=s%3A9e984315-4d55-496c-a7cf-06bfe711df3a.OD85HPOJ8clIOZxagfEX%2Fps7Pi%2BuSliu%2FU0SAFI1wmw; sessionid=52314e2d3754f719c3710fe8750a7c6d8b8acbd9"
           }
         ],
         "body": {},
+        "url": {
+          "raw": "https://gst.atreal.fr/api/v1/lamontagne/open_object/partners?fields%5B%5D=id&fields%5B%5D=name&filters%5B0%5D%5Bfield%5D=name&filters%5B0%5D%5Boperator%5D=ilike&filters%5B0%5D%5Bvalue%5D=&filters%5B1%5D%5Bfield%5D=type_id.name&filters%5B1%5D%5Boperator%5D=ilike&filters%5B1%5D%5Bvalue%5D=asso",
+          "protocol": "https",
+          "host": [
+            "gst",
+            "atreal",
+            "fr"
+          ],
+          "path": [
+            "api",
+            "v1",
+            "lamontagne",
+            "open_object",
+            "partners"
+          ],
+          "query": [
+            {
+              "key": "fields%5B%5D",
+              "value": "id"
+            },
+            {
+              "key": "fields%5B%5D",
+              "value": "name"
+            },
+            {
+              "key": "filters%5B0%5D%5Bfield%5D",
+              "value": "name"
+            },
+            {
+              "key": "filters%5B0%5D%5Boperator%5D",
+              "value": "ilike"
+            },
+            {
+              "key": "filters%5B0%5D%5Bvalue%5D",
+              "value": ""
+            },
+            {
+              "key": "filters%5B1%5D%5Bfield%5D",
+              "value": "type_id.name"
+            },
+            {
+              "key": "filters%5B1%5D%5Boperator%5D",
+              "value": "ilike"
+            },
+            {
+              "key": "filters%5B1%5D%5Bvalue%5D",
+              "value": "asso"
+            }
+          ]
+        },
         "description": ""
       },
       "response": []
