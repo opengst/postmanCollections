@@ -3478,7 +3478,27 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "postman.setNextRequest(\"Get Site\");"
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "switch(jsonData.result.result) {",
+                  "    ",
+                  "    case true:",
+                  "        postman.setNextRequest(\"Get Site\");",
+                  "        break;",
+                  "    ",
+                  "    case undefined:",
+                  "        postman.setNextRequest(null);",
+                  "        break;",
+                  "",
+                  "    case false:",
+                  "        postman.setNextRequest(null);",
+                  "        break;",
+                  "",
+                  "    default:",
+                  "        postman.setNextRequest(null);",
+                  "        break;",
+                  "}",
+                  ""
                 ]
               }
             }
