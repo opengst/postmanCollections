@@ -4133,7 +4133,7 @@
       "item": [
         {
           "_postman_id": "bfafe500-63c9-ba99-67f4-da996edb1d50",
-          "name": "Authenticate copy",
+          "name": "Authenticate",
           "event": [
             {
               "listen": "test",
