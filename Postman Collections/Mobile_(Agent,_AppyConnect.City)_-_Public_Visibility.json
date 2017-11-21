@@ -4145,25 +4145,6 @@
                   "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
                 ]
               }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "/*postman.setEnvironmentVariable(\"server\", \"https://gst-staging.atreal-ouest.fr\");",
-                  "postman.setEnvironmentVariable(\"db\", \"demo\");",
-                  "postman.setEnvironmentVariable(\"login\", \"dstdst\");",
-                  "postman.setEnvironmentVariable(\"password\", \"dstdst\");",
-                  "postman.setEnvironmentVariable(\"sessionId\", \"\");",
-                  "postman.setEnvironmentVariable(\"uid\", \"\");",
-                  "postman.setEnvironmentVariable(\"interventionRequest.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"attachment_count\", \"\");",
-                  "postman.setEnvironmentVariable(\"attachment.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"demandeInter.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"resPartner.id\", \"\");*/"
-                ]
-              }
             }
           ],
           "request": {
