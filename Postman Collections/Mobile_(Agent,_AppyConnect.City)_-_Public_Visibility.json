@@ -4189,7 +4189,7 @@
         },
         {
           "_postman_id": "52db393e-09f7-4d99-b731-3ef401ba7beb",
-          "name": "Get Site copy",
+          "name": "Get Site",
           "request": {
             "method": "POST",
             "header": [
