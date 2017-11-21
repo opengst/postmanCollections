@@ -3422,7 +3422,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"limit\":1000,\n      \"offset\":0,\n      \"fields\":[\n         \"id\"\n      ],\n      \"domain\":[\n         [\n            \"geo_point\",\n            \"=\",\n            \"{\\\"type\\\": \\\"Point\\\", \\\"coordinates\\\": [0.0, 0.0]}\"\n         ],\n         [\n            \"id\",\n            \"=\",\n            {{site.id}},\n         ]\n      ],\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.site\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"limit\":1000,\n      \"offset\":0,\n      \"fields\":[\n         \"id\"\n      ],\n      \"domain\":[\n         [\n            \"geo_point\",\n            \"=\",\n            \"{\\\"type\\\": \\\"Point\\\", \\\"coordinates\\\": [0.0, 0.0]}\"\n         ],\n         [\n            \"id\",\n            \"=\",\n            {{site.id}}\n         ]\n      ],\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.site\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "url": "{{server}}/web/dataset/search_read",
             "description": ""
@@ -3446,7 +3446,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\":\"r4\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"data\": {\n      \"name\":\"Ma premiere modif\"\n    },\n    \"model\":\"openstc.ask\",\n    \"id\": {{demandeInter.id}},\n      \"session_id\": \"{{sessionId}}\",\n    \"context\": {\n      \"__ref\":\"compound_context\",\n      \"__contexts\": [\n        { \n          \"lang\":\"fr_FR\",\n          \"tz\":\"Europe/Paris\",\n            \"uid\": {{uid}}\n        },\n        {\n          \"bin_size\":true\n            \n        }\n      ],\n      \"__eval_context\":null\n    }\n  }\n} "
+              "raw": "{\n  \"id\":\"r4\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"data\": {\n      \"geo_point\":false\n    },\n    \"model\":\"openstc.site\",\n    \"id\": {{site.id}},\n      \"session_id\": \"{{sessionId}}\"\n  }\n} "
             },
             "url": "{{server}}/web/dataset/save",
             "description": ""
