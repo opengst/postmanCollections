@@ -3390,62 +3390,6 @@
           "response": []
         },
         {
-          "_postman_id": "bfafe500-63c9-ba99-67f4-da996edb1d50",
-          "name": "Authenticate copy",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "/*postman.setEnvironmentVariable(\"server\", \"https://gst-staging.atreal-ouest.fr\");",
-                  "postman.setEnvironmentVariable(\"db\", \"demo\");",
-                  "postman.setEnvironmentVariable(\"login\", \"dstdst\");",
-                  "postman.setEnvironmentVariable(\"password\", \"dstdst\");",
-                  "postman.setEnvironmentVariable(\"sessionId\", \"\");",
-                  "postman.setEnvironmentVariable(\"uid\", \"\");",
-                  "postman.setEnvironmentVariable(\"interventionRequest.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"attachment_count\", \"\");",
-                  "postman.setEnvironmentVariable(\"attachment.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"demandeInter.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"resPartner.id\", \"\");*/"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
-            },
-            "url": "{{server}}/web/session/authenticate",
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "bb2ba57b-0e29-a639-7203-e73cb6dc9f55",
           "name": "Get My Tasks",
           "request": {
@@ -4186,7 +4130,64 @@
       "_postman_id": "33cdca0e-33ce-a11f-3b86-612ac1a10083",
       "name": "Migration",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "bfafe500-63c9-ba99-67f4-da996edb1d50",
+          "name": "Authenticate copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "/*postman.setEnvironmentVariable(\"server\", \"https://gst-staging.atreal-ouest.fr\");",
+                  "postman.setEnvironmentVariable(\"db\", \"demo\");",
+                  "postman.setEnvironmentVariable(\"login\", \"dstdst\");",
+                  "postman.setEnvironmentVariable(\"password\", \"dstdst\");",
+                  "postman.setEnvironmentVariable(\"sessionId\", \"\");",
+                  "postman.setEnvironmentVariable(\"uid\", \"\");",
+                  "postman.setEnvironmentVariable(\"interventionRequest.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"attachment_count\", \"\");",
+                  "postman.setEnvironmentVariable(\"attachment.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"demandeInter.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"resPartner.id\", \"\");*/"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
+            },
+            "url": "{{server}}/web/session/authenticate",
+            "description": ""
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
