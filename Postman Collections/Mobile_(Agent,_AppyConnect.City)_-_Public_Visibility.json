@@ -3430,6 +3430,30 @@
           "response": []
         },
         {
+          "_postman_id": "4c825f28-47fe-c5fc-2e11-575e6160f59c",
+          "name": "Edit Demande d'intervention copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\":\"r4\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"data\": {\n      \"geo_point\":false\n    },\n    \"model\":\"openstc.site\",\n    \"id\": {{site.id}},\n      \"session_id\": \"{{sessionId}}\"\n  }\n} "
+            },
+            "url": "{{server}}/web/dataset/save",
+            "description": ""
+          },
+          "response": []
+        },
+        {
           "_postman_id": "96901b87-012c-4e7e-f361-7f9580f69ecd",
           "name": "Get Equipement",
           "request": {
@@ -3465,30 +3489,6 @@
               "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"fields\":[\"actions\",\"id\",\"datas_fname\",\"create_uid\",\"create_date\",\"name\"],\"domain\":[[\"res_model\",\"=\",\"openstc.site\"],[\"res_id\",\"=\",49]],\"model\":\"ir.attachment\",\"session_id\":\"89414787d73a49efa2b0626135dc8d54\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":63},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r31\"}"
             },
             "url": "{{server}}/web/dataset/search_read",
-            "description": ""
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "4c825f28-47fe-c5fc-2e11-575e6160f59c",
-          "name": "Edit geo_point of Site  AND GoTo",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"id\":\"r4\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"data\": {\n      \"geo_point\":false\n    },\n    \"model\":\"openstc.site\",\n    \"id\": {{site.id}},\n    \"session_id\": \"{{sessionId}}\"\n  }\n} "
-            },
-            "url": "{{server}}/web/dataset/save",
             "description": ""
           },
           "response": []
@@ -4143,6 +4143,25 @@
                   "var jsonData = JSON.parse(responseBody);",
                   "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
                   "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "/*postman.setEnvironmentVariable(\"server\", \"https://gst-staging.atreal-ouest.fr\");",
+                  "postman.setEnvironmentVariable(\"db\", \"demo\");",
+                  "postman.setEnvironmentVariable(\"login\", \"dstdst\");",
+                  "postman.setEnvironmentVariable(\"password\", \"dstdst\");",
+                  "postman.setEnvironmentVariable(\"sessionId\", \"\");",
+                  "postman.setEnvironmentVariable(\"uid\", \"\");",
+                  "postman.setEnvironmentVariable(\"interventionRequest.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"attachment_count\", \"\");",
+                  "postman.setEnvironmentVariable(\"attachment.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"demandeInter.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"resPartner.id\", \"\");*/"
                 ]
               }
             }
