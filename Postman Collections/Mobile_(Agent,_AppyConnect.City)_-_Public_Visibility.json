@@ -3334,30 +3334,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "4c825f28-47fe-c5fc-2e11-575e6160f59c",
-          "name": "Edit Demande d'intervention copy",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n  \"id\":\"r4\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"data\": {\n      \"geo_point\":false\n    },\n    \"model\":\"openstc.site\",\n    \"id\": {{site.id}},\n      \"session_id\": \"{{sessionId}}\"\n  }\n} "
-            },
-            "url": "{{server}}/web/dataset/save",
-            "description": ""
-          },
-          "response": []
-        },
-        {
           "_postman_id": "344740b3-3a62-1a2c-7e38-2f22e8c02ccb",
           "name": "Authenticate",
           "event": [
@@ -4196,6 +4172,30 @@
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"limit\":1,\n      \"offset\":0,\n      \"fields\":[\n         \"id\"\n      ],\n      \"domain\":[\n         [\n            \"geo_point\",\n            \"=\",\n            \"{\\\"type\\\": \\\"Point\\\", \\\"coordinates\\\": [0.0, 0.0]}\"\n         ]\n      ],\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.site\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "url": "{{server}}/web/dataset/search_read",
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4c825f28-47fe-c5fc-2e11-575e6160f59c",
+          "name": "Edit Demande d'intervention copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\":\"r4\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"data\": {\n      \"geo_point\":false\n    },\n    \"model\":\"openstc.site\",\n    \"id\": {{site.id}},\n      \"session_id\": \"{{sessionId}}\"\n  }\n} "
+            },
+            "url": "{{server}}/web/dataset/save",
             "description": ""
           },
           "response": []
