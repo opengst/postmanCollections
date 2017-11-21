@@ -4186,6 +4186,26 @@
             "description": ""
           },
           "response": []
+        },
+        {
+          "_postman_id": "52db393e-09f7-4d99-b731-3ef401ba7beb",
+          "name": "Get Site copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"limit\":1000,\n      \"offset\":0,\n      \"fields\":[\n         \"id\"\n      ],\n      \"domain\":[\n         [\n            \"geo_point\",\n            \"=\",\n            \"{\\\"type\\\": \\\"Point\\\", \\\"coordinates\\\": [0.0, 0.0]}\"\n         ],\n         [\n            \"id\",\n            \"=\",\n            {{site.id}}\n         ]\n      ],\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.site\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read",
+            "description": ""
+          },
+          "response": []
         }
       ]
     }
