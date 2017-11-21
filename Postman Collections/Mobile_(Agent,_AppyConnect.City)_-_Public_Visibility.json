@@ -3471,7 +3471,7 @@
         },
         {
           "_postman_id": "4c825f28-47fe-c5fc-2e11-575e6160f59c",
-          "name": "Edit Demande d'intervention copy",
+          "name": "Edit geo_point of Site  AND GoTo",
           "request": {
             "method": "POST",
             "header": [
