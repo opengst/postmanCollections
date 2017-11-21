@@ -3486,7 +3486,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"id\":\"r4\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"data\": {\n      \"geo_point\":false\n    },\n    \"model\":\"openstc.site\",\n    \"id\": {{site.id}},\n      \"session_id\": \"{{sessionId}}\"\n  }\n} "
+              "raw": "{\n  \"id\":\"r4\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"data\": {\n      \"geo_point\":false\n    },\n    \"model\":\"openstc.site\",\n    \"id\": {{site.id}},\n    \"session_id\": \"{{sessionId}}\"\n  }\n} "
             },
             "url": "{{server}}/web/dataset/save",
             "description": ""
