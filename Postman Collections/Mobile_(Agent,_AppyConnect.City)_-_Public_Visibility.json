@@ -879,7 +879,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t  \"model\":\"res.users\",\n   \t  \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n      \t [\"id\", \"!=\", false],\n      \t [\"name\", \"!=\", false],\n      \t [\"address_id\", \"!=\", false],\n      \t [\"partner_id\", \"!=\", false],\n         [\"id\", \"=\", {{uid}}]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"email\",\n         \"city\",\n         \"zip\",\n         \"street\",\n         \"phone\",\n         \"mobile\",\n         \"address_id\",\n         \"partner_id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"model\":\"res.users\",\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n         [\"id\", \"!=\", false],\n         [\"name\", \"!=\", false],\n         [\"address_id\", \"!=\", false],\n         [\"partner_id\", \"!=\", false],\n         [\"id\", \"=\", {{uid}}]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"email\",\n         \"city\",\n         \"zip\",\n         \"street\",\n         \"phone\",\n         \"mobile\",\n         \"address_id\",\n         \"partner_id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "url": "{{server}}/web/dataset/search_read",
             "description": ""
