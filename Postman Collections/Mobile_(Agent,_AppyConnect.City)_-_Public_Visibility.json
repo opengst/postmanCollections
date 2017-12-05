@@ -2015,7 +2015,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t  \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"ir.model\",\n      \"domain\":[\n         [\n            \"model\",\n            \"=\",\n            \"openstc.ask\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"model\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"ir.model\",\n      \"domain\":[\n         [\n            \"model\",\n            \"=\",\n            \"openstc.ask\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"model\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "url": "{{server}}/web/dataset/search_read",
             "description": ""
