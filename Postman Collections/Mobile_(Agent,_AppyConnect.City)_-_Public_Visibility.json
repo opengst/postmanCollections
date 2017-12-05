@@ -988,7 +988,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"openstc.ask.category\",\n  \t  \"sort\": \"id DESC\",\n      \"limit\": false,\n      \"offset\": false,\n      \"domain\":[\n      \t [\"id\", \"!=\", false],\n         [\"name\", \"!=\", false],\n         [\"active\", \"!=\", false]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"active\"\n      ],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"openstc.ask.category\",\n      \"sort\": \"id DESC\",\n      \"limit\": false,\n      \"offset\": false,\n      \"domain\":[\n         [\"id\", \"!=\", false],\n         [\"name\", \"!=\", false],\n         [\"active\", \"!=\", false]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"active\"\n      ],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
             },
             "url": "{{server}}/web/dataset/search_read",
             "description": ""
