@@ -1,5 +1,4 @@
 {
-  "variables": [],
   "info": {
     "name": "Requests API (used by Jenkins) - Demandeur - Public",
     "_postman_id": "7a39d20f-1740-a722-d432-34f00bdad326",
@@ -85,6 +84,16 @@
           "name": "create user : Particuliers Commune - Demandeur externe",
           "event": [
             {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.setEnvironmentVariable('userLogin','login'+postman.getEnvironmentVariable('userNumber'));",
+                  "postman.setEnvironmentVariable('userName','name'+postman.getEnvironmentVariable('userNumber'));"
+                ]
+              }
+            },
+            {
               "listen": "test",
               "script": {
                 "type": "text/javascript",
@@ -94,16 +103,6 @@
                   "tests[\"Check error code\"] = jsonData.error.code ===200;",
                   "tests[\"Check error type\"] = jsonData.error.data.type ===\"server_exception\";",
                   ""
-                ]
-              }
-            },
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "postman.setEnvironmentVariable('userLogin','login'+postman.getEnvironmentVariable('userNumber'));",
-                  "postman.setEnvironmentVariable('userName','name'+postman.getEnvironmentVariable('userNumber'));"
                 ]
               }
             }
@@ -178,20 +177,6 @@
           "name": "Create Compteur Demandeur externe",
           "event": [
             {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "//You have no right to create when you are not in the group Gestionnaire.",
-                  "tests[\"error code Check\"] = jsonData.error.code === 200;",
-                  ""
-                ]
-              }
-            },
-            {
               "listen": "prerequest",
               "script": {
                 "type": "text/javascript",
@@ -203,6 +188,20 @@
                   "    text += possible.charAt(Math.floor(Math.random() * possible.length));",
                   "    ",
                   "postman.setEnvironmentVariable(\"ref\", text);",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "//You have no right to create when you are not in the group Gestionnaire.",
+                  "tests[\"error code Check\"] = jsonData.error.code === 200;",
                   ""
                 ]
               }
@@ -234,18 +233,6 @@
           "name": "Update Compteur DE",
           "event": [
             {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "//You have no right to create when you are not in the group Gestionnaire.",
-                  "tests[\"error code Check\"] = jsonData.error.code === 200;"
-                ]
-              }
-            },
-            {
               "listen": "prerequest",
               "script": {
                 "type": "text/javascript",
@@ -258,6 +245,18 @@
                   "    ",
                   "postman.setEnvironmentVariable(\"ref1\", text);",
                   ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "//You have no right to create when you are not in the group Gestionnaire.",
+                  "tests[\"error code Check\"] = jsonData.error.code === 200;"
                 ]
               }
             }
