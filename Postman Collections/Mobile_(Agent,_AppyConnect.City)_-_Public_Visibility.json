@@ -570,7 +570,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"res.partner\",\n      \"fields\":[\n         \"id\",\n         \"type_id\"\n      ],\n      \"domain\":[\n         [\n            \"name\",\n            \"=\",\n            \"Particuliers Commune\"\n         ],\n         [\n            \"type_id\",\n            \"in\",\n            [\n               {{categorieOrganisationId}}\n            ]\n         ],\n         [\n            \"is_department\",\n            \"=\",\n            false\n         ]\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"res.partner\",\n      \"fields\":[\n         \"id\",\n         \"type_id\"\n      ],\n      \"domain\":[\n      \t [\n            \"name\",\n            \"=\",\n            \"Particuliers Commune\"\n         ],\n         [\n            \"type_id\",\n            \"in\",\n            [\n               {{categorieOrganisationId}}\n            ]\n         ],\n         [\n            \"is_department\",\n            \"=\",\n            false\n         ]\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "url": "{{server}}/web/dataset/search_read",
             "description": ""
@@ -988,7 +988,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"openstc.ask.category\",\n      \"sort\": \"id DESC\",\n      \"limit\": false,\n      \"offset\": false,\n      \"domain\":[\n         [\"id\", \"!=\", false],\n         [\"name\", \"!=\", false],\n         [\"active\", \"!=\", false]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"active\"\n      ],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"openstc.ask.category\",\n  \t  \"sort\": \"id DESC\",\n      \"limit\": false,\n      \"offset\": false,\n      \"domain\":[\n      \t [\"id\", \"!=\", false],\n         [\"name\", \"!=\", false],\n         [\"active\", \"!=\", false]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"active\"\n      ],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
             },
             "url": "{{server}}/web/dataset/search_read",
             "description": ""
@@ -1041,7 +1041,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n      \"model\": \"openstc.ask\",\r\n      \"sort\": \"id DESC\",\r\n      \"limit\": false,\r\n      \"offset\": false,\r\n      \"domain\":[\r\n         [\"id\", \"!=\", false],\r\n         [\"name\", \"!=\", false],\r\n         [\"geo_point\", \"!=\", false],\r\n         [\"description\", \"!=\", false],\r\n         [\"type_id\", \"!=\", false],\r\n         [\"create_uid\", \"!=\", false],\r\n         [\"create_date\", \"!=\", false],\r\n         [\"partner_address\", \"!=\", false],\r\n         [\"partner_id\", \"!=\", false],\r\n         [\"state\", \"!=\", false]\r\n      ],\r\n      \"fields\":[\r\n         \"id\",\r\n         \"name\",\r\n         \"geo_point\",\r\n         \"description\",\r\n         \"type_id\",\r\n         \"create_uid\",\r\n         \"create_date\",\r\n         \"partner_address\",\r\n         \"partner_id\",\r\n         \"state\"\r\n      ],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
+              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n  \t  \"model\": \"openstc.ask\",\r\n  \t  \"sort\": \"id DESC\",\r\n      \"limit\": false,\r\n      \"offset\": false,\r\n      \"domain\":[\r\n      \t [\"id\", \"!=\", false],\r\n         [\"name\", \"!=\", false],\r\n         [\"geo_point\", \"!=\", false],\r\n         [\"description\", \"!=\", false],\r\n         [\"type_id\", \"!=\", false],\r\n         [\"create_uid\", \"!=\", false],\r\n         [\"create_date\", \"!=\", false],\r\n         [\"partner_address\", \"!=\", false],\r\n         [\"partner_id\", \"!=\", false],\r\n         [\"state\", \"!=\", false]\r\n      ],\r\n      \"fields\":[\r\n         \"id\",\r\n         \"name\",\r\n         \"geo_point\",\r\n         \"description\",\r\n         \"type_id\",\r\n         \"create_uid\",\r\n         \"create_date\",\r\n         \"partner_address\",\r\n         \"partner_id\",\r\n         \"state\"\r\n      ],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
             },
             "url": "{{server}}/web/dataset/search_read",
             "description": ""
@@ -1963,7 +1963,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"ir.model\",\n      \"domain\":[\n         [\n            \"model\",\n            \"=\",\n            \"openstc.service\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"model\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n   \t  \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"ir.model\",\n      \"domain\":[\n         [\n            \"model\",\n            \"=\",\n            \"openstc.service\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"model\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "url": "{{server}}/web/dataset/search_read",
             "description": ""
