@@ -3327,7 +3327,7 @@
         },
         {
           "_postman_id": "029f0d83-5ef5-b10d-ed90-2e5201cdbd80",
-          "name": "Get All Category copy",
+          "name": "Get All Pictogram",
           "request": {
             "method": "POST",
             "header": [
