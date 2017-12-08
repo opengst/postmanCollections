@@ -2910,7 +2910,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.ask.category\",\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.ask.category\",\n      \"session_id\": \"{{sessionId}}\",\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"is_used_by_mobile\",\n         \"active\",\n         \"service_id\",\n         \"sequence\",\n         \"picto\"\n      ],\n      \"domain\":[\n         [\n            \"id\",\n            \"!=\",\n            false\n         ],\n         [\n            \"name\",\n            \"!=\",\n            false\n         ],\n         [\n            \"is_used_by_mobile\",\n            \"!=\",\n            false\n         ],\n         [\n            \"active\",\n            \"!=\",\n            false\n         ],\n         [\n            \"service_id\",\n            \"!=\",\n            false\n         ],\n         [\n            \"sequence\",\n            \"!=\",\n            false\n         ]\n      ]\n   }\n}"
             },
             "url": "{{server}}/web/dataset/search_read",
             "description": ""
