@@ -4260,7 +4260,15 @@
       "_postman_id": "ea496eee-a473-a850-b6ee-c122f90e4375",
       "name": "(DONT USE) Init VAR ENV",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "23c38b05-4802-8110-e622-270664ea85f8",
+          "name": "DEV",
+          "description": "",
+          "item": [],
+          "_postman_isSubFolder": true
+        }
+      ]
     }
   ]
 }
