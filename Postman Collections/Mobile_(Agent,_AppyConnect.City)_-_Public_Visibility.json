@@ -4310,10 +4310,10 @@
                     "exec": [
                       "postman.clearEnvironmentVariables();",
                       "",
-                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
+                      "postman.setEnvironmentVariable(\"server\", \"https://stbarth.opengst.fr/\");",
                       "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
                       "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"password\");",
+                      "postman.setEnvironmentVariable(\"password\", \"--\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
