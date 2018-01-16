@@ -4328,7 +4328,7 @@
                   "raw": ""
                 },
                 "url": "http://www.google.com",
-                "description": ""
+                "description": null
               },
               "response": []
             },
@@ -4361,7 +4361,7 @@
                   "raw": ""
                 },
                 "url": "http://www.google.com",
-                "description": ""
+                "description": null
               },
               "response": []
             }
@@ -4443,7 +4443,7 @@
                   "raw": ""
                 },
                 "url": "http://www.google.com",
-                "description": ""
+                "description": null
               },
               "response": []
             }
@@ -4491,7 +4491,7 @@
                   "raw": ""
                 },
                 "url": "http://www.google.com",
-                "description": ""
+                "description": null
               },
               "response": []
             }
@@ -4532,7 +4532,7 @@
                   "raw": ""
                 },
                 "url": "http://www.google.com",
-                "description": ""
+                "description": null
               },
               "response": []
             }
