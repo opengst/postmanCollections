@@ -5597,44 +5597,6 @@
                 "description": ""
               },
               "response": []
-            },
-            {
-              "_postman_id": "294e401e-71c9-bf7f-2114-13756edd480e",
-              "name": "Init VAR ENV - STAGING MOBILE copy",
-              "event": [
-                {
-                  "listen": "prerequest",
-                  "script": {
-                    "type": "text/javascript",
-                    "exec": [
-                      "postman.clearEnvironmentVariables();",
-                      "",
-                      "postman.setEnvironmentVariable(\"server\", \"http://staging.opengst.fr/\");",
-                      "postman.setEnvironmentVariable(\"db\", \"mobile\");",
-                      "",
-                      "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password_admin\", \"FMAlV00516562798\");",
-                      "",
-                      "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");",
-                      "",
-                      "postman.setEnvironmentVariable(\"login_agent\", \"fblanchard\");",
-                      "postman.setEnvironmentVariable(\"password_agent\", \"12345678\");"
-                    ]
-                  }
-                }
-              ],
-              "request": {
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
-                "url": "http://www.google.com",
-                "description": null
-              },
-              "response": []
             }
           ],
           "_postman_isSubFolder": true
@@ -5730,6 +5692,43 @@
             },
             "url": "{{server}}/web/session/authenticate",
             "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7552789e-217c-63d0-f200-be714daf3fbf",
+          "name": "Authenticate copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login_agent}}\",\r\n    \"password\": \"{{password_agent}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
+            },
+            "url": "{{server}}/web/session/authenticate",
+            "description": null
           },
           "response": []
         }
