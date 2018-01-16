@@ -3546,62 +3546,6 @@
             "description": ""
           },
           "response": []
-        },
-        {
-          "_postman_id": "88ef1964-1c27-39ae-1b64-79fc30221ef2",
-          "name": "Authenticate copy",
-          "event": [
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "/*postman.setEnvironmentVariable(\"server\", \"https://gst-staging.atreal-ouest.fr\");",
-                  "postman.setEnvironmentVariable(\"db\", \"demo\");",
-                  "postman.setEnvironmentVariable(\"login\", \"dstdst\");",
-                  "postman.setEnvironmentVariable(\"password\", \"dstdst\");",
-                  "postman.setEnvironmentVariable(\"sessionId\", \"\");",
-                  "postman.setEnvironmentVariable(\"uid\", \"\");",
-                  "postman.setEnvironmentVariable(\"interventionRequest.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"attachment_count\", \"\");",
-                  "postman.setEnvironmentVariable(\"attachment.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"demandeInter.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"resPartner.id\", \"\");*/"
-                ]
-              }
-            },
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
-            },
-            "url": "{{server}}/web/session/authenticate",
-            "description": null
-          },
-          "response": []
         }
       ]
     },
@@ -4351,7 +4295,7 @@
                   "raw": ""
                 },
                 "url": "http://www.google.com",
-                "description": null
+                "description": ""
               },
               "response": []
             },
@@ -4399,15 +4343,33 @@
             {
               "_postman_id": "69b15237-69cd-2f0b-eb95-9875c35cf242",
               "name": "Init VAR ENV - DEVDEMO",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "postman.clearEnvironmentVariables();",
+                      "",
+                      "postman.setEnvironmentVariable(\"server\", \"https://gst-dev.atreal-ouest.fr/\");",
+                      "postman.setEnvironmentVariable(\"db\", \"demo\");",
+                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
+                      "postman.setEnvironmentVariable(\"password\", \"G{#>Fm9pRo<H@22zSz*Xq7BL^Tl8gn\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                    ]
+                  }
+                }
+              ],
               "request": {
-                "method": null,
+                "method": "GET",
                 "header": [],
                 "body": {
                   "mode": "raw",
                   "raw": ""
                 },
-                "url": null,
-                "description": null
+                "url": "http://www.google.com",
+                "description": ""
               },
               "response": []
             }
@@ -4591,7 +4553,64 @@
       "_postman_id": "b601f9ba-3194-3264-497d-fc1724f28bbe",
       "name": "(JENKINS) AGENT",
       "description": "",
-      "item": []
+      "item": [
+        {
+          "_postman_id": "88ef1964-1c27-39ae-1b64-79fc30221ef2",
+          "name": "Authenticate copy",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "/*postman.setEnvironmentVariable(\"server\", \"https://gst-staging.atreal-ouest.fr\");",
+                  "postman.setEnvironmentVariable(\"db\", \"demo\");",
+                  "postman.setEnvironmentVariable(\"login\", \"dstdst\");",
+                  "postman.setEnvironmentVariable(\"password\", \"dstdst\");",
+                  "postman.setEnvironmentVariable(\"sessionId\", \"\");",
+                  "postman.setEnvironmentVariable(\"uid\", \"\");",
+                  "postman.setEnvironmentVariable(\"interventionRequest.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"attachment_count\", \"\");",
+                  "postman.setEnvironmentVariable(\"attachment.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"demandeInter.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"resPartner.id\", \"\");*/"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
+            },
+            "url": "{{server}}/web/session/authenticate",
+            "description": null
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
