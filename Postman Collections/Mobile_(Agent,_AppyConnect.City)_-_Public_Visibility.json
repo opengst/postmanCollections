@@ -4300,6 +4300,39 @@
               "response": []
             },
             {
+              "_postman_id": "267e69dc-2092-b174-31ba-50a6166652bf",
+              "name": "Utils - Clear Environnement Variables copy copy",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "postman.clearEnvironmentVariables();",
+                      "",
+                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
+                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
+                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
+                      "postman.setEnvironmentVariable(\"password\", \"password\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": "http://www.google.com",
+                "description": null
+              },
+              "response": []
+            },
+            {
               "_postman_id": "eea3e793-8446-cbb7-e794-2ff9888dc87b",
               "name": "Utils - Clear Environnement Variables copy copy copy",
               "event": [
@@ -4479,41 +4512,7 @@
           "_postman_id": "76b08358-72ec-7472-b765-b9a829b69834",
           "name": "DEV PRODUCTOWNER",
           "description": "",
-          "item": [
-            {
-              "_postman_id": "267e69dc-2092-b174-31ba-50a6166652bf",
-              "name": "Utils - Clear Environnement Variables copy copy",
-              "event": [
-                {
-                  "listen": "prerequest",
-                  "script": {
-                    "type": "text/javascript",
-                    "exec": [
-                      "postman.clearEnvironmentVariables();",
-                      "",
-                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
-                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
-                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"password\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
-                    ]
-                  }
-                }
-              ],
-              "request": {
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
-                "url": "http://www.google.com",
-                "description": null
-              },
-              "response": []
-            }
-          ],
+          "item": [],
           "_postman_isSubFolder": true
         },
         {
