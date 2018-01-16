@@ -4279,10 +4279,12 @@
                       "",
                       "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
                       "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
-                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"password\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                      "",
+                      "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
+                      "postman.setEnvironmentVariable(\"password_admin\", \"password\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
                   }
                 }
@@ -4314,10 +4316,10 @@
                       "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
                       "",
                       "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"--\");",
+                      "postman.setEnvironmentVariable(\"password_admin\", \"--\");",
                       "",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                      "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
                   }
                 }
@@ -4396,10 +4398,12 @@
                       "",
                       "postman.setEnvironmentVariable(\"server\", \"https://gst-dev.atreal-ouest.fr/\");",
                       "postman.setEnvironmentVariable(\"db\", \"productowner\");",
-                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"GyU8C43H48772445\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                      "",
+                      "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
+                      "postman.setEnvironmentVariable(\"password_admin\", \"GyU8C43H48772445\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
                   }
                 }
@@ -4437,10 +4441,12 @@
                       "",
                       "postman.setEnvironmentVariable(\"server\", \"http://staging.opengst.fr/\");",
                       "postman.setEnvironmentVariable(\"db\", \"demo\");",
-                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"Viq2Z70e20450317\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                      "",
+                      "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
+                      "postman.setEnvironmentVariable(\"password_admin\", \"Viq2Z70e20450317\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
                   }
                 }
@@ -4480,10 +4486,13 @@
                       "postman.setEnvironmentVariable(\"db\", \"mobile\");",
                       "",
                       "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"FMAlV00516562798\");",
+                      "postman.setEnvironmentVariable(\"password_admin\", \"FMAlV00516562798\");",
                       "",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                      "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_agent\", \"fblanchard\");",
+                      "postman.setEnvironmentVariable(\"password_agent\", \"12345678\");"
                     ]
                   }
                 }
@@ -4521,10 +4530,12 @@
                       "",
                       "postman.setEnvironmentVariable(\"server\", \"https://app.opengst.fr/\");",
                       "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou_mobile\");",
-                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"369rVwwQ38074894\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                      "",
+                      "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
+                      "postman.setEnvironmentVariable(\"password_admin\", \"369rVwwQ38074894\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
                   }
                 }
@@ -4588,7 +4599,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
+              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login_agent}}\",\r\n    \"password\": \"{{password_agent}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
             },
             "url": "{{server}}/web/session/authenticate",
             "description": ""
