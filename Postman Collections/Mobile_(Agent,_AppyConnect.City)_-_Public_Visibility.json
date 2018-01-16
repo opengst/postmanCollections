@@ -4268,7 +4268,7 @@
           "item": [
             {
               "_postman_id": "11cd23bd-a0b9-6383-5d3a-8f7aed3fb7cd",
-              "name": "Init VAR ENV - LOCAL ALEX",
+              "name": "Utils - Clear Environnement Variables",
               "event": [
                 {
                   "listen": "prerequest",
@@ -4372,21 +4372,6 @@
                 "description": null
               },
               "response": []
-            },
-            {
-              "_postman_id": "69b15237-69cd-2f0b-eb95-9875c35cf242",
-              "name": "Init VAR ENV - DEVDEMO",
-              "request": {
-                "method": null,
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
-                "url": null,
-                "description": null
-              },
-              "response": []
             }
           ],
           "_postman_isSubFolder": true
@@ -4398,7 +4383,7 @@
           "item": [
             {
               "_postman_id": "267e69dc-2092-b174-31ba-50a6166652bf",
-              "name": "Init VAR ENV - DEV PRODUCTOWNER",
+              "name": "Utils - Clear Environnement Variables copy copy",
               "event": [
                 {
                   "listen": "prerequest",
@@ -4439,7 +4424,7 @@
           "item": [
             {
               "_postman_id": "ba3882f8-22cd-4753-3b4b-6e2c6ccf8890",
-              "name": "Init VAR ENV - STAGING DEMO",
+              "name": "Utils - Clear Environnement Variables copy copy copy copy copy copy",
               "event": [
                 {
                   "listen": "prerequest",
@@ -4480,7 +4465,7 @@
           "item": [
             {
               "_postman_id": "eea3e793-8446-cbb7-e794-2ff9888dc87b",
-              "name": "Init VAR ENV - STAGING MOBILE",
+              "name": "Utils - Clear Environnement Variables copy copy copy",
               "event": [
                 {
                   "listen": "prerequest",
@@ -4521,7 +4506,7 @@
           "item": [
             {
               "_postman_id": "6a13c06c-01c9-1d63-28b6-6ecd1b41ac1c",
-              "name": "Init VAR ENV - PROD SAINTBARTHBETA",
+              "name": "Utils - Clear Environnement Variables copy copy copy copy",
               "event": [
                 {
                   "listen": "prerequest",
