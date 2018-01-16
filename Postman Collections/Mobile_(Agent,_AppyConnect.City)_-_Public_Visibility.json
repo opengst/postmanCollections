@@ -4258,7 +4258,7 @@
     },
     {
       "_postman_id": "ea496eee-a473-a850-b6ee-c122f90e4375",
-      "name": "(DONT USE) VAR ENV",
+      "name": "(DONT USE) Init VAR ENV",
       "description": "",
       "item": [
         {
@@ -4372,21 +4372,6 @@
                 "description": null
               },
               "response": []
-            },
-            {
-              "_postman_id": "69b15237-69cd-2f0b-eb95-9875c35cf242",
-              "name": "Init VAR ENV - DEVDEMO",
-              "request": {
-                "method": null,
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
-                "url": null,
-                "description": null
-              },
-              "response": []
             }
           ],
           "_postman_isSubFolder": true
@@ -4439,7 +4424,7 @@
           "item": [
             {
               "_postman_id": "ba3882f8-22cd-4753-3b4b-6e2c6ccf8890",
-              "name": "Init VAR ENV - STAGING DEMO",
+              "name": "Utils - Clear Environnement Variables copy copy copy copy copy copy",
               "event": [
                 {
                   "listen": "prerequest",
@@ -4480,7 +4465,7 @@
           "item": [
             {
               "_postman_id": "eea3e793-8446-cbb7-e794-2ff9888dc87b",
-              "name": "Init VAR ENV - STAGING MOBILE",
+              "name": "Utils - Clear Environnement Variables copy copy copy",
               "event": [
                 {
                   "listen": "prerequest",
@@ -4516,12 +4501,12 @@
         },
         {
           "_postman_id": "1e2e8ee5-91f3-b8f8-9bfd-ccae1306861a",
-          "name": "PROD SAINTBARTHBETA",
+          "name": "PROD SAINTBARTH BETA",
           "description": "",
           "item": [
             {
               "_postman_id": "6a13c06c-01c9-1d63-28b6-6ecd1b41ac1c",
-              "name": "Init VAR ENV - PROD SAINTBARTHBETA",
+              "name": "Utils - Clear Environnement Variables copy copy copy copy",
               "event": [
                 {
                   "listen": "prerequest",
