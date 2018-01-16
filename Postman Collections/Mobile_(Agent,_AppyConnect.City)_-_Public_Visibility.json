@@ -4268,7 +4268,7 @@
           "item": [
             {
               "_postman_id": "11cd23bd-a0b9-6383-5d3a-8f7aed3fb7cd",
-              "name": "Utils - Clear Environnement Variables copy",
+              "name": "Utils - Clear Environnement Variables",
               "event": [
                 {
                   "listen": "prerequest",
