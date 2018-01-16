@@ -4372,6 +4372,21 @@
                 "description": null
               },
               "response": []
+            },
+            {
+              "_postman_id": "69b15237-69cd-2f0b-eb95-9875c35cf242",
+              "name": "Init VAR ENV - DEVDEMO",
+              "request": {
+                "method": null,
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": null,
+                "description": null
+              },
+              "response": []
             }
           ],
           "_postman_isSubFolder": true
@@ -4424,7 +4439,7 @@
           "item": [
             {
               "_postman_id": "ba3882f8-22cd-4753-3b4b-6e2c6ccf8890",
-              "name": "Utils - Clear Environnement Variables copy copy copy copy copy copy",
+              "name": "Init VAR ENV - STAGING DEMO",
               "event": [
                 {
                   "listen": "prerequest",
