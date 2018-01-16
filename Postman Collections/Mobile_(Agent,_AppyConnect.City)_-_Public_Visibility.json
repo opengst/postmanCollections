@@ -4486,10 +4486,10 @@
                       "postman.setEnvironmentVariable(\"db\", \"mobile\");",
                       "",
                       "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password_admin\", \"FMAlV00516562798\");",
+                      "postman.setEnvironmentVariable(\"password\", \"FMAlV00516562798\");",
                       "",
-                      "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
                   }
                 }
