@@ -4301,7 +4301,7 @@
             },
             {
               "_postman_id": "60edf192-8175-7946-b0f6-a05503ffc04a",
-              "name": "Utils - Clear Environnement Variables copy copy copy copy copy",
+              "name": "Init VAR ENV - PROD SAINTBARTH",
               "event": [
                 {
                   "listen": "prerequest",
@@ -4516,7 +4516,7 @@
         },
         {
           "_postman_id": "1e2e8ee5-91f3-b8f8-9bfd-ccae1306861a",
-          "name": "PROD SAINTBARTH BETA",
+          "name": "PROD SAINTBARTHBETA",
           "description": "",
           "item": [
             {
