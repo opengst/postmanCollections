@@ -4258,7 +4258,7 @@
     },
     {
       "_postman_id": "ea496eee-a473-a850-b6ee-c122f90e4375",
-      "name": "(DONT USE) VAR ENV",
+      "name": "(DONT USE) Init VAR ENV",
       "description": "",
       "item": [
         {
@@ -4301,7 +4301,7 @@
             },
             {
               "_postman_id": "60edf192-8175-7946-b0f6-a05503ffc04a",
-              "name": "Init VAR ENV - PROD SAINTBARTH",
+              "name": "Utils - Clear Environnement Variables copy copy copy copy copy",
               "event": [
                 {
                   "listen": "prerequest",
@@ -4341,16 +4341,34 @@
           "description": "",
           "item": [
             {
-              "_postman_id": "69b15237-69cd-2f0b-eb95-9875c35cf242",
-              "name": "Init VAR ENV - DEVDEMO",
+              "_postman_id": "92c95c4a-25ce-9167-4019-af8d0a3bfb58",
+              "name": "Utils - Clear Environnement Variables copy",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "postman.clearEnvironmentVariables();",
+                      "",
+                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
+                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
+                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
+                      "postman.setEnvironmentVariable(\"password\", \"password\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                    ]
+                  }
+                }
+              ],
               "request": {
-                "method": null,
+                "method": "GET",
                 "header": [],
                 "body": {
                   "mode": "raw",
                   "raw": ""
                 },
-                "url": null,
+                "url": "http://www.google.com",
                 "description": null
               },
               "response": []
@@ -4374,10 +4392,10 @@
                     "exec": [
                       "postman.clearEnvironmentVariables();",
                       "",
-                      "postman.setEnvironmentVariable(\"server\", \"https://gst-dev.atreal-ouest.fr/\");",
-                      "postman.setEnvironmentVariable(\"db\", \"productowner\");",
+                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
+                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
                       "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"GyU8C43H48772445\");",
+                      "postman.setEnvironmentVariable(\"password\", \"password\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
@@ -4406,7 +4424,7 @@
           "item": [
             {
               "_postman_id": "ba3882f8-22cd-4753-3b4b-6e2c6ccf8890",
-              "name": "Init VAR ENV - STAGING DEMO",
+              "name": "Utils - Clear Environnement Variables copy copy copy copy copy copy",
               "event": [
                 {
                   "listen": "prerequest",
@@ -4483,7 +4501,7 @@
         },
         {
           "_postman_id": "1e2e8ee5-91f3-b8f8-9bfd-ccae1306861a",
-          "name": "PROD SAINTBARTHBETA",
+          "name": "PROD SAINTBARTH BETA",
           "description": "",
           "item": [
             {
