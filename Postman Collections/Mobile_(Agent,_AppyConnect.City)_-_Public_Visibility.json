@@ -4312,8 +4312,10 @@
                       "",
                       "postman.setEnvironmentVariable(\"server\", \"https://stbarth.opengst.fr/\");",
                       "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
-                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
                       "postman.setEnvironmentVariable(\"password\", \"--\");",
+                      "",
                       "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
@@ -4476,8 +4478,10 @@
                       "",
                       "postman.setEnvironmentVariable(\"server\", \"http://staging.opengst.fr/\");",
                       "postman.setEnvironmentVariable(\"db\", \"mobile\");",
-                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
                       "postman.setEnvironmentVariable(\"password\", \"FMAlV00516562798\");",
+                      "",
                       "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
@@ -4556,27 +4560,8 @@
       "item": [
         {
           "_postman_id": "88ef1964-1c27-39ae-1b64-79fc30221ef2",
-          "name": "Authenticate copy",
+          "name": "Authenticate",
           "event": [
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "/*postman.setEnvironmentVariable(\"server\", \"https://gst-staging.atreal-ouest.fr\");",
-                  "postman.setEnvironmentVariable(\"db\", \"demo\");",
-                  "postman.setEnvironmentVariable(\"login\", \"dstdst\");",
-                  "postman.setEnvironmentVariable(\"password\", \"dstdst\");",
-                  "postman.setEnvironmentVariable(\"sessionId\", \"\");",
-                  "postman.setEnvironmentVariable(\"uid\", \"\");",
-                  "postman.setEnvironmentVariable(\"interventionRequest.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"attachment_count\", \"\");",
-                  "postman.setEnvironmentVariable(\"attachment.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"demandeInter.id\", \"\");",
-                  "postman.setEnvironmentVariable(\"resPartner.id\", \"\");*/"
-                ]
-              }
-            },
             {
               "listen": "test",
               "script": {
@@ -4606,7 +4591,7 @@
               "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
             },
             "url": "{{server}}/web/session/authenticate",
-            "description": null
+            "description": ""
           },
           "response": []
         }
