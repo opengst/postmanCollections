@@ -48,6 +48,43 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "7869aca4-8e6b-3944-b816-e13b327cfda3",
+          "name": "Authenticate copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login_agent}}\",\r\n    \"password\": \"{{password_agent}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
+            },
+            "url": "{{server}}/web/session/authenticate",
+            "description": null
+          },
+          "response": []
         }
       ]
     }
