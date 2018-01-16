@@ -3345,7 +3345,7 @@
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"name ASC\",\n      \"model\":\"opengst_mobile.pictogram\",\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
             },
             "url": "{{server}}/web/dataset/search_read",
-            "description": ""
+            "description": null
           },
           "response": []
         }
@@ -4300,6 +4300,39 @@
               "response": []
             },
             {
+              "_postman_id": "6a13c06c-01c9-1d63-28b6-6ecd1b41ac1c",
+              "name": "Utils - Clear Environnement Variables copy copy copy copy",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "postman.clearEnvironmentVariables();",
+                      "",
+                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
+                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
+                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
+                      "postman.setEnvironmentVariable(\"password\", \"password\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": "http://www.google.com",
+                "description": null
+              },
+              "response": []
+            },
+            {
               "_postman_id": "60edf192-8175-7946-b0f6-a05503ffc04a",
               "name": "Utils - Clear Environnement Variables copy copy copy copy copy",
               "event": [
@@ -4502,41 +4535,7 @@
           "_postman_id": "1e2e8ee5-91f3-b8f8-9bfd-ccae1306861a",
           "name": "PROD SAINTBARTH BETA",
           "description": "",
-          "item": [
-            {
-              "_postman_id": "6a13c06c-01c9-1d63-28b6-6ecd1b41ac1c",
-              "name": "Utils - Clear Environnement Variables copy copy copy copy",
-              "event": [
-                {
-                  "listen": "prerequest",
-                  "script": {
-                    "type": "text/javascript",
-                    "exec": [
-                      "postman.clearEnvironmentVariables();",
-                      "",
-                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
-                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
-                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"password\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
-                    ]
-                  }
-                }
-              ],
-              "request": {
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
-                "url": "http://www.google.com",
-                "description": null
-              },
-              "response": []
-            }
-          ],
+          "item": [],
           "_postman_isSubFolder": true
         },
         {
