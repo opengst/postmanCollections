@@ -1360,35 +1360,43 @@
           "query": [
             {
               "key": "fields%5B%5D",
-              "value": "id"
+              "value": "id",
+              "equals": true
             },
             {
               "key": "fields%5B%5D",
-              "value": "name"
+              "value": "name",
+              "equals": true
             },
             {
               "key": "filters%5B0%5D%5Bfield%5D",
-              "value": "name"
+              "value": "name",
+              "equals": true
             },
             {
               "key": "filters%5B0%5D%5Boperator%5D",
-              "value": "ilike"
+              "value": "ilike",
+              "equals": true
             },
             {
               "key": "filters%5B0%5D%5Bvalue%5D",
-              "value": ""
+              "value": "",
+              "equals": true
             },
             {
               "key": "filters%5B1%5D%5Bfield%5D",
-              "value": "type_id.name"
+              "value": "type_id.name",
+              "equals": true
             },
             {
               "key": "filters%5B1%5D%5Boperator%5D",
-              "value": "ilike"
+              "value": "ilike",
+              "equals": true
             },
             {
               "key": "filters%5B1%5D%5Bvalue%5D",
-              "value": "asso"
+              "value": "asso",
+              "equals": true
             }
           ]
         },
