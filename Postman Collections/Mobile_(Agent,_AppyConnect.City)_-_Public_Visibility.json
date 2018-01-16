@@ -4351,7 +4351,7 @@
                   "raw": ""
                 },
                 "url": "http://www.google.com",
-                "description": ""
+                "description": null
               },
               "response": []
             },
@@ -4399,33 +4399,15 @@
             {
               "_postman_id": "69b15237-69cd-2f0b-eb95-9875c35cf242",
               "name": "Init VAR ENV - DEVDEMO",
-              "event": [
-                {
-                  "listen": "prerequest",
-                  "script": {
-                    "type": "text/javascript",
-                    "exec": [
-                      "postman.clearEnvironmentVariables();",
-                      "",
-                      "postman.setEnvironmentVariable(\"server\", \"https://gst-dev.atreal-ouest.fr/\");",
-                      "postman.setEnvironmentVariable(\"db\", \"demo\");",
-                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"G{#>Fm9pRo<H@22zSz*Xq7BL^Tl8gn\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
-                    ]
-                  }
-                }
-              ],
               "request": {
-                "method": "GET",
+                "method": null,
                 "header": [],
                 "body": {
                   "mode": "raw",
                   "raw": ""
                 },
-                "url": "http://www.google.com",
-                "description": ""
+                "url": null,
+                "description": null
               },
               "response": []
             }
