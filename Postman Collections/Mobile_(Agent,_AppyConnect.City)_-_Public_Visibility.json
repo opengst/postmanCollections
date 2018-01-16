@@ -4328,40 +4328,7 @@
                   "raw": ""
                 },
                 "url": "http://www.google.com",
-                "description": null
-              },
-              "response": []
-            },
-            {
-              "_postman_id": "ba3882f8-22cd-4753-3b4b-6e2c6ccf8890",
-              "name": "Utils - Clear Environnement Variables copy copy copy copy copy copy",
-              "event": [
-                {
-                  "listen": "prerequest",
-                  "script": {
-                    "type": "text/javascript",
-                    "exec": [
-                      "postman.clearEnvironmentVariables();",
-                      "",
-                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
-                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
-                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"password\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
-                    ]
-                  }
-                }
-              ],
-              "request": {
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
-                "url": "http://www.google.com",
-                "description": null
+                "description": ""
               },
               "response": []
             }
@@ -4443,7 +4410,7 @@
                   "raw": ""
                 },
                 "url": "http://www.google.com",
-                "description": null
+                "description": ""
               },
               "response": []
             }
@@ -4454,7 +4421,41 @@
           "_postman_id": "8b951e9b-60e0-0121-6451-eb9f8adc86f7",
           "name": "STAGING DEMO",
           "description": "",
-          "item": [],
+          "item": [
+            {
+              "_postman_id": "ba3882f8-22cd-4753-3b4b-6e2c6ccf8890",
+              "name": "Utils - Clear Environnement Variables copy copy copy copy copy copy",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "postman.clearEnvironmentVariables();",
+                      "",
+                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
+                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
+                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
+                      "postman.setEnvironmentVariable(\"password\", \"password\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": "http://www.google.com",
+                "description": ""
+              },
+              "response": []
+            }
+          ],
           "_postman_isSubFolder": true
         },
         {
@@ -4491,7 +4492,7 @@
                   "raw": ""
                 },
                 "url": "http://www.google.com",
-                "description": null
+                "description": ""
               },
               "response": []
             }
@@ -4532,7 +4533,7 @@
                   "raw": ""
                 },
                 "url": "http://www.google.com",
-                "description": null
+                "description": ""
               },
               "response": []
             }
