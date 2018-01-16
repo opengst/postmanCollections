@@ -4298,6 +4298,39 @@
                 "description": null
               },
               "response": []
+            },
+            {
+              "_postman_id": "92c95c4a-25ce-9167-4019-af8d0a3bfb58",
+              "name": "Utils - Clear Environnement Variables copy",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "postman.clearEnvironmentVariables();",
+                      "",
+                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
+                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
+                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
+                      "postman.setEnvironmentVariable(\"password\", \"password\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": "http://www.google.com",
+                "description": null
+              },
+              "response": []
             }
           ],
           "_postman_isSubFolder": true
