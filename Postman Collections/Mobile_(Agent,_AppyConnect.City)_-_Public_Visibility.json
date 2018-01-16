@@ -7,1095 +7,6 @@
   },
   "item": [
     {
-      "_postman_id": "de68745d-5947-4dda-ac30-5e027a997e63",
-      "name": "Mobile AppyConnect.City",
-      "description": "",
-      "item": [
-        {
-          "_postman_id": "99276487-7dec-b967-d2ca-f9d6eaea4d48",
-          "name": "BEGIN RUN HERE",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"BEGIN\"] = 1 === 1;",
-                  "postman.clearEnvironmentVariable(\"lastStepScenarioCitoyen\")",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "http://www.google.com",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ece7d757-81c7-cf6f-152f-7ddd864cbf8d",
-          "name": "000 - Global Scenario",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"Switch..\"] = 1 === 1;",
-                  "",
-                  "switch(postman.getEnvironmentVariable(\"lastStepScenarioCitoyen\")) {",
-                  "    ",
-                  "    case undefined:",
-                  "        tests[\"Utils - Clear Environnement Variables\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Utils - Clear Environnement Variables\");",
-                  "        break;",
-                  "        ",
-                  "    case \"Clear Environnement Variables\":",
-                  "        tests[\"Authenticate with globalAccount\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Authenticate with globalAccount\");",
-                  "        break;",
-                  "        ",
-                  "    case \"Authenticate with globalAccount\":",
-                  "        tests[\"Get CategorieOrganisations with code PARTICULIER\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Get CategorieOrganisations with code PARTICULIER\");",
-                  "        break;        ",
-                  "        ",
-                  "    case \"Get CategorieOrganisations with code PARTICULIER\":",
-                  "        tests[\"Get Organisation with last CategorieOrganisation\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Get Organisation with last CategorieOrganisation\");",
-                  "        break;              ",
-                  "        ",
-                  "    case \"Get Organisation with last CategorieOrganisation\":",
-                  "        tests[\"Get GroupId for Demandeur\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Get GroupId for Demandeur\");",
-                  "        break;        ",
-                  "        ",
-                  "    case \"Get GroupId for Demandeur\":",
-                  "        tests[\"Create User on Particuliers Commune\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Create User on Particuliers Commune\");",
-                  "        break;        ",
-                  "        ",
-                  "    case \"Create User on Particuliers Commune\":",
-                  "        tests[\"Authenticate with userAccount\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Authenticate with userAccount\");",
-                  "        break;              ",
-                  "        ",
-                  "    case \"Authenticate with userAccount\":",
-                  "        tests[\"Get session info\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Get session info\");",
-                  "        break;        ",
-                  "        ",
-                  "    case \"Get session info\":",
-                  "        tests[\"Get user informations\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Get user informations\");",
-                  "        break;        ",
-                  "        ",
-                  "    case \"Get user informations\":",
-                  "        tests[\"Get contact informations\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Get contact informations\");",
-                  "        break;        ",
-                  "        ",
-                  "    case \"Get contact informations\":",
-                  "        tests[\"Search_read All Category\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Search_read All Category\");",
-                  "        break;              ",
-                  "        ",
-                  "    case \"Search_read All Category\":",
-                  "        tests[\"Search_read All Demandes d'intervention\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Search_read All Demandes d'intervention\");",
-                  "        break;        ",
-                  "        ",
-                  "    case \"Search_read All Demandes d'intervention\":",
-                  "        tests[\"Create Demande intervention\"] = 1 === 1;",
-                  "        postman.setNextRequest(\"Create Demande intervention\");",
-                  "        break;        ",
-                  "        ",
-                  "    case \"Create Demande intervention\":",
-                  "        tests[\"END\"] = 1 === 1;",
-                  "        postman.setNextRequest(null);",
-                  "        break;     ",
-                  "        ",
-                  "    default:",
-                  "        tests[\"ERROR ON lastStepScenarioCitoyen\"] = 1 === 0;",
-                  "        postman.setNextRequest(null);",
-                  "}",
-                  ""
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "http://www.google.com",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "b72a2f9c-2cbb-9faf-ecb3-3228304cf71d",
-          "name": "Utils - Clear Environnement Variables",
-          "event": [
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var server = postman.getEnvironmentVariable(\"server\");",
-                  "var db = postman.getEnvironmentVariable(\"db\");",
-                  "var login = postman.getEnvironmentVariable(\"login\");",
-                  "var password = postman.getEnvironmentVariable(\"password\");",
-                  "var accountNotConnectedLogin = postman.getEnvironmentVariable(\"accountNotConnectedLogin\");",
-                  "var accountNotConnectedPassword = postman.getEnvironmentVariable(\"accountNotConnectedPassword\");",
-                  "var accountNotConnectedName = postman.getEnvironmentVariable(\"accountNotConnectedName\");",
-                  "",
-                  "postman.clearEnvironmentVariables();",
-                  "",
-                  "postman.setEnvironmentVariable(\"server\", server);",
-                  "postman.setEnvironmentVariable(\"db\", db);",
-                  "postman.setEnvironmentVariable(\"login\", login);",
-                  "postman.setEnvironmentVariable(\"password\", password);",
-                  "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", accountNotConnectedLogin);",
-                  "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", accountNotConnectedPassword);",
-                  "postman.setEnvironmentVariable(\"accountNotConnectedName\", accountNotConnectedName);"
-                ]
-              }
-            },
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "http://www.google.com",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "2df425c7-fe51-785e-69e4-a4e16bfe689f",
-          "name": "Authenticate with globalAccount",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "//Check status code",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "//Check if the content type is json",
-                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
-                  "if (contentTypeHeader) {",
-                  "    tests[\"Content-Type is application/json\"] = ",
-                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
-                  "}",
-                  "",
-                  "//Check if really authenticate",
-                  "tests[\"Authenticate\"] = jsonData.result.uid !== false;",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  " ",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Authenticate with globalAccount\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{accountNotConnectedLogin}}\",\r\n      \"password\": \"{{accountNotConnectedPassword}}\"\r\n   }\r\n}"
-            },
-            "url": "{{server}}/web/session/authenticate",
-            "description": null
-          },
-          "response": [
-            {
-              "id": "4cbe8f44-e9b2-0534-0704-2939ebc5643c",
-              "name": "stag demo - dstdst",
-              "originalRequest": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json;charset=UTF-8",
-                    "enabled": true,
-                    "description": "The mime type of this content",
-                    "warning": ""
-                  },
-                  {
-                    "key": "Content-Length",
-                    "value": "",
-                    "enabled": false,
-                    "warning": "Restricted Header (use Postman Interceptor)"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{login}}\",\r\n      \"password\": \"{{password}}\"\r\n   }\r\n}"
-                },
-                "url": "{{server}}/web/session/authenticate"
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
-              "header": [
-                {
-                  "name": "Connection",
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "description": "Options that are desired for the connection"
-                },
-                {
-                  "name": "Content-Encoding",
-                  "key": "Content-Encoding",
-                  "value": "gzip",
-                  "description": "The type of encoding used on the data."
-                },
-                {
-                  "name": "Content-Type",
-                  "key": "Content-Type",
-                  "value": "application/json",
-                  "description": "The mime type of this content"
-                },
-                {
-                  "name": "Date",
-                  "key": "Date",
-                  "value": "Wed, 12 Apr 2017 14:17:34 GMT",
-                  "description": "The date and time that the message was sent"
-                },
-                {
-                  "name": "Server",
-                  "key": "Server",
-                  "value": "nginx/1.4.6 (Ubuntu)",
-                  "description": "A name for the server"
-                },
-                {
-                  "name": "Transfer-Encoding",
-                  "key": "Transfer-Encoding",
-                  "value": "chunked",
-                  "description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-                },
-                {
-                  "name": "Vary",
-                  "key": "Vary",
-                  "value": "Accept-Encoding",
-                  "description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-                }
-              ],
-              "cookie": [],
-              "responseTime": "1054",
-              "body": "{\"jsonrpc\": \"2.0\", \"id\": null, \"result\": {\"uid\": 82, \"db\": \"demo\", \"session_id\": \"a71fcc8234a34bfb9571f8c39ff7ba00\", \"openerp_entreprise\": false, \"context\": {\"lang\": \"fr_FR\", \"project_id\": false, \"tz\": \"Europe/Paris\", \"section_id\": false, \"uid\": 82}, \"login\": \"dstdst\"}}"
-            }
-          ]
-        },
-        {
-          "_postman_id": "b8098e14-76ab-9381-baf9-d082306da1a6",
-          "name": "Get CategorieOrganisations with code PARTICULIER",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "postman.setEnvironmentVariable(\"categorieOrganisationId\", jsonData.result.records[0].id);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get CategorieOrganisations with code PARTICULIER\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"openstc.partner.type\",\n      \"domain\":[\n         \"|\",\n         \"|\",\n         [\n            \"code\",\n            \"=\",\n            \"PARTICULIER\"\n         ],\n         [\n            \"code\",\n            \"=\",\n            \"3\"\n         ],\n     [\n            \"name\",\n            \"=\",\n            \"Particulier\"\n         ]\n      ],\n      \"fields\":[\n         \"id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "c75fbe9d-0242-3548-a7b3-4fafbe0438f2",
-          "name": "Get Organisation with last CategorieOrganisation",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "postman.setEnvironmentVariable(\"organisationId\", jsonData.result.records[0].id);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get Organisation with last CategorieOrganisation\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"res.partner\",\n      \"fields\":[\n         \"id\",\n         \"type_id\"\n      ],\n      \"domain\":[\n         [\n            \"type_id\",\n            \"in\",\n            [\n               {{categorieOrganisationId}}\n            ]\n         ],\n         [\n            \"is_department\",\n            \"=\",\n            false\n         ]\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "080e4ea1-1567-d799-56cb-ba95a14f1648",
-          "name": "Get GroupId for Demandeur",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "postman.setEnvironmentVariable(\"groupIdDemandeur\", jsonData.result.records[0].id);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n         [\n            \"code\",\n            \"=\",\n            \"PART\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\"\n      ],\n      \"model\":\"res.groups\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "86af7c41-7dda-20ae-370a-8498bcc9eee6",
-          "name": "Create User on Particuliers Commune",
-          "event": [
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var userLogin = \"\";",
-                  "var userPassword = \"\";",
-                  "var userName = \"\";",
-                  "",
-                  "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
-                  "",
-                  "for( var i=0; i < 15; i++ ){",
-                  "    userLogin += possible.charAt(Math.floor(Math.random() * possible.length));",
-                  "}",
-                  "for( var i=0; i < 15; i++ ){",
-                  "    userPassword += possible.charAt(Math.floor(Math.random() * possible.length));",
-                  "}",
-                  "for( var i=0; i < 15; i++ ){",
-                  "    userName += possible.charAt(Math.floor(Math.random() * possible.length));",
-                  "}",
-                  "",
-                  "postman.setEnvironmentVariable(\"userLogin\", userLogin);",
-                  "postman.setEnvironmentVariable(\"userPassword\", userPassword);",
-                  "postman.setEnvironmentVariable(\"userName\", userName);"
-                ]
-              }
-            },
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Create User on Particuliers Commune\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n             ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"{{userLogin}}\",\n         \"new_password\":\"{{userPassword}}\",\n         \"name\":\"{{userName}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{groupIdDemandeur}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "url": "{{server}}/web/dataset/create",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "0274b77e-02d0-7109-4624-98dd27c240fc",
-          "name": "Authenticate with userAccount",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "//Check status code",
-                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
-                  "",
-                  "//Check if the content type is json",
-                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
-                  "if (contentTypeHeader) {",
-                  "    tests[\"Content-Type is application/json\"] = ",
-                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
-                  "}",
-                  "",
-                  "//Check if really authenticate",
-                  "tests[\"Authenticate\"] = jsonData.result.uid !== false;",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Authenticate with userAccount\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{userLogin}}\",\r\n      \"password\": \"{{userPassword}}\"\r\n   }\r\n}"
-            },
-            "url": "{{server}}/web/session/authenticate",
-            "description": null
-          },
-          "response": [
-            {
-              "id": "dbc82ef5-c42b-4997-0379-7978feabf621",
-              "name": "stag demo - dstdst",
-              "originalRequest": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Content-Type",
-                    "value": "application/json;charset=UTF-8",
-                    "enabled": true,
-                    "description": "The mime type of this content",
-                    "warning": ""
-                  },
-                  {
-                    "key": "Content-Length",
-                    "value": "",
-                    "enabled": false,
-                    "warning": "Restricted Header (use Postman Interceptor)"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{login}}\",\r\n      \"password\": \"{{password}}\"\r\n   }\r\n}"
-                },
-                "url": "{{server}}/web/session/authenticate"
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": "json",
-              "header": [
-                {
-                  "name": "Connection",
-                  "key": "Connection",
-                  "value": "keep-alive",
-                  "description": "Options that are desired for the connection"
-                },
-                {
-                  "name": "Content-Encoding",
-                  "key": "Content-Encoding",
-                  "value": "gzip",
-                  "description": "The type of encoding used on the data."
-                },
-                {
-                  "name": "Content-Type",
-                  "key": "Content-Type",
-                  "value": "application/json",
-                  "description": "The mime type of this content"
-                },
-                {
-                  "name": "Date",
-                  "key": "Date",
-                  "value": "Wed, 12 Apr 2017 14:17:34 GMT",
-                  "description": "The date and time that the message was sent"
-                },
-                {
-                  "name": "Server",
-                  "key": "Server",
-                  "value": "nginx/1.4.6 (Ubuntu)",
-                  "description": "A name for the server"
-                },
-                {
-                  "name": "Transfer-Encoding",
-                  "key": "Transfer-Encoding",
-                  "value": "chunked",
-                  "description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
-                },
-                {
-                  "name": "Vary",
-                  "key": "Vary",
-                  "value": "Accept-Encoding",
-                  "description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-                }
-              ],
-              "cookie": [],
-              "responseTime": "1054",
-              "body": "{\"jsonrpc\": \"2.0\", \"id\": null, \"result\": {\"uid\": 82, \"db\": \"demo\", \"session_id\": \"a71fcc8234a34bfb9571f8c39ff7ba00\", \"openerp_entreprise\": false, \"context\": {\"lang\": \"fr_FR\", \"project_id\": false, \"tz\": \"Europe/Paris\", \"section_id\": false, \"uid\": 82}, \"login\": \"dstdst\"}}"
-            }
-          ]
-        },
-        {
-          "_postman_id": "a22d5652-054a-7ee5-d805-3da6846ba5df",
-          "name": "Get session info",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get session info\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "url": "{{server}}/web/session/get_session_info",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "7808dd83-0e1d-0314-b721-3bc26dc2d563",
-          "name": "Get user informations",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "postman.setEnvironmentVariable(\"addressId\", jsonData.result.records[0].address_id[0]);",
-                  "postman.setEnvironmentVariable(\"partnerId\", jsonData.result.records[0].partner_id[0]);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get user informations\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"model\":\"res.users\",\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n         [\"id\", \"!=\", false],\n         [\"name\", \"!=\", false],\n         [\"address_id\", \"!=\", false],\n         [\"partner_id\", \"!=\", false],\n         [\"id\", \"=\", {{uid}}]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"email\",\n         \"city\",\n         \"zip\",\n         \"street\",\n         \"phone\",\n         \"mobile\",\n         \"address_id\",\n         \"partner_id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "f548d80d-4aa5-5a68-3dd3-f89d20616e98",
-          "name": "Get contact informations",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get contact informations\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"res.partner.address\",\n      \"domain\":[\n         [\n            \"id\",\n            \"=\",\n            {{addressId}}\n         ]\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "0eac20c4-e2d3-f82a-c4a3-3d2ab79f2b21",
-          "name": "Search_read All Category",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "postman.setEnvironmentVariable(\"listCategory\", JSON.stringify(jsonData.result.ids));",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Search_read All Category\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*"
-              },
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"openstc.ask.category\",\n      \"sort\": \"id DESC\",\n      \"limit\": false,\n      \"offset\": false,\n      \"domain\":[\n         [\"id\", \"!=\", false],\n         [\"name\", \"!=\", false],\n         [\"active\", \"!=\", false]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"active\"\n      ],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
-            },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "80dbcc26-b0fb-81b8-7d79-0764e5f7a900",
-          "name": "Search_read All Demandes d'intervention",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Search_read All Demandes d'intervention\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n      \"model\": \"openstc.ask\",\r\n      \"sort\": \"id DESC\",\r\n      \"limit\": false,\r\n      \"offset\": false,\r\n      \"domain\":[\r\n         [\"id\", \"!=\", false],\r\n         [\"name\", \"!=\", false],\r\n         [\"geo_point\", \"!=\", false],\r\n         [\"description\", \"!=\", false],\r\n         [\"type_id\", \"!=\", false],\r\n         [\"create_uid\", \"!=\", false],\r\n         [\"create_date\", \"!=\", false],\r\n         [\"partner_address\", \"!=\", false],\r\n         [\"partner_id\", \"!=\", false],\r\n         [\"state\", \"!=\", false]\r\n      ],\r\n      \"fields\":[\r\n         \"id\",\r\n         \"name\",\r\n         \"geo_point\",\r\n         \"description\",\r\n         \"type_id\",\r\n         \"create_uid\",\r\n         \"create_date\",\r\n         \"partner_address\",\r\n         \"partner_id\",\r\n         \"state\"\r\n      ],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
-            },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "8f4547d3-64e5-9a80-585d-f1528b452426",
-          "name": "Create Demande intervention",
-          "event": [
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var requestName = \"\";",
-                  "var requestDescription = \"\";",
-                  "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
-                  "",
-                  "for( var i=0; i < 15; i++ ){",
-                  "    requestName += possible.charAt(Math.floor(Math.random() * possible.length));",
-                  "}",
-                  "for( var i=0; i < 15; i++ ){",
-                  "    requestDescription += possible.charAt(Math.floor(Math.random() * possible.length));",
-                  "}",
-                  "",
-                  "",
-                  "var requestLongitude = (Math.random() * (7 - -1.5) + -1.5).toFixed(15) * 1;",
-                  "var requestLatitude = (Math.random() * (49.5 - 44) + 44).toFixed(15) * 1;",
-                  "",
-                  "var listCategory = postman.getEnvironmentVariable(\"listCategory\");",
-                  "listCategory = listCategory.replace(',', '');",
-                  "listCategory = listCategory.replace('[', '');",
-                  "listCategory = listCategory.replace(']', '');",
-                  "",
-                  "var requestCategory = listCategory[Math.floor(Math.random() * listCategory.length)];",
-                  "",
-                  "postman.setEnvironmentVariable(\"requestName\", requestName);",
-                  "postman.setEnvironmentVariable(\"requestDescription\", requestDescription);",
-                  "postman.setEnvironmentVariable(\"requestLatitude\", requestLatitude);",
-                  "postman.setEnvironmentVariable(\"requestLongitude\", requestLongitude);",
-                  "postman.setEnvironmentVariable(\"requestCategory\", requestCategory);",
-                  ""
-                ]
-              }
-            },
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
-                  "",
-                  "",
-                  "/*",
-                  " * TESTS ",
-                  " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * LOGIC",
-                  " */",
-                  "",
-                  "postman.setEnvironmentVariable(\"requestId\", jsonData.result.result);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Create Demande intervention\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"name\": \"requestName\",\r\n      \"description\": \"requestDescription\",\r\n      \"is_citizen\":false,\r\n      \"geo_point\":\"Point({{requestLongitude}} {{requestLatitude}})\",\r\n      \"type_id\":6,\r\n      \"partner_address\":{{addressId}},\r\n      \"partner_id\":{{partnerId}}\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
-            },
-            "url": "{{server}}/web/dataset/create",
-            "description": null
-          },
-          "response": []
-        }
-      ]
-    },
-    {
       "_postman_id": "8c99bf23-f287-a2b8-8da9-174ca2ec0dfa",
       "name": "2 - Jeu de données - Modele Demande Intervention - AppyConnect.City copy",
       "description": "",
@@ -5692,6 +4603,1095 @@
             },
             "url": "{{server}}/web/session/authenticate",
             "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "de68745d-5947-4dda-ac30-5e027a997e63",
+      "name": "Mobile AppyConnect.City",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "99276487-7dec-b967-d2ca-f9d6eaea4d48",
+          "name": "BEGIN RUN HERE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"BEGIN\"] = 1 === 1;",
+                  "postman.clearEnvironmentVariable(\"lastStepScenarioCitoyen\")",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "http://www.google.com",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ece7d757-81c7-cf6f-152f-7ddd864cbf8d",
+          "name": "000 - Global Scenario",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Switch..\"] = 1 === 1;",
+                  "",
+                  "switch(postman.getEnvironmentVariable(\"lastStepScenarioCitoyen\")) {",
+                  "    ",
+                  "    case undefined:",
+                  "        tests[\"Utils - Clear Environnement Variables\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Utils - Clear Environnement Variables\");",
+                  "        break;",
+                  "        ",
+                  "    case \"Clear Environnement Variables\":",
+                  "        tests[\"Authenticate with globalAccount\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Authenticate with globalAccount\");",
+                  "        break;",
+                  "        ",
+                  "    case \"Authenticate with globalAccount\":",
+                  "        tests[\"Get CategorieOrganisations with code PARTICULIER\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Get CategorieOrganisations with code PARTICULIER\");",
+                  "        break;        ",
+                  "        ",
+                  "    case \"Get CategorieOrganisations with code PARTICULIER\":",
+                  "        tests[\"Get Organisation with last CategorieOrganisation\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Get Organisation with last CategorieOrganisation\");",
+                  "        break;              ",
+                  "        ",
+                  "    case \"Get Organisation with last CategorieOrganisation\":",
+                  "        tests[\"Get GroupId for Demandeur\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Get GroupId for Demandeur\");",
+                  "        break;        ",
+                  "        ",
+                  "    case \"Get GroupId for Demandeur\":",
+                  "        tests[\"Create User on Particuliers Commune\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Create User on Particuliers Commune\");",
+                  "        break;        ",
+                  "        ",
+                  "    case \"Create User on Particuliers Commune\":",
+                  "        tests[\"Authenticate with userAccount\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Authenticate with userAccount\");",
+                  "        break;              ",
+                  "        ",
+                  "    case \"Authenticate with userAccount\":",
+                  "        tests[\"Get session info\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Get session info\");",
+                  "        break;        ",
+                  "        ",
+                  "    case \"Get session info\":",
+                  "        tests[\"Get user informations\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Get user informations\");",
+                  "        break;        ",
+                  "        ",
+                  "    case \"Get user informations\":",
+                  "        tests[\"Get contact informations\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Get contact informations\");",
+                  "        break;        ",
+                  "        ",
+                  "    case \"Get contact informations\":",
+                  "        tests[\"Search_read All Category\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Search_read All Category\");",
+                  "        break;              ",
+                  "        ",
+                  "    case \"Search_read All Category\":",
+                  "        tests[\"Search_read All Demandes d'intervention\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Search_read All Demandes d'intervention\");",
+                  "        break;        ",
+                  "        ",
+                  "    case \"Search_read All Demandes d'intervention\":",
+                  "        tests[\"Create Demande intervention\"] = 1 === 1;",
+                  "        postman.setNextRequest(\"Create Demande intervention\");",
+                  "        break;        ",
+                  "        ",
+                  "    case \"Create Demande intervention\":",
+                  "        tests[\"END\"] = 1 === 1;",
+                  "        postman.setNextRequest(null);",
+                  "        break;     ",
+                  "        ",
+                  "    default:",
+                  "        tests[\"ERROR ON lastStepScenarioCitoyen\"] = 1 === 0;",
+                  "        postman.setNextRequest(null);",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "http://www.google.com",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b72a2f9c-2cbb-9faf-ecb3-3228304cf71d",
+          "name": "Utils - Clear Environnement Variables",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var server = postman.getEnvironmentVariable(\"server\");",
+                  "var db = postman.getEnvironmentVariable(\"db\");",
+                  "var login = postman.getEnvironmentVariable(\"login\");",
+                  "var password = postman.getEnvironmentVariable(\"password\");",
+                  "var accountNotConnectedLogin = postman.getEnvironmentVariable(\"accountNotConnectedLogin\");",
+                  "var accountNotConnectedPassword = postman.getEnvironmentVariable(\"accountNotConnectedPassword\");",
+                  "var accountNotConnectedName = postman.getEnvironmentVariable(\"accountNotConnectedName\");",
+                  "",
+                  "postman.clearEnvironmentVariables();",
+                  "",
+                  "postman.setEnvironmentVariable(\"server\", server);",
+                  "postman.setEnvironmentVariable(\"db\", db);",
+                  "postman.setEnvironmentVariable(\"login\", login);",
+                  "postman.setEnvironmentVariable(\"password\", password);",
+                  "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", accountNotConnectedLogin);",
+                  "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", accountNotConnectedPassword);",
+                  "postman.setEnvironmentVariable(\"accountNotConnectedName\", accountNotConnectedName);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Clear Environnement Variables\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "http://www.google.com",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "2df425c7-fe51-785e-69e4-a4e16bfe689f",
+          "name": "Authenticate with globalAccount",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "//Check status code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "//Check if the content type is json",
+                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
+                  "if (contentTypeHeader) {",
+                  "    tests[\"Content-Type is application/json\"] = ",
+                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
+                  "}",
+                  "",
+                  "//Check if really authenticate",
+                  "tests[\"Authenticate\"] = jsonData.result.uid !== false;",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  " ",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Authenticate with globalAccount\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{accountNotConnectedLogin}}\",\r\n      \"password\": \"{{accountNotConnectedPassword}}\"\r\n   }\r\n}"
+            },
+            "url": "{{server}}/web/session/authenticate",
+            "description": null
+          },
+          "response": [
+            {
+              "id": "4cbe8f44-e9b2-0534-0704-2939ebc5643c",
+              "name": "stag demo - dstdst",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json;charset=UTF-8",
+                    "enabled": true,
+                    "description": "The mime type of this content",
+                    "warning": ""
+                  },
+                  {
+                    "key": "Content-Length",
+                    "value": "",
+                    "enabled": false,
+                    "warning": "Restricted Header (use Postman Interceptor)"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{login}}\",\r\n      \"password\": \"{{password}}\"\r\n   }\r\n}"
+                },
+                "url": "{{server}}/web/session/authenticate"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "name": "Connection",
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "description": "Options that are desired for the connection"
+                },
+                {
+                  "name": "Content-Encoding",
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "description": "The type of encoding used on the data."
+                },
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "The mime type of this content"
+                },
+                {
+                  "name": "Date",
+                  "key": "Date",
+                  "value": "Wed, 12 Apr 2017 14:17:34 GMT",
+                  "description": "The date and time that the message was sent"
+                },
+                {
+                  "name": "Server",
+                  "key": "Server",
+                  "value": "nginx/1.4.6 (Ubuntu)",
+                  "description": "A name for the server"
+                },
+                {
+                  "name": "Transfer-Encoding",
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+                },
+                {
+                  "name": "Vary",
+                  "key": "Vary",
+                  "value": "Accept-Encoding",
+                  "description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+                }
+              ],
+              "cookie": [],
+              "responseTime": "1054",
+              "body": "{\"jsonrpc\": \"2.0\", \"id\": null, \"result\": {\"uid\": 82, \"db\": \"demo\", \"session_id\": \"a71fcc8234a34bfb9571f8c39ff7ba00\", \"openerp_entreprise\": false, \"context\": {\"lang\": \"fr_FR\", \"project_id\": false, \"tz\": \"Europe/Paris\", \"section_id\": false, \"uid\": 82}, \"login\": \"dstdst\"}}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "b8098e14-76ab-9381-baf9-d082306da1a6",
+          "name": "Get CategorieOrganisations with code PARTICULIER",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "postman.setEnvironmentVariable(\"categorieOrganisationId\", jsonData.result.records[0].id);",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get CategorieOrganisations with code PARTICULIER\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"openstc.partner.type\",\n      \"domain\":[\n         \"|\",\n         \"|\",\n         [\n            \"code\",\n            \"=\",\n            \"PARTICULIER\"\n         ],\n         [\n            \"code\",\n            \"=\",\n            \"3\"\n         ],\n     [\n            \"name\",\n            \"=\",\n            \"Particulier\"\n         ]\n      ],\n      \"fields\":[\n         \"id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "c75fbe9d-0242-3548-a7b3-4fafbe0438f2",
+          "name": "Get Organisation with last CategorieOrganisation",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "postman.setEnvironmentVariable(\"organisationId\", jsonData.result.records[0].id);",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get Organisation with last CategorieOrganisation\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"res.partner\",\n      \"fields\":[\n         \"id\",\n         \"type_id\"\n      ],\n      \"domain\":[\n         [\n            \"type_id\",\n            \"in\",\n            [\n               {{categorieOrganisationId}}\n            ]\n         ],\n         [\n            \"is_department\",\n            \"=\",\n            false\n         ]\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "080e4ea1-1567-d799-56cb-ba95a14f1648",
+          "name": "Get GroupId for Demandeur",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "postman.setEnvironmentVariable(\"groupIdDemandeur\", jsonData.result.records[0].id);",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n         [\n            \"code\",\n            \"=\",\n            \"PART\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\"\n      ],\n      \"model\":\"res.groups\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "86af7c41-7dda-20ae-370a-8498bcc9eee6",
+          "name": "Create User on Particuliers Commune",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var userLogin = \"\";",
+                  "var userPassword = \"\";",
+                  "var userName = \"\";",
+                  "",
+                  "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+                  "",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userLogin += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userPassword += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userName += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "",
+                  "postman.setEnvironmentVariable(\"userLogin\", userLogin);",
+                  "postman.setEnvironmentVariable(\"userPassword\", userPassword);",
+                  "postman.setEnvironmentVariable(\"userName\", userName);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Create User on Particuliers Commune\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n             ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"{{userLogin}}\",\n         \"new_password\":\"{{userPassword}}\",\n         \"name\":\"{{userName}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{groupIdDemandeur}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/create",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0274b77e-02d0-7109-4624-98dd27c240fc",
+          "name": "Authenticate with userAccount",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "//Check status code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "//Check if the content type is json",
+                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
+                  "if (contentTypeHeader) {",
+                  "    tests[\"Content-Type is application/json\"] = ",
+                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
+                  "}",
+                  "",
+                  "//Check if really authenticate",
+                  "tests[\"Authenticate\"] = jsonData.result.uid !== false;",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Authenticate with userAccount\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{userLogin}}\",\r\n      \"password\": \"{{userPassword}}\"\r\n   }\r\n}"
+            },
+            "url": "{{server}}/web/session/authenticate",
+            "description": null
+          },
+          "response": [
+            {
+              "id": "dbc82ef5-c42b-4997-0379-7978feabf621",
+              "name": "stag demo - dstdst",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json;charset=UTF-8",
+                    "enabled": true,
+                    "description": "The mime type of this content",
+                    "warning": ""
+                  },
+                  {
+                    "key": "Content-Length",
+                    "value": "",
+                    "enabled": false,
+                    "warning": "Restricted Header (use Postman Interceptor)"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{login}}\",\r\n      \"password\": \"{{password}}\"\r\n   }\r\n}"
+                },
+                "url": "{{server}}/web/session/authenticate"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "name": "Connection",
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "description": "Options that are desired for the connection"
+                },
+                {
+                  "name": "Content-Encoding",
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "description": "The type of encoding used on the data."
+                },
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "The mime type of this content"
+                },
+                {
+                  "name": "Date",
+                  "key": "Date",
+                  "value": "Wed, 12 Apr 2017 14:17:34 GMT",
+                  "description": "The date and time that the message was sent"
+                },
+                {
+                  "name": "Server",
+                  "key": "Server",
+                  "value": "nginx/1.4.6 (Ubuntu)",
+                  "description": "A name for the server"
+                },
+                {
+                  "name": "Transfer-Encoding",
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+                },
+                {
+                  "name": "Vary",
+                  "key": "Vary",
+                  "value": "Accept-Encoding",
+                  "description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+                }
+              ],
+              "cookie": [],
+              "responseTime": "1054",
+              "body": "{\"jsonrpc\": \"2.0\", \"id\": null, \"result\": {\"uid\": 82, \"db\": \"demo\", \"session_id\": \"a71fcc8234a34bfb9571f8c39ff7ba00\", \"openerp_entreprise\": false, \"context\": {\"lang\": \"fr_FR\", \"project_id\": false, \"tz\": \"Europe/Paris\", \"section_id\": false, \"uid\": 82}, \"login\": \"dstdst\"}}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "a22d5652-054a-7ee5-d805-3da6846ba5df",
+          "name": "Get session info",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get session info\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/session/get_session_info",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "7808dd83-0e1d-0314-b721-3bc26dc2d563",
+          "name": "Get user informations",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "postman.setEnvironmentVariable(\"addressId\", jsonData.result.records[0].address_id[0]);",
+                  "postman.setEnvironmentVariable(\"partnerId\", jsonData.result.records[0].partner_id[0]);",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get user informations\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"model\":\"res.users\",\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n         [\"id\", \"!=\", false],\n         [\"name\", \"!=\", false],\n         [\"address_id\", \"!=\", false],\n         [\"partner_id\", \"!=\", false],\n         [\"id\", \"=\", {{uid}}]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"email\",\n         \"city\",\n         \"zip\",\n         \"street\",\n         \"phone\",\n         \"mobile\",\n         \"address_id\",\n         \"partner_id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "f548d80d-4aa5-5a68-3dd3-f89d20616e98",
+          "name": "Get contact informations",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get contact informations\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"res.partner.address\",\n      \"domain\":[\n         [\n            \"id\",\n            \"=\",\n            {{addressId}}\n         ]\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "0eac20c4-e2d3-f82a-c4a3-3d2ab79f2b21",
+          "name": "Search_read All Category",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "postman.setEnvironmentVariable(\"listCategory\", JSON.stringify(jsonData.result.ids));",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Search_read All Category\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"openstc.ask.category\",\n      \"sort\": \"id DESC\",\n      \"limit\": false,\n      \"offset\": false,\n      \"domain\":[\n         [\"id\", \"!=\", false],\n         [\"name\", \"!=\", false],\n         [\"active\", \"!=\", false]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"active\"\n      ],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "80dbcc26-b0fb-81b8-7d79-0764e5f7a900",
+          "name": "Search_read All Demandes d'intervention",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Search_read All Demandes d'intervention\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n      \"model\": \"openstc.ask\",\r\n      \"sort\": \"id DESC\",\r\n      \"limit\": false,\r\n      \"offset\": false,\r\n      \"domain\":[\r\n         [\"id\", \"!=\", false],\r\n         [\"name\", \"!=\", false],\r\n         [\"geo_point\", \"!=\", false],\r\n         [\"description\", \"!=\", false],\r\n         [\"type_id\", \"!=\", false],\r\n         [\"create_uid\", \"!=\", false],\r\n         [\"create_date\", \"!=\", false],\r\n         [\"partner_address\", \"!=\", false],\r\n         [\"partner_id\", \"!=\", false],\r\n         [\"state\", \"!=\", false]\r\n      ],\r\n      \"fields\":[\r\n         \"id\",\r\n         \"name\",\r\n         \"geo_point\",\r\n         \"description\",\r\n         \"type_id\",\r\n         \"create_uid\",\r\n         \"create_date\",\r\n         \"partner_address\",\r\n         \"partner_id\",\r\n         \"state\"\r\n      ],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "8f4547d3-64e5-9a80-585d-f1528b452426",
+          "name": "Create Demande intervention",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var requestName = \"\";",
+                  "var requestDescription = \"\";",
+                  "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+                  "",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    requestName += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    requestDescription += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "",
+                  "",
+                  "var requestLongitude = (Math.random() * (7 - -1.5) + -1.5).toFixed(15) * 1;",
+                  "var requestLatitude = (Math.random() * (49.5 - 44) + 44).toFixed(15) * 1;",
+                  "",
+                  "var listCategory = postman.getEnvironmentVariable(\"listCategory\");",
+                  "listCategory = listCategory.replace(',', '');",
+                  "listCategory = listCategory.replace('[', '');",
+                  "listCategory = listCategory.replace(']', '');",
+                  "",
+                  "var requestCategory = listCategory[Math.floor(Math.random() * listCategory.length)];",
+                  "",
+                  "postman.setEnvironmentVariable(\"requestName\", requestName);",
+                  "postman.setEnvironmentVariable(\"requestDescription\", requestDescription);",
+                  "postman.setEnvironmentVariable(\"requestLatitude\", requestLatitude);",
+                  "postman.setEnvironmentVariable(\"requestLongitude\", requestLongitude);",
+                  "postman.setEnvironmentVariable(\"requestCategory\", requestCategory);",
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "postman.setEnvironmentVariable(\"requestId\", jsonData.result.result);",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Create Demande intervention\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"name\": \"requestName\",\r\n      \"description\": \"requestDescription\",\r\n      \"is_citizen\":false,\r\n      \"geo_point\":\"Point({{requestLongitude}} {{requestLatitude}})\",\r\n      \"type_id\":6,\r\n      \"partner_address\":{{addressId}},\r\n      \"partner_id\":{{partnerId}}\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
+            },
+            "url": "{{server}}/web/dataset/create",
+            "description": null
           },
           "response": []
         }
