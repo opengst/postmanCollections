@@ -4310,10 +4310,10 @@
                     "exec": [
                       "postman.clearEnvironmentVariables();",
                       "",
-                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
+                      "postman.setEnvironmentVariable(\"server\", \"https://stbarth.opengst.fr/\");",
                       "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
                       "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"password\");",
+                      "postman.setEnvironmentVariable(\"password\", \"--\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
@@ -4374,10 +4374,10 @@
                     "exec": [
                       "postman.clearEnvironmentVariables();",
                       "",
-                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
-                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
+                      "postman.setEnvironmentVariable(\"server\", \"https://gst-dev.atreal-ouest.fr/\");",
+                      "postman.setEnvironmentVariable(\"db\", \"productowner\");",
                       "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"password\");",
+                      "postman.setEnvironmentVariable(\"password\", \"GyU8C43H48772445\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
@@ -4415,10 +4415,10 @@
                     "exec": [
                       "postman.clearEnvironmentVariables();",
                       "",
-                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
-                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
+                      "postman.setEnvironmentVariable(\"server\", \"http://staging.opengst.fr/\");",
+                      "postman.setEnvironmentVariable(\"db\", \"demo\");",
                       "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"password\");",
+                      "postman.setEnvironmentVariable(\"password\", \"Viq2Z70e20450317\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
@@ -4456,10 +4456,10 @@
                     "exec": [
                       "postman.clearEnvironmentVariables();",
                       "",
-                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
-                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
+                      "postman.setEnvironmentVariable(\"server\", \"http://staging.opengst.fr/\");",
+                      "postman.setEnvironmentVariable(\"db\", \"mobile\");",
                       "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"password\");",
+                      "postman.setEnvironmentVariable(\"password\", \"FMAlV00516562798\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
@@ -4497,10 +4497,10 @@
                     "exec": [
                       "postman.clearEnvironmentVariables();",
                       "",
-                      "postman.setEnvironmentVariable(\"server\", \"192.168.1.102:8000\");",
-                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
+                      "postman.setEnvironmentVariable(\"server\", \"https://app.opengst.fr/\");",
+                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou_mobile\");",
                       "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"password\");",
+                      "postman.setEnvironmentVariable(\"password\", \"369rVwwQ38074894\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                     ]
@@ -4530,6 +4530,12 @@
           "_postman_isSubFolder": true
         }
       ]
+    },
+    {
+      "_postman_id": "b601f9ba-3194-3264-497d-fc1724f28bbe",
+      "name": "(JENKINS) AGENT",
+      "description": "",
+      "item": []
     }
   ]
 }
