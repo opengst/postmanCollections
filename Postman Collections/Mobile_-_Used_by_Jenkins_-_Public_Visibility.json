@@ -87,6 +87,41 @@
           "response": []
         }
       ]
+    },
+    {
+      "_postman_id": "60b9bbc9-4795-5ca0-6331-61db1726a990",
+      "name": "Mobile AppyConnect.City",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "cbf2ee17-fe56-bb35-337a-476102cdb08c",
+          "name": "BEGIN RUN HERE",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"BEGIN\"] = 1 === 1;",
+                  "postman.clearEnvironmentVariable(\"lastStepScenarioCitoyen\")",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "http://www.google.com",
+            "description": null
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
