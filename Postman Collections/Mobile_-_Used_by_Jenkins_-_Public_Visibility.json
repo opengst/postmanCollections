@@ -943,6 +943,63 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "21e7baab-e469-fc64-49cb-2c8e076483c0",
+          "name": "Search_read All Category",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "postman.setEnvironmentVariable(\"listCategory\", JSON.stringify(jsonData.result.ids));",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Search_read All Category\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"openstc.ask.category\",\n      \"sort\": \"id DESC\",\n      \"limit\": false,\n      \"offset\": false,\n      \"domain\":[\n         [\"id\", \"!=\", false],\n         [\"name\", \"!=\", false],\n         [\"active\", \"!=\", false]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"active\"\n      ],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read",
+            "description": null
+          },
+          "response": []
         }
       ]
     }
