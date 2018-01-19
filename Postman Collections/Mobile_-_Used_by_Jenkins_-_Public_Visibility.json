@@ -525,6 +525,137 @@
             "description": null
           },
           "response": []
+        },
+        {
+          "_postman_id": "7fe79f29-aef9-89c3-a711-eb0e6b0c12cb",
+          "name": "Get GroupId for Demandeur",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "postman.setEnvironmentVariable(\"groupIdDemandeur\", jsonData.result.records[0].id);",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n         [\n            \"code\",\n            \"=\",\n            \"PART\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\"\n      ],\n      \"model\":\"res.groups\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read",
+            "description": null
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "b418593f-c2fb-45d4-f436-08f541f2c4b6",
+          "name": "Create User on Particuliers Commune",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var userLogin = \"\";",
+                  "var userPassword = \"\";",
+                  "var userName = \"\";",
+                  "",
+                  "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
+                  "",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userLogin += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userPassword += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "for( var i=0; i < 15; i++ ){",
+                  "    userName += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "}",
+                  "",
+                  "postman.setEnvironmentVariable(\"userLogin\", userLogin);",
+                  "postman.setEnvironmentVariable(\"userPassword\", userPassword);",
+                  "postman.setEnvironmentVariable(\"userName\", userName);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Create User on Particuliers Commune\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n             ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"{{userLogin}}\",\n         \"new_password\":\"{{userPassword}}\",\n         \"name\":\"{{userName}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{groupIdDemandeur}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/create",
+            "description": null
+          },
+          "response": []
         }
       ]
     }
