@@ -94,34 +94,6 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "cbf2ee17-fe56-bb35-337a-476102cdb08c",
-          "name": "BEGIN RUN HERE",
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"BEGIN\"] = 1 === 1;",
-                  "postman.clearEnvironmentVariable(\"lastStepScenarioCitoyen\")",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "http://www.google.com",
-            "description": null
-          },
-          "response": []
-        },
-        {
           "_postman_id": "c689f950-3910-8c76-0652-27c19e9a915f",
           "name": "000 - Global Scenario",
           "event": [
