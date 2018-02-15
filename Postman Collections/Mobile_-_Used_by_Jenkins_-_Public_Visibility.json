@@ -449,7 +449,7 @@
         },
         {
           "_postman_id": "000d9903-145d-7b10-85f0-48a9d31a85a6",
-          "name": "Authenticate with accountNotConnected copy",
+          "name": "Authenticate with generatedUserCitoyen",
           "event": [
             {
               "listen": "test",
