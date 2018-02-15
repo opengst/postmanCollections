@@ -779,16 +779,7 @@
                   "/*",
                   " * LOGIC",
                   " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Search_read All Demandes d'intervention\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                  ""
                 ]
               }
             }
