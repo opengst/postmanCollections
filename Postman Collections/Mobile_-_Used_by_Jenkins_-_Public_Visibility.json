@@ -226,6 +226,44 @@
           "response": []
         },
         {
+          "_postman_id": "4ed961a2-dde8-78c3-59cd-a0135097d930",
+          "name": "Init VAR ENV - STAGING MOBILE copy",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "postman.clearEnvironmentVariables();",
+                  "",
+                  "postman.setEnvironmentVariable(\"server\", \"https://staging.opengst.fr/\");",
+                  "postman.setEnvironmentVariable(\"db\", \"mobile\");",
+                  "",
+                  "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
+                  "postman.setEnvironmentVariable(\"password_admin\", \"FMAlV00516562798\");",
+                  "",
+                  "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
+                  "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");",
+                  "",
+                  "postman.setEnvironmentVariable(\"login_agent\", \"fblanchard\");",
+                  "postman.setEnvironmentVariable(\"password_agent\", \"12345678\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": "http://www.google.com",
+            "description": null
+          },
+          "response": []
+        },
+        {
           "_postman_id": "ebcd4ec5-2e4c-99c6-6654-137ad18e980c",
           "name": "Utils - Clear Environnement Variables",
           "event": [
@@ -1139,44 +1177,6 @@
               "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"name\": \"requestName\",\r\n      \"description\": \"requestDescription\",\r\n      \"is_citizen\":false,\r\n      \"geo_point\":\"Point({{requestLongitude}} {{requestLatitude}})\",\r\n      \"type_id\":6,\r\n      \"partner_address\":{{addressId}},\r\n      \"partner_id\":{{partnerId}}\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
             },
             "url": "{{server}}/web/dataset/create",
-            "description": null
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "4ed961a2-dde8-78c3-59cd-a0135097d930",
-          "name": "Init VAR ENV - STAGING MOBILE copy",
-          "event": [
-            {
-              "listen": "prerequest",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "postman.clearEnvironmentVariables();",
-                  "",
-                  "postman.setEnvironmentVariable(\"server\", \"https://staging.opengst.fr/\");",
-                  "postman.setEnvironmentVariable(\"db\", \"mobile\");",
-                  "",
-                  "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
-                  "postman.setEnvironmentVariable(\"password_admin\", \"FMAlV00516562798\");",
-                  "",
-                  "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
-                  "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");",
-                  "",
-                  "postman.setEnvironmentVariable(\"login_agent\", \"fblanchard\");",
-                  "postman.setEnvironmentVariable(\"password_agent\", \"12345678\");"
-                ]
-              }
-            }
-          ],
-          "request": {
-            "method": "GET",
-            "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": ""
-            },
-            "url": "http://www.google.com",
             "description": null
           },
           "response": []
