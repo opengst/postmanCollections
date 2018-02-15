@@ -518,7 +518,7 @@
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n             ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"{{login_generatedUserCitoyen}}\",\n         \"new_password\":\"{{password_generatedUserCitoyen}}\",\n         \"name\":\"{{name_generatedUserCitoyen}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{groupIdDemandeur}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
-            "url": "{{server}}/web/dataset/create",
+            "url": "{{server}}/#/activate/",
             "description": null
           },
           "response": []
