@@ -153,7 +153,7 @@
                   "tests[\"server2\"] = postman.getEnvironmentVariable(\"server\") === \"https://staging.opengst.fr/\";",
                   "tests[\"db2\"] = postman.getEnvironmentVariable(\"db\") === \"mobile\";",
                   "",
-                  "var jsonData = JSON.parse(responseBody);",
+                  "//var jsonData = JSON.parse(responseBody);",
                   "",
                   "tests[\"server3\"] = postman.getEnvironmentVariable(\"server\") === \"https://staging.opengst.fr/\";",
                   "tests[\"db3\"] = postman.getEnvironmentVariable(\"db\") === \"mobile\";",
@@ -179,8 +179,8 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
+                  "//postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "//postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
                 ]
               }
             }
@@ -191,6 +191,10 @@
               {
                 "key": "Content-Type",
                 "value": "application/json;charset=UTF-8"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
               }
             ],
             "body": {
