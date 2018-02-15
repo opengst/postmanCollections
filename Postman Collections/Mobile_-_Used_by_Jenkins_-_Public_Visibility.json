@@ -390,25 +390,25 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "var userLogin = \"\";",
-                  "var userPassword = \"\";",
-                  "var userName = \"\";",
+                  "var login_generatedUserCitoyen = \"\";",
+                  "var password_generatedUserCitoyen = \"\";",
+                  "var name_generatedUserCitoyen = \"\";",
                   "",
                   "var possible = \"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789\";",
                   "",
                   "for( var i=0; i < 15; i++ ){",
-                  "    userLogin += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "    login_generatedUserCitoyen += possible.charAt(Math.floor(Math.random() * possible.length));",
                   "}",
                   "for( var i=0; i < 15; i++ ){",
-                  "    userPassword += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "    password_generatedUserCitoyen += possible.charAt(Math.floor(Math.random() * possible.length));",
                   "}",
                   "for( var i=0; i < 15; i++ ){",
-                  "    userName += possible.charAt(Math.floor(Math.random() * possible.length));",
+                  "    name_generatedUserCitoyen += possible.charAt(Math.floor(Math.random() * possible.length));",
                   "}",
                   "",
-                  "postman.setEnvironmentVariable(\"userLogin\", userLogin);",
-                  "postman.setEnvironmentVariable(\"userPassword\", userPassword);",
-                  "postman.setEnvironmentVariable(\"userName\", userName);"
+                  "postman.setEnvironmentVariable(\"login_generatedUserCitoyen\", login_generatedUserCitoyen);",
+                  "postman.setEnvironmentVariable(\"password_generatedUserCitoyen\", password_generatedUserCitoyen);",
+                  "postman.setEnvironmentVariable(\"name_generatedUserCitoyen\", name_generatedUserCitoyen);"
                 ]
               }
             },
@@ -445,7 +445,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n             ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"{{userLogin}}\",\n         \"new_password\":\"{{userPassword}}\",\n         \"name\":\"{{userName}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{groupIdDemandeur}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n             ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"{{login_generatedUserCitoyen}}\",\n         \"new_password\":\"{{password_generatedUserCitoyen}}\",\n         \"name\":\"{{name_generatedUserCitoyen}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{groupIdDemandeur}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
             "url": "{{server}}/web/dataset/create",
             "description": null
