@@ -731,15 +731,7 @@
                   " */",
                   "",
                   "postman.setEnvironmentVariable(\"listCategory\", JSON.stringify(jsonData.result.ids));",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Search_read All Category\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                  ""
                 ]
               }
             }
