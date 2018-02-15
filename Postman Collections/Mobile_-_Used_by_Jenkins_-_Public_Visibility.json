@@ -503,7 +503,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{userLogin}}\",\r\n      \"password\": \"{{userPassword}}\"\r\n   }\r\n}"
+              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{login_generatedUserCitoyen}}\",\r\n      \"password\": \"{{password_generatedUserCitoyen}}\"\r\n   }\r\n}"
             },
             "url": "{{server}}/web/session/authenticate",
             "description": null
