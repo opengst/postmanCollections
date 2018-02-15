@@ -467,7 +467,7 @@
                   " * TESTS ",
                   " */",
                   "",
-                  "tests[\"Activate user\"] = jsonData.result !== true;",
+                  "tests[\"Activate user\"] = jsonData.result === true;",
                   "",
                   "/*",
                   " * LOGIC",
