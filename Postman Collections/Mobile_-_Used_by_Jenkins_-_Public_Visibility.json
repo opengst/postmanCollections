@@ -297,15 +297,7 @@
                   " */",
                   "",
                   "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
-                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  " ",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Authenticate with globalAccount\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
                 ]
               }
             }
