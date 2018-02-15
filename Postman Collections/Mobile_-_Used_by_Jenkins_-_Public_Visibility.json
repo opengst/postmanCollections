@@ -643,14 +643,7 @@
                   "",
                   "postman.setEnvironmentVariable(\"addressId\", jsonData.result.records[0].address_id[0]);",
                   "postman.setEnvironmentVariable(\"partnerId\", jsonData.result.records[0].partner_id[0]);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get user informations\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                  ""
                 ]
               }
             }
