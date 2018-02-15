@@ -133,7 +133,7 @@
         },
         {
           "_postman_id": "6292307e-33b7-bd42-5d14-982a0666c3f0",
-          "name": "Authenticate with globalAccount",
+          "name": "Authenticate with globalAccountt",
           "event": [
             {
               "listen": "test",
