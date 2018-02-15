@@ -466,8 +466,7 @@
                   " * TESTS ",
                   " */",
                   "",
-                  "",
-                  "",
+                  "tests[\"Activate user\"] = jsonData.result !== true;",
                   "",
                   "/*",
                   " * LOGIC",
@@ -488,9 +487,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": ""
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"db\":\"mobile\",\n      \"uid\":{{id_generatedUserCitoyen}}\n   }\n}"
             },
-            "url": "{{server}}/activate/{{id_generatedUserCitoyen}}/",
+            "url": "{{server}}/web/user/activate",
             "description": null
           },
           "response": []
