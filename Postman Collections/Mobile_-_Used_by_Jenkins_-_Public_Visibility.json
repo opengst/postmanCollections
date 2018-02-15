@@ -490,7 +490,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{server}}/#/activate/{{id_generatedUserCitoyen}}/",
+            "url": "{{server}}/activate/{{id_generatedUserCitoyen}}/",
             "description": null
           },
           "response": []
