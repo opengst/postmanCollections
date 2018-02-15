@@ -454,7 +454,7 @@
         },
         {
           "_postman_id": "7741b113-3241-b77b-1abc-1ca729215332",
-          "name": "Create User on Particuliers Commune copy",
+          "name": "Activate User (link inside email)",
           "event": [
             {
               "listen": "prerequest",
