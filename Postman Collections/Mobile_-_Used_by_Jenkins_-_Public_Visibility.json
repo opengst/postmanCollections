@@ -117,6 +117,16 @@
                   "postman.setEnvironmentVariable(\"password_agent\", \"12345678\");"
                 ]
               }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"server\"] = postman.getEnvironmentVariable(\"server\") === \"https://staging.opengst.fr/\";",
+                  "tests[\"db\"] = postman.getEnvironmentVariable(\"db\") === \"mobile\";"
+                ]
+              }
             }
           ],
           "request": {
