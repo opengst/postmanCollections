@@ -143,7 +143,7 @@
         },
         {
           "_postman_id": "32e5b5fc-3557-0dda-69f7-9cec78f65440",
-          "name": "Authenticate copy",
+          "name": "Authenticate with copy",
           "event": [
             {
               "listen": "test",
