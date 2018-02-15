@@ -461,7 +461,6 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "var jsonData = JSON.parse(responseBody);",
                   "",
                   "/*",
                   " * TESTS ",
@@ -491,7 +490,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "{{server}}/#/activate/{id_generatedUserCitoyen}",
+            "url": "{{server}}/#/activate/{{id_generatedUserCitoyen}}/",
             "description": null
           },
           "response": []
