@@ -430,7 +430,7 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "postman.setEnvironmentVariable(\"id_generatedUserCitoyen\", jsonData.result.result.id);"
+                  "postman.setEnvironmentVariable(\"id_generatedUserCitoyen\", jsonData.result.result);"
                 ]
               }
             }
