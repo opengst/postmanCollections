@@ -463,15 +463,7 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "postman.setEnvironmentVariable(\"organisationId\", jsonData.result.records[0].id);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get Organisation with last CategorieOrganisation\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                  "postman.setEnvironmentVariable(\"organisationId\", jsonData.result.records[0].id);"
                 ]
               }
             }
