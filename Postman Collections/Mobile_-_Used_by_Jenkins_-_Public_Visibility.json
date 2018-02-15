@@ -515,15 +515,7 @@
                   " * LOGIC",
                   " */",
                   "",
-                  "postman.setEnvironmentVariable(\"groupIdDemandeur\", jsonData.result.records[0].id);",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get GroupId for Demandeur\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                  "postman.setEnvironmentVariable(\"groupIdDemandeur\", jsonData.result.records[0].id);"
                 ]
               }
             }
