@@ -5528,7 +5528,7 @@
                     "exec": [
                       "postman.clearEnvironmentVariables();",
                       "",
-                      "postman.setEnvironmentVariable(\"server\", \"http://staging.opengst.fr/\");",
+                      "postman.setEnvironmentVariable(\"server\", \"https://staging.opengst.fr/\");",
                       "postman.setEnvironmentVariable(\"db\", \"demo\");",
                       "",
                       "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
