@@ -686,16 +686,7 @@
                   "/*",
                   " * LOGIC",
                   " */",
-                  "",
-                  "",
-                  "",
-                  "",
-                  "/*",
-                  " * SCENARIO",
-                  " */ ",
-                  "",
-                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Get contact informations\");",
-                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                  ""
                 ]
               }
             }
