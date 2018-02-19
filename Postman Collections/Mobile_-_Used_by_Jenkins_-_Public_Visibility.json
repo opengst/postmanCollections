@@ -25,7 +25,7 @@
                   "postman.setEnvironmentVariable(\"db\", \"test_api\");",
                   "",
                   "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
-                  "postman.setEnvironmentVariable(\"password_admin\", \"FMAlV00516562798\");",
+                  "postman.setEnvironmentVariable(\"password_admin\", \"OZ7F60qT74889201\");",
                   "",
                   "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
                   "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");",
