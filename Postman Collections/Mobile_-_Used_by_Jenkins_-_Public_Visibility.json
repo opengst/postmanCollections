@@ -121,8 +121,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"server\"] = postman.getEnvironmentVariable(\"server\") === \"https://staging.opengst.fr/\";",
-                  "tests[\"db\"] = postman.getEnvironmentVariable(\"db\") === \"mobile\";"
+                  "tests[\"db\"] = postman.getEnvironmentVariable(\"db\") === \"test_api\";"
                 ]
               }
             }
