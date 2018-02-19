@@ -94,7 +94,7 @@
       "item": [
         {
           "_postman_id": "4ed961a2-dde8-78c3-59cd-a0135097d930",
-          "name": "Init VAR ENV - STAGING MOBILE copy",
+          "name": "Init VAR ENV - STAGING ??? copy",
           "event": [
             {
               "listen": "prerequest",
