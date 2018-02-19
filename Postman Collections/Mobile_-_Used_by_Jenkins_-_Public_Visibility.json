@@ -115,15 +115,6 @@
                   "postman.setEnvironmentVariable(\"password_agent\", \"12345678\");"
                 ]
               }
-            },
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "tests[\"db\"] = postman.getEnvironmentVariable(\"db\") === \"test_api\";"
-                ]
-              }
             }
           ],
           "request": {
