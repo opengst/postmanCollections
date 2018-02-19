@@ -103,8 +103,7 @@
                 "exec": [
                   "postman.clearEnvironmentVariables();",
                   "",
-                  "postman.setEnvironmentVariable(\"server\", \"https://staging.opengst.fr/\");",
-                  "postman.setEnvironmentVariable(\"db\", \"mobile\");",
+                  "postman.setEnvironmentVariable(\"db\", \"test_api\");",
                   "",
                   "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
                   "postman.setEnvironmentVariable(\"password_admin\", \"FMAlV00516562798\");",
