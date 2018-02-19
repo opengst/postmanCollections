@@ -428,7 +428,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"db\":\"mobile\",\n      \"uid\":{{id_generatedUserCitoyen}}\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"db\":\"{{db}}\",\n      \"uid\":{{id_generatedUserCitoyen}}\n   }\n}"
             },
             "url": "{{server}}/web/user/activate",
             "description": null
