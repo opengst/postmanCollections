@@ -81,7 +81,7 @@
               "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login_agent}}\",\r\n    \"password\": \"{{password_agent}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
             },
             "url": "{{server}}/web/session/authenticate",
-            "description": null
+            "description": ""
           },
           "response": []
         }
