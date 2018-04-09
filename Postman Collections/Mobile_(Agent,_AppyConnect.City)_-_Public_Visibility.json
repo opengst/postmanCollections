@@ -4688,6 +4688,25 @@
           "response": []
         },
         {
+          "_postman_id": "5c6a09db-1d7d-4b33-9221-240b49b6915c",
+          "name": "Update Task (simple) Copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"cost\":0,\n         \"planned_hours\":3,\n         \"user_id\":82,\n         \"date_start\":\"2017-07-06 14:00:00\",\n         \"report_hours\":0,\n         \"date_end\":\"2017-07-06 16:00:00\",\n         \"state\": \"open\"\n      },\n      \"model\":\"project.task\",\n      \"id\":3169,\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/save"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "31935d71-72ce-ef98-adec-6a55836de8b1",
           "name": "Update Task (full)",
           "request": {
@@ -5153,25 +5172,6 @@
               "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"domain\":[[\"id\",\"!=\",false],[\"name\",\"!=\",false],[\"id\",\"=\",642]],\"fields\":[\"id\",\"name\",\"email\",\"city\",\"zip\",\"street\",\"phone\",\"mobile\",\"address_id\",\"partner_id\"],\"limit\":1,\"model\":\"res.users\",\"offset\":0,\"sort\":\"id DESC\",\"session_id\":\"{{sessionId}}\"}}\n"
             },
             "url": "{{server}}/web/dataset/search_read"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "5c6a09db-1d7d-4b33-9221-240b49b6915c",
-          "name": "Update Task (simple) Copy",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"cost\":0,\n         \"planned_hours\":3,\n         \"user_id\":82,\n         \"date_start\":\"2017-07-06 14:00:00\",\n         \"report_hours\":0,\n         \"date_end\":\"2017-07-06 16:00:00\",\n         \"state\": \"open\"\n      },\n      \"model\":\"project.task\",\n      \"id\":3169,\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "url": "{{server}}/web/dataset/save"
           },
           "response": []
         }
