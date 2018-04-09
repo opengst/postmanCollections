@@ -5688,7 +5688,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"data\":{\"date_end\":\"2017-03-31 12:30:00\",\"date_start\":\"2017-03-31 08:30:00\",\"effective_hours\":\"3.0\",\"notes\":\"essai\",\"partner_id\":false,\"report_hours\":\"3.0\",\"team_id\":false},\"id\":40306,\"model\":\"project.task\",\"session_id\":\"ce5a5651dadb4cf9b055f58b7420c244\"}}\n"
+              "raw": "{\"jsonrpc\":\"2.0\",\n\"method\":\"call\",\n\"params\":{\n\t\"data\":{\n\t\t\"date_end\":\"2017-03-31 12:30:00\",\n\t\t\"date_start\":\"2017-03-31 08:30:00\",\n\t\t\"effective_hours\":\"3.0\",\n\t\t\"notes\":\"essai\",\n\t\t\"partner_id\":false,\n\t\t\"report_hours\":\"3.0\",\n\t\t\"team_id\":false},\n\t\t\"id\":40306,\n\t\t\"model\":\"project.task\",\n\t\t\"session_id\":\"{{sessionId}}\"\n\t}\n}\n"
             },
             "url": "{{server}}/web/dataset/save"
           },
