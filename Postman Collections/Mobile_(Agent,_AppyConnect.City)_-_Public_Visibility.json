@@ -5352,41 +5352,6 @@
                 "url": "http://www.google.com"
               },
               "response": []
-            },
-            {
-              "_postman_id": "7a456809-d9cc-4fb4-9b28-57d5050921dd",
-              "name": "Init VAR ENV - DEVDEMO Copy",
-              "event": [
-                {
-                  "listen": "prerequest",
-                  "script": {
-                    "id": "8d6b1fd1-95ab-461a-90e0-5c605911aaad",
-                    "type": "text/javascript",
-                    "exec": [
-                      "postman.clearEnvironmentVariables();",
-                      "",
-                      "postman.setEnvironmentVariable(\"server\", \"https://gst-dev.atreal-ouest.fr/\");",
-                      "postman.setEnvironmentVariable(\"db\", \"demo\");",
-                      "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                      "postman.setEnvironmentVariable(\"password\", \"G{#>Fm9pRo<H@22zSz*Xq7BL^Tl8gn\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");",
-                      "postman.setEnvironmentVariable(\"login_agent\", \"fred\");",
-                      "postman.setEnvironmentVariable(\"password_agent\", \"1234567\");"
-                    ]
-                  }
-                }
-              ],
-              "request": {
-                "method": "GET",
-                "header": [],
-                "body": {
-                  "mode": "raw",
-                  "raw": ""
-                },
-                "url": "http://www.google.com"
-              },
-              "response": []
             }
           ],
           "_postman_isSubFolder": true
