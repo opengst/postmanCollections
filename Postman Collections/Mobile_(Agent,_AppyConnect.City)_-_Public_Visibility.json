@@ -5325,7 +5325,7 @@
                 {
                   "listen": "prerequest",
                   "script": {
-                    "id": "871b99cc-8037-48e4-918d-a1b927363530",
+                    "id": "8d6b1fd1-95ab-461a-90e0-5c605911aaad",
                     "type": "text/javascript",
                     "exec": [
                       "postman.clearEnvironmentVariables();",
@@ -5336,7 +5336,7 @@
                       "postman.setEnvironmentVariable(\"password\", \"G{#>Fm9pRo<H@22zSz*Xq7BL^Tl8gn\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");",
-                      "postman.setEnvironmentVariable(\"login_agent\", \"fred2\");",
+                      "postman.setEnvironmentVariable(\"login_agent\", \"fred\");",
                       "postman.setEnvironmentVariable(\"password_agent\", \"1234567\");"
                     ]
                   }
@@ -5586,25 +5586,24 @@
       "description": "",
       "item": [
         {
-          "_postman_id": "adb24c67-ddcb-4a2b-bc0b-936d7c259408",
-          "name": "Init VAR ENV - DEVDEMO Copy",
+          "_postman_id": "58d1f2f3-0e31-40eb-9321-a1b6eaea0072",
+          "name": "Init VAR ENV - STAGING DEMO Copy",
           "event": [
             {
               "listen": "prerequest",
               "script": {
-                "id": "871b99cc-8037-48e4-918d-a1b927363530",
                 "type": "text/javascript",
                 "exec": [
                   "postman.clearEnvironmentVariables();",
                   "",
-                  "postman.setEnvironmentVariable(\"server\", \"https://gst-dev.atreal-ouest.fr/\");",
+                  "postman.setEnvironmentVariable(\"server\", \"https://staging.opengst.fr/\");",
                   "postman.setEnvironmentVariable(\"db\", \"demo\");",
-                  "postman.setEnvironmentVariable(\"login\", \"admin\");",
-                  "postman.setEnvironmentVariable(\"password\", \"G{#>Fm9pRo<H@22zSz*Xq7BL^Tl8gn\");",
-                  "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
-                  "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");",
-                  "postman.setEnvironmentVariable(\"login_agent\", \"fred2\");",
-                  "postman.setEnvironmentVariable(\"password_agent\", \"1234567\");"
+                  "",
+                  "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
+                  "postman.setEnvironmentVariable(\"password_admin\", \"Viq2Z70e20450317\");",
+                  "",
+                  "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
+                  "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
                 ]
               }
             }
