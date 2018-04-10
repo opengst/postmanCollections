@@ -5155,25 +5155,6 @@
             "url": "{{server}}/web/dataset/search_read"
           },
           "response": []
-        },
-        {
-          "_postman_id": "18d751d4-2f28-4673-8c4a-2b9c6ffb68cf",
-          "name": "Get My Tasks copy Copy",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"domain\":[],\n      \"sort\":\"id DESC\",\n      \"limit\":20,\n      \"offset\":0,\n      \"fields\":[\n         \"actions\",\n         \"agent_or_team_name\",\n         \"category_id\",\n         \"date_start\",\n         \"date_end\",\n         \"equipment_id\",\n         \"effective_hours\",\n         \"report_hours\",\n         \"id\",\n         \"swif_id\",\n         \"ask_id\",\n         \"name\",\n         \"partner_id\",\n         \"planned_hours\",\n         \"project_id\",\n         \"can_read_project\",\n         \"service_id\",\n         \"site1\",\n         \"state\",\n         \"team_id\",\n         \"user_id\",\n         \"cost\",\n         \"hr_cost\",\n         \"equipment_cost\",\n         \"consumable_cost\",\n         \"equipment_ids\",\n         \"attachment_count\",\n         \"mail_message_count\",\n         \"external\",\n         \"write_date\"\n      ],\n      \"model\":\"project.task\",\n      \"session_id\":\"{{sessionId}}\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":1\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r4\"\n}"
-            },
-            "url": "{{server}}/web/dataset/search_read"
-          },
-          "response": []
         }
       ]
     },
@@ -5710,6 +5691,25 @@
               "raw": "{\"jsonrpc\":\"2.0\",\n\"method\":\"call\",\n\"params\":{\n\t\"data\":{\n\t\t\"date_end\":\"2017-03-31 12:30:00\",\n\t\t\"date_start\":\"2017-03-31 08:30:00\",\n\t\t\"effective_hours\":\"3.0\",\n\t\t\"notes\":\"essai\",\n\t\t\"partner_id\":false,\n\t\t\"report_hours\":\"3.0\",\n\t\t\"team_id\":false},\n\t\t\"id\":40306,\n\t\t\"model\":\"project.task\",\n\t\t\"session_id\":\"{{sessionId}}\"\n\t}\n}\n"
             },
             "url": "{{server}}/web/dataset/save"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "18d751d4-2f28-4673-8c4a-2b9c6ffb68cf",
+          "name": "Get My Tasks copy Copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"domain\":[[\"id\",\"!=\",false],[\"user_id\",\"in\",[385]],\"|\",[\"create_date\",\">\",\"2018-04-10 11:40:29\"],[\"write_date\",\">\",\"2018-04-10 11:40:29\"]],\"limit\":50,\"model\":\"project.task\",\"offset\":false,\"sort\":\"date_start DESC\",\"session_id\":\"{{sessionId}}\"}}\n"
+            },
+            "url": "{{server}}/web/dataset/search_read"
           },
           "response": []
         }
