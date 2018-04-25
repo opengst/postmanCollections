@@ -5712,6 +5712,25 @@
             "url": "{{server}}/web/dataset/search_read"
           },
           "response": []
+        },
+        {
+          "_postman_id": "6744e9de-af4c-4e03-90c7-32524b94ec37",
+          "name": "Get My Tasks copy Copy Copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"domain\":[[\"id\",\"!=\",false],[\"user_id\",\"in\",[385]],\"|\",[\"create_date\",\">\",\"2018-04-10 11:40:29\"],[\"write_date\",\">\",\"2018-04-10 11:40:29\"]],\"limit\":50,\"model\":\"project.task\",\"offset\":false,\"sort\":\"date_start DESC\",\"session_id\":\"{{sessionId}}\"}}\n"
+            },
+            "url": "{{server}}/web/dataset/search_read"
+          },
+          "response": []
         }
       ]
     }
