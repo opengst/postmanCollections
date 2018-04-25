@@ -5715,7 +5715,7 @@
         },
         {
           "_postman_id": "6744e9de-af4c-4e03-90c7-32524b94ec37",
-          "name": "Get My Tasks copy Copy Copy",
+          "name": "Get My Tasks With Restricted Search",
           "request": {
             "method": "POST",
             "header": [
