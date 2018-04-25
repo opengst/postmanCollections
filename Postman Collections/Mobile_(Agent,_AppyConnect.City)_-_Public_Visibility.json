@@ -5726,7 +5726,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"domain\":[[\"id\",\"!=\",false],[\"user_id\",\"in\",[385]],\"|\",[\"create_date\",\">\",\"2018-04-10 11:40:29\"],[\"write_date\",\">\",\"2018-04-10 11:40:29\"]],\"limit\":50,\"model\":\"project.task\",\"offset\":false,\"sort\":\"date_start DESC\",\"session_id\":\"{{sessionId}}\"}}\n"
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"domain\":[[\"id\",\"!=\",false],\"|\",[[\"state\",\"in\",[\"open\",\"absent\",\"done\"]],[\"date_start\",\">\",\"2018-04-10 16:14:33\"],[\"date_start\",\"<\",\"2018-05-10 16:14:33\"]],[[\"state\",\"=\",[\"draft\"]],[\"date_start\",\"=\",false]],[\"user_id\",\"in\",[385]],\"|\",[\"create_date\",\">\",\"1980-01-01\"],[\"write_date\",\">\",\"1980-01-01\"]],\"limit\":50,\"model\":\"project.task\",\"offset\":false,\"sort\":\"date_start DESC\",\"session_id\":\"{{sessionId}}\"}}\n"
             },
             "url": "{{server}}/web/dataset/search_read"
           },
