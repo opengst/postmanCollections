@@ -5325,7 +5325,7 @@
                 {
                   "listen": "prerequest",
                   "script": {
-                    "id": "871b99cc-8037-48e4-918d-a1b927363530",
+                    "id": "d2854480-2a47-434f-8098-f7d64a0c5d55",
                     "type": "text/javascript",
                     "exec": [
                       "postman.clearEnvironmentVariables();",
@@ -5337,7 +5337,9 @@
                       "postman.setEnvironmentVariable(\"accountNotConnectedLogin\", \"MainAccessUserForCitizenMobile\");",
                       "postman.setEnvironmentVariable(\"accountNotConnectedPassword\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");",
                       "postman.setEnvironmentVariable(\"login_agent\", \"fred2\");",
-                      "postman.setEnvironmentVariable(\"password_agent\", \"1234567\");"
+                      "postman.setEnvironmentVariable(\"password_agent\", \"1234567\");",
+                      "postman.setEnvironmentVariable(\"login_gestionnaire\", \"fred2\");",
+                      "postman.setEnvironmentVariable(\"password_gestionnaire\", \"1234567\");"
                     ]
                   }
                 }
