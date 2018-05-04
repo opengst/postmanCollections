@@ -5412,6 +5412,7 @@
                 {
                   "listen": "prerequest",
                   "script": {
+                    "id": "eba6500c-aad9-454d-9a76-bc94d71d861e",
                     "type": "text/javascript",
                     "exec": [
                       "postman.clearEnvironmentVariables();",
@@ -5423,7 +5424,10 @@
                       "postman.setEnvironmentVariable(\"password_admin\", \"Viq2Z70e20450317\");",
                       "",
                       "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
-                      "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                      "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_agent\", \"cboulanger\");",
+                      "postman.setEnvironmentVariable(\"password_agent\", \"cboulanger!\");"
                     ]
                   }
                 }
