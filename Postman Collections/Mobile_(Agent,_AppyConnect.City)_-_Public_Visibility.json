@@ -5504,13 +5504,13 @@
                 {
                   "listen": "prerequest",
                   "script": {
-                    "id": "f7a05895-b553-4b99-8a13-3ad93c5f32ea",
+                    "id": "81e2061b-af9b-4ae3-8cda-0e31ddecfd8f",
                     "type": "text/javascript",
                     "exec": [
                       "postman.clearEnvironmentVariables();",
                       "",
-                      "postman.setEnvironmentVariable(\"server\", \"https://staging.opengst.fr/\");",
-                      "postman.setEnvironmentVariable(\"db\", \"mobile\");",
+                      "postman.setEnvironmentVariable(\"server\", \"https://gst-staging.atreal-ouest.fr/\");",
+                      "postman.setEnvironmentVariable(\"db\", \"demo\");",
                       "",
                       "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
                       "postman.setEnvironmentVariable(\"password_admin\", \"1+1=Deux\");",
@@ -5518,8 +5518,8 @@
                       "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
                       "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");",
                       "",
-                      "postman.setEnvironmentVariable(\"login_agent\", \"fblanchard\");",
-                      "postman.setEnvironmentVariable(\"password_agent\", \"12345678\");"
+                      "postman.setEnvironmentVariable(\"login_agent\", \"cboulanger\");",
+                      "postman.setEnvironmentVariable(\"password_agent\", \"cboulanger!\");"
                     ]
                   }
                 }
