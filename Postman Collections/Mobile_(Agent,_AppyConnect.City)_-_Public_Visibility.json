@@ -5499,7 +5499,7 @@
           "item": [
             {
               "_postman_id": "2fac9e3f-496d-4f26-b433-c337e291f98b",
-              "name": "Init VAR ENV - STAGING MOBILE",
+              "name": "Init VAR ENV - PRODINTERNE DEMO",
               "event": [
                 {
                   "listen": "prerequest",
