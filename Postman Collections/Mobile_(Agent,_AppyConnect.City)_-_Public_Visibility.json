@@ -5540,6 +5540,52 @@
           "description": "",
           "item": [],
           "_postman_isSubFolder": true
+        },
+        {
+          "_postman_id": "3be31e47-f2d8-4b73-b787-b6596207412d",
+          "name": "STAGING MOBILE Copy",
+          "description": "",
+          "item": [
+            {
+              "_postman_id": "2fac9e3f-496d-4f26-b433-c337e291f98b",
+              "name": "Init VAR ENV - STAGING MOBILE",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "id": "f7a05895-b553-4b99-8a13-3ad93c5f32ea",
+                    "type": "text/javascript",
+                    "exec": [
+                      "postman.clearEnvironmentVariables();",
+                      "",
+                      "postman.setEnvironmentVariable(\"server\", \"https://staging.opengst.fr/\");",
+                      "postman.setEnvironmentVariable(\"db\", \"mobile\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
+                      "postman.setEnvironmentVariable(\"password_admin\", \"1+1=Deux\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_agent\", \"fblanchard\");",
+                      "postman.setEnvironmentVariable(\"password_agent\", \"12345678\");"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": "http://www.google.com"
+              },
+              "response": []
+            }
+          ],
+          "_postman_isSubFolder": true
         }
       ]
     },
