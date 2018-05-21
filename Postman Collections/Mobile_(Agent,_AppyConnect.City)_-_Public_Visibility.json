@@ -4612,6 +4612,10 @@
               {
                 "key": "Content-Type",
                 "value": "application/json;charset=UTF-8"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*"
               }
             ],
             "body": {
