@@ -4544,6 +4544,198 @@
       ]
     },
     {
+      "_postman_id": "d197d4de-7d96-65c4-ac3a-bbeea3d9dd3a",
+      "name": "Mobile Agent copy",
+      "description": "",
+      "item": [
+        {
+          "_postman_id": "6aa47e30-4469-8e6f-424e-9802e2d68b89",
+          "name": "Authenticate",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "/*postman.setEnvironmentVariable(\"server\", \"https://gst-staging.atreal-ouest.fr\");",
+                  "postman.setEnvironmentVariable(\"db\", \"demo\");",
+                  "postman.setEnvironmentVariable(\"login\", \"dstdst\");",
+                  "postman.setEnvironmentVariable(\"password\", \"dstdst\");",
+                  "postman.setEnvironmentVariable(\"sessionId\", \"\");",
+                  "postman.setEnvironmentVariable(\"uid\", \"\");",
+                  "postman.setEnvironmentVariable(\"interventionRequest.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"attachment_count\", \"\");",
+                  "postman.setEnvironmentVariable(\"attachment.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"demandeInter.id\", \"\");",
+                  "postman.setEnvironmentVariable(\"resPartner.id\", \"\");*/"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"id\": \"r1\",\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
+            },
+            "url": "{{server}}/web/session/authenticate"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4d632de4-3618-e465-6f0a-017dfa22a5df",
+          "name": "Get My Tasks",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"domain\":[\n         [\n            \"user_id\",\n            \"in\",\n            [\n               63\n            ]\n         ]\n      ],\n      \"sort\":\"id DESC\",\n      \"limit\":20,\n      \"offset\":0,\n      \"fields\":[\n         \"actions\",\n         \"agent_or_team_name\",\n         \"category_id\",\n         \"consumable_ask_ids\",\n         \"consumable_asks\",\n         \"consumable_request_id\",\n         \"date_start\",\n         \"equipment_id\",\n         \"effective_hours\",\n         \"id\",\n         \"swif_id\",\n         \"ask_id\",\n         \"name\",\n         \"partner_id\",\n         \"planned_hours\",\n         \"project_id\",\n         \"can_read_project\",\n         \"service_id\",\n         \"site1\",\n         \"state\",\n         \"team_id\",\n         \"user_id\",\n         \"cost\",\n         \"hr_cost\",\n         \"equipment_cost\",\n         \"consumable_cost\",\n         \"equipment_ids\",\n         \"attachment_count\",\n         \"mail_message_count\",\n         \"external\"\n      ],\n      \"model\":\"project.task\",\n      \"session_id\":\"{{sessionId}}\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":63\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r4\"\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "1508baf9-9a76-e6e5-fa55-22e554c70549",
+          "name": "Get Site",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"limit\":1000,\n      \"offset\":0,\n      \"fields\":[\n         \"id\"\n      ],\n      \"domain\":[\n         [\n            \"geo_point\",\n            \"=\",\n            \"{\\\"type\\\": \\\"Point\\\", \\\"coordinates\\\": [0.0, 0.0]}\"\n         ],\n         [\n            \"id\",\n            \"=\",\n            {{site.id}}\n         ]\n      ],\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.site\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "d953d501-01e2-56e8-3e5c-e32e7e01aae4",
+          "name": "Get Equipement",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n     \n      \"fields\":[\"active\",\"actions\",\"attachment_count\",\"block_booking\",\"built_date\",\"categ_id\",\"code\",\"color\",\"commercial_vehicle\",\"default_code\",\"energy_type\",\"external_bookable_notice\",\"external_booking\",\"fat_material\",\"hour_price\",\"immat\",\"internal_bookable_notice\",\"internal_booking\",\"internal_use\",\"km\",\"length_amort\",\"list_price\",\"marque\",\"maintenance_service_ids\",\"name\",\"openresa_property_manager_id\",\"openstc_reservable\",\"parent_id\",\"partner_type_bookable_ids\",\"product_product_id\",\"purchase_date\",\"purchase_price\",\"qty_available\",\"service_ids\",\"service_bookable_ids\",\"small_material\",\"supplier_id\",\"technical_vehicle\",\"time\",\"warranty_date\",\"new_qty\",\"site_id\",\"state\",\"life_duration\",\"date_start\",\"date_end\",\"resa_service_manager_ids\",\"resa_user_manager_ids\",\"serial_number\",\"optional_product_ids\",\"option_of_product_ids\"],\n      \"sort\":\"name ASC\",\n      \"limit\":100,\n      \"offset\":0,\n      \"model\":\"openstc.equipment\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "045d97ab-4740-e423-4565-38bce3ae57f6",
+          "name": "Get Image of Site",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"fields\":[\"actions\",\"id\",\"datas_fname\",\"create_uid\",\"create_date\",\"name\"],\"domain\":[[\"res_model\",\"=\",\"openstc.site\"],[\"res_id\",\"=\",49]],\"model\":\"ir.attachment\",\"session_id\":\"89414787d73a49efa2b0626135dc8d54\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":63},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r31\"}"
+            },
+            "url": "{{server}}/web/dataset/search_read"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "4bd1f131-bea6-7045-e414-f811ae855fc1",
+          "name": "Edit geo_point of Site  AND GoTo",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "switch(jsonData.result.result) {",
+                  "    ",
+                  "    case true:",
+                  "        postman.setNextRequest(\"Get Site\");",
+                  "        break;",
+                  "    ",
+                  "    case undefined:",
+                  "        postman.setNextRequest(null);",
+                  "        break;",
+                  "",
+                  "    case false:",
+                  "        postman.setNextRequest(null);",
+                  "        break;",
+                  "",
+                  "    default:",
+                  "        postman.setNextRequest(null);",
+                  "        break;",
+                  "}",
+                  ""
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\":\"r4\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"data\": {\n      \"geo_point\":false\n    },\n    \"model\":\"openstc.site\",\n    \"id\": {{site.id}},\n    \"session_id\": \"{{sessionId}}\"\n  }\n} "
+            },
+            "url": "{{server}}/web/dataset/save"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "_postman_id": "adc9b71f-9b9d-4195-3dfc-458a04ef5e57",
       "name": "Sandbox",
       "description": "",
