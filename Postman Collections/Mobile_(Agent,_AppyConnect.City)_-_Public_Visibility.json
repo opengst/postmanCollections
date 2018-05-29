@@ -4628,7 +4628,7 @@
         },
         {
           "_postman_id": "ee0aa73b-0d10-bf14-36bf-9f3fb2f85f13",
-          "name": "Get My Tasks copy",
+          "name": "Get Inter details",
           "request": {
             "method": "POST",
             "header": [
