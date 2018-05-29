@@ -4627,6 +4627,29 @@
           "response": []
         },
         {
+          "_postman_id": "ee0aa73b-0d10-bf14-36bf-9f3fb2f85f13",
+          "name": "Get My Tasks copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"call\",\n    \"params\": {\n       \"domain\": [\n          [\n             \"id\",\n             \"!=\",\n             false\n          ],\n          \"|\",\n          \"&\",\n          \"&\",\n          [\n             \"state\",\n             \"in\",\n             [\n                \"open\",\n                \"absent\",\n                \"done\"\n             ]\n          ],\n          [\n             \"date_start\",\n             \">\",\n             \"2018-05-06 15:03:01\"\n          ],\n          [\n             \"date_start\",\n             \"<\",\n             \"2018-06-05 15:03:01\"\n          ],\n          \"&\",\n          [\n             \"state\",\n             \"=\",\n             [\n                \"draft\"\n             ]\n          ],\n          [\n             \"date_start\",\n             \"=\",\n             false\n          ],\n          [\n             \"user_id\",\n             \"in\",\n             [\n                105\n             ]\n          ],\n          [\n             \"id\",\n             \"in\",\n             [\n                \"13153\"\n             ]\n          ]\n       ],\n       \"fields\": [\n          \"id\",\n          \"create_date\",\n          \"date_end\",\n          \"date_start\",\n          \"team_id\",\n          \"planned_hours\",\n          \"swif_id\",\n          \"user_id\",\n          \"parent_id\",\n          \"state\",\n          \"description\",\n          \"progress\",\n          \"effective_hours\",\n          \"delay_hours\",\n          \"name\",\n          \"date_deadline\",\n          \"agent_or_team_name\",\n          \"notes\",\n          \"site1\",\n          \"total_hours\",\n          \"remaining_hours\",\n          \"reports_hours\"\n       ],\n       \"limit\": 50,\n       \"model\": \"project.task\",\n       \"offset\": false,\n       \"sort\": \"date_start DESC\",\n       \"session_id\": \"{{sessionId}}\"\n    }\n }"
+            },
+            "url": "{{server}}/web/dataset/search_read"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "1508baf9-9a76-e6e5-fa55-22e554c70549",
           "name": "Get Site",
           "request": {
@@ -4734,29 +4757,6 @@
               "raw": "{\n  \"id\":\"r4\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"data\": {\n      \"geo_point\":false\n    },\n    \"model\":\"openstc.site\",\n    \"id\": {{site.id}},\n    \"session_id\": \"{{sessionId}}\"\n  }\n} "
             },
             "url": "{{server}}/web/dataset/save"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "ee0aa73b-0d10-bf14-36bf-9f3fb2f85f13",
-          "name": "Get My Tasks copy",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"call\",\n    \"params\": {\n       \"domain\": [\n          [\n             \"id\",\n             \"!=\",\n             false\n          ],\n          \"|\",\n          \"&\",\n          \"&\",\n          [\n             \"state\",\n             \"in\",\n             [\n                \"open\",\n                \"absent\",\n                \"done\"\n             ]\n          ],\n          [\n             \"date_start\",\n             \">\",\n             \"2018-05-06 15:03:01\"\n          ],\n          [\n             \"date_start\",\n             \"<\",\n             \"2018-06-05 15:03:01\"\n          ],\n          \"&\",\n          [\n             \"state\",\n             \"=\",\n             [\n                \"draft\"\n             ]\n          ],\n          [\n             \"date_start\",\n             \"=\",\n             false\n          ],\n          [\n             \"user_id\",\n             \"in\",\n             [\n                105\n             ]\n          ],\n          [\n             \"id\",\n             \"in\",\n             [\n                \"13153\"\n             ]\n          ]\n       ],\n       \"fields\": [\n          \"id\",\n          \"create_date\",\n          \"date_end\",\n          \"date_start\",\n          \"team_id\",\n          \"planned_hours\",\n          \"swif_id\",\n          \"user_id\",\n          \"parent_id\",\n          \"state\",\n          \"description\",\n          \"progress\",\n          \"effective_hours\",\n          \"delay_hours\",\n          \"name\",\n          \"date_deadline\",\n          \"agent_or_team_name\",\n          \"notes\",\n          \"site1\",\n          \"total_hours\",\n          \"remaining_hours\",\n          \"reports_hours\"\n       ],\n       \"limit\": 50,\n       \"model\": \"project.task\",\n       \"offset\": false,\n       \"sort\": \"date_start DESC\",\n       \"session_id\": \"{{sessionId}}\"\n    }\n }"
-            },
-            "url": "{{server}}/web/dataset/search_read"
           },
           "response": []
         }
