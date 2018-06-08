@@ -4662,9 +4662,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"limit\":1000,\n      \"offset\":0,\n      \"fields\":[\n         \"id\"\n      ],\n      \"domain\":[\n         [\n            \"geo_point\",\n            \"=\",\n            \"{\\\"type\\\": \\\"Point\\\", \\\"coordinates\\\": [0.0, 0.0]}\"\n         ],\n         [\n            \"id\",\n            \"=\",\n            {{site.id}}\n         ]\n      ],\n      \"sort\":\"name ASC\",\n      \"model\":\"openstc.site\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"fields\":[\n         \"type_ids\"\n      ],\n      \"ids\": [1058],\n      \"model\":\"openstc.site\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
-            "url": "{{server}}/web/dataset/search_read"
+            "url": "{{server}}/web/dataset/get"
           },
           "response": []
         },
