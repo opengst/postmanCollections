@@ -4627,6 +4627,29 @@
           "response": []
         },
         {
+          "_postman_id": "002ab855-5091-4f9c-0f3e-15f4a7aec5f9",
+          "name": "Get Attachments",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"call\",\n    \"params\": {\n       \"domain\": [\n          [\n             \"id\",\n             \"!=\",\n             false\n          ],\n          [\n             \"res_model\",\n             \"=\",\n             \"project.task\"\n          ],\n          [\n             \"res_id\",\n             \"=\",\n             4464\n          ],\n          \"|\",\n          \"|\",\n          [\n             \"create_date\",\n             \">\",\n             \"2018-05-30\"\n          ],\n          [\n             \"write_date\",\n             \">\",\n             \"2018-05-30\"\n          ],\n          [\n             \"write_date\",\n             \"=\",\n             false\n          ]\n       ],\n       \"fields\": [\n          \"id\",\n          \"res_id\",\n          \"res_model\",\n          \"create_date\",\n          \"write_date\",\n          \"name\",\n          \"datas_fname\",\n          \"create_uid\"\n       ],\n       \"model\": \"ir.attachment\",\n       \"session_id\": \"{{sessionId}}\"\n    }\n }"
+            },
+            "url": "{{server}}/web/dataset/search_read"
+          },
+          "response": []
+        },
+        {
           "_postman_id": "ee0aa73b-0d10-bf14-36bf-9f3fb2f85f13",
           "name": "Get Inter details",
           "request": {
@@ -4652,6 +4675,25 @@
         {
           "_postman_id": "1508baf9-9a76-e6e5-fa55-22e554c70549",
           "name": "Get Site",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"fields\":[\n         \"type_ids\"\n      ],\n      \"ids\": [1058],\n      \"model\":\"openstc.site\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/get"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "5885d299-740a-2abd-d5b9-b7ca3315a17e",
+          "name": "Get Site copy",
           "request": {
             "method": "POST",
             "header": [
@@ -4757,48 +4799,6 @@
               "raw": "{\n  \"id\":\"r4\",\n  \"jsonrpc\":\"2.0\",\n  \"method\":\"call\",\n  \"params\": {\n    \"data\": {\n      \"geo_point\":false\n    },\n    \"model\":\"openstc.site\",\n    \"id\": {{site.id}},\n    \"session_id\": \"{{sessionId}}\"\n  }\n} "
             },
             "url": "{{server}}/web/dataset/save"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "002ab855-5091-4f9c-0f3e-15f4a7aec5f9",
-          "name": "Get Attachments",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              },
-              {
-                "key": "Accept",
-                "value": "application/json, text/plain, */*"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"call\",\n    \"params\": {\n       \"domain\": [\n          [\n             \"id\",\n             \"!=\",\n             false\n          ],\n          [\n             \"res_model\",\n             \"=\",\n             \"project.task\"\n          ],\n          [\n             \"res_id\",\n             \"=\",\n             4464\n          ],\n          \"|\",\n          \"|\",\n          [\n             \"create_date\",\n             \">\",\n             \"2018-05-30\"\n          ],\n          [\n             \"write_date\",\n             \">\",\n             \"2018-05-30\"\n          ],\n          [\n             \"write_date\",\n             \"=\",\n             false\n          ]\n       ],\n       \"fields\": [\n          \"id\",\n          \"res_id\",\n          \"res_model\",\n          \"create_date\",\n          \"write_date\",\n          \"name\",\n          \"datas_fname\",\n          \"create_uid\"\n       ],\n       \"model\": \"ir.attachment\",\n       \"session_id\": \"{{sessionId}}\"\n    }\n }"
-            },
-            "url": "{{server}}/web/dataset/search_read"
-          },
-          "response": []
-        },
-        {
-          "_postman_id": "5885d299-740a-2abd-d5b9-b7ca3315a17e",
-          "name": "Get Site copy",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json;charset=UTF-8"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"fields\":[\n         \"type_ids\"\n      ],\n      \"ids\": [1058],\n      \"model\":\"openstc.site\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
-            },
-            "url": "{{server}}/web/dataset/get"
           },
           "response": []
         }
