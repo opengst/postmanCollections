@@ -4782,6 +4782,25 @@
             "url": "{{server}}/web/dataset/search_read"
           },
           "response": []
+        },
+        {
+          "_postman_id": "5885d299-740a-2abd-d5b9-b7ca3315a17e",
+          "name": "Get Site copy",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"fields\":[\n         \"type_ids\"\n      ],\n      \"ids\": [1058],\n      \"model\":\"openstc.site\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
+            },
+            "url": "{{server}}/web/dataset/get"
+          },
+          "response": []
         }
       ]
     },
