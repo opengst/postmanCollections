@@ -4693,7 +4693,7 @@
         },
         {
           "_postman_id": "5885d299-740a-2abd-d5b9-b7ca3315a17e",
-          "name": "Get Site copy",
+          "name": "Get Site Access Manager",
           "request": {
             "method": "POST",
             "header": [
