@@ -4273,7 +4273,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\"jsonrpc\":\"2.0\",\"method\":\"call\",\"params\":{\"fields\":[\"attachment_count\"],\"model\":\"openstc.site\",\"ids\":[1],\"session_id\":\"e3ec6d1c52844c579bd3966954f8d80b\",\"context\":{\"__ref\":\"compound_context\",\"__contexts\":[{\"lang\":\"fr_FR\",\"tz\":\"Europe/Paris\",\"uid\":1},{\"bin_size\":true}],\"__eval_context\":null}},\"id\":\"r48\"}"
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"fields\":[\n         \"attachment_count\"\n      ],\n      \"model\":\"openstc.site\",\n      \"ids\":[\n         1\n      ],\n      \"session_id\":\"e3ec6d1c52844c579bd3966954f8d80b\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":1\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r48\"\n}"
             },
             "url": "{{server}}/web/dataset/get"
           },
