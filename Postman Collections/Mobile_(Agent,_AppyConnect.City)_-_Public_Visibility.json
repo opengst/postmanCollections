@@ -5837,6 +5837,40 @@
                 "url": "http://www.google.com"
               },
               "response": []
+            },
+            {
+              "_postman_id": "c0ca8f03-1fa7-f1cf-ad4a-eec79f4ee6cc",
+              "name": "Init VAR ENV - PROD SAINTBARTHBETA copy",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "type": "text/javascript",
+                    "exec": [
+                      "postman.clearEnvironmentVariables();",
+                      "",
+                      "postman.setEnvironmentVariable(\"server\", \"https://app.opengst.fr/\");",
+                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou_mobile\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
+                      "postman.setEnvironmentVariable(\"password_admin\", \"369rVwwQ38074894\");",
+                      "",
+                      "postman.setEnvironmentVariable(\"login_accountNotConnected\", \"MainAccessUserForCitizenMobile\");",
+                      "postman.setEnvironmentVariable(\"password_accountNotConnected\", \"my8Vk4eThcWz9QdjfSXvCBw3K\");"
+                    ]
+                  }
+                }
+              ],
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": "http://www.google.com"
+              },
+              "response": []
             }
           ],
           "_postman_isSubFolder": true
