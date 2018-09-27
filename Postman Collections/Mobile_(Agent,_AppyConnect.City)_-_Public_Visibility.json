@@ -267,7 +267,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{accountNotConnectedLogin}}\",\r\n      \"password\": \"{{accountNotConnectedPassword}}\"\r\n   }\r\n}"
+              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{login_accountNotConnected}}\",\r\n      \"password\": \"{{password_accountNotConnected}}\"\r\n   }\r\n}"
             },
             "url": "{{server}}/web/session/authenticate"
           },
