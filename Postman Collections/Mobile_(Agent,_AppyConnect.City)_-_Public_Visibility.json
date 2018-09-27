@@ -5857,8 +5857,8 @@
                     "exec": [
                       "postman.clearEnvironmentVariables();",
                       "",
-                      "postman.setEnvironmentVariable(\"server\", \"https://app.opengst.fr/\");",
-                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou_mobile\");",
+                      "postman.setEnvironmentVariable(\"server\", \"https://stbarth.opengst.fr/\");",
+                      "postman.setEnvironmentVariable(\"db\", \"saintbarthelemyanjou\");",
                       "",
                       "postman.setEnvironmentVariable(\"login_admin\", \"admin\");",
                       "postman.setEnvironmentVariable(\"password_admin\", \"369rVwwQ38074894\");",
