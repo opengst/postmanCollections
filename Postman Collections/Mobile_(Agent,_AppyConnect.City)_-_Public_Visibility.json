@@ -726,6 +726,149 @@
           ]
         },
         {
+          "_postman_id": "0f4cc830-dd58-feaf-59b9-c8ae2ff091be",
+          "name": "Authenticate Generic User Test ACC",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = JSON.parse(responseBody);",
+                  "",
+                  "",
+                  "/*",
+                  " * TESTS ",
+                  " */",
+                  "",
+                  "",
+                  "//Check status code",
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;",
+                  "",
+                  "//Check if the content type is json",
+                  "var contentTypeHeader = responseHeaders.hasOwnProperty(\"Content-Type\")",
+                  "if (contentTypeHeader) {",
+                  "    tests[\"Content-Type is application/json\"] = ",
+                  "      responseHeaders[\"Content-Type\"].has(\"application/json\");",
+                  "}",
+                  "",
+                  "//Check if really authenticate",
+                  "tests[\"Authenticate\"] = jsonData.result.uid !== false;",
+                  "",
+                  "",
+                  "/*",
+                  " * LOGIC",
+                  " */",
+                  "",
+                  "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
+                  "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);",
+                  "",
+                  "",
+                  "/*",
+                  " * SCENARIO",
+                  " */ ",
+                  "",
+                  "postman.setEnvironmentVariable(\"lastStepScenarioCitoyen\", \"Authenticate with userAccount\");",
+                  "postman.setNextRequest(\"000 - Global Scenario\");"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{userLogin}}\",\r\n      \"password\": \"{{userPassword}}\"\r\n   }\r\n}"
+            },
+            "url": "{{server}}/web/session/authenticate"
+          },
+          "response": [
+            {
+              "id": "1836dc1c-8e35-2b72-fefe-96b0aeba8f87",
+              "name": "stag demo - dstdst",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json;charset=UTF-8",
+                    "enabled": true,
+                    "description": "The mime type of this content",
+                    "warning": ""
+                  },
+                  {
+                    "key": "Content-Length",
+                    "value": "",
+                    "enabled": false,
+                    "warning": "Restricted Header (use Postman Interceptor)"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n   \"jsonrpc\":\"2.0\",\r\n   \"method\":\"call\",\r\n   \"params\":{\r\n      \"db\": \"{{db}}\",\r\n      \"login\": \"{{login}}\",\r\n      \"password\": \"{{password}}\"\r\n   }\r\n}"
+                },
+                "url": "{{server}}/web/session/authenticate"
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "name": "Connection",
+                  "key": "Connection",
+                  "value": "keep-alive",
+                  "description": "Options that are desired for the connection"
+                },
+                {
+                  "name": "Content-Encoding",
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "description": "The type of encoding used on the data."
+                },
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json",
+                  "description": "The mime type of this content"
+                },
+                {
+                  "name": "Date",
+                  "key": "Date",
+                  "value": "Wed, 12 Apr 2017 14:17:34 GMT",
+                  "description": "The date and time that the message was sent"
+                },
+                {
+                  "name": "Server",
+                  "key": "Server",
+                  "value": "nginx/1.4.6 (Ubuntu)",
+                  "description": "A name for the server"
+                },
+                {
+                  "name": "Transfer-Encoding",
+                  "key": "Transfer-Encoding",
+                  "value": "chunked",
+                  "description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+                },
+                {
+                  "name": "Vary",
+                  "key": "Vary",
+                  "value": "Accept-Encoding",
+                  "description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+                }
+              ],
+              "cookie": [],
+              "responseTime": "1054",
+              "body": "{\"jsonrpc\": \"2.0\", \"id\": null, \"result\": {\"uid\": 82, \"db\": \"demo\", \"session_id\": \"a71fcc8234a34bfb9571f8c39ff7ba00\", \"openerp_entreprise\": false, \"context\": {\"lang\": \"fr_FR\", \"project_id\": false, \"tz\": \"Europe/Paris\", \"section_id\": false, \"uid\": 82}, \"login\": \"dstdst\"}}"
+            }
+          ]
+        },
+        {
           "_postman_id": "a22d5652-054a-7ee5-d805-3da6846ba5df",
           "name": "Get session info",
           "event": [
@@ -4414,6 +4557,25 @@
         {
           "_postman_id": "bb2ba57b-0e29-a639-7203-e73cb6dc9f55",
           "name": "Get My Tasks",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json;charset=UTF-8"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"domain\":[\n         [\n            \"user_id\",\n            \"in\",\n            [\n               63\n            ]\n         ]\n      ],\n      \"sort\":\"id DESC\",\n      \"limit\":20,\n      \"offset\":0,\n      \"fields\":[\n         \"actions\",\n         \"agent_or_team_name\",\n         \"category_id\",\n         \"consumable_ask_ids\",\n         \"consumable_asks\",\n         \"consumable_request_id\",\n         \"date_start\",\n         \"equipment_id\",\n         \"effective_hours\",\n         \"id\",\n         \"swif_id\",\n         \"ask_id\",\n         \"name\",\n         \"partner_id\",\n         \"planned_hours\",\n         \"project_id\",\n         \"can_read_project\",\n         \"service_id\",\n         \"site1\",\n         \"state\",\n         \"team_id\",\n         \"user_id\",\n         \"cost\",\n         \"hr_cost\",\n         \"equipment_cost\",\n         \"consumable_cost\",\n         \"equipment_ids\",\n         \"attachment_count\",\n         \"mail_message_count\",\n         \"external\"\n      ],\n      \"model\":\"project.task\",\n      \"session_id\":\"{{sessionId}}\",\n      \"context\":{\n         \"__ref\":\"compound_context\",\n         \"__contexts\":[\n            {\n               \"lang\":\"fr_FR\",\n               \"tz\":\"Europe/Paris\",\n               \"uid\":63\n            },\n            {\n               \"bin_size\":true\n            }\n         ],\n         \"__eval_context\":null\n      }\n   },\n   \"id\":\"r4\"\n}"
+            },
+            "url": "{{server}}/web/dataset/search_read"
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ca1527f7-4fd1-4645-be4d-8af295ff5701",
+          "name": "Get My Tasks Copy",
           "request": {
             "method": "POST",
             "header": [
