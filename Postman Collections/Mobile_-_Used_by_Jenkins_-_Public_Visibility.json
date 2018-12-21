@@ -1,8 +1,7 @@
 {
   "info": {
-    "name": "Mobile - Used by Jenkins - Public Visibility",
     "_postman_id": "4f1a88c8-b0f3-da27-0f9e-9a544c47d615",
-    "description": "",
+    "name": "Mobile - Used by Jenkins - Public Visibility",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
   "item": [
@@ -43,8 +42,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "http://www.google.com",
-            "description": null
+            "url": "http://www.google.com"
           },
           "response": []
         },
@@ -80,8 +78,7 @@
               "mode": "raw",
               "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login_agent}}\",\r\n    \"password\": \"{{password_agent}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
             },
-            "url": "{{server}}/web/session/authenticate",
-            "description": ""
+            "url": "{{server}}/web/session/authenticate"
           },
           "response": []
         }
@@ -124,8 +121,7 @@
               "mode": "raw",
               "raw": ""
             },
-            "url": "http://www.google.com",
-            "description": null
+            "url": "http://www.google.com"
           },
           "response": []
         },
@@ -136,7 +132,7 @@
             {
               "listen": "test",
               "script": {
-                "type": "text/javascript",
+                "id": "41d9b02c-3675-41a0-b3dc-e6f63e7a17d3",
                 "exec": [
                   "var jsonData = JSON.parse(responseBody);",
                   "",
@@ -164,7 +160,8 @@
                   "",
                   "postman.setEnvironmentVariable(\"sessionId\", jsonData.result.session_id);",
                   "postman.setEnvironmentVariable(\"uid\", jsonData.result.uid);"
-                ]
+                ],
+                "type": "text/javascript"
               }
             }
           ],
@@ -182,10 +179,9 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login_accountNotConnected}}\",\r\n    \"password\": \"{{password_accountNotConnected}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
+              "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
             },
-            "url": "{{server}}/web/session/authenticate",
-            "description": null
+            "url": "{{server}}/web/session/authenticate"
           },
           "response": []
         },
@@ -228,8 +224,7 @@
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"openstc.partner.type\",\n      \"domain\":[\n         \"|\",\n         \"|\",\n         [\n            \"code\",\n            \"=\",\n            \"PARTICULIER\"\n         ],\n         [\n            \"code\",\n            \"=\",\n            \"3\"\n         ],\n     [\n            \"name\",\n            \"=\",\n            \"Particulier\"\n         ]\n      ],\n      \"fields\":[\n         \"id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
+            "url": "{{server}}/web/dataset/search_read"
           },
           "response": []
         },
@@ -272,8 +267,7 @@
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"res.partner\",\n      \"fields\":[\n         \"id\",\n         \"type_id\"\n      ],\n      \"domain\":[\n         [\n            \"type_id\",\n            \"in\",\n            [\n               {{categorieOrganisationId}}\n            ]\n         ],\n         [\n            \"is_department\",\n            \"=\",\n            false\n         ]\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
+            "url": "{{server}}/web/dataset/search_read"
           },
           "response": []
         },
@@ -316,8 +310,7 @@
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n         [\n            \"code\",\n            \"=\",\n            \"PART\"\n         ]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\"\n      ],\n      \"model\":\"res.groups\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
+            "url": "{{server}}/web/dataset/search_read"
           },
           "response": []
         },
@@ -387,8 +380,7 @@
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"data\":{\n         \"service_id\":false,\n         \"service_ids\":[\n            [\n               6,\n               0,\n               [\n             ]\n            ]\n         ],\n         \"is_assignable_to_task\":false,\n         \"is_bookable_manager\":false,\n         \"image\":false,\n         \"login\":\"{{login_generatedUserCitoyen}}\",\n         \"new_password\":\"{{password_generatedUserCitoyen}}\",\n         \"name\":\"{{name_generatedUserCitoyen}}\",\n         \"partner_id\":{{organisationId}},\n         \"groups_id\":[\n            [\n               6,\n               0,\n               [\n                  {{groupIdDemandeur}}\n               ]\n            ]\n         ]\n      },\n      \"model\":\"res.users\",\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
-            "url": "{{server}}/web/dataset/create",
-            "description": null
+            "url": "{{server}}/web/dataset/create"
           },
           "response": []
         },
@@ -430,8 +422,7 @@
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"db\":\"{{db}}\",\n      \"uid\":{{id_generatedUserCitoyen}}\n   }\n}"
             },
-            "url": "{{server}}/web/user/activate",
-            "description": null
+            "url": "{{server}}/web/user/activate"
           },
           "response": []
         },
@@ -490,8 +481,7 @@
               "mode": "raw",
               "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"login\": \"{{login_generatedUserCitoyen}}\",\r\n    \"password\": \"{{password_generatedUserCitoyen}}\",\r\n    \"db\": \"{{db}}\"\r\n  }\r\n}"
             },
-            "url": "{{server}}/web/session/authenticate",
-            "description": null
+            "url": "{{server}}/web/session/authenticate"
           },
           "response": []
         },
@@ -536,8 +526,7 @@
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
-            "url": "{{server}}/web/session/get_session_info",
-            "description": null
+            "url": "{{server}}/web/session/get_session_info"
           },
           "response": []
         },
@@ -583,8 +572,7 @@
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"model\":\"res.users\",\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"domain\":[\n         [\"id\", \"!=\", false],\n         [\"name\", \"!=\", false],\n         [\"address_id\", \"!=\", false],\n         [\"partner_id\", \"!=\", false],\n         [\"id\", \"=\", {{uid}}]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"email\",\n         \"city\",\n         \"zip\",\n         \"street\",\n         \"phone\",\n         \"mobile\",\n         \"address_id\",\n         \"partner_id\"\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
+            "url": "{{server}}/web/dataset/search_read"
           },
           "response": []
         },
@@ -626,8 +614,7 @@
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n       \"sort\":\"id DESC\",\n      \"limit\":1,\n      \"offset\":0,\n      \"model\":\"res.partner.address\",\n      \"domain\":[\n         [\n            \"id\",\n            \"=\",\n            {{addressId}}\n         ]\n      ],\n      \"session_id\":\"{{sessionId}}\"\n   }\n}"
             },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
+            "url": "{{server}}/web/dataset/search_read"
           },
           "response": []
         },
@@ -675,8 +662,7 @@
               "mode": "raw",
               "raw": "{\n   \"jsonrpc\":\"2.0\",\n   \"method\":\"call\",\n   \"params\":{\n      \"model\":\"openstc.ask.category\",\n      \"sort\": \"id DESC\",\n      \"limit\": false,\n      \"offset\": false,\n      \"domain\":[\n         [\"id\", \"!=\", false],\n         [\"name\", \"!=\", false],\n         [\"active\", \"!=\", false]\n      ],\n      \"fields\":[\n         \"id\",\n         \"name\",\n         \"active\"\n      ],\n      \"session_id\": \"{{sessionId}}\"\n   }\n}"
             },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
+            "url": "{{server}}/web/dataset/search_read"
           },
           "response": []
         },
@@ -719,8 +705,7 @@
               "mode": "raw",
               "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n      \"model\": \"openstc.ask\",\r\n      \"sort\": \"id DESC\",\r\n      \"limit\": false,\r\n      \"offset\": false,\r\n      \"domain\":[\r\n         [\"id\", \"!=\", false],\r\n         [\"name\", \"!=\", false],\r\n         [\"geo_point\", \"!=\", false],\r\n         [\"description\", \"!=\", false],\r\n         [\"type_id\", \"!=\", false],\r\n         [\"create_uid\", \"!=\", false],\r\n         [\"create_date\", \"!=\", false],\r\n         [\"partner_address\", \"!=\", false],\r\n         [\"partner_id\", \"!=\", false],\r\n         [\"state\", \"!=\", false]\r\n      ],\r\n      \"fields\":[\r\n         \"id\",\r\n         \"name\",\r\n         \"geo_point\",\r\n         \"description\",\r\n         \"type_id\",\r\n         \"create_uid\",\r\n         \"create_date\",\r\n         \"partner_address\",\r\n         \"partner_id\",\r\n         \"state\"\r\n      ],\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
             },
-            "url": "{{server}}/web/dataset/search_read",
-            "description": null
+            "url": "{{server}}/web/dataset/search_read"
           },
           "response": []
         },
@@ -801,8 +786,7 @@
               "mode": "raw",
               "raw": "{\r\n  \"jsonrpc\": \"2.0\",\r\n  \"method\": \"call\",\r\n  \"params\": {\r\n    \"data\": {\r\n      \"name\": \"requestName\",\r\n      \"description\": \"requestDescription\",\r\n      \"is_citizen\":false,\r\n      \"geo_point\":\"Point({{requestLongitude}} {{requestLatitude}})\",\r\n      \"type_id\":6,\r\n      \"partner_address\":{{addressId}},\r\n      \"partner_id\":{{partnerId}}\r\n    },\r\n    \"model\": \"openstc.ask\",\r\n    \"session_id\": \"{{sessionId}}\"\r\n  }\r\n}"
             },
-            "url": "{{server}}/web/dataset/create",
-            "description": null
+            "url": "{{server}}/web/dataset/create"
           },
           "response": []
         }
